@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/mozhu/yoga_app_student/build/image_pickers/intermediates/merged_res/release/drawable-ldpi-v4/ucrop_ic_angle.png",
+        "source": "/Users/mozhu/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/res/drawable-ldpi-v4/ucrop_ic_angle.png"
+    },
+    {
+        "merged": "/Users/mozhu/yoga_app_student/build/image_pickers/intermediates/merged_res/release/drawable-ldpi-v4/ucrop_ic_done.png",
+        "source": "/Users/mozhu/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/res/drawable-ldpi-v4/ucrop_ic_done.png"
+    }
+]

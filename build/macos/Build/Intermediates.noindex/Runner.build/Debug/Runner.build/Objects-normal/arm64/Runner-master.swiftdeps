@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "f2e7b214d006b73e500a76914444190c20681ab2c59c1a1ac69864bfd50b5094"
+build_start_time: [1676056365, 440564155]
+build_end_time: [1676056366, 749402046]
+inputs:
+  "/Users/mozhu/yoga_app_student/macos/Flutter/GeneratedPluginRegistrant.swift": [1676056360, 612730979]
+  "/Users/mozhu/yoga_app_student/macos/Runner/AppDelegate.swift": [1657744731, 0]
+  "/Users/mozhu/yoga_app_student/macos/Runner/MainFlutterWindow.swift": [1657744731, 0]

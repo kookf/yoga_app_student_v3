@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/mozhu/yoga_app_student/build/image_pickers/intermediates/merged_res/release/xml/pickers_plugin_file_path.xml",
+        "source": "/Users/mozhu/Desktop/flutter3.3.5/.pub-cache/hosted/pub.flutter-io.cn/image_pickers-2.0.0+6/android/src/main/res/xml/pickers_plugin_file_path.xml"
+    },
+    {
+        "merged": "/Users/mozhu/yoga_app_student/build/image_pickers/intermediates/merged_res/release/xml/ps_file_paths.xml",
+        "source": "/Users/mozhu/.gradle/caches/transforms-3/5ca58615336ff08de3a1ce5a0fba4ca4/transformed/jetified-pictureselector-v3.10.6/res/xml/ps_file_paths.xml"
+    },
+    {
+        "merged": "/Users/mozhu/yoga_app_student/build/image_pickers/intermediates/merged_res/release/xml/net_sec.xml",
+        "source": "/Users/mozhu/Desktop/flutter3.3.5/.pub-cache/hosted/pub.flutter-io.cn/image_pickers-2.0.0+6/android/src/main/res/xml/net_sec.xml"
+    }
+]
