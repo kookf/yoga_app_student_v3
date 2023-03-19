@@ -18,7 +18,7 @@ class RegisterController extends GetxController{
   String? birth;
 
 
-  /// 登录请求
+  /// 注冊请求
   Future requestDataWithRegister()async{
 
     var params = {

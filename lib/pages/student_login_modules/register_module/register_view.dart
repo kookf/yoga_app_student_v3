@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:yoga_student_app/pages/student_login_modules/register_module/register_controller.dart';
-
 import '../../../common/colors.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
@@ -18,7 +17,7 @@ class RegisterView extends GetView{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-
+      resizeToAvoidBottomInset: false,
       body: GetBuilder<RegisterController>(builder: (_){
         return Scaffold(
 
@@ -27,10 +26,10 @@ class RegisterView extends GetView{
               color: Colors.black
             ),
           ),
-          body: Column(
+          body: ListView(
             children: [
               Container(
-                padding: const EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(top: 25),
                 alignment: Alignment.center,
                 child: Text('學生註冊',style: TextStyle(fontSize: 31,color: AppColor.themeColor,fontWeight: FontWeight.w700),),
               ),
@@ -129,9 +128,9 @@ class RegisterView extends GetView{
                           doneStyle:
                           const TextStyle(color: Colors.white, fontSize: 16)),
                       onChanged: (date) {
-                        print('change $date in time zone ${date.timeZoneOffset.inHours}');
+
                       }, onConfirm: (date) {
-                        print('confirm ${date.day}');
+
                         String dateStr = '${date.year}-${date.month}-${date.day}';
                         print('confirm ${dateStr}');
                         controller.birth = dateStr;
@@ -207,6 +206,7 @@ class RegisterView extends GetView{
                     borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                     //设置四周边框
                     border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
+
                   ),
                   child: TextField(
                     obscureText: true,
@@ -239,11 +239,16 @@ class RegisterView extends GetView{
                   ),
                 ),
               ),
-              Expanded(child: Container(
+              Container(
                 // color: Colors.red,
                 alignment: Alignment.bottomCenter,
-                child: Image.asset('images/yuyuebg.png'),
-              ),)
+                child: Image.asset('images/yuyuebg.png',fit: BoxFit.fill,),
+              )
+              // Expanded(child: Container(
+              //   // color: Colors.red,
+              //   alignment: Alignment.bottomCenter,
+              //   child: Image.asset('images/yuyuebg.png',fit: BoxFit.fill,),
+              // ),)
             ],
           ),
         );

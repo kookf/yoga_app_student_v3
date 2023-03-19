@@ -87,13 +87,19 @@ androidx.annotation.ColorInt
 androidx.annotation.ColorLong
 androidx.annotation.ColorRes
 androidx.annotation.ContentView
+androidx.annotation.DeprecatedSinceApi
 androidx.annotation.DimenRes
+androidx.annotation.Dimension$Companion
 androidx.annotation.Dimension
+androidx.annotation.Discouraged
+androidx.annotation.DisplayContext
 androidx.annotation.DoNotInline
 androidx.annotation.DrawableRes
+androidx.annotation.EmptySuper
 androidx.annotation.FloatRange
 androidx.annotation.FontRes
 androidx.annotation.FractionRes
+androidx.annotation.GravityInt
 androidx.annotation.GuardedBy
 androidx.annotation.HalfFloat
 androidx.annotation.IdRes
@@ -111,7 +117,9 @@ androidx.annotation.MainThread
 androidx.annotation.MenuRes
 androidx.annotation.NavigationRes
 androidx.annotation.NonNull
+androidx.annotation.NonUiContext
 androidx.annotation.Nullable
+androidx.annotation.OpenForTesting
 androidx.annotation.OptIn
 androidx.annotation.PluralsRes
 androidx.annotation.Px
@@ -125,13 +133,16 @@ androidx.annotation.RequiresPermission$Write
 androidx.annotation.RequiresPermission
 androidx.annotation.RestrictTo$Scope
 androidx.annotation.RestrictTo
+androidx.annotation.ReturnThis
 androidx.annotation.Size
 androidx.annotation.StringDef
 androidx.annotation.StringRes
 androidx.annotation.StyleRes
 androidx.annotation.StyleableRes
 androidx.annotation.TransitionRes
+androidx.annotation.UiContext
 androidx.annotation.UiThread
+androidx.annotation.VisibleForTesting$Companion
 androidx.annotation.VisibleForTesting
 androidx.annotation.WorkerThread
 androidx.annotation.XmlRes
@@ -15961,6 +15972,102 @@ com.luck.picture.lib.widget.SquareRelativeLayout:
 com.luck.picture.lib.widget.TitleBar:
     public void <init>(android.content.Context)
     public void <init>(android.content.Context,android.util.AttributeSet,int)
+com.tekartik.sqflite.BuildConfig
+com.tekartik.sqflite.Constant:
+    static final java.lang.String CMD_GET
+    static final java.lang.String ERROR_BAD_PARAM
+    static final java.lang.String ERROR_DATABASE_CLOSED
+    static final java.lang.String ERROR_OPEN_FAILED
+    static final java.lang.String MEMORY_DATABASE_PATH
+    public static final java.lang.String METHOD_ANDROID_SET_LOCALE
+    public static final java.lang.String METHOD_BATCH
+    public static final java.lang.String METHOD_CLOSE_DATABASE
+    public static final java.lang.String METHOD_DATABASE_EXISTS
+    public static final java.lang.String METHOD_DEBUG
+    public static final java.lang.String METHOD_DEBUG_MODE
+    public static final java.lang.String METHOD_DELETE_DATABASE
+    public static final java.lang.String METHOD_EXECUTE
+    public static final java.lang.String METHOD_GET_DATABASES_PATH
+    public static final java.lang.String METHOD_GET_PLATFORM_VERSION
+    public static final java.lang.String METHOD_INSERT
+    public static final java.lang.String METHOD_OPEN_DATABASE
+    public static final java.lang.String METHOD_OPTIONS
+    public static final java.lang.String METHOD_QUERY
+    public static final java.lang.String METHOD_QUERY_CURSOR_NEXT
+    public static final java.lang.String METHOD_UPDATE
+    public static final java.lang.String PARAM_CANCEL
+    static final java.lang.String PARAM_CMD
+    public static final java.lang.String PARAM_COLUMNS
+    public static final java.lang.String PARAM_CONTINUE_OR_ERROR
+    public static final java.lang.String PARAM_CURSOR_ID
+    public static final java.lang.String PARAM_CURSOR_PAGE_SIZE
+    public static final java.lang.String PARAM_ERROR
+    public static final java.lang.String PARAM_ERROR_CODE
+    public static final java.lang.String PARAM_ERROR_DATA
+    public static final java.lang.String PARAM_ERROR_MESSAGE
+    static final java.lang.String PARAM_ID
+    public static final java.lang.String PARAM_IN_TRANSACTION_CHANGE
+    static final java.lang.String PARAM_LOCALE
+    static final java.lang.String PARAM_LOG_LEVEL
+    public static final java.lang.String PARAM_METHOD
+    public static final java.lang.String PARAM_NO_RESULT
+    static final java.lang.String PARAM_OPERATIONS
+    static final java.lang.String PARAM_PATH
+    static final java.lang.String PARAM_READ_ONLY
+    public static final java.lang.String PARAM_RECOVERED
+    public static final java.lang.String PARAM_RECOVERED_IN_TRANSACTION
+    public static final java.lang.String PARAM_RESULT
+    public static final java.lang.String PARAM_ROWS
+    static final java.lang.String PARAM_SINGLE_INSTANCE
+    public static final java.lang.String PARAM_SQL
+    public static final java.lang.String PARAM_SQL_ARGUMENTS
+    static final java.lang.String PARAM_THREAD_COUNT
+    static final java.lang.String PARAM_THREAD_PRIORITY
+    public static final java.lang.String PARAM_TRANSACTION_ID
+    public static final java.lang.String PLUGIN_KEY
+    static final java.lang.String SQLITE_ERROR
+    public static final java.lang.String TAG
+    public static final int TRANSACTION_ID_FORCE
+    public void <init>()
+com.tekartik.sqflite.Database:
+    static final boolean WAL_ENABLED_BY_DEFAULT
+    private static final java.lang.String WAL_ENABLED_META_NAME
+    public boolean enableWriteAheadLogging()
+com.tekartik.sqflite.LocaleUtils
+com.tekartik.sqflite.LogLevel:
+    static final int none
+    static final int sql
+    static final int verbose
+    public void <init>()
+com.tekartik.sqflite.R$attr
+com.tekartik.sqflite.R$color
+com.tekartik.sqflite.R$dimen
+com.tekartik.sqflite.R$drawable
+com.tekartik.sqflite.R$id
+com.tekartik.sqflite.R$integer
+com.tekartik.sqflite.R$layout
+com.tekartik.sqflite.R$string
+com.tekartik.sqflite.R$style
+com.tekartik.sqflite.R$styleable
+com.tekartik.sqflite.R
+com.tekartik.sqflite.SqflitePlugin:
+    public void <init>(android.content.Context)
+    private static java.util.Map fixMap(java.util.Map)
+    private android.content.Context getContext()
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+    private static java.lang.String toString(java.lang.Object)
+com.tekartik.sqflite.Utils:
+    public void <init>()
+com.tekartik.sqflite.dev.Debug:
+    public void <init>()
+    public static void devLog(java.lang.String,java.lang.String)
+com.tekartik.sqflite.operation.BaseReadOperation:
+    protected abstract com.tekartik.sqflite.operation.OperationResult getOperationResult()
+com.tekartik.sqflite.operation.Operation:
+    public abstract boolean getContinueOnError()
+com.tekartik.sqflite.operation.OperationRunnable
+com.tekartik.sqflite.operation.SqlErrorInfo:
+    public void <init>()
 com.yalantis.ucrop.BuildConfig
 com.yalantis.ucrop.OkHttpClientStore:
     void setClient(okhttp3.OkHttpClient)
@@ -17543,7 +17650,6 @@ io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint:
 io.flutter.embedding.engine.dart.DartExecutor$DefaultBinaryMessenger:
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
-    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.embedding.engine.dart.DartExecutor:
     private static final java.lang.String TAG
@@ -17553,23 +17659,13 @@ io.flutter.embedding.engine.dart.DartExecutor:
     public void executeDartEntrypoint(io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint)
     public io.flutter.plugin.common.BinaryMessenger getBinaryMessenger()
     public int getPendingChannelResponseCount()
-    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public void send(java.lang.String,java.nio.ByteBuffer)
     public void setIsolateServiceIdListener(io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener)
-io.flutter.embedding.engine.dart.DartMessenger$1
-io.flutter.embedding.engine.dart.DartMessenger$ConcurrentTaskQueue
-io.flutter.embedding.engine.dart.DartMessenger$DefaultTaskQueueFactory:
-    public io.flutter.embedding.engine.dart.DartMessenger$DartMessengerTaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
-io.flutter.embedding.engine.dart.DartMessenger$SerialTaskQueue
-io.flutter.embedding.engine.dart.DartMessenger$TaskQueueFactory:
-    public abstract io.flutter.embedding.engine.dart.DartMessenger$DartMessengerTaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
-io.flutter.embedding.engine.dart.DartMessenger$TaskQueueToken
 io.flutter.embedding.engine.dart.DartMessenger:
     private static final java.lang.String TAG
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
     public int getPendingChannelResponseCount()
-    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager:
     public abstract void loadAssets(int,java.lang.String)
@@ -17753,14 +17849,11 @@ io.flutter.plugin.common.BinaryCodec
 io.flutter.plugin.common.BinaryMessenger$-CC:
     public static void $default$disableBufferingIncomingMessages(io.flutter.plugin.common.BinaryMessenger)
     public static void $default$enableBufferingIncomingMessages(io.flutter.plugin.common.BinaryMessenger)
-    public static io.flutter.plugin.common.BinaryMessenger$TaskQueue $default$makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger)
-    public static io.flutter.plugin.common.BinaryMessenger$TaskQueue $default$makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger,io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
-io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions
+io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions:
+    public io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions setIsSerial(boolean)
 io.flutter.plugin.common.BinaryMessenger:
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
-    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue()
-    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public abstract void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.plugin.common.ErrorLogResult
 io.flutter.plugin.common.EventChannel$1
@@ -17774,8 +17867,6 @@ io.flutter.plugin.common.FlutterException:
 io.flutter.plugin.common.JSONUtil:
     private void <init>()
     public static java.lang.Object unwrap(java.lang.Object)
-io.flutter.plugin.common.MethodCall:
-    public boolean hasArgument(java.lang.String)
 io.flutter.plugin.common.MethodChannel:
     private static final java.lang.String TAG
     public void resizeChannelBuffer(int)
@@ -17861,6 +17952,24 @@ io.flutter.plugin.platform.SingleViewPresentation$WindowManagerHandler:
 io.flutter.plugin.platform.VirtualDisplayController:
     public void dispose()
     void onFlutterViewDetached()
+io.flutter.plugins.pathprovider.BuildConfig
+io.flutter.plugins.pathprovider.Messages:
+    public void <init>()
+io.flutter.plugins.pathprovider.PathProviderPlugin:
+    static final java.lang.String TAG
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+io.flutter.plugins.pathprovider.R$attr
+io.flutter.plugins.pathprovider.R$color
+io.flutter.plugins.pathprovider.R$dimen
+io.flutter.plugins.pathprovider.R$drawable
+io.flutter.plugins.pathprovider.R$id
+io.flutter.plugins.pathprovider.R$integer
+io.flutter.plugins.pathprovider.R$layout
+io.flutter.plugins.pathprovider.R$string
+io.flutter.plugins.pathprovider.R$style
+io.flutter.plugins.pathprovider.R$styleable
+io.flutter.plugins.pathprovider.R
+io.flutter.plugins.pathprovider.StorageDirectoryMapper
 io.flutter.plugins.sharedpreferences.BuildConfig
 io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl:
     private static final java.lang.String BIG_INTEGER_PREFIX
@@ -17933,6 +18042,7 @@ kotlin.BuilderInference
 kotlin.CharCodeJVMKt
 kotlin.CharCodeKt
 kotlin.CompareToKt
+kotlin.ContextFunctionTypeParams
 kotlin.DeepRecursiveFunction
 kotlin.DeepRecursiveKt
 kotlin.DeepRecursiveScope
@@ -18319,6 +18429,62 @@ kotlin.collections.ArraysKt___ArraysJvmKt:
     public static synthetic void fill$default(boolean[],boolean,int,int,int,java.lang.Object)
     public static final java.util.List filterIsInstance(java.lang.Object[],java.lang.Class)
     public static final java.util.Collection filterIsInstanceTo(java.lang.Object[],java.util.Collection,java.lang.Class)
+    public static final synthetic java.lang.Byte max(byte[])
+    public static final synthetic java.lang.Character max(char[])
+    public static final synthetic java.lang.Comparable max(java.lang.Comparable[])
+    public static final synthetic java.lang.Double max(double[])
+    public static final synthetic java.lang.Double max(java.lang.Double[])
+    public static final synthetic java.lang.Float max(float[])
+    public static final synthetic java.lang.Float max(java.lang.Float[])
+    public static final synthetic java.lang.Integer max(int[])
+    public static final synthetic java.lang.Long max(long[])
+    public static final synthetic java.lang.Short max(short[])
+    public static final synthetic java.lang.Boolean maxBy(boolean[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Byte maxBy(byte[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character maxBy(char[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Double maxBy(double[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Float maxBy(float[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Integer maxBy(int[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Long maxBy(long[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object maxBy(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Short maxBy(short[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Boolean maxWith(boolean[],java.util.Comparator)
+    public static final synthetic java.lang.Byte maxWith(byte[],java.util.Comparator)
+    public static final synthetic java.lang.Character maxWith(char[],java.util.Comparator)
+    public static final synthetic java.lang.Double maxWith(double[],java.util.Comparator)
+    public static final synthetic java.lang.Float maxWith(float[],java.util.Comparator)
+    public static final synthetic java.lang.Integer maxWith(int[],java.util.Comparator)
+    public static final synthetic java.lang.Long maxWith(long[],java.util.Comparator)
+    public static final synthetic java.lang.Object maxWith(java.lang.Object[],java.util.Comparator)
+    public static final synthetic java.lang.Short maxWith(short[],java.util.Comparator)
+    public static final synthetic java.lang.Byte min(byte[])
+    public static final synthetic java.lang.Character min(char[])
+    public static final synthetic java.lang.Comparable min(java.lang.Comparable[])
+    public static final synthetic java.lang.Double min(double[])
+    public static final synthetic java.lang.Double min(java.lang.Double[])
+    public static final synthetic java.lang.Float min(float[])
+    public static final synthetic java.lang.Float min(java.lang.Float[])
+    public static final synthetic java.lang.Integer min(int[])
+    public static final synthetic java.lang.Long min(long[])
+    public static final synthetic java.lang.Short min(short[])
+    public static final synthetic java.lang.Boolean minBy(boolean[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Byte minBy(byte[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character minBy(char[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Double minBy(double[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Float minBy(float[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Integer minBy(int[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Long minBy(long[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object minBy(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Short minBy(short[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Boolean minWith(boolean[],java.util.Comparator)
+    public static final synthetic java.lang.Byte minWith(byte[],java.util.Comparator)
+    public static final synthetic java.lang.Character minWith(char[],java.util.Comparator)
+    public static final synthetic java.lang.Double minWith(double[],java.util.Comparator)
+    public static final synthetic java.lang.Float minWith(float[],java.util.Comparator)
+    public static final synthetic java.lang.Integer minWith(int[],java.util.Comparator)
+    public static final synthetic java.lang.Long minWith(long[],java.util.Comparator)
+    public static final synthetic java.lang.Object minWith(java.lang.Object[],java.util.Comparator)
+    public static final synthetic java.lang.Short minWith(short[],java.util.Comparator)
     public static final byte[] plus(byte[],byte)
     public static final byte[] plus(byte[],java.util.Collection)
     public static final byte[] plus(byte[],byte[])
@@ -18618,8 +18784,8 @@ kotlin.collections.ArraysKt___ArraysKt:
     private static final boolean component5(boolean[])
     public static final boolean contains(byte[],byte)
     public static final boolean contains(char[],char)
-    public static final boolean contains(double[],double)
-    public static final boolean contains(float[],float)
+    public static final synthetic boolean contains(double[],double)
+    public static final synthetic boolean contains(float[],float)
     public static final boolean contains(int[],int)
     public static final boolean contains(long[],long)
     public static final boolean contains(java.lang.Object[],java.lang.Object)
@@ -18998,8 +19164,8 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final kotlin.collections.Grouping groupingBy(java.lang.Object[],kotlin.jvm.functions.Function1)
     public static final int indexOf(byte[],byte)
     public static final int indexOf(char[],char)
-    public static final int indexOf(double[],double)
-    public static final int indexOf(float[],float)
+    public static final synthetic int indexOf(double[],double)
+    public static final synthetic int indexOf(float[],float)
     public static final int indexOf(int[],int)
     public static final int indexOf(long[],long)
     public static final int indexOf(java.lang.Object[],java.lang.Object)
@@ -19106,8 +19272,8 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final boolean last(boolean[],kotlin.jvm.functions.Function1)
     public static final int lastIndexOf(byte[],byte)
     public static final int lastIndexOf(char[],char)
-    public static final int lastIndexOf(double[],double)
-    public static final int lastIndexOf(float[],float)
+    public static final synthetic int lastIndexOf(double[],double)
+    public static final synthetic int lastIndexOf(float[],float)
     public static final int lastIndexOf(int[],int)
     public static final int lastIndexOf(long[],long)
     public static final int lastIndexOf(java.lang.Object[],java.lang.Object)
@@ -19171,25 +19337,6 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.util.Collection mapTo(java.lang.Object[],java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(short[],java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(boolean[],java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Byte max(byte[])
-    public static final synthetic java.lang.Character max(char[])
-    public static final synthetic java.lang.Comparable max(java.lang.Comparable[])
-    public static final synthetic java.lang.Double max(double[])
-    public static final synthetic java.lang.Double max(java.lang.Double[])
-    public static final synthetic java.lang.Float max(float[])
-    public static final synthetic java.lang.Float max(java.lang.Float[])
-    public static final synthetic java.lang.Integer max(int[])
-    public static final synthetic java.lang.Long max(long[])
-    public static final synthetic java.lang.Short max(short[])
-    public static final synthetic java.lang.Boolean maxBy(boolean[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Byte maxBy(byte[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Character maxBy(char[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Double maxBy(double[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Float maxBy(float[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Integer maxBy(int[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Long maxBy(long[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Object maxBy(java.lang.Object[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Short maxBy(short[],kotlin.jvm.functions.Function1)
     public static final java.lang.Boolean maxByOrNull(boolean[],kotlin.jvm.functions.Function1)
     public static final java.lang.Byte maxByOrNull(byte[],kotlin.jvm.functions.Function1)
     public static final java.lang.Character maxByOrNull(char[],kotlin.jvm.functions.Function1)
@@ -19199,6 +19346,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long maxByOrNull(long[],kotlin.jvm.functions.Function1)
     public static final java.lang.Object maxByOrNull(java.lang.Object[],kotlin.jvm.functions.Function1)
     public static final java.lang.Short maxByOrNull(short[],kotlin.jvm.functions.Function1)
+    public static final byte maxByOrThrow(byte[],kotlin.jvm.functions.Function1)
+    public static final char maxByOrThrow(char[],kotlin.jvm.functions.Function1)
+    public static final double maxByOrThrow(double[],kotlin.jvm.functions.Function1)
+    public static final float maxByOrThrow(float[],kotlin.jvm.functions.Function1)
+    public static final int maxByOrThrow(int[],kotlin.jvm.functions.Function1)
+    public static final long maxByOrThrow(long[],kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxByOrThrow(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final short maxByOrThrow(short[],kotlin.jvm.functions.Function1)
+    public static final boolean maxByOrThrow(boolean[],kotlin.jvm.functions.Function1)
     private static final double maxOf(byte[],kotlin.jvm.functions.Function1)
     private static final double maxOf(char[],kotlin.jvm.functions.Function1)
     private static final double maxOf(double[],kotlin.jvm.functions.Function1)
@@ -19281,15 +19437,16 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Integer maxOrNull(int[])
     public static final java.lang.Long maxOrNull(long[])
     public static final java.lang.Short maxOrNull(short[])
-    public static final synthetic java.lang.Boolean maxWith(boolean[],java.util.Comparator)
-    public static final synthetic java.lang.Byte maxWith(byte[],java.util.Comparator)
-    public static final synthetic java.lang.Character maxWith(char[],java.util.Comparator)
-    public static final synthetic java.lang.Double maxWith(double[],java.util.Comparator)
-    public static final synthetic java.lang.Float maxWith(float[],java.util.Comparator)
-    public static final synthetic java.lang.Integer maxWith(int[],java.util.Comparator)
-    public static final synthetic java.lang.Long maxWith(long[],java.util.Comparator)
-    public static final synthetic java.lang.Object maxWith(java.lang.Object[],java.util.Comparator)
-    public static final synthetic java.lang.Short maxWith(short[],java.util.Comparator)
+    public static final byte maxOrThrow(byte[])
+    public static final char maxOrThrow(char[])
+    public static final double maxOrThrow(double[])
+    public static final double maxOrThrow(java.lang.Double[])
+    public static final float maxOrThrow(float[])
+    public static final float maxOrThrow(java.lang.Float[])
+    public static final int maxOrThrow(int[])
+    public static final long maxOrThrow(long[])
+    public static final java.lang.Comparable maxOrThrow(java.lang.Comparable[])
+    public static final short maxOrThrow(short[])
     public static final java.lang.Boolean maxWithOrNull(boolean[],java.util.Comparator)
     public static final java.lang.Byte maxWithOrNull(byte[],java.util.Comparator)
     public static final java.lang.Character maxWithOrNull(char[],java.util.Comparator)
@@ -19299,25 +19456,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long maxWithOrNull(long[],java.util.Comparator)
     public static final java.lang.Object maxWithOrNull(java.lang.Object[],java.util.Comparator)
     public static final java.lang.Short maxWithOrNull(short[],java.util.Comparator)
-    public static final synthetic java.lang.Byte min(byte[])
-    public static final synthetic java.lang.Character min(char[])
-    public static final synthetic java.lang.Comparable min(java.lang.Comparable[])
-    public static final synthetic java.lang.Double min(double[])
-    public static final synthetic java.lang.Double min(java.lang.Double[])
-    public static final synthetic java.lang.Float min(float[])
-    public static final synthetic java.lang.Float min(java.lang.Float[])
-    public static final synthetic java.lang.Integer min(int[])
-    public static final synthetic java.lang.Long min(long[])
-    public static final synthetic java.lang.Short min(short[])
-    public static final synthetic java.lang.Boolean minBy(boolean[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Byte minBy(byte[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Character minBy(char[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Double minBy(double[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Float minBy(float[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Integer minBy(int[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Long minBy(long[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Object minBy(java.lang.Object[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Short minBy(short[],kotlin.jvm.functions.Function1)
+    public static final byte maxWithOrThrow(byte[],java.util.Comparator)
+    public static final char maxWithOrThrow(char[],java.util.Comparator)
+    public static final double maxWithOrThrow(double[],java.util.Comparator)
+    public static final float maxWithOrThrow(float[],java.util.Comparator)
+    public static final int maxWithOrThrow(int[],java.util.Comparator)
+    public static final long maxWithOrThrow(long[],java.util.Comparator)
+    public static final java.lang.Object maxWithOrThrow(java.lang.Object[],java.util.Comparator)
+    public static final short maxWithOrThrow(short[],java.util.Comparator)
+    public static final boolean maxWithOrThrow(boolean[],java.util.Comparator)
     public static final java.lang.Boolean minByOrNull(boolean[],kotlin.jvm.functions.Function1)
     public static final java.lang.Byte minByOrNull(byte[],kotlin.jvm.functions.Function1)
     public static final java.lang.Character minByOrNull(char[],kotlin.jvm.functions.Function1)
@@ -19327,6 +19474,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long minByOrNull(long[],kotlin.jvm.functions.Function1)
     public static final java.lang.Object minByOrNull(java.lang.Object[],kotlin.jvm.functions.Function1)
     public static final java.lang.Short minByOrNull(short[],kotlin.jvm.functions.Function1)
+    public static final byte minByOrThrow(byte[],kotlin.jvm.functions.Function1)
+    public static final char minByOrThrow(char[],kotlin.jvm.functions.Function1)
+    public static final double minByOrThrow(double[],kotlin.jvm.functions.Function1)
+    public static final float minByOrThrow(float[],kotlin.jvm.functions.Function1)
+    public static final int minByOrThrow(int[],kotlin.jvm.functions.Function1)
+    public static final long minByOrThrow(long[],kotlin.jvm.functions.Function1)
+    public static final java.lang.Object minByOrThrow(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final short minByOrThrow(short[],kotlin.jvm.functions.Function1)
+    public static final boolean minByOrThrow(boolean[],kotlin.jvm.functions.Function1)
     private static final double minOf(byte[],kotlin.jvm.functions.Function1)
     private static final double minOf(char[],kotlin.jvm.functions.Function1)
     private static final double minOf(double[],kotlin.jvm.functions.Function1)
@@ -19409,15 +19565,16 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Integer minOrNull(int[])
     public static final java.lang.Long minOrNull(long[])
     public static final java.lang.Short minOrNull(short[])
-    public static final synthetic java.lang.Boolean minWith(boolean[],java.util.Comparator)
-    public static final synthetic java.lang.Byte minWith(byte[],java.util.Comparator)
-    public static final synthetic java.lang.Character minWith(char[],java.util.Comparator)
-    public static final synthetic java.lang.Double minWith(double[],java.util.Comparator)
-    public static final synthetic java.lang.Float minWith(float[],java.util.Comparator)
-    public static final synthetic java.lang.Integer minWith(int[],java.util.Comparator)
-    public static final synthetic java.lang.Long minWith(long[],java.util.Comparator)
-    public static final synthetic java.lang.Object minWith(java.lang.Object[],java.util.Comparator)
-    public static final synthetic java.lang.Short minWith(short[],java.util.Comparator)
+    public static final byte minOrThrow(byte[])
+    public static final char minOrThrow(char[])
+    public static final double minOrThrow(double[])
+    public static final double minOrThrow(java.lang.Double[])
+    public static final float minOrThrow(float[])
+    public static final float minOrThrow(java.lang.Float[])
+    public static final int minOrThrow(int[])
+    public static final long minOrThrow(long[])
+    public static final java.lang.Comparable minOrThrow(java.lang.Comparable[])
+    public static final short minOrThrow(short[])
     public static final java.lang.Boolean minWithOrNull(boolean[],java.util.Comparator)
     public static final java.lang.Byte minWithOrNull(byte[],java.util.Comparator)
     public static final java.lang.Character minWithOrNull(char[],java.util.Comparator)
@@ -19427,6 +19584,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long minWithOrNull(long[],java.util.Comparator)
     public static final java.lang.Object minWithOrNull(java.lang.Object[],java.util.Comparator)
     public static final java.lang.Short minWithOrNull(short[],java.util.Comparator)
+    public static final byte minWithOrThrow(byte[],java.util.Comparator)
+    public static final char minWithOrThrow(char[],java.util.Comparator)
+    public static final double minWithOrThrow(double[],java.util.Comparator)
+    public static final float minWithOrThrow(float[],java.util.Comparator)
+    public static final int minWithOrThrow(int[],java.util.Comparator)
+    public static final long minWithOrThrow(long[],java.util.Comparator)
+    public static final java.lang.Object minWithOrThrow(java.lang.Object[],java.util.Comparator)
+    public static final short minWithOrThrow(short[],java.util.Comparator)
+    public static final boolean minWithOrThrow(boolean[],java.util.Comparator)
     public static final boolean none(byte[])
     public static final boolean none(byte[],kotlin.jvm.functions.Function1)
     public static final boolean none(char[])
@@ -20215,6 +20381,16 @@ kotlin.collections.CollectionsKt___CollectionsJvmKt:
     public void <init>()
     public static final java.util.List filterIsInstance(java.lang.Iterable,java.lang.Class)
     public static final java.util.Collection filterIsInstanceTo(java.lang.Iterable,java.util.Collection,java.lang.Class)
+    public static final synthetic java.lang.Comparable max(java.lang.Iterable)
+    public static final synthetic java.lang.Double max(java.lang.Iterable)
+    public static final synthetic java.lang.Float max(java.lang.Iterable)
+    public static final synthetic java.lang.Object maxBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object maxWith(java.lang.Iterable,java.util.Comparator)
+    public static final synthetic java.lang.Comparable min(java.lang.Iterable)
+    public static final synthetic java.lang.Double min(java.lang.Iterable)
+    public static final synthetic java.lang.Float min(java.lang.Iterable)
+    public static final synthetic java.lang.Object minBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object minWith(java.lang.Iterable,java.util.Comparator)
     public static final void reverse(java.util.List)
     private static final java.math.BigDecimal sumOfBigDecimal(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.math.BigInteger sumOfBigInteger(java.lang.Iterable,kotlin.jvm.functions.Function1)
@@ -20335,11 +20511,8 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.util.List mapNotNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(java.lang.Iterable,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(java.lang.Iterable,java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Comparable max(java.lang.Iterable)
-    public static final synthetic java.lang.Double max(java.lang.Iterable)
-    public static final synthetic java.lang.Float max(java.lang.Iterable)
-    public static final synthetic java.lang.Object maxBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.lang.Object maxByOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxByOrThrow(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final double maxOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final float maxOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
@@ -20351,13 +20524,13 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.lang.Comparable maxOrNull(java.lang.Iterable)
     public static final java.lang.Double maxOrNull(java.lang.Iterable)
     public static final java.lang.Float maxOrNull(java.lang.Iterable)
-    public static final synthetic java.lang.Object maxWith(java.lang.Iterable,java.util.Comparator)
+    public static final double maxOrThrow(java.lang.Iterable)
+    public static final float maxOrThrow(java.lang.Iterable)
+    public static final java.lang.Comparable maxOrThrow(java.lang.Iterable)
     public static final java.lang.Object maxWithOrNull(java.lang.Iterable,java.util.Comparator)
-    public static final synthetic java.lang.Comparable min(java.lang.Iterable)
-    public static final synthetic java.lang.Double min(java.lang.Iterable)
-    public static final synthetic java.lang.Float min(java.lang.Iterable)
-    public static final synthetic java.lang.Object minBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxWithOrThrow(java.lang.Iterable,java.util.Comparator)
     public static final java.lang.Object minByOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object minByOrThrow(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final double minOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final float minOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
@@ -20368,8 +20541,11 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     private static final java.lang.Object minOfWithOrNull(java.lang.Iterable,java.util.Comparator,kotlin.jvm.functions.Function1)
     public static final java.lang.Double minOrNull(java.lang.Iterable)
     public static final java.lang.Float minOrNull(java.lang.Iterable)
-    public static final synthetic java.lang.Object minWith(java.lang.Iterable,java.util.Comparator)
+    public static final double minOrThrow(java.lang.Iterable)
+    public static final float minOrThrow(java.lang.Iterable)
+    public static final java.lang.Comparable minOrThrow(java.lang.Iterable)
     public static final java.lang.Object minWithOrNull(java.lang.Iterable,java.util.Comparator)
+    public static final java.lang.Object minWithOrThrow(java.lang.Iterable,java.util.Comparator)
     public static final java.util.List minus(java.lang.Iterable,java.lang.Iterable)
     public static final java.util.List minus(java.lang.Iterable,java.lang.Object)
     public static final java.util.List minus(java.lang.Iterable,kotlin.sequences.Sequence)
@@ -20467,15 +20643,23 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.util.List zipWithNext(java.lang.Iterable)
     public static final java.util.List zipWithNext(java.lang.Iterable,kotlin.jvm.functions.Function2)
 kotlin.collections.DoubleIterator
+kotlin.collections.EmptyIterator:
+    public void add(java.lang.Void)
+    public void set(java.lang.Void)
 kotlin.collections.EmptyList:
     private static final long serialVersionUID
+    public void add(int,java.lang.Void)
+    public boolean add(java.lang.Void)
     private final java.lang.Object readResolve()
     public java.lang.Void remove(int)
+    public java.lang.Void set(int,java.lang.Void)
 kotlin.collections.EmptyMap:
     private static final long serialVersionUID
+    public java.lang.Void put(java.lang.Object,java.lang.Void)
     private final java.lang.Object readResolve()
 kotlin.collections.EmptySet:
     private static final long serialVersionUID
+    public boolean add(java.lang.Void)
     private final java.lang.Object readResolve()
 kotlin.collections.FloatIterator
 kotlin.collections.Grouping
@@ -20581,6 +20765,12 @@ kotlin.collections.MapsKt__MapsKt:
     public static final java.util.Map toMap(kotlin.Pair[],java.util.Map)
     public static final java.util.Map toMutableMap(java.util.Map)
     private static final kotlin.Pair toPair(java.util.Map$Entry)
+kotlin.collections.MapsKt___MapsJvmKt:
+    public void <init>()
+    private static final synthetic java.util.Map$Entry maxBy(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final synthetic java.util.Map$Entry maxWith(java.util.Map,java.util.Comparator)
+    public static final synthetic java.util.Map$Entry minBy(java.util.Map,kotlin.jvm.functions.Function1)
+    public static final synthetic java.util.Map$Entry minWith(java.util.Map,java.util.Comparator)
 kotlin.collections.MapsKt___MapsKt:
     public void <init>()
     public static final boolean all(java.util.Map,kotlin.jvm.functions.Function1)
@@ -20601,8 +20791,8 @@ kotlin.collections.MapsKt___MapsKt:
     public static final java.util.List mapNotNull(java.util.Map,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(java.util.Map,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(java.util.Map,java.util.Collection,kotlin.jvm.functions.Function1)
-    private static final synthetic java.util.Map$Entry maxBy(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.util.Map$Entry maxByOrNull(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final java.util.Map$Entry maxByOrThrow(java.util.Map,kotlin.jvm.functions.Function1)
     private static final double maxOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final float maxOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(java.util.Map,kotlin.jvm.functions.Function1)
@@ -20611,10 +20801,10 @@ kotlin.collections.MapsKt___MapsKt:
     private static final java.lang.Float maxOfOrNull(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Object maxOfWith(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object maxOfWithOrNull(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
-    private static final synthetic java.util.Map$Entry maxWith(java.util.Map,java.util.Comparator)
     private static final java.util.Map$Entry maxWithOrNull(java.util.Map,java.util.Comparator)
-    public static final synthetic java.util.Map$Entry minBy(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final java.util.Map$Entry maxWithOrThrow(java.util.Map,java.util.Comparator)
     private static final java.util.Map$Entry minByOrNull(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final java.util.Map$Entry minByOrThrow(java.util.Map,kotlin.jvm.functions.Function1)
     private static final double minOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final float minOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(java.util.Map,kotlin.jvm.functions.Function1)
@@ -20623,8 +20813,8 @@ kotlin.collections.MapsKt___MapsKt:
     private static final java.lang.Float minOfOrNull(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Object minOfWith(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object minOfWithOrNull(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
-    public static final synthetic java.util.Map$Entry minWith(java.util.Map,java.util.Comparator)
     private static final java.util.Map$Entry minWithOrNull(java.util.Map,java.util.Comparator)
+    private static final java.util.Map$Entry minWithOrThrow(java.util.Map,java.util.Comparator)
     public static final boolean none(java.util.Map)
     public static final boolean none(java.util.Map,kotlin.jvm.functions.Function1)
     public static final java.util.Map onEach(java.util.Map,kotlin.jvm.functions.Function1)
@@ -20682,12 +20872,8 @@ kotlin.collections.SlidingWindowKt
 kotlin.collections.State
 kotlin.collections.TypeAliasesKt
 kotlin.collections.UArraySortingKt
-kotlin.collections.UByteIterator
 kotlin.collections.UCollectionsKt
 kotlin.collections.UCollectionsKt___UCollectionsKt
-kotlin.collections.UIntIterator
-kotlin.collections.ULongIterator
-kotlin.collections.UShortIterator
 kotlin.collections.builders.AbstractMapBuilderEntrySet
 kotlin.collections.builders.ListBuilder$Itr
 kotlin.collections.builders.ListBuilder
@@ -20912,6 +21098,7 @@ kotlin.internal.DynamicExtension
 kotlin.internal.Exact
 kotlin.internal.HidesMembers
 kotlin.internal.InlineOnly
+kotlin.internal.IntrinsicConstEvaluation
 kotlin.internal.LowPriorityInOverloadResolution
 kotlin.internal.NoInfer
 kotlin.internal.OnlyInputTypes
@@ -20983,6 +21170,8 @@ kotlin.jdk7.AutoCloseableKt
 kotlin.js.ExperimentalJsExport
 kotlin.jvm.JvmClassMappingKt:
     public static final kotlin.reflect.KClass getAnnotationClass(java.lang.annotation.Annotation)
+    private static final java.lang.Class getDeclaringJavaClass(java.lang.Enum)
+    public static synthetic void getDeclaringJavaClass$annotations(java.lang.Enum)
     public static final java.lang.Class getJavaClass(java.lang.Object)
     public static final java.lang.Class getJavaClass(kotlin.reflect.KClass)
     public static synthetic void getJavaClass$annotations(kotlin.reflect.KClass)
@@ -20991,6 +21180,7 @@ kotlin.jvm.JvmClassMappingKt:
     public static synthetic void getRuntimeClassOfKClassInstance$annotations(kotlin.reflect.KClass)
     public static final synthetic boolean isArrayOf(java.lang.Object[])
 kotlin.jvm.JvmDefault
+kotlin.jvm.JvmDefaultWithCompatibility
 kotlin.jvm.JvmDefaultWithoutCompatibility
 kotlin.jvm.JvmField
 kotlin.jvm.JvmInline
@@ -21122,6 +21312,7 @@ kotlin.jvm.internal.DoubleSpreadBuilder
 kotlin.jvm.internal.EnumCompanionObject
 kotlin.jvm.internal.FloatCompanionObject
 kotlin.jvm.internal.FloatSpreadBuilder
+kotlin.jvm.internal.FunInterfaceConstructorReference
 kotlin.jvm.internal.FunctionAdapter
 kotlin.jvm.internal.FunctionImpl
 kotlin.jvm.internal.InlineMarker
@@ -21140,7 +21331,6 @@ kotlin.jvm.internal.Intrinsics:
     public static void checkFieldIsNotNull(java.lang.Object,java.lang.String,java.lang.String)
     public static void checkHasClass(java.lang.String)
     public static void checkHasClass(java.lang.String,java.lang.String)
-    public static void checkNotNull(java.lang.Object,java.lang.String)
     public static void checkParameterIsNotNull(java.lang.Object,java.lang.String)
     public static void checkReturnedValueIsNotNull(java.lang.Object,java.lang.String)
     public static void checkReturnedValueIsNotNull(java.lang.Object,java.lang.String,java.lang.String)
@@ -21155,7 +21345,6 @@ kotlin.jvm.internal.Intrinsics:
     public static void throwIllegalArgument(java.lang.String)
     public static void throwIllegalState()
     public static void throwIllegalState(java.lang.String)
-    public static void throwJavaNpe(java.lang.String)
     public static void throwNpe()
     public static void throwNpe(java.lang.String)
     private static void throwParameterIsNullIAE(java.lang.String)
@@ -21243,6 +21432,7 @@ kotlin.jvm.internal.ReflectionFactory:
     public kotlin.reflect.KType typeOf(kotlin.reflect.KClassifier,java.util.List,boolean)
     public kotlin.reflect.KTypeParameter typeParameter(java.lang.Object,java.lang.String,kotlin.reflect.KVariance,boolean)
 kotlin.jvm.internal.RepeatableContainer
+kotlin.jvm.internal.SerializedIr
 kotlin.jvm.internal.ShortCompanionObject
 kotlin.jvm.internal.ShortSpreadBuilder
 kotlin.jvm.internal.SpreadBuilder
@@ -21387,7 +21577,6 @@ kotlin.ranges.ComparableRange
 kotlin.ranges.IntProgressionIterator:
     public final int getStep()
 kotlin.ranges.IntRange:
-    public boolean contains(int)
     public synthetic bridge boolean contains(java.lang.Comparable)
     public synthetic bridge java.lang.Comparable getEndInclusive()
     public synthetic bridge java.lang.Comparable getStart()
@@ -21456,6 +21645,12 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final kotlin.ranges.LongProgression downTo(long,long)
     public static final kotlin.ranges.LongProgression downTo(long,short)
     public static final kotlin.ranges.LongProgression downTo(short,long)
+    public static final char first(kotlin.ranges.CharProgression)
+    public static final int first(kotlin.ranges.IntProgression)
+    public static final long first(kotlin.ranges.LongProgression)
+    public static final java.lang.Character firstOrNull(kotlin.ranges.CharProgression)
+    public static final java.lang.Integer firstOrNull(kotlin.ranges.IntProgression)
+    public static final java.lang.Long firstOrNull(kotlin.ranges.LongProgression)
     public static final synthetic boolean floatRangeContains(kotlin.ranges.ClosedRange,byte)
     public static final boolean floatRangeContains(kotlin.ranges.ClosedRange,double)
     public static final synthetic boolean floatRangeContains(kotlin.ranges.ClosedRange,int)
@@ -21466,6 +21661,12 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final synthetic boolean intRangeContains(kotlin.ranges.ClosedRange,float)
     public static final boolean intRangeContains(kotlin.ranges.ClosedRange,long)
     public static final boolean intRangeContains(kotlin.ranges.ClosedRange,short)
+    public static final char last(kotlin.ranges.CharProgression)
+    public static final int last(kotlin.ranges.IntProgression)
+    public static final long last(kotlin.ranges.LongProgression)
+    public static final java.lang.Character lastOrNull(kotlin.ranges.CharProgression)
+    public static final java.lang.Integer lastOrNull(kotlin.ranges.IntProgression)
+    public static final java.lang.Long lastOrNull(kotlin.ranges.LongProgression)
     public static final boolean longRangeContains(kotlin.ranges.ClosedRange,byte)
     public static final synthetic boolean longRangeContains(kotlin.ranges.ClosedRange,double)
     public static final synthetic boolean longRangeContains(kotlin.ranges.ClosedRange,float)
@@ -21632,7 +21833,6 @@ kotlin.sequences.SequenceBuilderIterator
 kotlin.sequences.SequenceScope
 kotlin.sequences.SequencesKt:
     private void <init>()
-kotlin.sequences.SequencesKt__SequenceBuilderKt$buildSequence$$inlined$Sequence$1
 kotlin.sequences.SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1
 kotlin.sequences.SequencesKt__SequenceBuilderKt:
     private static final int State_Done
@@ -21642,9 +21842,6 @@ kotlin.sequences.SequencesKt__SequenceBuilderKt:
     private static final int State_NotReady
     private static final int State_Ready
     public void <init>()
-    public static synthetic void SequenceBuilder$annotations()
-    private static final java.util.Iterator buildIterator(kotlin.jvm.functions.Function2)
-    private static final kotlin.sequences.Sequence buildSequence(kotlin.jvm.functions.Function2)
     public static final java.util.Iterator iterator(kotlin.jvm.functions.Function2)
     public static final kotlin.sequences.Sequence sequence(kotlin.jvm.functions.Function2)
 kotlin.sequences.SequencesKt__SequencesJVMKt:
@@ -21681,6 +21878,16 @@ kotlin.sequences.SequencesKt___SequencesJvmKt:
     public void <init>()
     public static final kotlin.sequences.Sequence filterIsInstance(kotlin.sequences.Sequence,java.lang.Class)
     public static final java.util.Collection filterIsInstanceTo(kotlin.sequences.Sequence,java.util.Collection,java.lang.Class)
+    public static final synthetic java.lang.Comparable max(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Double max(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Float max(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Object maxBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object maxWith(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final synthetic java.lang.Comparable min(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Double min(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Float min(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Object minBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object minWith(kotlin.sequences.Sequence,java.util.Comparator)
     private static final java.math.BigDecimal sumOfBigDecimal(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final java.math.BigInteger sumOfBigInteger(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.util.SortedSet toSortedSet(kotlin.sequences.Sequence)
@@ -21804,11 +22011,8 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final kotlin.sequences.Sequence mapNotNull(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(kotlin.sequences.Sequence,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(kotlin.sequences.Sequence,java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Comparable max(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Double max(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Float max(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object maxBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.lang.Object maxByOrNull(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxByOrThrow(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final double maxOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final float maxOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
@@ -21820,13 +22024,13 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final java.lang.Comparable maxOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Double maxOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Float maxOrNull(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object maxWith(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final double maxOrThrow(kotlin.sequences.Sequence)
+    public static final float maxOrThrow(kotlin.sequences.Sequence)
+    public static final java.lang.Comparable maxOrThrow(kotlin.sequences.Sequence)
     public static final java.lang.Object maxWithOrNull(kotlin.sequences.Sequence,java.util.Comparator)
-    public static final synthetic java.lang.Comparable min(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Double min(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Float min(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object minBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxWithOrThrow(kotlin.sequences.Sequence,java.util.Comparator)
     public static final java.lang.Object minByOrNull(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object minByOrThrow(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final double minOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final float minOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
@@ -21838,8 +22042,11 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final java.lang.Comparable minOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Double minOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Float minOrNull(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object minWith(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final double minOrThrow(kotlin.sequences.Sequence)
+    public static final float minOrThrow(kotlin.sequences.Sequence)
+    public static final java.lang.Comparable minOrThrow(kotlin.sequences.Sequence)
     public static final java.lang.Object minWithOrNull(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final java.lang.Object minWithOrThrow(kotlin.sequences.Sequence,java.util.Comparator)
     public static final kotlin.sequences.Sequence minus(kotlin.sequences.Sequence,java.lang.Iterable)
     public static final kotlin.sequences.Sequence minus(kotlin.sequences.Sequence,java.lang.Object)
     public static final kotlin.sequences.Sequence minus(kotlin.sequences.Sequence,kotlin.sequences.Sequence)
@@ -22343,6 +22550,12 @@ kotlin.text.StringsKt__StringsKt:
 kotlin.text.StringsKt___StringsJvmKt:
     public void <init>()
     private static final char elementAt(java.lang.CharSequence,int)
+    public static final synthetic java.lang.Character max(java.lang.CharSequence)
+    public static final synthetic java.lang.Character maxBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character maxWith(java.lang.CharSequence,java.util.Comparator)
+    public static final synthetic java.lang.Character min(java.lang.CharSequence)
+    public static final synthetic java.lang.Character minBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character minWith(java.lang.CharSequence,java.util.Comparator)
     private static final java.math.BigDecimal sumOfBigDecimal(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final java.math.BigInteger sumOfBigInteger(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.util.SortedSet toSortedSet(java.lang.CharSequence)
@@ -22432,9 +22645,8 @@ kotlin.text.StringsKt___StringsKt:
     public static final java.util.List mapNotNull(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(java.lang.CharSequence,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(java.lang.CharSequence,java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Character max(java.lang.CharSequence)
-    public static final synthetic java.lang.Character maxBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.lang.Character maxByOrNull(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final char maxByOrThrow(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final double maxOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final float maxOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
@@ -22444,11 +22656,11 @@ kotlin.text.StringsKt___StringsKt:
     private static final java.lang.Object maxOfWith(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object maxOfWithOrNull(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     public static final java.lang.Character maxOrNull(java.lang.CharSequence)
-    public static final synthetic java.lang.Character maxWith(java.lang.CharSequence,java.util.Comparator)
+    public static final char maxOrThrow(java.lang.CharSequence)
     public static final java.lang.Character maxWithOrNull(java.lang.CharSequence,java.util.Comparator)
-    public static final synthetic java.lang.Character min(java.lang.CharSequence)
-    public static final synthetic java.lang.Character minBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final char maxWithOrThrow(java.lang.CharSequence,java.util.Comparator)
     public static final java.lang.Character minByOrNull(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final char minByOrThrow(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final double minOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final float minOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
@@ -22458,8 +22670,9 @@ kotlin.text.StringsKt___StringsKt:
     private static final java.lang.Object minOfWith(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object minOfWithOrNull(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     public static final java.lang.Character minOrNull(java.lang.CharSequence)
-    public static final synthetic java.lang.Character minWith(java.lang.CharSequence,java.util.Comparator)
+    public static final char minOrThrow(java.lang.CharSequence)
     public static final java.lang.Character minWithOrNull(java.lang.CharSequence,java.util.Comparator)
+    public static final char minWithOrThrow(java.lang.CharSequence,java.util.Comparator)
     public static final boolean none(java.lang.CharSequence)
     public static final boolean none(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.lang.CharSequence onEach(java.lang.CharSequence,kotlin.jvm.functions.Function1)
@@ -22549,11 +22762,15 @@ kotlin.time.DurationUnitKt__DurationUnitJvmKt
 kotlin.time.DurationUnitKt__DurationUnitKt$WhenMappings
 kotlin.time.DurationUnitKt__DurationUnitKt
 kotlin.time.ExperimentalTime
+kotlin.time.LongSaturatedMathKt
 kotlin.time.MeasureTimeKt
+kotlin.time.MonoTimeSourceKt
 kotlin.time.MonotonicTimeSource
 kotlin.time.TestTimeSource
+kotlin.time.TimeMark$DefaultImpls
 kotlin.time.TimeMark
 kotlin.time.TimeSource$Companion
+kotlin.time.TimeSource$Monotonic$ValueTimeMark
 kotlin.time.TimeSource$Monotonic
 kotlin.time.TimeSource
 kotlin.time.TimeSourceKt
@@ -25583,7 +25800,9 @@ io.flutter.Log:
     private static int logLevel
 io.flutter.embedding.engine.loader.ResourceExtractor:
     void waitForCompletion()
-io.flutter.plugin.common.BinaryMessenger$-CC
+io.flutter.plugin.common.BinaryMessenger$-CC:
+    public static io.flutter.plugin.common.BinaryMessenger$TaskQueue $default$makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger,io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
+    public static void $default$setMessageHandler(io.flutter.plugin.common.BinaryMessenger,java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler,io.flutter.plugin.common.BinaryMessenger$TaskQueue)
 io.flutter.plugin.platform.PlatformView$-CC
 io.flutter.plugin.platform.VirtualDisplayController:
     private static java.lang.String TAG

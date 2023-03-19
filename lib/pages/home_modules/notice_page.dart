@@ -4,7 +4,10 @@ import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart
 import '../../services/address.dart';
 import '../../services/dio_manager.dart';
 class NoticePage extends StatefulWidget {
-  const NoticePage({Key? key}) : super(key: key);
+
+
+  int id;
+  NoticePage(this.id,{Key? key}) : super(key: key);
 
   @override
   State<NoticePage> createState() => _NoticePageState();
@@ -19,6 +22,7 @@ class _NoticePageState extends State<NoticePage> {
   requestDataWithNoticeDetail()async{
     var params = {
       'method':'notice.info',
+      'id':widget.id
     };
     var json = await DioManager().kkRequest(Address.host,bodyParams:params);
 
@@ -56,7 +60,7 @@ class _NoticePageState extends State<NoticePage> {
                     padding: const EdgeInsets.only(top: 35),
                     child:IconButton(onPressed: (){
                       Get.back();
-                    }, icon: Icon(Icons.arrow_back_ios),color: Colors.white,),
+                    }, icon: const Icon(Icons.arrow_back_ios),color: Colors.white,),
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 35),
@@ -67,7 +71,7 @@ class _NoticePageState extends State<NoticePage> {
                 ],
               )
           ),
-          SizedBox(height: 25,),
+          const SizedBox(height: 25,),
           Center(
             child: HtmlWidget(_json['data']['body']??''),
           ),

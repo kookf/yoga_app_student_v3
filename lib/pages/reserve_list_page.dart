@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yoga_student_app/pages/classroom_modules/classroom_view.dart';
-import 'package:yoga_student_app/services/address.dart';
-import 'package:yoga_student_app/services/dio_manager.dart';
-
+import 'package:yoga_student_app/router/app_pages.dart';
 import '../common/colors.dart';
 import 'mine_modules/appointment_record_page.dart';
-import 'mine_modules/purchase_history_page.dart';
+import 'mine_modules/charge_log_modules/purchase_history_page.dart';
+
 class ReserveListPage extends StatefulWidget {
+
   const ReserveListPage({Key? key}) : super(key: key);
 
   @override
@@ -16,45 +16,37 @@ class ReserveListPage extends StatefulWidget {
 
 class _ReserveListPageState extends State<ReserveListPage> {
 
-  requestDataWithSubscribeList()async{
-    var params = {
-      'method':'subscribe.list',
-      'course_time_id':'',
-    };
-    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams:params);
-
-  }
-
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    requestDataWithSubscribeList();
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
+        padding: const EdgeInsets.all(0),
         children: [
           Container(
             width: Get.width,
             // color: Colors.red,
             margin: const EdgeInsets.only(top: 25),
-            height: 300,
+            // height: 300,
             child: Stack(
               children: [
                 SizedBox(
                   width: Get.width,
                   child: Image.asset('images/ic_bg.png',fit: BoxFit.fill,),
                 ),
-                Align(alignment: const Alignment(0, -0.5),child:  Image.asset('images/login_log.png',width: 150,height: 150,),),
-
+                Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+                  child:Center(
+                    child: Image.asset('images/login_log.png',width: 150,height: 150,),
+                  )
+                ),
                 Align(
                   child: Container(
-                    margin: const EdgeInsets.only(top: 150),
+                    margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top+150),
                     child: Text('預約課堂',style: TextStyle(fontSize: 25,
                         fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
                   ),
@@ -64,10 +56,11 @@ class _ReserveListPageState extends State<ReserveListPage> {
             ),
 
           ),
-
           GestureDetector(
             onTap: (){
-              Get.to(ClassroomView());
+
+              Get.toNamed(AppRoutes.classroom);
+              // Get.to(ClassroomView());
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -133,7 +126,6 @@ class _ReserveListPageState extends State<ReserveListPage> {
                 )
             ),
           ),
-
         ],
       ),
     );

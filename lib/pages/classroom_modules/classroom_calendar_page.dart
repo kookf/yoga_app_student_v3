@@ -24,11 +24,11 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(onPressed: (){
-
-          }, icon: Image.asset('images/message_icon.png'))
-        ],
+        // actions: [
+          // IconButton(onPressed: (){
+          //
+          // }, icon: Image.asset('images/message_icon.png'))
+        // ],
         backgroundColor: AppColor.themeColor,
         iconTheme: const IconThemeData(
           color: Colors.white, //修改颜色
@@ -45,9 +45,9 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
             padding: const EdgeInsets.only(left: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('選擇日期和時間',style: TextStyle(fontSize: 18,color: Colors.white),),
-                Text('成人減壓班1201 陳大明#2368',style: TextStyle(fontSize: 18,color: Colors.white),),
+              children: const [
+                Text('選擇查詢日期',style: TextStyle(fontSize: 18,color: Colors.white),),
+                // Text('成人減壓班1201 陳大明#2368',style: TextStyle(fontSize: 18,color: Colors.white),),
               ],
             )
           ),
@@ -203,19 +203,25 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
         //
         //   ],
         // ),
-
-
-        Center(
-          child: Container(
-            margin: const EdgeInsets.only(top: 15),
-            width: Get.width - 50,
-            height: 45,
-            child:  GradientButton(
-              borderRadius: const BorderRadius.all(Radius.circular(20)),colors: [
+        GestureDetector(
+          onTap: (){
+            var timeFormat = DateFormat("yyyy-MM-dd");
+            var timeStr = timeFormat.format(_singleDatePickerValueWithDefaultValue[0]!);
+            print(timeStr);
+            Get.back(result: '${timeStr}');
+          },
+          child:Center(
+            child: Container(
+              margin: const EdgeInsets.only(top: 15),
+              width: Get.width - 50,
+              height: 45,
+              child:  GradientButton(
+                borderRadius: const BorderRadius.all(Radius.circular(20)),colors: [
                 AppColor.themeColor,
                 AppColor.themeColor,
-            ],
-              child: Text('确定'),),
+              ],
+                child: Text('确定'),),
+            ),
           ),
         )
       ],

@@ -58,7 +58,11 @@ class _SettingPageState extends State<SettingPage> {
       'optional':addressTextEditingController.text,
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
-    BotToast.showText(text: json['message']);
+    if(json['code'] == 200){
+      BotToast.showText(text: '修改成功');
+    }else{
+      BotToast.showText(text: json['message']);
+    }
 
   }
   @override

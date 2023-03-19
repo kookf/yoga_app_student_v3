@@ -1,7 +1,8 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:get/get.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
 import 'package:yoga_student_app/utils/persistent_storage.dart';
-
+import '../../common/eventbus.dart';
 import '../../services/address.dart';
 import 'classroom_model.dart';
 
@@ -14,12 +15,18 @@ class ClassTimeController extends GetxController{
   String? userName;
 
 
-  requestDataWithSubscribeCreate()async{
+  requestDataWithSubscribeCreate(var isShareWallet)async{
     var params = {
       'method':'subscribe.create',
       'course_time_id':model?.courseTimeId,
+      'is_share_wallet':isShareWallet,
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+    if(json['code']==200){
+      BotToast.showText(text: '預約成功');
+      eventBus.fire(EventFn('refresh'));
+
+    }
   }
 
   @override
@@ -28,7 +35,9 @@ class ClassTimeController extends GetxController{
     super.onInit();
     model = Get.arguments;
     getName();
-    print('model!.name ====== ${model!.name}');
+
+
+
   }
 
   getName()async{

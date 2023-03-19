@@ -33,6 +33,7 @@ class Data {
   String? updatedAt;
   String? createdAt;
   var avatar;
+  var walletExpireAt;
 
   Data(
       {this.id,
@@ -44,6 +45,7 @@ class Data {
         this.optional,
         this.updatedAt,
         this.avatar,
+        this.walletExpireAt,
         this.createdAt});
 
   Data.fromJson(Map<String, dynamic> json) {
@@ -57,6 +59,7 @@ class Data {
     updatedAt = json['updated_at'];
     createdAt = json['created_at'];
     avatar = json['avatar'];
+    walletExpireAt = json['wallet_expire_at'];
   }
 
   Map<String, dynamic> toJson() {

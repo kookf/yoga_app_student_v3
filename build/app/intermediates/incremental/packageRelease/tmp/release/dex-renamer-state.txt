@@ -1,4 +1,4 @@
-#Sat Feb 25 08:51:28 CST 2023
-base.0=/Users/mozhu/yoga_app_student/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+#Sat Mar 18 20:41:45 CST 2023
+base.0=D\:\\yoga_app_student\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

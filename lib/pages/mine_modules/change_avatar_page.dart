@@ -6,6 +6,7 @@ import 'package:image_pickers/image_pickers.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
 import '../../common/colors.dart';
+import '../../common/eventbus.dart';
 import '../../utils/hex_color.dart';
 import 'package:dio/dio.dart';
 import 'package:get/route_manager.dart';
@@ -38,7 +39,7 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
     );
 
     FormData formData = FormData.fromMap({
-      'dir':'charge',
+      'dir':'avatar',
       'type':'image',
       'file':multipartFile,
     });
@@ -53,6 +54,8 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params,isShowLoad: true);
     BotToast.showText(text: json['message']);
+    eventBus.fire(EventFn('headerRefresh'));
+
   }
 
   /// 上传图片
@@ -85,6 +88,8 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      resizeToAvoidBottomInset: false,
+
       body: Column(
         children: [
           Container(
@@ -120,13 +125,13 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
             height: 160,
             clipBehavior: Clip.hardEdge,
             decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(60))
+                borderRadius: BorderRadius.all(Radius.circular(80))
             ),
             child: CachedNetworkImage(
               imageUrl: widget.headerUrl,
               placeholder: (context, url) => const CircularProgressIndicator(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
-              fit: BoxFit.contain,
+              fit: BoxFit.cover,
             ),
           ),
           const SizedBox(height: 25,),
@@ -195,11 +200,11 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
           const SizedBox(height: 5,),
 
           Expanded(child:Container(
-            // height: 200,
-            alignment: Alignment.bottomRight,
-            child: Image.asset('images/yuyuebg.png'),
-          ),)
 
+            alignment: Alignment.bottomCenter,
+            width: Get.width,
+            child: Image.asset('images/yuyuebg.png',fit: BoxFit.fill,),
+          ),)
         ],
       ),
     );

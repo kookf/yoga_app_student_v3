@@ -1,8 +1,8 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yoga_student_app/common/colors.dart';
-import 'package:yoga_student_app/components/gradient_button.dart';
 import 'classtime_controller.dart';
 
 
@@ -10,8 +10,8 @@ import 'classtime_controller.dart';
 class ClassTimeView extends GetView{
 
   @override
-
   final ClassTimeController controller = Get.put(ClassTimeController());
+
 
   final List<String> items = [
     '課程1',
@@ -23,31 +23,16 @@ class ClassTimeView extends GetView{
     '課程7',
     '課程8',
   ];
-  final List<String> dataItems = [
-    '日期1',
-    '日期2',
-    '日期3',
-    '日期4',
-  ];
-  final List<String> timeItems = [
-    '時間1',
-    '時間2',
-    '時間3',
-    '時間4',
-  ];
   final List<String> type = [
     '個人錢包',
     '共享錢包',
   ];
 
-
   String? selectedValue;
   String? dataSelectedValue;
   String? timeSelectedValue;
   String? typeSelectedValue;
-
   ClassTimeView({super.key});
-
 
 
   @override
@@ -73,10 +58,10 @@ class ClassTimeView extends GetView{
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 35),
+                      padding: const EdgeInsets.only(top: 35),
                       child:IconButton(onPressed: (){
                         Get.back();
-                      }, icon: Icon(Icons.arrow_back_ios),color: Colors.white,),
+                      }, icon: const Icon(Icons.arrow_back_ios),color: Colors.white,),
                     ),
                     Container(
                       padding: const EdgeInsets.only(top: 35),
@@ -97,7 +82,7 @@ class ClassTimeView extends GetView{
                   border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
                 ),
                 width: Get.width -50,
-                padding: EdgeInsets.only(left: 5),
+                padding: const EdgeInsets.only(left: 5),
                 height: 40,
                 alignment: Alignment.centerLeft,
                 child:Text('${controller.model!.name}')
@@ -134,7 +119,7 @@ class ClassTimeView extends GetView{
                 ),
                 child: Row(
                   children: [
-                    Text('課程學生:',),
+                    const Text('課程學生:',),
                     Text('${controller.userName}',)
                   ],
                 ),
@@ -151,7 +136,7 @@ class ClassTimeView extends GetView{
                     border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
                   ),
                   width: Get.width -50,
-                  padding: EdgeInsets.only(left: 5),
+                  padding: const EdgeInsets.only(left: 5),
                   height: 40,
                   alignment: Alignment.centerLeft,
                   child:Text('${controller.model!.startDay}')
@@ -237,7 +222,7 @@ class ClassTimeView extends GetView{
                     border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
                   ),
                   width: Get.width -50,
-                  padding: EdgeInsets.only(left: 5),
+                  padding: const EdgeInsets.only(left: 5),
                   height: 40,
                   alignment: Alignment.centerLeft,
                   child:Text('${controller.model!.startTime}')
@@ -299,6 +284,8 @@ class ClassTimeView extends GetView{
                   dropdownWidth: Get.width-50,
                   dropdownItems: type,
                   value: typeSelectedValue,
+                  iconEnabledColor: AppColor.themeColor,
+                  iconDisabledColor: AppColor.themeColor,
                   buttonDecoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8))
                   ),
@@ -319,10 +306,18 @@ class ClassTimeView extends GetView{
               height: 45,
               decoration: BoxDecoration(
                   color: AppColor.themeColor,
-                  borderRadius: BorderRadius.all(Radius.circular(20))
+                  borderRadius: const BorderRadius.all(Radius.circular(20))
               ),
               child: MaterialButton(onPressed: () {
-                controller.requestDataWithSubscribeCreate();
+                if(typeSelectedValue == null){
+                  BotToast.showText(text: '請選擇支付的錢包');
+                  return;
+                }
+                if(typeSelectedValue == '共享錢包'){
+                  controller.requestDataWithSubscribeCreate(1);
+                }else{
+                  controller.requestDataWithSubscribeCreate(0);
+                }
               },
               child: const Text('預約',style: TextStyle(color: Colors.white),),
               ),

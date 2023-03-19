@@ -4,22 +4,22 @@
     minSdkVersion="21"
     targetSdkVersion="31"
     shrinking="true"
-    mergedManifest="/Users/mozhu/yoga_app_student/build/app/intermediates/merged_manifest/release/AndroidManifest.xml"
-    proguardFiles="/Users/mozhu/yoga_app_student/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.1.2:/Users/mozhu/Desktop/flutter3.3.5/packages/flutter_tools/gradle/flutter_proguard_rules.pro:proguard-rules.pro"
-    partialResultsDir="/Users/mozhu/yoga_app_student/build/app/intermediates/lint_vital_partial_results/release/out">
+    mergedManifest="D:\yoga_app_student\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
+    proguardFiles="D:\yoga_app_student\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.1.2;D:\3.3.4flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
+    partialResultsDir="D:\yoga_app_student\build\app\intermediates\lint_vital_partial_results\release\out">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
     <sourceProvider
-        manifest="src/main/AndroidManifest.xml"
-        javaDirectories="src/main/java:src/main/kotlin"
-        resDirectories="src/main/res"
-        assetsDirectories="src/main/assets"/>
+        manifest="src\main\AndroidManifest.xml"
+        javaDirectories="src\main\java;src\main\kotlin"
+        resDirectories="src\main\res"
+        assetsDirectories="src\main\assets"/>
     <sourceProvider
-        manifest="src/release/AndroidManifest.xml"
-        javaDirectories="src/release/java:src/release/kotlin"
-        resDirectories="src/release/res"
-        assetsDirectories="src/release/assets"/>
+        manifest="src\release\AndroidManifest.xml"
+        javaDirectories="src\release\java;src\release\kotlin"
+        resDirectories="src\release\res"
+        assetsDirectories="src\release\assets"/>
   </sourceProviders>
   <testSourceProviders>
   </testSourceProviders>
@@ -29,9 +29,9 @@
         value="android.app.Application" />
   </manifestPlaceholders>
   <mainArtifact
-      classOutputs="/Users/mozhu/yoga_app_student/build/app/intermediates/javac/release/classes:/Users/mozhu/yoga_app_student/build/app/tmp/kotlin-classes/release:/Users/mozhu/yoga_app_student/build/app/kotlinToolingMetadata:/Users/mozhu/yoga_app_student/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/R.jar"
+      classOutputs="D:\yoga_app_student\build\app\intermediates\javac\release\classes;D:\yoga_app_student\build\app\tmp\kotlin-classes\release;D:\yoga_app_student\build\app\kotlinToolingMetadata;D:\yoga_app_student\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
       applicationId="com.example.yoga_student_app"
-      generatedSourceFolders="/Users/mozhu/yoga_app_student/build/app/generated/ap_generated_sources/release/out:/Users/mozhu/yoga_app_student/build/app/generated/aidl_source_output_dir/release/out:/Users/mozhu/yoga_app_student/build/app/generated/source/buildConfig/release:/Users/mozhu/yoga_app_student/build/app/generated/renderscript_source_output_dir/release/out"
-      generatedResourceFolders="/Users/mozhu/yoga_app_student/build/app/generated/res/rs/release:/Users/mozhu/yoga_app_student/build/app/generated/res/resValues/release">
+      generatedSourceFolders="D:\yoga_app_student\build\app\generated\ap_generated_sources\release\out;D:\yoga_app_student\build\app\generated\aidl_source_output_dir\release\out;D:\yoga_app_student\build\app\generated\source\buildConfig\release;D:\yoga_app_student\build\app\generated\renderscript_source_output_dir\release\out"
+      generatedResourceFolders="D:\yoga_app_student\build\app\generated\res\rs\release;D:\yoga_app_student\build\app\generated\res\resValues\release">
   </mainArtifact>
 </variant>

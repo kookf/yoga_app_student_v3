@@ -1,14 +1,14 @@
 class SharedWalletModel {
   int? code;
   String? message;
-  Data? data;
+  var data;
 
   SharedWalletModel({this.code, this.message, this.data});
 
   SharedWalletModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ?  Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -23,37 +23,69 @@ class SharedWalletModel {
 }
 
 class Data {
+  var owner;
+  List<UserList>? userList;
 
-  List<SharedWalletList>? list;
-
-  Data({this.list});
+  Data({this.owner, this.userList});
 
   Data.fromJson(Map<String, dynamic> json) {
-    if (json['list'] != null) {
-      list = <SharedWalletList>[];
-      json['list'].forEach((v) {
-        list!.add(SharedWalletList.fromJson(v));
+    owner = json['owner'] != null ? Owner.fromJson(json['owner']) : null;
+    if (json['user_list'] != null) {
+      userList = <UserList>[];
+      json['user_list'].forEach((v) {
+        userList!.add(new UserList.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.list != null) {
-      data['list'] = this.list!.map((v) => v.toJson()).toList();
+    if (this.owner != null) {
+      data['owner'] = this.owner!.toJson();
+    }
+    if (this.userList != null) {
+      data['user_list'] = this.userList!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class SharedWalletList {
+class Owner {
   int? id;
   String? name;
   var avatar;
+  String? balance;
+  var walletExpireAt;
 
-  SharedWalletList({this.id, this.name, this.avatar});
+  Owner({this.id, this.name, this.avatar, this.balance, this.walletExpireAt});
 
-  SharedWalletList.fromJson(Map<String, dynamic> json) {
+  Owner.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    avatar = json['avatar'];
+    balance = json['balance'];
+    walletExpireAt = json['wallet_expire_at'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['avatar'] = this.avatar;
+    data['balance'] = this.balance;
+    data['wallet_expire_at'] = this.walletExpireAt;
+    return data;
+  }
+}
+
+class UserList {
+  int? id;
+  String? name;
+  String? avatar;
+
+  UserList({this.id, this.name, this.avatar});
+
+  UserList.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     avatar = json['avatar'];

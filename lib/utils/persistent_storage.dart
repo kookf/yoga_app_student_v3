@@ -1,6 +1,6 @@
-
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+
 
 /// 封装SharedPreferences为单例模式
 class PersistentStorage{

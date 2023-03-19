@@ -60,7 +60,7 @@ class HomeView extends GetView{
                       Container(
                         height: 200,
                         margin: const EdgeInsets.only(left: 15,right: 15,top: 15),
-                        child: Swiper(itemCount: controller.model?.data?.list?.length??3,
+                        child: Swiper(itemCount: controller.homeIndexModel?.data?.banner?.length??3,
                           autoplay: false,
                           pagination: SwiperPagination(
                               alignment: Alignment.bottomCenter,
@@ -75,11 +75,10 @@ class HomeView extends GetView{
                                 // color: Colors.red,
                                 padding: const EdgeInsets.all(1),
                                 child: CachedNetworkImage(
-                                  imageUrl: '${Address.homeHost}${controller.model?.data?.list?[index].coverUrl}',
+                                  imageUrl: '${Address.homeHost}${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
                                   placeholder: (context, url) => const CircularProgressIndicator(),
                                   errorWidget: (context, url, error) => const Icon(Icons.error),
                                   fit: BoxFit.contain,
-
                                 ),
                               ),
                             );
@@ -90,6 +89,8 @@ class HomeView extends GetView{
                         child: Text('最新公告',style: TextStyle(color: AppColor.themeTextColor,fontSize: 20,
                             fontWeight: FontWeight.w600),),
                       ),
+                      const SizedBox(height: 5,),
+
                       Container(
                         height: 300,
                         margin: const EdgeInsets.only(left: 25,right: 25,top: 0),
@@ -124,11 +125,9 @@ class HomeView extends GetView{
                       const SizedBox(height: 10,),
 
                       Text('''
-               Room B, 4/F, 6-8 Tsing Fung Street,
-                    Tin Hau, Hong Kong
-                    
-                         Tel: 5597 8331
-                    memoyogahk@gmail.com
+               地址:${controller.homeIndexModel?.data?.site?.address}
+               Tel: ${controller.homeIndexModel?.data?.site?.tel}
+               郵箱: ${controller.homeIndexModel?.data?.site?.mail}
                 ''',style: TextStyle(color: AppColor.themeTextColor),),
 
                     ],
@@ -148,7 +147,7 @@ class HomeView extends GetView{
     return SliverChildBuilderDelegate((context, index) {
       return GestureDetector(
         onTap: (){
-          Get.to(const NoticePage());
+          Get.to(NoticePage(controller.homeIndexModel!.data!.notice![index].id!));
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +158,7 @@ class HomeView extends GetView{
                 Container(
                   alignment: Alignment.centerLeft,
                   height: 50,
-                    child: Text('${controller.noticeModel?.data?.list?[index].title}',style: TextStyle(fontWeight: FontWeight.w600,
+                    child: Text('${controller.homeIndexModel?.data?.notice?[index].title}',style: TextStyle(fontWeight: FontWeight.w600,
                       color: AppColor.themeTextColor),),
                 ),
                 Container(
@@ -178,6 +177,6 @@ class HomeView extends GetView{
           ],
         ),
       );
-    },childCount: controller.noticeModel?.data?.list?.length??0);
+    },childCount: controller.homeIndexModel?.data?.notice?.length??0);
   }
 }

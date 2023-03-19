@@ -71,7 +71,7 @@ dependencies:
   bruno: ^2.2.0
   # 解析html
   flutter_widget_from_html_core: ^0.9.1
-
+  event_bus: ^2.0.0
 
 
 

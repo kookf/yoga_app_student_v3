@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/services/address.dart';
+import 'package:yoga_student_app/services/dio_manager.dart';
 
 import '../../common/colors.dart';
 class ChangePasswordPage extends StatefulWidget {
@@ -11,9 +13,29 @@ class ChangePasswordPage extends StatefulWidget {
 }
 
 class _ChangePasswordPageState extends State<ChangePasswordPage> {
+
+
+  TextEditingController passwordTextEditingController = TextEditingController();
+  TextEditingController passwordNewTextEditingController = TextEditingController();
+  TextEditingController passwordConfirmationTextEditingController = TextEditingController();
+
+
+  requestDataWithChangePassWord()async{
+    var params = {
+      'method':'auth.change_password',
+      'password':passwordTextEditingController.text,
+      'password_new':passwordNewTextEditingController.text,
+      'password_confirmation':passwordConfirmationTextEditingController.text,
+    };
+    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Container(
@@ -28,10 +50,10 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               child: Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(top: 35),
+                    padding: const EdgeInsets.only(top: 35),
                     child:IconButton(onPressed: (){
                       Get.back();
-                    }, icon: Icon(Icons.arrow_back_ios),color: Colors.white,),
+                    }, icon: const Icon(Icons.arrow_back_ios),color: Colors.white,),
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 35),
@@ -40,11 +62,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 ],
               )
           ),
-          SizedBox(height: 80,),
+          const SizedBox(height: 40,),
           Center(
             child: Text('更改當前密碼',style: TextStyle(color: AppColor.themeTextColor,fontSize: 21,fontWeight: FontWeight.w700),),
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           Center(
             child:  Container(
               margin: const EdgeInsets.only(top: 5),
@@ -59,6 +81,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
               ),
               child: TextField(
+                controller: passwordTextEditingController,
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(13) //限制长度
                 ],
@@ -84,6 +107,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
               ),
               child: TextField(
+                controller: passwordNewTextEditingController,
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(13) //限制长度
                 ],
@@ -109,6 +133,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
               ),
               child: TextField(
+                controller: passwordConfirmationTextEditingController,
                 inputFormatters: <TextInputFormatter>[
                   LengthLimitingTextInputFormatter(13) //限制长度
                 ],
@@ -120,17 +145,22 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               ),
             ),
           ),
-          SizedBox(height: 35,),
-          Center(
-            child:Container(
-              height: 45,
-              width: Get.width -50,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(20)),
-                color: AppColor.themeColor,
+          const SizedBox(height: 35,),
+          GestureDetector(
+            onTap: (){
+              requestDataWithChangePassWord();
+            },
+            child:  Center(
+              child:Container(
+                height: 45,
+                width: Get.width -50,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                  color: AppColor.themeColor,
+                ),
+                child: const Text('送出',style: TextStyle(color: Colors.white),),
               ),
-              child: const Text('送出',style: TextStyle(color: Colors.white),),
             ),
           ),
           Expanded(child:Container(

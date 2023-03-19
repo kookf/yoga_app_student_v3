@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:dio/dio.dart';
+import 'package:yoga_student_app/router/app_pages.dart';
 import '../utils/persistent_storage.dart';
 import 'address.dart';
+import 'package:get/get.dart';
 class DioManager{
-
 
   static final DioManager _instance = DioManager._internal();
 
@@ -69,6 +70,10 @@ class DioManager{
       return json.data;
     } on DioError catch (error) {
       print('请求结果===== ${error}');
+
+      if(error.response?.statusCode==302){
+        Get.offAllNamed(AppRoutes.login);
+      }
 
       BotToast.closeAllLoading();
 

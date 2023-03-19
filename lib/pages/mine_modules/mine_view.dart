@@ -8,7 +8,7 @@ import 'package:yoga_student_app/pages/mine_modules/setting_page.dart';
 import 'package:yoga_student_app/pages/mine_modules/shared_wallet_module/shared_wallet_page.dart';
 import 'package:yoga_student_app/services/address.dart';
 
-import '../payment_method_page.dart';
+import '../payment_method_modules/payment_method_page.dart';
 import 'appointment_record_page.dart';
 import 'change_avatar_page.dart';
 import 'change_password_page.dart';
@@ -44,19 +44,19 @@ class MineView extends GetView{
                    height: 160,
                    clipBehavior: Clip.hardEdge,
                    decoration: const BoxDecoration(
-                     borderRadius: BorderRadius.all(Radius.circular(60))
+                     borderRadius: BorderRadius.all(Radius.circular(80))
                    ),
                    child: CachedNetworkImage(
                      imageUrl: "${Address.homeHost}/storage/${controller.userModel?.data?.avatar}",
                      placeholder: (context, url) => CircularProgressIndicator(),
                      errorWidget: (context, url, error) => Icon(Icons.error),
-                     fit: BoxFit.contain,
+                     fit: BoxFit.cover,
                    ),
                  ),),
 
                   Align(
                     child: Container(
-                      margin: const EdgeInsets.only(top: 45),
+                      margin: const EdgeInsets.only(top: 40),
                       child: Text('${controller.userModel?.data?.name}',style: TextStyle(fontSize: 25,
                           fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
                     ),
@@ -64,7 +64,7 @@ class MineView extends GetView{
 
                   Align(
                     child: Container(
-                      margin: const EdgeInsets.only(top: 45+50),
+                      margin: const EdgeInsets.only(top: 40+60),
                       child: Text('${controller.userModel?.data?.phone  }',style: TextStyle(fontSize: 25,
                           fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
                     ),
@@ -95,7 +95,7 @@ class MineView extends GetView{
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset('images/ic_shijian.png'),
+                                Image.asset('images/ic_shijian.png',width: 50,height: 50,),
                                 Text('預約記錄',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
                               ],
                             ),
@@ -114,7 +114,7 @@ class MineView extends GetView{
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset('images/ic_qianbao.png'),
+                                Image.asset('images/ic_qianbao.png',width: 50,height: 50,),
                                 Text('我的錢包',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
                               ],
                             ),
@@ -132,7 +132,7 @@ class MineView extends GetView{
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset('images/ic_gx.png'),
+                                Image.asset('images/ic_gx.png',width: 50,height: 50,),
                                 Text('共享钱包',style: TextStyle(fontSize: 22,fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
                               ],
                             ),
@@ -146,51 +146,9 @@ class MineView extends GetView{
               ),
 
             ),
-
-
-            // Center(
-            //   child: Stack(
-            //     children: [
-            //       Container(
-            //         decoration: BoxDecoration(
-            //             color: Colors.white,
-            //             borderRadius: BorderRadius.all(Radius.circular(15))
-            //         ),
-            //         margin: EdgeInsets.only(top: 30),
-            //         width: Get.width-100,
-            //         height: 180,
-            //         child: Column(
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //           children: [
-            //             Container(
-            //               margin: EdgeInsets.only(left: 15,top: 30),
-            //               child:  Text('ID:2396',style: TextStyle(color: AppColor.themeTextColor,fontSize: 22),),
-            //             ),
-            //             Container(
-            //               margin: EdgeInsets.only(left: 15,top: 5),
-            //               child:  Text('姓名:陳大明',style: TextStyle(color: AppColor.themeTextColor,fontSize: 20),),
-            //             ),
-            //             Container(
-            //               margin: EdgeInsets.only(left: 15,top: 5),
-            //               child:  Text('電錘:',style: TextStyle(color: AppColor.themeTextColor,fontSize: 20),),
-            //             ),
-            //             Container(
-            //               margin: EdgeInsets.only(left: 15,top: 5),
-            //               child:  Text('電話:',style: TextStyle(color: AppColor.themeTextColor,fontSize: 20),),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //       Padding(padding: EdgeInsets.only(left: 25,top: 5),
-            //         child:Image.asset('images/ic_mine_stack.png',width: 50,height: 50,),)
-            //
-            //     ],
-            //   ),
-            // ),
             const SizedBox(
               height: 25,
             ),
-
             GestureDetector(
               onTap: (){
               Get.to(ChangeAvatarPage('${Address.homeHost}/storage/${controller.userModel?.data?.avatar}'));
@@ -262,7 +220,6 @@ class MineView extends GetView{
                 )
               ),
             ),
-
             GestureDetector(
               onTap: (){
                 // Get.to(const SettingPage());
@@ -289,30 +246,6 @@ class MineView extends GetView{
               ),
             ),
 
-            // Center(
-            //   child: Container(
-            //     decoration: BoxDecoration(
-            //         color: Colors.white,
-            //         borderRadius: BorderRadius.all(Radius.circular(20))
-            //     ),
-            //     margin: EdgeInsets.only(top: 30),
-            //     width: Get.width-100,
-            //     height: 400,
-            //     child: EasyRefresh.custom(
-            //       slivers: [
-            //         SliverToBoxAdapter(
-            //           child: Container(
-            //             margin: EdgeInsets.only(left: 15,top: 15),
-            //             child: Text('課程購買記錄',style: TextStyle(color: AppColor.themeTextColor,fontSize: 22),),
-            //           ),
-            //         ),
-            //         SliverList(
-            //           delegate: _mySliverChildBuilderDelegate(),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // )
           ],
         );
       }),

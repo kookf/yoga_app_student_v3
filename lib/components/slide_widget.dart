@@ -148,7 +148,7 @@ class SlideVerifyState extends State<SlideVerifyWidget> with TickerProviderState
                 ),
                 child: Row(
                   mainAxisAlignment : MainAxisAlignment.center,
-                  children: <Widget>[
+                  children: const <Widget>[
                     SizedBox(width: 6,),
                     Text('簽到')
                     // Image.asset("images/huakuai_btn.png", height: 24, width: 24,),

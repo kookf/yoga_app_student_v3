@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/mozhu/yoga_app_student/build/image_pickers/intermediates/merged_res/release/layout-watch-v20/abc_alert_dialog_title_material.xml",
-        "source": "/Users/mozhu/.gradle/caches/transforms-3/47314ba33c4e3f2a973a3a4e62169be6/transformed/appcompat-1.3.1/res/layout-watch-v20/abc_alert_dialog_title_material.xml"
+        "merged": "D:\\yoga_app_student\\build\\image_pickers\\intermediates\\merged_res\\release\\layout-watch-v20\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\47314ba33c4e3f2a973a3a4e62169be6\\transformed\\appcompat-1.3.1\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "/Users/mozhu/yoga_app_student/build/image_pickers/intermediates/merged_res/release/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
-        "source": "/Users/mozhu/.gradle/caches/transforms-3/47314ba33c4e3f2a973a3a4e62169be6/transformed/appcompat-1.3.1/res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+        "merged": "D:\\yoga_app_student\\build\\image_pickers\\intermediates\\merged_res\\release\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\47314ba33c4e3f2a973a3a4e62169be6\\transformed\\appcompat-1.3.1\\res\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml"
     }
 ]

@@ -18,7 +18,7 @@ class CounterDownPage extends StatefulWidget {
 class _CounterDownPageState extends State<CounterDownPage> {
   // 用来在布局中显示相应的剩余时间
   String remainTimeStr = '';
-  
+
   String? _hourStr;
   String? _minute;
   String? _second;
@@ -26,8 +26,7 @@ class _CounterDownPageState extends State<CounterDownPage> {
   Timer? _timer;
 
   //倒计时
-  void startCountDown(int time) {
-    time = widget.time;
+  void startCountDown() {
 
     // 重新计时的时候要把之前的清除掉
     if (_timer != null) {
@@ -37,11 +36,11 @@ class _CounterDownPageState extends State<CounterDownPage> {
       }
     }
 
-    if (time <= 0) {
+    if (widget.time <= 0) {
       return;
     }
 
-    var countTime = time;
+    var countTime = widget.time;
     const repeatPeriod = Duration(seconds: 1);
     _timer = Timer.periodic(repeatPeriod, (timer) {
       if (countTime <= 0) {
@@ -55,7 +54,7 @@ class _CounterDownPageState extends State<CounterDownPage> {
       countTime--;
 
       //外面传进来的单位是秒，所以需要根据总秒数，计算小时，分钟，秒
-      int hour = (countTime ~/ 3600) % 24;
+      int hour = countTime ~/ 3600;
       int minute = countTime % 3600 ~/60;
       int second = countTime % 60;
 
@@ -90,7 +89,7 @@ class _CounterDownPageState extends State<CounterDownPage> {
   void initState() {
     super.initState();
     //开始倒计时，这里传入的是秒数
-    startCountDown(widget.time);
+    startCountDown();
   }
 
   @override
@@ -115,6 +114,7 @@ class _CounterDownPageState extends State<CounterDownPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
               Container(
                 width: 100,
                 height: 100,

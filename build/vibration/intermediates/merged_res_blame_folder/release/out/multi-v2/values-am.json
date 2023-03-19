@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/mozhu/yoga_app_student/build/vibration/intermediates/incremental/mergeReleaseResources/merged.dir/values-am/values-am.xml",
+            "outputFile": "D:\\yoga_app_student\\build\\vibration\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "/Users/mozhu/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/res/values-am/values-am.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/Users/mozhu/yoga_app_student/build/vibration/intermediates/merged_res/release/values-am/values-am.xml",
+            "outputFile": "D:\\yoga_app_student\\build\\vibration\\intermediates\\merged_res\\release\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "/Users/mozhu/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/res/values-am/values-am.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

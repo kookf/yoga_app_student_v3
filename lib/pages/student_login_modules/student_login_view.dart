@@ -172,11 +172,14 @@ class StudentLoginView extends GetView{
 
                           if(value['code']==200){
                             await PersistentStorage().setStorage('token', value['data']['token']),
-                            Get.offAll(const Tabs()),
+                            // Get.offAll(const Tabs()),
+                            Get.offAllNamed(AppRoutes.bottomMain),
                             stopLoading(),
-                          },
-                          BotToast.showText(text: '${value['message']}'),
-                          stopLoading(),
+                            BotToast.showText(text: '登錄成功')
+                          }else{
+                            BotToast.showText(text: '${value['message']}'),
+                            stopLoading(),
+                          }
                         });
 
                           // await Future.delayed(const Duration(seconds: 2));
