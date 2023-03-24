@@ -85,7 +85,7 @@ class ClassTimeView extends GetView{
                 padding: const EdgeInsets.only(left: 5),
                 height: 40,
                 alignment: Alignment.centerLeft,
-                child:Text('${controller.model!.name}')
+                child:Text('課堂名稱:${controller.model!.name}')
                 // CustomDropdownButton2(
                 //   dropdownWidth: Get.width-50,
                 //   hint: '請選擇課程',
@@ -139,7 +139,7 @@ class ClassTimeView extends GetView{
                   padding: const EdgeInsets.only(left: 5),
                   height: 40,
                   alignment: Alignment.centerLeft,
-                  child:Text('${controller.model!.startDay}')
+                  child:Text('開堂日期:${controller.model!.startDay}')
                 // CustomDropdownButton2(
                 //   dropdownWidth: Get.width-50,
                 //   hint: '請選擇課程',
@@ -225,7 +225,7 @@ class ClassTimeView extends GetView{
                   padding: const EdgeInsets.only(left: 5),
                   height: 40,
                   alignment: Alignment.centerLeft,
-                  child:Text('${controller.model!.startTime}')
+                  child:Text('開堂時間:${controller.model!.startTime}')
                 // CustomDropdownButton2(
                 //   dropdownWidth: Get.width-50,
                 //   hint: '請選擇課程',

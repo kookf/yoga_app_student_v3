@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:yoga_student_app/services/address.dart';
-import 'package:yoga_student_app/services/dio_manager.dart';
+import 'package:yoga_student_app/services/api_manager.dart';
+
 
 class StudentController extends GetxController{
 
 
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
-
 
   /// 登录请求
   Future requestDataWithLogin()async{
@@ -20,10 +19,10 @@ class StudentController extends GetxController{
       'is_teacher':'0',
     };
 
-    var json = await DioManager().kkRequest(Address.host,bodyParams: params);
+    var json = await ApiManager.requestWithPublic(params);
 
+    // var json = await DioManager().kkRequest(Address.host,bodyParams: params);
     return json;
-
   }
 
 }

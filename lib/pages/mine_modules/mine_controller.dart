@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:yoga_student_app/pages/mine_modules/user_model.dart';
 import 'package:yoga_student_app/router/app_pages.dart';
 import 'package:yoga_student_app/services/address.dart';
+import 'package:yoga_student_app/services/api_manager.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
 import 'package:yoga_student_app/utils/persistent_storage.dart';
 import '../../common/eventbus.dart';
@@ -21,12 +22,8 @@ class MineController extends GetxController{
     var params = {
       'method':'auth.profile',
     };
-
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
-
-
     userModel = UserModel.fromJson(json);
-
     await PersistentStorage().setStorage('name', userModel!.data!.name);
     await PersistentStorage().setStorage('id', userModel!.data!.id);
 

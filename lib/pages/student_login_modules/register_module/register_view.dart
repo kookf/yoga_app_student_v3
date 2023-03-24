@@ -102,7 +102,7 @@ class RegisterView extends GetView{
                   child: TextField(
                     controller: controller.phoneTextEditingController,
                     inputFormatters: <TextInputFormatter>[
-                      LengthLimitingTextInputFormatter(13) //限制长度
+                      LengthLimitingTextInputFormatter(20) //限制长度
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
@@ -136,7 +136,7 @@ class RegisterView extends GetView{
                         controller.birth = dateStr;
                         controller.birthController.text = dateStr;
                         controller.update();
-                    }, currentTime: DateTime.now(),);
+                    }, currentTime: DateTime(1998),);
                 },
                 child: Center(
                   child:Container(
@@ -184,7 +184,7 @@ class RegisterView extends GetView{
                     obscureText: true,
                     controller: controller.passwordTextEditingController,
                     inputFormatters: <TextInputFormatter>[
-                      LengthLimitingTextInputFormatter(13) //限制长度
+                      LengthLimitingTextInputFormatter(25) //限制长度
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
@@ -212,7 +212,7 @@ class RegisterView extends GetView{
                     obscureText: true,
                     controller: controller.passwordConfirmationController,
                     inputFormatters: <TextInputFormatter>[
-                      LengthLimitingTextInputFormatter(13) //限制长度
+                      LengthLimitingTextInputFormatter(25) //限制长度
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,

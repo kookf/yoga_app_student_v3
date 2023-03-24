@@ -5,6 +5,7 @@ import 'package:yoga_student_app/router/app_pages.dart';
 import '../utils/persistent_storage.dart';
 import 'address.dart';
 import 'package:get/get.dart';
+
 class DioManager{
 
   static final DioManager _instance = DioManager._internal();

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_pickers/image_pickers.dart';
 import 'package:yoga_student_app/common/colors.dart';
+import 'package:yoga_student_app/pages/payment_method_modules/payment_complete_model.dart';
 import 'package:yoga_student_app/utils/hex_color.dart';
 import '../../services/address.dart';
 import '../../services/dio_manager.dart';
@@ -17,7 +18,9 @@ class UpLoadReceiptPage extends StatefulWidget {
 
   String code;
 
-  UpLoadReceiptPage(this.chargeId,this.code,{Key? key}) : super(key: key);
+  double amount;
+
+  UpLoadReceiptPage(this.chargeId,this.code,this.amount,{Key? key}) : super(key: key);
 
   @override
   State<UpLoadReceiptPage> createState() => _UpLoadReceiptPageState();
@@ -60,9 +63,11 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params,isShowLoad: true);
     if(json['code'] == 200){
-      Get.to(ReceiptPage());
+      PaymentCompleteModel model = PaymentCompleteModel.fromJson(json);
+      Get.to(ReceiptPage(widget.amount,model));
+    }else{
+      BotToast.showText(text: json['message']);
     }
-    BotToast.showText(text: json['message']);
   }
 
   /// 上传图片
@@ -135,13 +140,13 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
             height: 50,
             child: Center(
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(18))
                 ),
                 width: Get.width-100,
                 height: 20,
                 alignment: Alignment.center,
-                padding: EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: 15),
               ),
             ),
           ),
@@ -150,20 +155,22 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
               width: Get.width,
               height: 80,
               padding: EdgeInsets.only(right: 15,left: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('上傳FPS收據',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700,
                       color: AppColor.themeTextColor),),
-                  // Row(
-                  //   children: [
-                  //     Text('我的代幣'),
-                  //     SizedBox(width: 5,),
-                  //     Image.asset('images/ic_mine_jinbi.png',width: 45,height: 45,),
-                  //     SizedBox(width: 8,),
-                  //     Text('236',style: TextStyle(color: AppColor.themeTextColor,fontSize: 26,fontWeight: FontWeight.w700),),
-                  //   ],
-                  // )
+                  Row(
+                    children: [
+                      Text('需支付:'),
+                      SizedBox(width: 5,),
+                      // Image.asset('images/ic_mine_jinbi.png',width: 45,height: 45,),
+                      // SizedBox(width: 8,),
+                      Text('HK\$${widget.amount}',style: TextStyle(color: AppColor.themeTextColor,
+                          fontSize: 26,fontWeight: FontWeight.w700),),
+                    ],
+                  )
                 ],
               )
           ),
@@ -198,7 +205,7 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             listFilePaths.isNotEmpty?Image.file(File(listFilePaths[0].path!),width: 80,
-                              height: 80,):Image.asset('images/ic_upload_camera.png'),
+                              height: 80,):Image.asset('images/ic_upload_camera.png',width: 50,height: 50,),
                             Text('上傳圖片',style: TextStyle(color: AppColor.themeTextColor),)
                           ],
                         )

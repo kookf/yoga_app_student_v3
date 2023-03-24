@@ -76,8 +76,9 @@ class _SettingPageState extends State<SettingPage> {
     @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
+        padding: EdgeInsets.all(0),
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
               height: MediaQuery.of(context).padding.top+kToolbarHeight,
@@ -103,8 +104,9 @@ class _SettingPageState extends State<SettingPage> {
                 ],
               )
           ),
-          Expanded(child: ListView(
-            padding: const EdgeInsets.all(0),
+          Expanded(child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            // padding: const EdgeInsets.all(0),
             children: [
               const SizedBox(height: 35,),
               Center(
@@ -137,32 +139,34 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                 ),
               ),
-              Padding(padding: const EdgeInsets.only(left: 30,top: 15),child: Text('用戶電話',style: TextStyle(color: AppColor.themeColor),),),
-              Center(
-                child:  Container(
-                  margin: const EdgeInsets.only(top: 5),
-                  padding: const EdgeInsets.only(left: 15),
-                  width: Get.width-50,
-                  //边框设置
-                  decoration:  BoxDecoration(
-                    color: Colors.white,
-                    //设置四周圆角 角度
-                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                    //设置四周边框
-                    border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
-                  ),
-                  child: TextField(
-                    controller: phoneTextEditingController,
-                    inputFormatters: <TextInputFormatter>[
-                      LengthLimitingTextInputFormatter(15) //限制长度
-                    ],
-                    decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        hintText: '用戶電話'
-                    ),
-                  ),
-                ),
-              ),
+              
+              // Padding(padding: const EdgeInsets.only(left: 30,top: 15),child: Text('用戶電話',style: TextStyle(color: AppColor.themeColor),),),
+              // Center(
+              //   child:  Container(
+              //     margin: const EdgeInsets.only(top: 5),
+              //     padding: const EdgeInsets.only(left: 15),
+              //     width: Get.width-50,
+              //     //边框设置
+              //     decoration:  BoxDecoration(
+              //       color: Colors.white,
+              //       //设置四周圆角 角度
+              //       borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+              //       //设置四周边框
+              //       border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
+              //     ),
+              //     child: TextField(
+              //       controller: phoneTextEditingController,
+              //       inputFormatters: <TextInputFormatter>[
+              //         LengthLimitingTextInputFormatter(15) //限制长度
+              //       ],
+              //       decoration: const InputDecoration(
+              //           border: InputBorder.none,
+              //           hintText: '用戶電話'
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
               Padding(padding: const EdgeInsets.only(left: 30,top: 15),child: Text('出生日期（年/月/日）',style: TextStyle(color: AppColor.themeColor),),),
               GestureDetector(
                 onTap: (){
@@ -264,11 +268,19 @@ class _SettingPageState extends State<SettingPage> {
                  ),
                ),
              ),
+              SizedBox(height: 50,),
+
               Container(
                 // height: 200,
                 alignment: Alignment.bottomRight,
                 child: Image.asset('images/yuyuebg.png'),
               )
+
+              // Expanded(child: Container(
+              //   // height: 200,
+              //   alignment: Alignment.bottomRight,
+              //   child: Image.asset('images/yuyuebg.png'),
+              // ))
             ],
           ))
 

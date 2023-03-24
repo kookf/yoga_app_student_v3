@@ -30,7 +30,7 @@
   </manifestPlaceholders>
   <mainArtifact
       classOutputs="D:\yoga_app_student\build\app\intermediates\javac\release\classes;D:\yoga_app_student\build\app\tmp\kotlin-classes\release;D:\yoga_app_student\build\app\kotlinToolingMetadata;D:\yoga_app_student\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
-      applicationId="com.example.yoga_student_app"
+      applicationId="com.ykk.yoga_student_app"
       generatedSourceFolders="D:\yoga_app_student\build\app\generated\ap_generated_sources\release\out;D:\yoga_app_student\build\app\generated\aidl_source_output_dir\release\out;D:\yoga_app_student\build\app\generated\source\buildConfig\release;D:\yoga_app_student\build\app\generated\renderscript_source_output_dir\release\out"
       generatedResourceFolders="D:\yoga_app_student\build\app\generated\res\rs\release;D:\yoga_app_student\build\app\generated\res\resValues\release">
   </mainArtifact>

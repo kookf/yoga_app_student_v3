@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.example.yoga_student_app",
+  "applicationId": "com.ykk.yoga_student_app",
   "variantName": "release",
   "elements": []
 }

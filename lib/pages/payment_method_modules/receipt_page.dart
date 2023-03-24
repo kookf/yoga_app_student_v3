@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:yoga_student_app/common/colors.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/pages/payment_method_modules/payment_complete_model.dart';
+import 'package:yoga_student_app/services/address.dart';
+import 'package:yoga_student_app/utils/app_util.dart';
+
+
 class ReceiptPage extends StatefulWidget {
-  const ReceiptPage({Key? key}) : super(key: key);
+
+  double amount;
+
+  PaymentCompleteModel? model;
+
+  ReceiptPage(this.amount,this.model,{Key? key}) : super(key: key);
 
   @override
   State<ReceiptPage> createState() => _ReceiptPageState();
@@ -28,7 +38,7 @@ class _ReceiptPageState extends State<ReceiptPage> {
           const SizedBox(height: 15,),
           Text('已完成付款',style: TextStyle(fontSize: 25,color: AppColor.themeTextColor),),
           Image.asset('images/ic_receipt_success.png',width: 160,height: 160,),
-          Text('HK\$ 500',style: TextStyle(fontSize: 30,color: AppColor.themeTextColor),),
+          Text('HK\$ ${widget.model?.data?.amount}',style: TextStyle(fontSize: 30,color: AppColor.themeTextColor),),
           const SizedBox(height: 15,),
           Text('付款給',style: TextStyle(color: AppColor.registerBgColor,fontSize: 14),),
           Center(
@@ -55,7 +65,7 @@ class _ReceiptPageState extends State<ReceiptPage> {
 
           Text('Transaction Id',style: TextStyle(color: AppColor.themeTextColor,fontSize: 12),),
           const SizedBox(height: 5,),
-          Text('1234 5678 9012 4567',style: TextStyle(color: AppColor.themeTextColor,fontSize: 12),),
+          Text('${widget.model?.data?.orderNo}',style: TextStyle(color: AppColor.themeTextColor,fontSize: 12),),
 
           const SizedBox(height: 15,),
           SizedBox(
@@ -74,6 +84,8 @@ class _ReceiptPageState extends State<ReceiptPage> {
             width: Get.width - 50,
             height: 45,
             child: MaterialButton(onPressed: (){
+
+              AppUtil.saveImage('${Address.homeHost}/storage/${widget.model!.data!.image}');
 
             },color: Colors.white,elevation: 0,shape:RoundedRectangleBorder(
               borderRadius: const BorderRadius.all(Radius.circular(20)),

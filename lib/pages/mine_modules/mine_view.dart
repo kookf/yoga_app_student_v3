@@ -56,9 +56,10 @@ class MineView extends GetView{
 
                   Align(
                     child: Container(
-                      margin: const EdgeInsets.only(top: 40),
+                      margin: const EdgeInsets.only(top: 40,right: 15,left: 15),
                       child: Text('${controller.userModel?.data?.name}',style: TextStyle(fontSize: 25,
-                          fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
+                          fontWeight: FontWeight.w700,color: AppColor.themeTextColor),
+                        textAlign: TextAlign.center,maxLines: 1,overflow: TextOverflow.ellipsis,),
                     ),
                   ),
 
@@ -178,7 +179,11 @@ class MineView extends GetView{
                 Get.to(const ChangePasswordPage());
               },
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.black,
+                      width: 0.3
+                  ),
                   color: Colors.white,
                 ),
                 padding: const EdgeInsets.only(left: 55,right: 55),

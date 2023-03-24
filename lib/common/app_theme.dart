@@ -29,7 +29,7 @@ AppBarTheme _appbarTheme() {
     // color: HexColor('#2A39E1'),
     elevation: 0,
     titleTextStyle:  TextStyle(fontSize: 18,color: AppColor.themeTextColor,fontWeight: FontWeight.w500),
-    iconTheme: const IconThemeData(color:Colors.white),  // 图标
+    iconTheme: const IconThemeData(color:Colors.black87),  // 图标
 
   );
 }

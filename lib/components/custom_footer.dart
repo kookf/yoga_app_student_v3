@@ -114,7 +114,7 @@ class MaterialFooterWidgetState extends State<MaterialFooterWidget> {
 
       margin: EdgeInsets.only(bottom: 0),
       // color: Colors.yellow,
-      child: Text('我是有底线的~',style: TextStyle(fontSize: 13),),
+      child: Text('我是有底綫的~',style: TextStyle(fontSize: 13),),
     );
     // 是否为垂直方向
     bool isVertical = _axisDirection == AxisDirection.down ||

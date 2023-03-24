@@ -1,58 +1,73 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
-class Dome2 extends StatefulWidget {
-  const Dome2({Key? key}) : super(key: key);
-
+class ChatScreen extends StatefulWidget {
   @override
-  State<Dome2> createState() => _Dome2State();
+  _ChatScreenState createState() => _ChatScreenState();
 }
 
-class _Dome2State extends State<Dome2> {
+class _ChatScreenState extends State<ChatScreen> {
+  final TextEditingController _textEditingController =
+  TextEditingController();
 
+  List<String> _messages = [];
 
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    doTask1();
-    doTask2();
-    doTask3();
+  void _handleSubmitted(String text) {
+    _textEditingController.clear();
+    setState(() {
+      _messages.insert(0, text);
+    });
   }
 
-
-  void doTask1(){
-    print('扫地');
-  }
-  void doTask2()async{
-    File file = File('/Users/mozhu/Desktop/Amos_Demo/__manifest__.py');
-    print('开始读取');
-    String s = await file.readAsString();
-
-  }
-  void doTask3(){
-    print('做饭');
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-
+  Widget _buildTextComposer() {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Row(
+        children: [
+          Flexible(
+            child: TextField(
+              controller: _textEditingController,
+              onSubmitted: _handleSubmitted,
+              decoration: InputDecoration.collapsed(
+                hintText: 'Send a message',
+              ),
+            ),
+          ),
+          IconButton(
+            icon: Icon(Icons.send),
+            onPressed: () => _handleSubmitted(_textEditingController.text),
+          ),
+        ],
       ),
     );
   }
 
-
-  List<Widget> _buildHeader(BuildContext context,bool innerBoxIsScrolled){
-    return [
-      Text('data'),
-    ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Chat'),
+      ),
+      body: Column(
+        children: [
+          Flexible(
+            child: ListView.builder(
+              reverse: true,
+              itemCount: _messages.length,
+              itemBuilder: (BuildContext context, int index) {
+                final String message = _messages[index];
+                return ListTile(
+                  title: Text(message),
+                );
+              },
+            ),
+          ),
+          Divider(height: 1.0),
+          Container(
+            decoration: BoxDecoration(color: Theme.of(context).cardColor),
+            child: _buildTextComposer(),
+          ),
+        ],
+      ),
+    );
   }
-
-
-
 }

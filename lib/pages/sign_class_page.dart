@@ -4,11 +4,10 @@ import 'package:intl/intl.dart';
 import 'package:yoga_student_app/common/colors.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
-import 'package:yoga_student_app/utils/persistent_storage.dart';
-
 import '../components/counter_down_page.dart';
 import '../components/slide_widget.dart';
 import 'package:get/get.dart';
+
 class SignClassPage extends StatefulWidget {
 
 
@@ -23,9 +22,6 @@ class SignClassPage extends StatefulWidget {
 }
 
 class _SignClassPageState extends State<SignClassPage> {
-
-
-
 
   int? countTime;
 

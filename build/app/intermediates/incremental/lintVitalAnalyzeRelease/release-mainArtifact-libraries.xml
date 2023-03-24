@@ -43,6 +43,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="D:\yoga_app_student\android@@:image_gallery_saver::release"
+      jars="D:\yoga_app_student\build\image_gallery_saver\.transforms\b9f8272aa97bded9caa6ea935552999e\transformed\out\jars\classes.jar"
+      resolved="com.example.imagegallerysaver:image_gallery_saver:unspecified"
+      folder="D:\yoga_app_student\build\image_gallery_saver\.transforms\b9f8272aa97bded9caa6ea935552999e\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="D:\yoga_app_student\android@@:sqflite::release"
       jars="D:\yoga_app_student\build\sqflite\.transforms\fd8f4cf91fdc4bf00de29ed78d761e1a\transformed\out\jars\classes.jar"
       resolved="com.tekartik.sqflite:sqflite:unspecified"

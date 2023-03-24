@@ -1,7 +1,7 @@
 class SharedWalletModel {
   int? code;
   String? message;
-  var data;
+  dynamic data;
 
   SharedWalletModel({this.code, this.message, this.data});
 
@@ -23,7 +23,7 @@ class SharedWalletModel {
 }
 
 class Data {
-  var owner;
+  dynamic owner;
   List<UserList>? userList;
 
   Data({this.owner, this.userList});

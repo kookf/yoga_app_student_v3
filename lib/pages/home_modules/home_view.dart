@@ -9,8 +9,6 @@ import 'notice_page.dart';
 
 
 class HomeView extends GetView{
-
-
   @override
   final HomeController controller = Get.put(HomeController());
 
@@ -42,6 +40,7 @@ class HomeView extends GetView{
                 )
             ),
             Expanded(child:ListView(
+
               padding: const EdgeInsets.all(0),
               children: [
                 Container(
@@ -59,7 +58,8 @@ class HomeView extends GetView{
                     children: [
                       Container(
                         height: 200,
-                        margin: const EdgeInsets.only(left: 15,right: 15,top: 15),
+                        // color: Colors.red,
+                        margin: const EdgeInsets.only(left: 15,right: 15,top: 0),
                         child: Swiper(itemCount: controller.homeIndexModel?.data?.banner?.length??3,
                           autoplay: false,
                           pagination: SwiperPagination(
@@ -70,21 +70,19 @@ class HomeView extends GetView{
                               )
                           ),
                           itemBuilder: (BuildContext context,int index){
-                            return Center(
-                              child: Container(
-                                // color: Colors.red,
-                                padding: const EdgeInsets.all(1),
-                                child: CachedNetworkImage(
-                                  imageUrl: '${Address.homeHost}${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
-                                  placeholder: (context, url) => const CircularProgressIndicator(),
-                                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                                  fit: BoxFit.contain,
-                                ),
+                            return  Container(
+                              // color: Colors.red,
+                              padding: const EdgeInsets.all(15),
+                              child: CachedNetworkImage(
+                                imageUrl: '${Address.homeHost}${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
+                                placeholder: (context, url) => const CircularProgressIndicator(),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
+                                fit: BoxFit.contain,
                               ),
                             );
                           },),
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(height: 5,),
                       Center(
                         child: Text('最新公告',style: TextStyle(color: AppColor.themeTextColor,fontSize: 20,
                             fontWeight: FontWeight.w600),),
@@ -95,9 +93,14 @@ class HomeView extends GetView{
                         height: 300,
                         margin: const EdgeInsets.only(left: 25,right: 25,top: 0),
                         child: CustomScrollView(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
                           slivers: [
                             SliverToBoxAdapter(
-                              child: Image.asset('images/home_banner1.png'),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 5,right: 5),
+                                child: Image.asset('images/home_banner1.png'),
+                              ),
                             ),
                             SliverList(delegate: _mySliverChildBuildList())
                           ],
@@ -124,11 +127,21 @@ class HomeView extends GetView{
                       Image.asset('images/ic_location.png'),
                       const SizedBox(height: 10,),
 
-                      Text('''
-               地址:${controller.homeIndexModel?.data?.site?.address}
-               Tel: ${controller.homeIndexModel?.data?.site?.tel}
-               郵箱: ${controller.homeIndexModel?.data?.site?.mail}
-                ''',style: TextStyle(color: AppColor.themeTextColor),),
+                      Container(
+                        child: Text('地址:${controller.homeIndexModel?.data?.site?.address}',style: TextStyle(color: AppColor.themeTextColor),),
+                      ),
+                      Container(
+                        child: Text('Tel: ${controller.homeIndexModel?.data?.site?.tel}',style: TextStyle(color: AppColor.themeTextColor),),
+                      ),
+                      Container(
+                        child: Text('郵箱: ${controller.homeIndexModel?.data?.site?.mail}',style: TextStyle(color: AppColor.themeTextColor),),
+                      ),
+
+               //        Text('''
+               // 地址:${controller.homeIndexModel?.data?.site?.address}
+               // Tel: ${controller.homeIndexModel?.data?.site?.tel}
+               // 郵箱: ${controller.homeIndexModel?.data?.site?.mail}
+               //  ''',style: TextStyle(color: AppColor.themeTextColor),),
 
                     ],
                   ),
@@ -156,12 +169,14 @@ class HomeView extends GetView{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
+                  padding: const EdgeInsets.only(left: 5),
                   alignment: Alignment.centerLeft,
                   height: 50,
                     child: Text('${controller.homeIndexModel?.data?.notice?[index].title}',style: TextStyle(fontWeight: FontWeight.w600,
                       color: AppColor.themeTextColor),),
                 ),
                 Container(
+                  padding: const EdgeInsets.only(right: 5),
                   alignment: Alignment.centerLeft,
                   height: 50,
                   child: Text('10/30/2023',style: TextStyle(fontWeight: FontWeight.w600,
@@ -171,6 +186,7 @@ class HomeView extends GetView{
               ],
             ),
             Container(
+              margin: const EdgeInsets.only(left: 5,right: 5),
               color: Colors.black,
               height: 0.5,
             )

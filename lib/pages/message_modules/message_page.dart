@@ -43,7 +43,7 @@ class MessagePage extends GetView{
                   child: const Text('MeMO Yoga',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),),
                 )
             ),
-            Expanded(child:  Container(
+            Expanded(child:Container(
               color: HexColor('#E4CCE1'),
               child: EasyRefresh.custom(
                   emptyWidget:controller.dataArr.isEmpty?const Center(child:Text('暫無信息')):null,
@@ -126,7 +126,7 @@ class MessagePage extends GetView{
             ),
             model.coursesName==null?const SizedBox():Container(
               margin: const EdgeInsets.only(left: 25,top: 5),
-              child: Text('開始日期：${model.startDay}',style: TextStyle(color: AppColor.themeTextColor,
+              child: Text('日期：${model.startDay}',style: TextStyle(color: AppColor.themeTextColor,
                   fontSize: 16,fontWeight: FontWeight.w700),),
             ),
             model.coursesName==null?const SizedBox():Container(
@@ -138,7 +138,7 @@ class MessagePage extends GetView{
           ],
         ),
       );
-    },childCount: 10);
+    },childCount: controller.dataArr.length);
   }
 
 

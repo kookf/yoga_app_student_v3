@@ -12,12 +12,15 @@ class MessagePageController extends GetxController{
 
   List dataArr = [];
 
+  int page = 1;
+
+
   onRefresh()async{
-    int page = 1 ;
+     page = 1 ;
     requestDataWithNoticeList(page);
   }
   onLoad()async{
-    int page = 1;
+    await Future.delayed(const Duration(milliseconds: 500));
     page++;
     requestDataWithNoticeList(page);
   }
@@ -41,7 +44,6 @@ class MessagePageController extends GetxController{
         dataArr.addAll(model.data!.list!);
       }else{
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暂无更多');
       }
     }
     update();

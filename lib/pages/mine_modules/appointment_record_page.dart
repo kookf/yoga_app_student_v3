@@ -46,7 +46,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
         dataArr.addAll(model.data!.list!);
       }else{
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暂无更多');
+        BotToast.showText(text: '暫無更多');
       }
     }
     setState(() {
@@ -68,9 +68,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
       BotToast.showText(text: json['message']);
     }
     requestDataWithCourseList();
-
   }
-
 
   @override
   void initState() {
@@ -299,7 +297,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
             ClassRoomList model = dataArr[index];
         return Container(
           // margin: const EdgeInsets.only(left: 30,right: 30,top: 0,bottom: 15),
-          height: 130,
+          height: 140,
           color: AppColor.bgColor,
           child: GestureDetector(
             onTap: (){
@@ -331,12 +329,19 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
                              fontSize: 16,color: AppColor.themeTextColor),maxLines: 1,overflow: TextOverflow.ellipsis,),
                         ),
                         TextButton(onPressed: (){
-                          Get.defaultDialog(title: '提示',middleText: '是否要取消當前課程',textCancel:'取消',textConfirm: '確定',onConfirm: (){
-                            requestDataWithCancel('${model.courseTimeId}');
-                            Get.back();
-                          },onCancel: (){
 
-                          });
+                          if(model.subscribeId!>=1&&model.subscribeStatus==0){
+
+                            Get.defaultDialog(title: '提示',middleText: '是否要取消當前課程',textCancel:'取消',textConfirm: '確定',onConfirm: (){
+                              requestDataWithCancel('${model.courseTimeId}');
+                              Get.back();
+                            },onCancel: (){
+
+                            });
+                          }else{
+                            BotToast.showText(text: '不可取消預約');
+                          }
+
                         }, child: Text('取消预约',style: TextStyle(color: AppColor.themeColor),)),
 
                       ],

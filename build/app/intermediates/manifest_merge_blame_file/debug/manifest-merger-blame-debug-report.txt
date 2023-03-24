@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.yoga_student_app"
+3    package="com.ykk.yoga_student_app"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -28,7 +28,7 @@
 19-->[:image_pickers] D:\yoga_app_student\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-81
 19-->[:image_pickers] D:\yoga_app_student\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-78
 20
-21    <queries package="com.example.yoga_student_app" >
+21    <queries package="com.ykk.yoga_student_app" >
 21-->[:image_pickers] D:\yoga_app_student\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-24:15
 21-->[:image_pickers] D:\yoga_app_student\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:15:14-40
 22        <intent>
@@ -147,7 +147,7 @@
 100-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:10:9-18:20
 101            android:name="com.luck.picture.lib.basic.PictureFileProvider"
 101-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:11:13-74
-102            android:authorities="com.example.yoga_student_app.luckProvider"
+102            android:authorities="com.ykk.yoga_student_app.luckProvider"
 102-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:12:13-64
 103            android:exported="false"
 103-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:13:13-37

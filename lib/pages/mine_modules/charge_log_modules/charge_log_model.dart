@@ -8,11 +8,11 @@ class ChargeLogModel {
   ChargeLogModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['code'] = this.code;
     data['message'] = this.message;
     if (this.data != null) {
@@ -39,11 +39,11 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.list != null) {
-      data['list'] = this.list!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    if (list != null) {
+      data['list'] = list!.map((v) => v.toJson()).toList();
     }
-    data['total_page'] = this.totalPage;
+    data['total_page'] = totalPage;
     return data;
   }
 }
@@ -56,6 +56,7 @@ class ChargeLogList {
   int? payStatus;
   var payTime;
   String? updatedAt;
+  var createdAt;
   String? image;
 
   ChargeLogList(
@@ -66,6 +67,7 @@ class ChargeLogList {
         this.payStatus,
         this.payTime,
         this.updatedAt,
+        this.createdAt,
         this.image});
 
   ChargeLogList.fromJson(Map<String, dynamic> json) {
@@ -76,12 +78,13 @@ class ChargeLogList {
     payStatus = json['pay_status'];
     payTime = json['pay_time'];
     updatedAt = json['updated_at'];
+    createdAt = json['created_at'];
     image = json['image'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
     data['order_no'] = this.orderNo;
     data['gold'] = this.gold;
     data['amount'] = this.amount;

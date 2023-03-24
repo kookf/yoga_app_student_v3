@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.yoga_student_app"
+    package="com.ykk.yoga_student_app"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <queries package="com.example.yoga_student_app" >
+    <queries package="com.ykk.yoga_student_app" >
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" >
             </action>
@@ -94,7 +94,7 @@
 
         <provider
             android:name="com.luck.picture.lib.basic.PictureFileProvider"
-            android:authorities="com.example.yoga_student_app.luckProvider"
+            android:authorities="com.ykk.yoga_student_app.luckProvider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data

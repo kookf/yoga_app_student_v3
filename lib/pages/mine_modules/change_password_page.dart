@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -28,6 +29,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
       'password_confirmation':passwordConfirmationTextEditingController.text,
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+    if(json['code'] == 200){
+      BotToast.showText(text: '修改成功');
+    }else{
+      BotToast.showText(text: json['message']);
+    }
 
   }
 

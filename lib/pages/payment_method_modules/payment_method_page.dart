@@ -7,8 +7,9 @@ import 'package:yoga_student_app/pages/payment_method_modules/upload_receipt_pag
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
 import 'package:yoga_student_app/utils/hex_color.dart';
-
 import 'charge_code_model.dart';
+
+
 class PayMethodPage extends StatefulWidget {
   const PayMethodPage({Key? key}) : super(key: key);
 
@@ -17,7 +18,6 @@ class PayMethodPage extends StatefulWidget {
 }
 
 class _PayMethodPageState extends State<PayMethodPage> {
-
 
   PaymentMethodModel? paymentMethodModel;
 
@@ -50,6 +50,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
 
 
     if(model.code == 200){
+      chargeCodeModel = model;
       BotToast.showText(text: '已使用優惠碼');
     }else{
       BotToast.showText(text: model.message!);
@@ -76,8 +77,6 @@ class _PayMethodPageState extends State<PayMethodPage> {
     super.initState();
     requestDataWithChargeType();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -179,7 +178,16 @@ class _PayMethodPageState extends State<PayMethodPage> {
       PaymentMethodList model = paymentMethodModel!.data!.list![index];
       return GestureDetector(
         onTap: (){
-          Get.to(UpLoadReceiptPage(model.id!,codeTextEditingController.text));
+
+          if(chargeCodeModel==null){
+            Get.to(UpLoadReceiptPage(model.id!,codeTextEditingController.text,double.parse(model.amount!)));
+          }else{
+            var amount = double.parse(model.amount!);
+            var codeAmount = double.parse(chargeCodeModel!.data!.cash!);
+            print(amount - codeAmount);
+            Get.to(UpLoadReceiptPage(model.id!,codeTextEditingController.text,amount - codeAmount));
+          }
+
           // Get.to(ReceiptPage());
         },
         child:Center(
@@ -216,7 +224,8 @@ class _PayMethodPageState extends State<PayMethodPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text('${model.gold}'),
-                         chargeCodeModel?.data?.gold==null? SizedBox():Text('+${chargeCodeModel?.data?.gold}')
+                         chargeCodeModel?.data?.gold==null? const SizedBox():
+                         Text('+${chargeCodeModel?.data?.gold}',style: const TextStyle(color: Colors.red),)
                         ],
                       )
                     ],
@@ -228,8 +237,9 @@ class _PayMethodPageState extends State<PayMethodPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text('HK\$${model.amount}',style: TextStyle(fontSize: 20,color: AppColor.themeTextColor),),
-                        chargeCodeModel?.data?.cash==null? SizedBox():Text('-HK\$${chargeCodeModel?.data?.gold}',style: TextStyle(
-                          color: AppColor.themeTextColor
+                        chargeCodeModel?.data?.cash==null? const SizedBox():
+                        Text('-HK\$${chargeCodeModel?.data?.cash}',style: const TextStyle(
+                          color:Colors.green
                         ),)
 
                       ],

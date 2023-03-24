@@ -23,10 +23,8 @@ class ChangeAvatarPage extends StatefulWidget {
 
 class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
 
-
   List<Media> listFilePaths = [];
-  
-  
+
   /// 獲取文件地址
   Future requestDataWithPath()async{
 
@@ -113,8 +111,6 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
                     padding: const EdgeInsets.only(top: 35),
                     child: const Text('更換頭像',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),),
                   ),
-
-
                 ],
               )
           ),
@@ -166,7 +162,7 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                            listFilePaths.isNotEmpty?Image.file(File(listFilePaths[0].path!),width: 80,
-                           height: 80,):Image.asset('images/ic_upload_camera.png'),
+                           height: 80,):Image.asset('images/ic_upload_camera.png',width: 50,height: 50,),
                             Text('上傳圖片',style: TextStyle(color: AppColor.themeTextColor),)
                           ],
                         )

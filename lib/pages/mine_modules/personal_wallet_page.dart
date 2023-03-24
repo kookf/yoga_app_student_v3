@@ -45,7 +45,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
         dataArr.addAll(model.data!.list!);
       } else {
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暂无更多');
+        BotToast.showText(text: '暫無更多');
       }
     }
     setState(() {});
@@ -281,7 +281,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                             const BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Text(
-                        '      已購買與 \n ${model.createdAt}',
+                        '        已購買與 \n ${model.createdAt}',
                         style:
                             const TextStyle(color: Colors.white, fontSize: 13),
                       ),

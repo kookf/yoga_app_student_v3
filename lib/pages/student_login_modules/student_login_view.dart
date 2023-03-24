@@ -5,11 +5,9 @@ import 'package:get/get.dart';
 import 'package:loading_btn/loading_btn.dart';
 import 'package:yoga_student_app/pages/student_login_modules/student_login_controller.dart';
 import 'package:yoga_student_app/utils/persistent_storage.dart';
-
 import '../../common/app_theme.dart';
 import '../../common/colors.dart';
 import '../../router/app_pages.dart';
-import '../bottom_nav_moudules/bottom_tab_controller.dart';
 
 class StudentLoginView extends GetView{
 
@@ -102,7 +100,7 @@ class StudentLoginView extends GetView{
                     child: TextField(
                       controller: controller.emailTextEditingController,
                       inputFormatters: <TextInputFormatter>[
-                        LengthLimitingTextInputFormatter(35) //限制长度
+                        LengthLimitingTextInputFormatter(50) //限制长度
                       ],
                       decoration: const InputDecoration(
                           border: InputBorder.none,
@@ -128,7 +126,7 @@ class StudentLoginView extends GetView{
                       controller: controller.passwordTextEditingController,
                       obscureText: true,
                       inputFormatters: <TextInputFormatter>[
-                        LengthLimitingTextInputFormatter(13) //限制长度
+                        LengthLimitingTextInputFormatter(25) //限制长度
                       ],
                       decoration: const InputDecoration(
                           border: InputBorder.none,

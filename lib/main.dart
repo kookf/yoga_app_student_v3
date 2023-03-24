@@ -8,12 +8,12 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:yoga_student_app/pages/bottom_nav_moudules/guide_page.dart';
 import 'package:yoga_student_app/router/app_routes.dart';
 import 'common/app_theme.dart';
+import 'demo2.dart';
 
 
 void main() {
 
   setCustomErrorPage();
-
   runApp(const MyApp());
 }
 
@@ -141,6 +141,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     // connect();
+    requestPermission();
     super.initState();
   }
 
@@ -169,57 +170,14 @@ class _MyAppState extends State<MyApp> {
       // initialRoute:isLogin==false?AppRoutes.login:AppRoutes.bottomMain,
       // home: isLogin==false?StudentLoginView():const Tabs(),
       home: const GuidePage(),
+      // home:  MyWidget(),
       navigatorObservers: [BotToastNavigatorObserver()],
       // home:Dome2(),
     );
   }
 }
-
-
-//判断是否有权限
-checkPermission() async {
-  //获取当前的权限
-  var status = await Permission.location.status;
-  if (status == PermissionStatus.granted) {
-
-    debugPrint('已经授权');
-    //已经授权
-    // return true;
-  } else {
-    //未授权则发起一次申请
-    debugPrint('未授权则发起一次申请');
-    status = await Permission.location.request();
-    if (status == PermissionStatus.granted) {
-      // return true;
-    } else {
-      // return false;
-    }
-  }
-  Permission permission = Permission.locationAlways;
-  // PermissionStatus status = await permission.status;
-  requestPermission(permission);
-
-  debugPrint('检测权限$status');
-  if (status.isGranted) {
-
-    //权限通过
-  } else if (status.isDenied) {
-    //权限拒绝， 需要区分IOS和Android，二者不一样
-    requestPermission(permission);
-  } else if (status.isPermanentlyDenied) {
-    //权限永久拒绝，且不在提示，需要进入设置界面
-    // openAppSettings();
-  } else if (status.isRestricted) {
-    //活动限制（例如，设置了家长///控件，仅在iOS以上受支持。
-    // openAppSettings();
-  } else {
-    //第一次申请
-    requestPermission(permission);
-  }
-}
-
 //申请权限
-requestPermission(Permission permission) async {
+requestPermission() async {
   //多个权限申请
   Map<Permission, PermissionStatus> statuses = await [
     Permission.camera,

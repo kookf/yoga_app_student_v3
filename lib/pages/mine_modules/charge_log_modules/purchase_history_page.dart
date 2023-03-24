@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 import 'package:yoga_student_app/pages/mine_modules/charge_log_modules/charge_log_model.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
-
 import '../../../common/colors.dart';
 import '../../../components/custom_footer.dart';
+import '../../classroom_modules/classroom_calendar_page.dart';
 
 class PurchaseHistoryPage extends StatefulWidget {
   const PurchaseHistoryPage({Key? key}) : super(key: key);
@@ -28,6 +28,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
 
   List dataArr = [];
 
+  String createDate = '';
 
   requestDataWithChargeLog()async{
     var params = {
@@ -35,7 +36,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
       'page':page,
       'pay_status':selectIndex,  /// 空所有状态记录 0 未支付状态 1 充值支付状态
       'is_share_wallet':'',
-
+      'create_date':createDate
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams:params);
 
@@ -49,15 +50,13 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
         dataArr.addAll(model.data!.list!);
       }else{
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暂无更多');
+        BotToast.showText(text: '暫無更多');
       }
     }
     setState(() {
 
     });
-
   }
-
   @override
   void initState() {
     // TODO: implement initState
@@ -71,9 +70,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
       body: NestedScrollView(
         headerSliverBuilder: _headerSliverBuilder,
         body: buildSliverBody(context),
-
       ),
-
     );
   }
 
@@ -92,7 +89,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
       elevation: 0,
       // backgroundColor:AppColor.themeColor,
       snap: false,
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
           color: Colors.black
       ),
       flexibleSpace: FlexibleSpaceBar(
@@ -160,8 +157,8 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
               children: [
                 GestureDetector(
                   onTap: (){
-
                     setState(() {
+                      page = 1;
                       selectIndex =1;
                       requestDataWithChargeLog();
                     });
@@ -172,18 +169,20 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                     width: 80,
                     decoration: BoxDecoration(
                         color: selectIndex ==1? AppColor.themeColor:Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(10))
+                        borderRadius: const BorderRadius.all(Radius.circular(10))
                     ),
-                    child:Text('已購買',style: TextStyle(fontSize: 22,color:selectIndex==1?Colors.white:AppColor.themeTextColor,fontWeight: FontWeight.w700),),
+                    child:Text('已購買',style: TextStyle(fontSize: 22,
+                        color:selectIndex==1?Colors.white:AppColor.themeTextColor,
+                        fontWeight: FontWeight.w700),),
                   ),
                 ),
                 GestureDetector(
                   onTap: (){
                     setState(() {
                       selectIndex =0;
+                      page = 1;
                       requestDataWithChargeLog();
                     });
-                    print(selectIndex);
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -191,14 +190,24 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                     width: 80,
                     decoration: BoxDecoration(
                         color: selectIndex ==0? AppColor.themeColor:Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(10))
+                        borderRadius: const BorderRadius.all(Radius.circular(10))
                     ),
-                    child:Text('已取消',style: TextStyle(fontSize: 22,color:selectIndex==2?Colors.white:AppColor.themeTextColor,fontWeight: FontWeight.w700),),
+                    child:Text('未支付',style: TextStyle(fontSize: 22,
+                        color:selectIndex==2?Colors.white:AppColor.themeTextColor,
+                        fontWeight: FontWeight.w700),),
                   ),
                 ),
-
-                Image.asset('images/ic_classroom_right.png',width: 40,height: 40,),
-
+                GestureDetector(
+                  onTap: ()async{
+                   var data = await Get.to(const ClassRoomCalendarPage());
+                   if(data != null){
+                     page = 1;
+                     createDate = data;
+                     requestDataWithChargeLog();
+                   }
+                  },
+                  child:Image.asset('images/ic_classroom_right.png',width: 40,height: 40,),
+                )
               ],
             ),
           ),
@@ -221,12 +230,14 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                   child:   Container(
                     height: 60,
                     color: AppColor.themeColor,
-                    padding: EdgeInsets.only(left: 55,right: 55),
+                    padding: const EdgeInsets.only(left: 55,right: 55),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('單號',style: TextStyle(fontSize: 20,color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
-                        Text('狀態',style: TextStyle(fontSize: 20,color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                        Text('單號',style: TextStyle(fontSize: 20,
+                            color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                        Text('狀態',style: TextStyle(fontSize: 20,
+                            color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
                       ],
                     ),
                   ),
@@ -240,16 +251,14 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
       ),
     );
   }
-
   SliverChildBuilderDelegate _mySliverChildBuilderDelegate() {
     return SliverChildBuilderDelegate(
           (BuildContext context, int index) {
 
             ChargeLogList model = dataArr[index];
-
         return Container(
           // margin: const EdgeInsets.only(left: 30,right: 30,top: 0,bottom: 15),
-          height: 150,
+          height: 190,
           color: AppColor.bgColor,
           child: GestureDetector(
             onTap: (){
@@ -262,7 +271,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                         width: 0.3
                     )
                 ),
-                padding: EdgeInsets.only(left: 15,right: 15),
+                padding: const EdgeInsets.only(left: 15,right: 15),
                 height: 75,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -271,34 +280,33 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        const SizedBox(height: 5,),
                         Text('${model.orderNo}',style: TextStyle(fontWeight: FontWeight.w700,
                             fontSize: 21,color: AppColor.themeTextColor),),
-                        SizedBox(height: 10,),
-                        Text('時間：${model.updatedAt}',style: TextStyle(fontWeight: FontWeight.w700,
+                        model.payTime==null?const SizedBox():const SizedBox(height: 10,),
+                        model.payTime==null?const SizedBox(): Text('支付時間：${model.payTime}',
+                         style: TextStyle(fontWeight: FontWeight.w700,
                             fontSize: 17,color: AppColor.themeTextColor),),
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
+                        Text('創建時間：${model.createdAt}',style: TextStyle(fontWeight: FontWeight.w700,
+                            fontSize: 17,color: AppColor.themeTextColor),),
+                        const SizedBox(height: 10,),
 
-                        model.payStatus==1?Container(
-
-                          child: Text('已支付',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
-                            ,fontWeight: FontWeight.w700,
-                          )),
-                        ):Container(
-
-                          child: Text('已取消',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
+                        model.payStatus==1?Text('已支付 HK\$${model.amount}',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
                           ,fontWeight: FontWeight.w700,
-                          ),),
-                        ),
+                        )):Text('未支付 HK\$${model.amount}',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
+                        ,fontWeight: FontWeight.w700,
+                        ),),
                         TextButton(onPressed: (){
                           Get.dialog(
                            Center(
-                             child: Container(
+                             child: SizedBox(
                                width: 150,
                                height: 150,
                                child: CachedNetworkImage(
                                  imageUrl: "${Address.homeHost}/storage/${model.image}",
-                                 placeholder: (context, url) => CircularProgressIndicator(),
-                                 errorWidget: (context, url, error) => Icon(Icons.error),
+                                 placeholder: (context, url) => const CircularProgressIndicator(),
+                                 errorWidget: (context, url, error) => const Icon(Icons.error),
                                  fit: BoxFit.cover,
                                  width: 150,height: 150,
                                ),

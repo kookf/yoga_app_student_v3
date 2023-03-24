@@ -1,5 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:date_picker_timeline/date_picker_widget.dart';
+import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
@@ -10,8 +11,8 @@ import 'package:yoga_student_app/pages/classroom_modules/classroom_model.dart';
 import 'package:yoga_student_app/pages/sign_class_page.dart';
 import 'package:yoga_student_app/router/app_pages.dart';
 import '../../components/custom_footer.dart';
-import 'classroom_calendar_page.dart';
 import 'classroom_controller.dart';
+
 
 class ClassroomView extends GetView{
 
@@ -25,10 +26,115 @@ class ClassroomView extends GetView{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
 
+    return Scaffold(
+      appBar: AppBar(
+
+      ),
       body: GetBuilder<ClassroomController>(builder: (_){
-        return SafeArea(child: NestedScrollView(
+        return EasyRefresh.custom(
+          header: MaterialHeader(),
+          footer: MaterialFooter1(),
+          controller: controller.easyRefreshController,
+          onRefresh: ()=>controller.onRefresh(),
+          onLoad: ()=>controller.onLoad(),
+          // emptyWidget:controller.dataArr.isEmpty?const Center(child:Text('暫無課程')):null,
+          slivers: [
+            SliverToBoxAdapter(
+              child: Container(
+                height:200,
+                // color: Colors.yellowAccent,
+                child: buildAppBarBackground(context),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                height: 45,
+                // color: Colors.red,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CustomDropdownButton2(
+                      // dropdownWidth: Get.width-50,
+                      buttonWidth: 150,
+                      hint: '',
+                      dropdownItems:controller.teacherNameArr,
+                      value: controller.selectedValue,
+                      icon: const Icon(Icons.arrow_drop_down,size: 25,),
+                      buttonDecoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(8))
+                      ),
+                      onChanged: (value) {
+                        controller.filterTeacher(value!);
+
+                        // controller.selectedValue = value!;
+                        // var data = value.split('-')[1];
+                        // controller.requestDataWithCourseList(teacherId: controller.teacherIdArr[int.parse(data)]);
+                        // controller.update();
+                      },
+                    ),
+                    // Text('全部地點',style: TextStyle(color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                    // Container(
+                    //   height: 25,
+                    //   width: 0.5,
+                    //   color: Colors.black,
+                    // ),
+                    //   Text('全部課程',style: TextStyle(color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                      Container(
+                        height: 25,
+                        width: 0.5,
+                        color: Colors.black,
+                      ),
+                    CustomDropdownButton2(
+                      // dropdownWidth: Get.width-50,
+                      buttonWidth: 150,
+                      hint: '',
+                      dropdownItems: controller.courseNameArr,
+                      value: controller.selectedCourseValue,
+                      icon: const Icon(Icons.arrow_drop_down,size: 25,),
+                      buttonDecoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8))
+                      ),
+                      onChanged: (value) {
+                        controller.selectedCourseValue = value!;
+                        var data = value.split('-')[1];
+                        controller.courseId = controller.courseIdArr[int.parse(data)];
+                        controller.requestDataWithCourseList();
+                        controller.update();
+                        // selectedValue = value;
+                        // controller.update();
+                      },
+                    ),
+                    // GestureDetector(
+                    //   onTap: ()async{
+                    //    controller.jumpToTeacherList();
+                    //   },
+                    //   child:Text(controller.teacherName,style: TextStyle(color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                    // )
+
+                  ],
+                ),
+              ),
+            ),
+            _buildStickBox(), // tag1
+            controller.dataArr.isEmpty?SliverToBoxAdapter(
+              child: Container(
+                height: 200,
+                alignment: Alignment(0, 0.1),
+                child: Text('暫無信息'),
+              ),
+            ): SliverList(
+              delegate: _mySliverChildBuilderDelegate(),
+            ),
+          ],
+        );
+      }),
+    );
+
+    return Scaffold(
+      body: GetBuilder<ClassroomController>(builder: (_){
+        return SafeArea(
+          child: NestedScrollView(
           controller: controller.scrollController,
           headerSliverBuilder: _headerSliverBuilder,
           body: Column(
@@ -51,7 +157,7 @@ class ClassroomView extends GetView{
                         var timeFormat = DateFormat("yyyy-MM-dd");
                         var timeStr = timeFormat.format(date);
                         controller.startDay = timeStr;
-                        controller.requestDataWithCourseList(startDay:timeStr);
+                        controller.requestDataWithCourseList();
                       },
                     ),
                   ),
@@ -90,7 +196,7 @@ class ClassroomView extends GetView{
           slivers: [
             SliverToBoxAdapter(
               child: SizedBox(
-                height: 60,
+                height: 50,
                 // color: Colors.red,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -194,15 +300,18 @@ class ClassroomView extends GetView{
     return SliverChildBuilderDelegate(
           (BuildContext context, int index) {
             ///
-
         ClassRoomList model = controller.dataArr[index];
-        return GestureDetector(
-          onTap: (){
+        return  GestureDetector(
+          onTap: ()async{
             // Get.to(SignClassPage());
+            var data = await Get.toNamed(AppRoutes.classtime,arguments: model);
+            if(data == 'refresh'){
+              controller.requestDataWithCourseList();
+            }
           },
           child: Container(
             margin: const EdgeInsets.only(left: 15,right: 15,top: 0,bottom: 15),
-            height: 260,
+            height: 280,
             color: AppColor.bgColor,
             child: Stack(
               children: [
@@ -213,7 +322,7 @@ class ClassroomView extends GetView{
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
-                    height: 235,
+                    height: 255,
                     width: Get.width,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -279,7 +388,7 @@ class ClassroomView extends GetView{
                                   ),
                                   child:  InkWell(
                                     onTap: (){
-                                      Get.to(SignClassPage(courseTimeId: model.courseTimeId,teacherName: model.teacherName,));
+                                      // Get.to(SignClassPage(courseTimeId: model.courseTimeId,teacherName: model.teacherName,));
                                     },
                                     child: const Text('已預約',style: TextStyle(color: Colors.white),),),
                                 ),
@@ -357,4 +466,69 @@ class ClassroomView extends GetView{
     );
   }
 
+  Widget _buildStickBox() {
+    return SliverPersistentHeader(
+      pinned: true,
+      delegate: FixedPersistentHeaderDelegate(height: 100,controller: controller),
+    );
+  }
+
+}
+
+
+class FixedPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final double height;
+  ClassroomController controller;
+  FixedPersistentHeaderDelegate({required this.height,required this.controller});
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      height: height,
+      // alignment: Alignment.center,
+      color: Colors.white,
+      child:Row(
+        children: [
+          Container(
+            margin: const EdgeInsets.only(left: 15,),
+            width: Get.width-100,
+            child: DatePicker(
+              DateTime.now(),
+              // initialSelectedDate:controller.initDatetime,
+              height: 90,
+              selectionColor: AppColor.registerBgColor,
+              selectedTextColor:AppColor.themeTextColor,
+              locale: "zh_HK",
+              onDateChange: (date) {
+                // New date selected
+                var timeFormat = DateFormat("yyyy-MM-dd");
+                var timeStr = timeFormat.format(date);
+                controller.startDay = timeStr;
+                controller.requestDataWithCourseList();
+              },
+            ),
+          ),
+          const SizedBox(width: 15,),
+          GestureDetector(
+            onTap: ()async{
+              controller.jumpToCalendar();
+            },
+            child:Image.asset('images/ic_classroom_right.png',width: 45,height: 45,),
+          )
+        ],
+      ),
+    );
+  }
+
+  @override
+  double get maxExtent => height;
+
+  @override
+  double get minExtent => height;
+
+  @override
+  bool shouldRebuild(covariant FixedPersistentHeaderDelegate oldDelegate) {
+    return oldDelegate.height != height;
+  }
 }
