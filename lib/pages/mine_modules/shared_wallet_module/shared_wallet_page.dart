@@ -10,6 +10,7 @@ import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
 import '../../../common/colors.dart';
 import '../../../components/custom_footer.dart';
+import '../../payment_method_modules/payment_method_page.dart';
 
 class SharedWalletPage extends StatefulWidget {
   const SharedWalletPage({Key? key}) : super(key: key);
@@ -88,7 +89,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
         dataArr.addAll(model.data!.list!);
       } else {
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暫無更多');
+
       }
     }
     setState(() {});
@@ -156,7 +157,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                       children: [
                         Container(
                           margin: EdgeInsets.only(left: 15),
-                          child: Text('钱包朋友'),
+                          child: Text('錢包朋友'),
                         ),
                         Container(
                           height: 75,
@@ -198,6 +199,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                                   },
                                   child: Container(
                                     margin: EdgeInsets.only(top: 10),
+                                    padding: EdgeInsets.only(left: 10),
                                     child: Image.asset(
                                       'images/ic_add.png',
                                       width: 55,
@@ -232,13 +234,12 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
   Widget buildAppBarBackground(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        Container(
           width: Get.width,
           // color: Colors.red,
-          height: 260,
+          height: 380,
           child: Stack(
             children: [
-
               Container(
                 width: Get.width,
                 child: Image.asset(
@@ -247,7 +248,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                 ),
               ),
               Align(
-                alignment: const Alignment(0, -0.25),
+                alignment: const Alignment(0, -0.55),
                 child: Image.asset(
                   'images/login_log.png',
                   width: 150,
@@ -256,7 +257,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
               ),
               Align(
                 child: Container(
-                  margin: const EdgeInsets.only(top: 150),
+                  margin: const EdgeInsets.only(top: 90),
                   child: Text(
                     '共享錢包',
                     style: TextStyle(
@@ -267,20 +268,30 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                 ),
               ),
               Align(
-                alignment: const Alignment(0, 6),
+                alignment: const Alignment(0, 1.3),
                 child: Image.asset(
                   'images/ic_duojinbi.png',
                   width: 210,
                   height: 210,
                 ),
               ),
+              Align(
+                alignment: const Alignment(0, 1.0),
+                child: MaterialButton(onPressed: (){
+                  Get.to(const PayMethodPage());
+                },
+                  color: AppColor.themeTextColor,elevation: 0,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),minWidth: 120,
+                  child: const Text('充值',style: TextStyle(color: Colors.white),),) ,
+              ),
               GestureDetector(
                 onTap: (){
                   Get.back();
                 },
                 child:Container(
-                  width: 100,
-                  color: Colors.transparent,
+                  width: 50,
                   margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top+15,left: 15),
                   child:const Align(
                     alignment:Alignment.topLeft,
@@ -290,9 +301,6 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
               ),
             ],
           ),
-        ),
-        const SizedBox(
-          height: 70,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -307,6 +315,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
               ),
             ),
             Container(
+              padding: EdgeInsets.only(top: 10,bottom: 15),
               child: RichText(
                 text: TextSpan(children: [
                   TextSpan(
@@ -326,13 +335,18 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
             TextButton(
                 onPressed: () {
                   // requestDataWithRemoveWallet(id)
+                  if(_sharedWalletModel?.data?.owner ==null){
+                    BotToast.showText(text: '暫無共享人員');
+                    return;
+                  }
                   isUnite = !isUnite;
                   setState(() {});
                 },
                 child: Text(
                   '解绑钱包',
                   style:
-                      TextStyle(fontSize: 16, color: AppColor.themeTextColor),
+                      TextStyle(fontSize: 18,
+                          color: AppColor.themeTextColor,fontWeight: FontWeight.w700),
                 ))
           ],
         ),
@@ -447,7 +461,10 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                                             }).show(context);
                                       },
                                       child: Container(
+
+                                        color: Colors.red,
                                         margin: EdgeInsets.only(top: 10),
+                                        padding: EdgeInsets.only(left: 15),
                                         child: Image.asset(
                                           'images/ic_add.png',
                                           width: 55,
@@ -582,30 +599,31 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '金額 ${model.amount}',
+                          '${model.type == 1 ? '充值' : model.type == 2 ? '訂閲' : model.type == 3 ? '管理员添加' : model.type == 12 ? '客户取消订阅' : model.type == 13 ? '管理员取消订阅' : model.type == 21 ? '钱包过期清除' : '共享钱包过期清除'}',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
-                              fontSize: 23,
+                              fontSize: 21,
                               color: AppColor.themeTextColor),
                         ),
                         Text(
-                          '類型：${model.type == 1 ? '充值' : model.type == 2 ? '訂閲' : model.type == 3 ? '管理员添加' : model.type == 12 ? '客户取消订阅' : model.type == 13 ? '管理员取消订阅' : model.type == 21 ? '钱包过期清除' : '共享钱包过期清除'}',
+                          '${model.createdAt}',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 17,
                               color: AppColor.themeTextColor),
                         ),
+
                         // Text('日期：${model.createdAt}',style: TextStyle(fontWeight: FontWeight.w700,
                         //     fontSize: 17,color: AppColor.themeTextColor),),
                       ],
                     ),
                     Container(
                       height: 45,
-                      // width: 130,
+                      width: 100,
                       padding: const EdgeInsets.all(5),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
@@ -613,8 +631,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
                       ),
-                      child: Text(
-                        '      已購買與 \n ${model.createdAt}',
+                      child: Text('${model.amount}',
                         style: TextStyle(color: Colors.white, fontSize: 13),
                       ),
                     )

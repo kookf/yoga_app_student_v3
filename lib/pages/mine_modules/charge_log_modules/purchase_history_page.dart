@@ -50,7 +50,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
         dataArr.addAll(model.data!.list!);
       }else{
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暫無更多');
+
       }
     }
     setState(() {

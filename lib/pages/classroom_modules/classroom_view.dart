@@ -311,7 +311,7 @@ class ClassroomView extends GetView{
           },
           child: Container(
             margin: const EdgeInsets.only(left: 15,right: 15,top: 0,bottom: 15),
-            height: 280,
+            height: 270,
             color: AppColor.bgColor,
             child: Stack(
               children: [
@@ -322,7 +322,7 @@ class ClassroomView extends GetView{
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                     ),
-                    height: 255,
+                    height: 240,
                     width: Get.width,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -345,14 +345,14 @@ class ClassroomView extends GetView{
                               color: AppColor.themeTextColor,fontWeight: FontWeight.w700
                           ),),
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10,left: 15),
-
-                          child: Text('地址：${model.address}',style:
-                          appThemeData.textTheme.bodyText1!.copyWith(
-                              color: AppColor.themeTextColor,fontWeight: FontWeight.w700,
-                          ),maxLines: 1,overflow: TextOverflow.ellipsis,),
-                        ),
+                        // Container(
+                        //   margin: const EdgeInsets.only(top: 10,left: 15),
+                        //
+                        //   child: Text('地址：${model.address}',style:
+                        //   appThemeData.textTheme.bodyText1!.copyWith(
+                        //       color: AppColor.themeTextColor,fontWeight: FontWeight.w700,
+                        //   ),maxLines: 1,overflow: TextOverflow.ellipsis,),
+                        // ),
                         Container(
                           margin: const EdgeInsets.only(top: 10,left: 15),
 
@@ -449,7 +449,7 @@ class ClassroomView extends GetView{
                       children: [
                         Image.asset('images/header.png',width: 55,height: 55,),
                         Container(
-                          margin: const EdgeInsets.only(top: 15,right: 15),
+                          margin: const EdgeInsets.only(top: 35,right: 15),
                           child: Text('時間：${model.startTime} - ${model.endTime}',
                             style: TextStyle(fontWeight: FontWeight.w700,fontSize: 16,
                                 color: AppColor.themeTextColor),),

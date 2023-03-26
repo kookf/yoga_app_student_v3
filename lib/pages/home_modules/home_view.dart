@@ -57,11 +57,15 @@ class HomeView extends GetView{
                   child: Column(
                     children: [
                       Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(8))
+                        ),
+                        clipBehavior: Clip.hardEdge,
                         height: 200,
                         // color: Colors.red,
-                        margin: const EdgeInsets.only(left: 15,right: 15,top: 0),
+                        margin: const EdgeInsets.only(left: 15,right: 15,top: 15),
                         child: Swiper(itemCount: controller.homeIndexModel?.data?.banner?.length??3,
-                          autoplay: false,
+                          autoplay: true,
                           pagination: SwiperPagination(
                               alignment: Alignment.bottomCenter,
                               builder: DotSwiperPaginationBuilder(
@@ -71,13 +75,20 @@ class HomeView extends GetView{
                           ),
                           itemBuilder: (BuildContext context,int index){
                             return  Container(
-                              // color: Colors.red,
-                              padding: const EdgeInsets.all(15),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  // borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              clipBehavior: Clip.hardEdge,
+                              padding: const EdgeInsets.all(0),
                               child: CachedNetworkImage(
-                                imageUrl: '${Address.homeHost}${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
-                                placeholder: (context, url) => const CircularProgressIndicator(),
+                                imageUrl: '${Address.homeHost}'
+                                    '${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
+                                placeholder: (context, url) => const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
                                 errorWidget: (context, url, error) => const Icon(Icons.error),
-                                fit: BoxFit.contain,
+                                fit: BoxFit.cover,
                               ),
                             );
                           },),
@@ -91,17 +102,31 @@ class HomeView extends GetView{
 
                       Container(
                         height: 300,
-                        margin: const EdgeInsets.only(left: 25,right: 25,top: 0),
+                        // color: Colors.red,
+                        margin: const EdgeInsets.only(left: 5,right: 5,top: 0),
                         child: CustomScrollView(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           slivers: [
-                            SliverToBoxAdapter(
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 5,right: 5),
-                                child: Image.asset('images/home_banner1.png'),
-                              ),
-                            ),
+                            // SliverToBoxAdapter(
+                            //   child: Container(
+                            //     margin: EdgeInsets.only(left: 15,right: 15,top: 15),
+                            //     decoration: BoxDecoration(
+                            //       color: Colors.yellowAccent,
+                            //       borderRadius: BorderRadius.all(Radius.circular(8)),
+                            //     ),
+                            //     clipBehavior: Clip.hardEdge,
+                            //     child: CachedNetworkImage(
+                            //       imageUrl: '${Address.homeHost}'
+                            //           '${controller.homeIndexModel?.data?.notice![0].picUrl}',
+                            //       placeholder: (context, url) => const Center(
+                            //         child: CircularProgressIndicator(),
+                            //       ),
+                            //       errorWidget: (context, url, error) => const Icon(Icons.error),
+                            //       fit: BoxFit.cover,
+                            //     ),
+                            //   ),
+                            // ),
                             SliverList(delegate: _mySliverChildBuildList())
                           ],
                         ),
@@ -169,14 +194,14 @@ class HomeView extends GetView{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: const EdgeInsets.only(left: 5),
+                  padding: const EdgeInsets.only(left: 15),
                   alignment: Alignment.centerLeft,
                   height: 50,
                     child: Text('${controller.homeIndexModel?.data?.notice?[index].title}',style: TextStyle(fontWeight: FontWeight.w600,
                       color: AppColor.themeTextColor),),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(right: 5),
+                  padding: const EdgeInsets.only(right: 15),
                   alignment: Alignment.centerLeft,
                   height: 50,
                   child: Text('10/30/2023',style: TextStyle(fontWeight: FontWeight.w600,

@@ -45,7 +45,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
         dataArr.addAll(model.data!.list!);
       } else {
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暫無更多');
+
       }
     }
     setState(() {});
@@ -100,16 +100,16 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
       elevation: 0,
       // backgroundColor:AppColor.themeColor,
       snap: false,
-      actions: [
-        TextButton(
-            onPressed: () {
-              Get.to(const PayMethodPage());
-            },
-            child: Text(
-              '充值',
-              style: TextStyle(color: AppColor.themeColor),
-            ))
-      ],
+      // actions: [
+      //   TextButton(
+      //       onPressed: () {
+      //         Get.to(const PayMethodPage());
+      //       },
+      //       child: Text(
+      //         '充值',
+      //         style: TextStyle(color: AppColor.themeColor),
+      //       ))
+      // ],
       iconTheme: const IconThemeData(color: Colors.black),
       flexibleSpace: FlexibleSpaceBar(
         title: Text(
@@ -133,7 +133,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
         SizedBox(
           width: Get.width,
           // color: Colors.red,
-          height: 400,
+          height: 390,
           child: Stack(
             children: [
               SizedBox(
@@ -171,16 +171,35 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                   height: 130,
                 ),
               ),
+              Align(
+                alignment: const Alignment(0, 1),
+                child: MaterialButton(onPressed: (){
+                  Get.to(const PayMethodPage());
+
+                },
+                  color: AppColor.themeTextColor,elevation: 0,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: const Text('充值',style: TextStyle(color: Colors.white),),minWidth: 120,) ,
+              )
+
             ],
           ),
         ),
-        Text(
-          '代幣 ${userModel?.data?.balance ?? '0'}',
-          style: TextStyle(
-              color: AppColor.themeTextColor,
-              fontSize: 30,
-              fontWeight: FontWeight.w700),
-        ),
+       Row(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: [
+           Text(
+             '代幣 ${userModel?.data?.balance ?? '0'}',
+             style: TextStyle(
+                 color: AppColor.themeTextColor,
+                 fontSize: 30,
+                 fontWeight: FontWeight.w700),
+           ),
+
+         ],
+       ),
         userModel?.data?.walletExpireAt == null
             ? SizedBox()
             : Container(
@@ -215,7 +234,24 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                       ? const Center(child: Text('暫無信息'))
                       : null,
                   slivers: [
-                SliverList(
+                    SliverToBoxAdapter(
+                      child:   Container(
+                        height: 60,
+                        color: AppColor.themeColor,
+                        padding: const EdgeInsets.only(left: 75,right: 45),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('類型',style: TextStyle(fontSize: 20,
+                                color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                            Text('代幣',style: TextStyle(fontSize: 20,
+                                color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    SliverList(
                   delegate: _mySliverChildBuilderDelegate(),
                 ),
               ])),
@@ -248,31 +284,32 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '金額:${model.amount}',
+                          '${model.type==1?'充值':model.type==2?'訂閲':model.type==3?'管理员添加'
+                              :model.type==12?'客户取消订阅':model.type==13?'管理员取消订阅':model.type==21?'钱包过期清除':
+                          '共享钱包过期清除'
+                          }',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
-                              fontSize: 23,
+                              fontSize: 20,
                               color: AppColor.themeTextColor),
                         ),
                         Text(
-                          '類型：${model.type==1?'充值':model.type==2?'訂閲':model.type==3?'管理员添加'
-                          :model.type==12?'客户取消订阅':model.type==13?'管理员取消订阅':model.type==21?'钱包过期清除':
-                              '共享钱包过期清除'
-                          }',
+                          '${model.createdAt}',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 17,
                               color: AppColor.themeTextColor),
                         ),
+
                       ],
                     ),
                     Container(
                       height: 45,
-                      // width: 130,
+                      width: 90,
                       padding: const EdgeInsets.all(5),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
@@ -280,8 +317,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
                       ),
-                      child: Text(
-                        '        已購買與 \n ${model.createdAt}',
+                      child: Text('${model.amount}',
                         style:
                             const TextStyle(color: Colors.white, fontSize: 13),
                       ),

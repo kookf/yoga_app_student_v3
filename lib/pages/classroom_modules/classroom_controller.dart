@@ -66,14 +66,14 @@ class ClassroomController extends GetxController{
         dataArr.addAll(model.data!.list!);
       }else{
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暫無更多');
+
       }
     }
     update();
   }
 
   String selectedValue = '全部教練-0';
-  String selectedCourseValue = '請選擇課堂-0';
+  String selectedCourseValue = '所有課堂-0';
 
   requestDataWithTeacher()async{
     var params = {
@@ -97,7 +97,7 @@ class ClassroomController extends GetxController{
 
   }
 
-  List <String>courseNameArr = ['請選擇課堂-0'];
+  List <String>courseNameArr = ['所有課堂-0'];
   List <int>courseIdArr = [];
 
   requestDataWithCourseName()async{

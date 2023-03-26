@@ -46,7 +46,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
         dataArr.addAll(model.data!.list!);
       }else{
         easyRefreshController.finishLoad(noMore: true);
-        BotToast.showText(text: '暫無更多');
+
       }
     }
     setState(() {
@@ -325,7 +325,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
                             fontSize: 16,color: AppColor.themeTextColor),),
                         SizedBox(
                           width: Get.width -150,
-                          child: Text('地址：${model.address}',style: TextStyle(fontWeight: FontWeight.w700,
+                          child: Text('代幣：${model.address}',style: TextStyle(fontWeight: FontWeight.w700,
                              fontSize: 16,color: AppColor.themeTextColor),maxLines: 1,overflow: TextOverflow.ellipsis,),
                         ),
                         TextButton(onPressed: (){
