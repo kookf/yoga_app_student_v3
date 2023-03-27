@@ -113,7 +113,7 @@ class MessagePage extends GetView{
               fontSize: 19,fontWeight: FontWeight.w700),),
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 25,top: 5),
+              margin: const EdgeInsets.only(left: 25,top: 5,right: 15),
               child: Text('${model.msg}',style: TextStyle(color: HexColor('#D15299'),
                   fontSize: 19,fontWeight: FontWeight.w700),),
             ),

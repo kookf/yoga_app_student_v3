@@ -45,6 +45,7 @@ class ClassRoomList {
   int? subscribeUser;
   int? signIn;
   String? teacherAvatar;
+  var gold;
 
   ClassRoomList(
       {this.courseTimeId,
@@ -60,6 +61,7 @@ class ClassRoomList {
         this.subscribeStatus,
         this.signIn,
         this.teacherAvatar,
+        this.gold,
         this.subscribeUser});
 
   ClassRoomList.fromJson(Map<String, dynamic> json) {
@@ -76,6 +78,7 @@ class ClassRoomList {
     subscribeStatus = json['subscribe_status'];
     subscribeUser = json['subscribe_user'];
     teacherAvatar = json['teacher_avatar'];
+    gold = json['gold'];
     signIn = json['sign_in'];
   }
 

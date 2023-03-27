@@ -11,7 +11,7 @@ import 'package:yoga_student_app/services/dio_manager.dart';
 import '../../../common/colors.dart';
 import '../../../components/custom_footer.dart';
 import '../../payment_method_modules/payment_method_page.dart';
-
+import 'package:get/get.dart';
 class SharedWalletPage extends StatefulWidget {
   const SharedWalletPage({Key? key}) : super(key: key);
 
@@ -47,6 +47,10 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
     var json =
         await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
     BotToast.showText(text: json['message']);
+    if(json['code'] ==200){
+
+      Get.back();
+    }
     requestDataWithWalletUser();
     requestDataWithWalletLog();
   }
@@ -58,10 +62,13 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
         await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
     print('remove == ${json}');
     if (json['code'] == 200) {
+
       BotToast.showText(text: '移除成功');
-      requestDataWithWalletUser();
+      Get.back();
+      Get.back();
+      // requestDataWithWalletUser();
     }
-    requestDataWithWalletUser();
+    // requestDataWithWalletUser();
   }
 
   /// 共享錢包充值記錄
@@ -199,7 +206,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                                   },
                                   child: Container(
                                     margin: EdgeInsets.only(top: 10),
-                                    padding: EdgeInsets.only(left: 10),
+                                    padding: EdgeInsets.only(left: 10,bottom: 15),
                                     child: Image.asset(
                                       'images/ic_add.png',
                                       width: 55,
@@ -257,7 +264,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
               ),
               Align(
                 child: Container(
-                  margin: const EdgeInsets.only(top: 90),
+                  margin: const EdgeInsets.only(top: 70),
                   child: Text(
                     '共享錢包',
                     style: TextStyle(

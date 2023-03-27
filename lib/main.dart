@@ -44,8 +44,6 @@ class _MyAppState extends State<MyApp> {
 
   /// 百度地图的appkey
   static const String  appKey = 'IUkP2NbP8VOrlpl5tbEKAPszvk1w6GGt';
-
-
   /// 极光注册
   // connect()async{
   //

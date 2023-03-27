@@ -1,4 +1,0 @@
-#Thu Mar 23 11:34:33 CST 2023
-base.0=D\:\\yoga_app_student\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

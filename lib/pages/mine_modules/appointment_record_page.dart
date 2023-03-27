@@ -325,7 +325,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
                             fontSize: 16,color: AppColor.themeTextColor),),
                         SizedBox(
                           width: Get.width -150,
-                          child: Text('代幣：${model.address}',style: TextStyle(fontWeight: FontWeight.w700,
+                          child: Text('代幣：${model.gold}',style: TextStyle(fontWeight: FontWeight.w700,
                              fontSize: 16,color: AppColor.themeTextColor),maxLines: 1,overflow: TextOverflow.ellipsis,),
                         ),
                         TextButton(onPressed: (){

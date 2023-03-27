@@ -90,90 +90,115 @@ class _PayMethodPageState extends State<PayMethodPage> {
         backgroundColor: AppColor.themeColor,
         title: const Text('付款方式'),
       ),
-      body: Column(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              color: AppColor.themeColor,
-              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(15),bottomRight: Radius.circular(20)),
-            ),
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Container(
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(18))
-                    ),
-                    width: Get.width-100,
-                    height: 35,
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.only(left: 15),
-                    child: TextField(
-                      controller: codeTextEditingController,
-                      style: const TextStyle(fontSize: 18),
-                      decoration: InputDecoration(
-                        isCollapsed: true,
-                        border: InputBorder.none,
-                        hintText: '輸入優惠碼',
-                        hintStyle: TextStyle(color: AppColor.themeTextColor,fontSize: 18),
+      body: SafeArea(
+        child:Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: AppColor.themeColor,
+                borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(15),bottomRight: Radius.circular(20)),
+              ),
+              height: 50,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(18))
+                      ),
+                      width: Get.width-100,
+                      height: 35,
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.only(left: 15),
+                      child: TextField(
+                        controller: codeTextEditingController,
+                        style: const TextStyle(fontSize: 18),
+                        decoration: InputDecoration(
+                          isCollapsed: true,
+                          border: InputBorder.none,
+                          hintText: '輸入優惠碼',
+                          hintStyle: TextStyle(color: AppColor.themeTextColor,fontSize: 18),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                TextButton(onPressed: (){
-                  print(codeTextEditingController.text);
-                  if(codeTextEditingController.text.isEmpty){
-                    BotToast.showText(text: '請輸入優惠碼');
-                    return;
-                  }
-                  requestDataWithChargeCode(codeTextEditingController.text);
-                }, child: Text('使用',style: TextStyle(color: AppColor.themeTextColor),))
-              ],
-            ),
-          ),
-
-          Expanded(child: CustomScrollView(
-            slivers: [
-              SliverList(delegate: _mySliverChildBuilderDelegate())
-            ],
-          )),
-          const SizedBox(height: 15,),
-          Center(
-            child: Text('如欲使用Payme付款可與客服聯繫',style: TextStyle(color: AppColor.themeTextColor),),
-          ),
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(top: 15),
-              width: Get.width-30,
-              child: Row(
-                children: [
-                  Container(
-                    height: 24,
-                    width: 5,
-                    color: HexColor('#343679'),
-                  ),
-                  const SizedBox(width: 3,),
-                  Text('退款政策',style: TextStyle(fontSize: 21,color: AppColor.themeTextColor),),
+                  TextButton(onPressed: (){
+                    print(codeTextEditingController.text);
+                    if(codeTextEditingController.text.isEmpty){
+                      BotToast.showText(text: '請輸入優惠碼');
+                      return;
+                    }
+                    requestDataWithChargeCode(codeTextEditingController.text);
+                  }, child: Text('使用',style: TextStyle(color: AppColor.themeTextColor),))
                 ],
-              )
+              ),
             ),
-          ),
-          Container(
 
-              margin: const EdgeInsets.only(top: 15,left: 35,right: 35),
-              child: Column(
-                children: [
-                  Text('''momo yoga 可能惠威部分購買交易退款,視乎下述的退款的政策而定。您亦可以直接聯繫開發人員,
-如果朋友或家庭成員意外使用了您的賬戶購物，請在 momo yoga網站要求退款。
+            Expanded(child: CustomScrollView(
+              slivers: [
+                SliverList(delegate: _mySliverChildBuilderDelegate()),
+
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 15,),
+                      Center(
+                        child: Text('如欲使用Payme付款可與客服聯繫',style: TextStyle(color: AppColor.themeTextColor),),
+                      ),
+                      // Center(
+                      //   child: Container(
+                      //       margin: const EdgeInsets.only(top: 15),
+                      //       width: Get.width-30,
+                      //       child: Row(
+                      //         children: [
+                      //           Container(
+                      //             height: 24,
+                      //             width: 5,
+                      //             color: HexColor('#343679'),
+                      //           ),
+                      //           const SizedBox(width: 3,),
+                      //           Text('退款政策',style: TextStyle(fontSize: 21,color: AppColor.themeTextColor),),
+                      //         ],
+                      //       )
+                      //   ),
+                      // ),
+                      Container(
+
+                          margin: const EdgeInsets.only(top: 15,left: 35,right: 35),
+                          child: Column(
+                            children: [
+                              SelectableText('''
+請學員細閱以下提示：
+
+1. 學員已繳付的所有費用，不設退款或轉讓，不接受任何理由將課堂延期。MeMoYoga保留一切權利。如患上新冠病毒或任何病患，請出示有效醫生證明，否則一概不可取消課堂。
+
+2. 開課前24小時內不能取消課堂，如未能出席將課堂扣除。
+
+3. 學員身體如有傷患/舊患/懷孕等特別情況，需主動通知老師及學員已明白及同意MeMoYoga其免責機制。
+
+4. 請於開課前5-10分鐘前到達； 如遲到多於10分鐘，有機會被拒上課，以免影響其他學員練習。
+
+5. MeMoYoga有提供消毒物品，請學員於落堂後將瑜伽用具消毒。並請勿踐踏其他人學員的瑜伽蓆，以尊重瑜伽精神。
+
+6. 特殊情況下的上堂安排：如果上堂前2小時，懸掛8號風球或以上或者黑暴雨警告訊號生效，則會停課，已預約課堂可改期。
+
+7. 如有任何問題，可於辦公時間（11:00-21:00）Whatsapp: 5597 8331
+                              
+                              
                   ''',style: TextStyle(fontSize: 12,color: AppColor.themeTextColor),),
-                ],
-              )
-          ),
-        ],
-      ),
+                            ],
+                          )
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            )),
+          ],
+        ),
+      )
     );
   }
   SliverChildBuilderDelegate _mySliverChildBuilderDelegate(){

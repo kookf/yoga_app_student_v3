@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>yoga需要訪問您的相冊來上傳支付收據</string>
+	<string>yoga需要訪問您的相機來上傳頭像,支付收據</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>yoga需要訪問您的相冊來上傳支付收據</string>
+	<string>yoga需要訪問您的相冊來上傳頭像,上傳支付收據</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

@@ -239,6 +239,8 @@ class RegisterView extends GetView{
                   ),
                 ),
               ),
+              const SizedBox(height: 80,),
+
               Container(
                 // color: Colors.red,
                 alignment: Alignment.bottomCenter,
