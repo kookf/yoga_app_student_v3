@@ -90,14 +90,16 @@ class Notice {
   String? title;
   String? picUrl;
   String? body;
+  String? noticeTime;
 
-  Notice({this.id, this.title, this.picUrl, this.body});
+  Notice({this.id, this.title, this.picUrl, this.body,this.noticeTime});
 
   Notice.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     picUrl = json['pic_url'];
     body = json['body'];
+    noticeTime = json['notice_time'];
   }
 
   Map<String, dynamic> toJson() {

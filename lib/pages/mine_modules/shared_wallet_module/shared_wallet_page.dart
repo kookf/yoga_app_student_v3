@@ -278,7 +278,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
               Align(
                 alignment: const Alignment(0, 1.0),
                 child: MaterialButton(onPressed: (){
-                  Get.to(const PayMethodPage());
+                  Get.to(PayMethodPage(1));
                 },
                   color: AppColor.themeTextColor,elevation: 0,
                   shape: const RoundedRectangleBorder(

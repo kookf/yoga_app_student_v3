@@ -87,8 +87,8 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       resizeToAvoidBottomInset: false,
-
-      body: Column(
+      body: ListView(
+        padding: EdgeInsets.all(0),
         children: [
           Container(
               height: MediaQuery.of(context).padding.top+kToolbarHeight,
@@ -116,20 +116,22 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
           ),
           const SizedBox(height: 25,),
 
-          Container(
-            width: 160,
-            height: 160,
-            clipBehavior: Clip.hardEdge,
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(80))
-            ),
-            child: CachedNetworkImage(
-              imageUrl: widget.headerUrl,
-              placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
-              fit: BoxFit.cover,
-            ),
-          ),
+         Center(
+           child:  Container(
+             width: 160,
+             height: 160,
+             clipBehavior: Clip.hardEdge,
+             decoration: const BoxDecoration(
+                 borderRadius: BorderRadius.all(Radius.circular(80))
+             ),
+             child: CachedNetworkImage(
+               imageUrl: widget.headerUrl,
+               placeholder: (context, url) => const CircularProgressIndicator(),
+               errorWidget: (context, url, error) => const Icon(Icons.error),
+               fit: BoxFit.cover,
+             ),
+           ),
+         ),
           const SizedBox(height: 25,),
 
           GestureDetector(
@@ -193,14 +195,14 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
               ),
             ),
           ),
-          const SizedBox(height: 5,),
+          const SizedBox(height: 100,),
 
-          Expanded(child:Container(
+          Container(
 
             alignment: Alignment.bottomCenter,
             width: Get.width,
             child: Image.asset('images/yuyuebg.png',fit: BoxFit.fill,),
-          ),)
+          )
         ],
       ),
     );

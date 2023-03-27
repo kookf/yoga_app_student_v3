@@ -204,7 +204,7 @@ class HomeView extends GetView{
                   padding: const EdgeInsets.only(right: 15),
                   alignment: Alignment.centerLeft,
                   height: 50,
-                  child: Text('10/30/2023',style: TextStyle(fontWeight: FontWeight.w600,
+                  child: Text('${controller.homeIndexModel?.data?.notice?[index].noticeTime}',style: TextStyle(fontWeight: FontWeight.w600,
                       color: AppColor.themeTextColor),),
                 ),
 

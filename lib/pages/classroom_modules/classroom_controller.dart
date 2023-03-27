@@ -148,10 +148,11 @@ class ClassroomController extends GetxController{
     var data = await Get.to(const ClassRoomCalendarPage());
     if(data!=null){
       initDatetime = DateTime.parse(data);
+      startDay = data;
       print(initDatetime);
       print(DateTime.now());
       dataArr.clear();
-      requestDataWithCourseList(page: 1);
+      requestDataWithCourseList(page: 1,);
     }
     update();
   }

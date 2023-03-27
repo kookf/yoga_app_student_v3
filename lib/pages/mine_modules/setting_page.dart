@@ -60,6 +60,7 @@ class _SettingPageState extends State<SettingPage> {
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
     if(json['code'] == 200){
       BotToast.showText(text: '修改成功');
+      Get.back();
     }else{
       BotToast.showText(text: json['message']);
     }
@@ -76,8 +77,7 @@ class _SettingPageState extends State<SettingPage> {
     @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.all(0),
+      body: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
@@ -270,17 +270,18 @@ class _SettingPageState extends State<SettingPage> {
              ),
               SizedBox(height: 50,),
 
-              Container(
+              // Container(
+              //
+              //   alignment: Alignment.bottomCenter,
+              //   width: Get.width,
+              //   child: Image.asset('images/yuyuebg.png'),
+              // )
+
+              Expanded(child: Container(
                 // height: 200,
                 alignment: Alignment.bottomRight,
                 child: Image.asset('images/yuyuebg.png'),
-              )
-
-              // Expanded(child: Container(
-              //   // height: 200,
-              //   alignment: Alignment.bottomRight,
-              //   child: Image.asset('images/yuyuebg.png'),
-              // ))
+              ))
             ],
           ))
 
