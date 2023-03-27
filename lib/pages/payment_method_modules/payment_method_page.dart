@@ -11,7 +11,11 @@ import 'charge_code_model.dart';
 
 
 class PayMethodPage extends StatefulWidget {
-  const PayMethodPage({Key? key}) : super(key: key);
+
+
+  int type;
+
+  PayMethodPage(this.type,{Key? key}) : super(key: key);
 
   @override
   State<PayMethodPage> createState() => _PayMethodPageState();
@@ -126,7 +130,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
                     return;
                   }
                   requestDataWithChargeCode(codeTextEditingController.text);
-                }, child: Text('確定',style: TextStyle(color: AppColor.themeTextColor),))
+                }, child: Text('使用',style: TextStyle(color: AppColor.themeTextColor),))
               ],
             ),
           ),
@@ -176,7 +180,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
     return SliverChildBuilderDelegate((context, index) {
 
       PaymentMethodList model = paymentMethodModel!.data!.list![index];
-      return GestureDetector(
+      return model.isShareWallet==widget.type?GestureDetector(
         onTap: (){
 
           if(chargeCodeModel==null){
@@ -195,7 +199,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
             width: Get.width-20,
             margin: const EdgeInsets.only(top: 15),
             height: 70,
-            padding: const EdgeInsets.only(left: 5,right: 5),
+            padding: const EdgeInsets.only(left: 15,right: 5),
             decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
                 border: Border.all(
@@ -209,25 +213,27 @@ class _PayMethodPageState extends State<PayMethodPage> {
 
                 Row(
                     children: [
-                      Image.asset('images/ic_payment_fps.png',width: 35,height: 35,),
                      Column(
                        mainAxisAlignment: MainAxisAlignment.center,
                        crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
                          Text('${model.name}',style: TextStyle(fontSize: 20,color: AppColor.themeTextColor),),
-                         model.isShareWallet==0?Text('正常钱包充值',style: TextStyle(fontSize: 12,color: AppColor.themeTextColor),):
-                         Text('共享錢包充值',style: TextStyle(fontSize: 12,color: AppColor.themeTextColor),),
+                         // model.isShareWallet==0?Text('正常钱包充值',style: TextStyle(fontSize: 12,color: AppColor.themeTextColor),):
+                         // Text('共享錢包充值',style: TextStyle(fontSize: 12,color: AppColor.themeTextColor),),
+                         Row(children: [
+                           Image.asset('images/ic_mine_jinbi.png',width: 25,height: 25,),
+                           Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Text('${model.gold}'),
+                               chargeCodeModel?.data?.gold==null? const SizedBox():
+                               Text(' +${chargeCodeModel?.data?.gold}',style: const TextStyle(color: Colors.red),)
+                             ],
+                           ),
+                         ],)
                        ],
                      ),
-                      Image.asset('images/ic_mine_jinbi.png',width: 25,height: 25,),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('${model.gold}'),
-                         chargeCodeModel?.data?.gold==null? const SizedBox():
-                         Text('+${chargeCodeModel?.data?.gold}',style: const TextStyle(color: Colors.red),)
-                        ],
-                      )
+
                     ],
                   ),
 
@@ -251,7 +257,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
             ),
           ),
         ),
-      );
+      ):SizedBox();
     },childCount: paymentMethodModel?.data?.list?.length??0);
   }
 

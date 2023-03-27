@@ -31,6 +31,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
     if(json['code'] == 200){
       BotToast.showText(text: '修改成功');
+      Get.back();
     }else{
       BotToast.showText(text: json['message']);
     }
@@ -42,7 +43,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Column(
+      body: ListView(
+        padding: EdgeInsets.all(0),
         children: [
           Container(
               height: MediaQuery.of(context).padding.top+kToolbarHeight,
@@ -169,11 +171,13 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               ),
             ),
           ),
-          Expanded(child:Container(
+          Container(
             // height: 200,
-            alignment: Alignment.bottomRight,
+            padding: EdgeInsets.only(top: 200),
+            alignment: Alignment.bottomCenter,
             child: Image.asset('images/yuyuebg.png'),
-          ),)
+          ),
+
 
         ],
       ),

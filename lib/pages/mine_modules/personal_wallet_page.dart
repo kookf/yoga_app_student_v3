@@ -174,7 +174,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
               Align(
                 alignment: const Alignment(0, 1),
                 child: MaterialButton(onPressed: (){
-                  Get.to(const PayMethodPage());
+                  Get.to(PayMethodPage(0));
 
                 },
                   color: AppColor.themeTextColor,elevation: 0,
