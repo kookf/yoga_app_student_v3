@@ -18,6 +18,8 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - image_gallery_saver (1.5.0):
+    - Flutter
   - image_pickers (0.0.1):
     - AFNetworking
     - Flutter
@@ -44,6 +46,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_pickers (from `.symlinks/plugins/image_pickers/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
@@ -61,6 +64,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  image_gallery_saver:
+    :path: ".symlinks/plugins/image_gallery_saver/ios"
   image_pickers:
     :path: ".symlinks/plugins/image_pickers/ios"
   path_provider_foundation:
@@ -78,6 +83,7 @@ SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
   image_pickers: 075764ed041c5e3089fcd4d040384ecdb23840e0
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
@@ -89,4 +95,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

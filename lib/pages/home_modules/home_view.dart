@@ -161,13 +161,6 @@ class HomeView extends GetView{
                       Container(
                         child: Text('郵箱: ${controller.homeIndexModel?.data?.site?.mail}',style: TextStyle(color: AppColor.themeTextColor),),
                       ),
-
-               //        Text('''
-               // 地址:${controller.homeIndexModel?.data?.site?.address}
-               // Tel: ${controller.homeIndexModel?.data?.site?.tel}
-               // 郵箱: ${controller.homeIndexModel?.data?.site?.mail}
-               //  ''',style: TextStyle(color: AppColor.themeTextColor),),
-
                     ],
                   ),
                 ),

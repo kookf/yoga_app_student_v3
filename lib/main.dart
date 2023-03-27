@@ -8,7 +8,6 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:yoga_student_app/pages/bottom_nav_moudules/guide_page.dart';
 import 'package:yoga_student_app/router/app_routes.dart';
 import 'common/app_theme.dart';
-import 'demo2.dart';
 
 
 void main() {

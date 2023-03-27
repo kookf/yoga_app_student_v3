@@ -18,15 +18,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Q7KWy9pwsQuHBElInFS4xNM3HxY=
+		eAHS2yn38i52c7PRT8Mrc2/a4Z0=
 		</data>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		FT5oP4O9/FPWXVKlQSM0DRsOKB8=
+		iesdZG6MVwyOdAdd0yN0hUceock=
 		</data>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		2LqMj0lhk6zC22rI+wZs8erfBsU=
+		2an149lgjg30s0qrDIhFBs+s+LI=
 		</data>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7jJ3NmWul57mZ5pfrTEKKYFxL9E=
+		YgmM7zEL8PkOJ+TzqcSxzU+ocG4=
 		</data>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sTI8isNT7tkNGun2d0gjDAvY/F4=
+		05ldJJIOZ1bo9mM/UA+Vu+fE4xE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -684,22 +684,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FT5oP4O9/FPWXVKlQSM0DRsOKB8=
+			iesdZG6MVwyOdAdd0yN0hUceock=
 			</data>
 			<key>hash2</key>
 			<data>
-			wt5bKYmHiP2mQBv1ebdbzF6BpmZW5qM1kBpJibamuvQ=
+			W8GuV5UBcZkLlAXEB1sjN7AIpYyRM0q1VzdT5EBc20E=
 			</data>
 		</dict>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2LqMj0lhk6zC22rI+wZs8erfBsU=
+			2an149lgjg30s0qrDIhFBs+s+LI=
 			</data>
 			<key>hash2</key>
 			<data>
-			BYXLdkF9IW9vgePWKwJu4J7jqY5ehd1fcz8Q0yoAVdE=
+			QK+txb4WOAoSm6F4mKRbbKINYVuCasjWVy4ujD5yytY=
 			</data>
 		</dict>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -728,11 +728,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7jJ3NmWul57mZ5pfrTEKKYFxL9E=
+			YgmM7zEL8PkOJ+TzqcSxzU+ocG4=
 			</data>
 			<key>hash2</key>
 			<data>
-			nWDQVYvaH998FwMP0/FNeabZBTgAkv0gXh0tK4PPygk=
+			6AzvmQgpSK4cjHOQWH3Tl9eBR9RSixym8MhPoBLuPKA=
 			</data>
 		</dict>
 		<key>Modules/ZLPhotoBrowser.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -761,11 +761,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sTI8isNT7tkNGun2d0gjDAvY/F4=
+			05ldJJIOZ1bo9mM/UA+Vu+fE4xE=
 			</data>
 			<key>hash2</key>
 			<data>
-			2VH3Y7EZxJ65F+qAUPx4unfi8wu07DXQPL6aTp5BzM4=
+			OivSWrHGAY59UzQRX/YaTO8OSJmxOrd5EbTzStCqnN0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
