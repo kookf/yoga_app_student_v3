@@ -44,4 +44,13 @@ class RegisterController extends GetxController{
 
   }
 
+  tapClickRegister()async{
+
+    if(!GetUtils.isEmail(emailTextEditingController.text)){
+      BotToast.showText(text: '請輸入正確的郵箱');
+      return;
+    }
+    requestDataWithRegister();
+  }
+
 }

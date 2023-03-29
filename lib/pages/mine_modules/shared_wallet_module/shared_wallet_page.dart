@@ -8,6 +8,7 @@ import 'package:yoga_student_app/pages/mine_modules/shared_wallet_module/shared_
 import 'package:yoga_student_app/pages/mine_modules/shared_wallet_module/shared_wallet_model.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
+import 'package:yoga_student_app/utils/persistent_storage.dart';
 import '../../../common/colors.dart';
 import '../../../components/custom_footer.dart';
 import '../../payment_method_modules/payment_method_page.dart';
@@ -108,6 +109,12 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
     super.initState();
     requestDataWithWalletLog();
     requestDataWithWalletUser();
+    getAvatar();
+  }
+
+  String avatar = '';
+  getAvatar()async{
+    avatar =  await PersistentStorage().getStorage('avatar');
   }
 
   @override
@@ -144,11 +151,28 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Text('錢包主人'),
-                        Image.asset(
-                          'images/header3.png',
-                          width: 75,
-                          height: 75,
-                        )
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(35)),
+                          ),
+                          width: 70,
+                          height: 70,
+                          clipBehavior: Clip.hardEdge,
+                          child: CachedNetworkImage(
+                            imageUrl:
+                            '${Address.homeHost}/storage/${avatar}',
+                            placeholder: (context, url) =>
+                            const CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        // Image.asset(
+                        //   'images/header3.png',
+                        //   width: 75,
+                        //   height: 75,
+                        // )
                       ],
                     ),
                     SizedBox(

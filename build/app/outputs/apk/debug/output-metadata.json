@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.ykk.yoga_student_app",
+  "applicationId": "com.yk.yoga_student_app",
   "variantName": "debug",
   "elements": [
     {

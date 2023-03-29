@@ -38,6 +38,7 @@ class AppUtil {
         imageBytes = bytes.buffer.asUint8List();
       } else {
         /// 保存网络图片
+
         CachedNetworkImage image = CachedNetworkImage(imageUrl: imageUrl);
         BaseCacheManager manager = image.cacheManager ?? DefaultCacheManager();
         // Map<String, String>? headers = image.httpHeaders;
@@ -52,8 +53,8 @@ class AppUtil {
       final result = await ImageGallerySaver.saveImage(imageBytes);
 
       if (result == null || result == '') throw '图片保存失败';
-      BotToast.showText(text: '保存成功');
-      print("保存成功");
+      BotToast.showText(text: '已存儲到本地');
+      // print("保存成功${result.}");
     } catch (e) {
       BotToast.showText(text: '無效的圖片地址');
       print(e.toString());

@@ -84,7 +84,6 @@ class _ReceiptPageState extends State<ReceiptPage> {
             width: Get.width - 50,
             height: 45,
             child: MaterialButton(onPressed: (){
-
               AppUtil.saveImage('${Address.homeHost}/storage/${widget.model!.data!.image}');
 
             },color: Colors.white,elevation: 0,shape:RoundedRectangleBorder(

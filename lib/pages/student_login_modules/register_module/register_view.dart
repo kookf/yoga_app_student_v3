@@ -5,7 +5,6 @@ import 'package:yoga_student_app/pages/student_login_modules/register_module/reg
 import '../../../common/colors.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
-
 class RegisterView extends GetView{
 
   @override
@@ -223,9 +222,7 @@ class RegisterView extends GetView{
               ),
               const SizedBox(height: 25,),
               GestureDetector(
-                onTap: (){
-                  controller.requestDataWithRegister();
-                },
+                onTap: () =>controller.tapClickRegister(),
                 child: Center(
                   child:Container(
                     height: 45,

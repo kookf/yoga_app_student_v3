@@ -26,6 +26,7 @@ class MineController extends GetxController{
     userModel = UserModel.fromJson(json);
     await PersistentStorage().setStorage('name', userModel!.data!.name);
     await PersistentStorage().setStorage('id', userModel!.data!.id);
+    await PersistentStorage().setStorage('avatar', userModel!.data!.avatar);
 
     update();
   }
@@ -35,6 +36,9 @@ class MineController extends GetxController{
     var json = await DioManager().kkRequest(Address.loginOut,isShowLoad: true);
     if(json['code'] == 200){
       await PersistentStorage().removeStorage('token');
+      await PersistentStorage().removeStorage('avatar');
+      await PersistentStorage().removeStorage('name');
+      await PersistentStorage().removeStorage('id');
       // Get.off(StudentLoginView());
       Get.offNamed(AppRoutes.login);
     }

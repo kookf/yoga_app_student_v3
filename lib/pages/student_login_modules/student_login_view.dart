@@ -104,7 +104,7 @@ class StudentLoginView extends GetView{
                       ],
                       decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: '用戶名稱'
+                          hintText: '郵件'
                       ),
                     ),
                   ),

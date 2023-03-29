@@ -1,4 +1,7 @@
 class Address{
+
+  /// 測試服務
+  // static const String homeHost = 'http://118.190.37.156';
   /// 正式服务
   static const String homeHost = 'http://yoga.web3-it.net';
   static const String host = '/api/v1/public';

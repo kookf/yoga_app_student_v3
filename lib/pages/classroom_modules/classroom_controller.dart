@@ -140,6 +140,7 @@ class ClassroomController extends GetxController{
     selectedValue = value;
     var data = value.split('-')[1];
     teacherId = teacherIdArr[int.parse(data)];
+    startDay = '';
     requestDataWithCourseList();
     update();
   }

@@ -99,6 +99,7 @@ class ClassroomView extends GetView {
                           borderRadius: BorderRadius.all(Radius.circular(8))),
                       onChanged: (value) {
                         controller.selectedCourseValue = value!;
+                        controller.startDay = '';
                         var data = value.split('-')[1];
                         controller.courseId =
                             controller.courseIdArr[int.parse(data)];
@@ -569,7 +570,8 @@ class ClassroomView extends GetView {
                         Container(
                           margin: const EdgeInsets.only(top: 35, right: 15),
                           child: Text(
-                            '時間：${model.startTime} - ${model.endTime}',
+                            // '時間：${model.startTime} - ${model.endTime}',
+                            '時間：${model.times}分鐘',
                             style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 16,

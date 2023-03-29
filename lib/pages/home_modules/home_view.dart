@@ -57,7 +57,7 @@ class HomeView extends GetView{
                   child: Column(
                     children: [
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(8))
                         ),
                         clipBehavior: Clip.hardEdge,
@@ -74,21 +74,28 @@ class HomeView extends GetView{
                               )
                           ),
                           itemBuilder: (BuildContext context,int index){
-                            return  Container(
-                              decoration: BoxDecoration(
+                            return  GestureDetector(
+                              onTap: (){
+                                if(int.parse(controller.homeIndexModel!.data!.banner![index].url!) >=1){
+                                  Get.to(NoticePage(int.parse(controller.homeIndexModel!.data!.banner![index].url!)));
+                                }
+                              },
+                              child: Container(
+                                decoration: const BoxDecoration(
                                   color: Colors.white,
                                   // borderRadius: BorderRadius.all(Radius.circular(8))
-                              ),
-                              clipBehavior: Clip.hardEdge,
-                              padding: const EdgeInsets.all(0),
-                              child: CachedNetworkImage(
-                                imageUrl: '${Address.homeHost}'
-                                    '${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
-                                placeholder: (context, url) => const Center(
-                                  child: CircularProgressIndicator(),
                                 ),
-                                errorWidget: (context, url, error) => const Icon(Icons.error),
-                                fit: BoxFit.cover,
+                                clipBehavior: Clip.hardEdge,
+                                padding: const EdgeInsets.all(0),
+                                child: CachedNetworkImage(
+                                  imageUrl: '${Address.homeHost}'
+                                      '${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
+                                  placeholder: (context, url) => const Center(
+                                    child: CircularProgressIndicator(),
+                                  ),
+                                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                             );
                           },),
@@ -105,8 +112,8 @@ class HomeView extends GetView{
                         // color: Colors.red,
                         margin: const EdgeInsets.only(left: 5,right: 5,top: 0),
                         child: CustomScrollView(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
+                          // shrinkWrap: true,
+                          // physics: const NeverScrollableScrollPhysics(),
                           slivers: [
                             // SliverToBoxAdapter(
                             //   child: Container(
@@ -152,14 +159,25 @@ class HomeView extends GetView{
                       Image.asset('images/ic_location.png'),
                       const SizedBox(height: 10,),
 
-                      Container(
-                        child: Text('地址:${controller.homeIndexModel?.data?.site?.address}',style: TextStyle(color: AppColor.themeTextColor),),
+                      Center(
+                        child: Container(
+                          margin: EdgeInsets.only(top: 5),
+                          child: SelectableText('地址:${controller.homeIndexModel?.data?.site?.address}'
+                            ,style: TextStyle(color: AppColor.themeTextColor),
+                            textAlign: TextAlign.center,),
+                        ),
                       ),
                       Container(
-                        child: Text('Tel: ${controller.homeIndexModel?.data?.site?.tel}',style: TextStyle(color: AppColor.themeTextColor),),
+                        margin: EdgeInsets.only(top: 5),
+                        child: SelectableText('Tel: ${controller.homeIndexModel?.data?.site?.tel}',
+                          style: TextStyle(color: AppColor.themeTextColor),
+                          textAlign: TextAlign.center,),
                       ),
                       Container(
-                        child: Text('郵箱: ${controller.homeIndexModel?.data?.site?.mail}',style: TextStyle(color: AppColor.themeTextColor),),
+                        margin: EdgeInsets.only(top: 5),
+                        child: SelectableText('郵箱: ${controller.homeIndexModel?.data?.site?.mail}',
+                          style: TextStyle(color: AppColor.themeTextColor),
+                          textAlign: TextAlign.center,),
                       ),
                     ],
                   ),
@@ -190,14 +208,19 @@ class HomeView extends GetView{
                   padding: const EdgeInsets.only(left: 15),
                   alignment: Alignment.centerLeft,
                   height: 50,
-                    child: Text('${controller.homeIndexModel?.data?.notice?[index].title}',style: TextStyle(fontWeight: FontWeight.w600,
-                      color: AppColor.themeTextColor),),
+                    width: 150,
+                    // color: Colors.red,
+                    child: Text('${controller.homeIndexModel?.data?.notice?[index].title}',
+                      style: TextStyle(fontWeight: FontWeight.w600,
+                      color: AppColor.themeTextColor),maxLines: 1,overflow: TextOverflow.ellipsis,),
                 ),
                 Container(
                   padding: const EdgeInsets.only(right: 15),
                   alignment: Alignment.centerLeft,
                   height: 50,
-                  child: Text('${controller.homeIndexModel?.data?.notice?[index].noticeTime}',style: TextStyle(fontWeight: FontWeight.w600,
+                  // width: 100,
+                  child: Text('${controller.homeIndexModel?.data?.notice?[index].noticeTime}'
+                    ,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 12,
                       color: AppColor.themeTextColor),),
                 ),
 

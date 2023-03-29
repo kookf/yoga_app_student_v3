@@ -41,7 +41,7 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
       'type':'image',
       'file':multipartFile,
     });
-    var json = await DioManager().kkRequest(Address.upload,bodyParams:formData);
+    var json = await DioManager().kkRequest(Address.upload,bodyParams:formData,isShowLoad: true);
     return json;
   }
   /// 更新頭像
@@ -51,7 +51,13 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
       'avatar':avatar,
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params,isShowLoad: true);
-    BotToast.showText(text: json['message']);
+    if(json['code'] == 200){
+      Get.back();
+      BotToast.showText(text: '上傳成功');
+    }else{
+      BotToast.showText(text: json['message']);
+    }
+
     eventBus.fire(EventFn('headerRefresh'));
 
   }

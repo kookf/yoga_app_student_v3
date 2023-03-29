@@ -58,7 +58,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		lAf+xQ/A3pLRCdGIZRC3VRmh0ZU=
+		zVu6SUVJcGZwxZhbez213kIWuks=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		R9VczBFLpR8a0mW6ZqIOziiFB2k=
+		ebgCAAKZR6C/+GzWu9ebYHV+lgg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -266,7 +266,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		LlOuUki58kx+bs9JrqDTRpPDXF8=
+		kc635e9FylTxwJvG9Puk8xh5caQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/bruno/assets/fonts/Bebas-Regular.ttf</key>
 		<data>
@@ -1654,7 +1654,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		C1SKB1QWlmLQcRYbWedssGCkrJo=
+		wqdzHvLsy0UmBSl9sao7gRXQjyw=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1758,7 +1758,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fns/6Q2rk4Tj53LWzFrMAJKLHQdflBHqXTC3mUgGpnE=
+			T50oQjIzeO29xppu4mDHTKc8KUqqWTTTm8vq8OOhp3U=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1772,7 +1772,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y+TRrJFnzqSPfqlk+H7Pr3M7a+1ZB/+mwRdKzUGAE10=
+			kKe/+VnYpVuz1QIMzoCaXNOqfLbdt8loTovfGOpXGhA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -2122,7 +2122,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XonQbJZGLclm1jphI9QZJAzGDVDIkSXaQz0STPywp80=
+			ChEtdWvvYbDY95p469NxIwQ+UruUSPWRLHf5ZSSyxD0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/bruno/assets/fonts/Bebas-Regular.ttf</key>

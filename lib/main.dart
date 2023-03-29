@@ -141,7 +141,6 @@ class _MyAppState extends State<MyApp> {
     requestPermission();
     super.initState();
   }
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -181,7 +180,7 @@ requestPermission() async {
     // Permission.location,
     Permission.storage,
     Permission.mediaLibrary,
-    Permission.microphone,
+    // Permission.microphone,
   ].request();
   debugPrint('权限状态$statuses');
   // if (!status.isGranted) {

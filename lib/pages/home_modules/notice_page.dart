@@ -44,7 +44,9 @@ class _NoticePageState extends State<NoticePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      backgroundColor: Colors.white,
+      body: ListView(
+        padding: EdgeInsets.all(0),
         children: [
           Container(
               height: MediaQuery.of(context).padding.top+kToolbarHeight,
@@ -64,8 +66,6 @@ class _NoticePageState extends State<NoticePage> {
                     }, icon: const Icon(Icons.arrow_back_ios),color: Colors.white,),
                   ),
 
-
-
                   Container(
                     padding: const EdgeInsets.only(top: 35),
                     child: const Text('公告',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),),
@@ -84,8 +84,7 @@ class _NoticePageState extends State<NoticePage> {
             clipBehavior: Clip.hardEdge,
             padding: const EdgeInsets.all(15),
             child: CachedNetworkImage(
-              imageUrl: '${Address.homeHost}'
-                  '${_json['data']['pic_url']}',
+              imageUrl: '${_json['data']['pic_url']}',
               placeholder: (context, url) => const Center(
                 child: CircularProgressIndicator(),
               ),
