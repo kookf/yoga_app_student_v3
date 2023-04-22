@@ -14,30 +14,23 @@ class GuidePage extends StatefulWidget {
 
 class _GuidePageState extends State<GuidePage> {
 
-  Timer? _t;
   bool? isLogin;
 
   @override
   void initState() {
-    // Get.offAll(LoginPage(),curve:Curves.linear,transition:Transition.zoom);
+
     getToken();
     super.initState();
-    _t = Timer(const Duration(milliseconds: 500), () {
-    if(isLogin == false){
-
-      Get.offAllNamed(AppRoutes.login,);
-    }else{
-      Get.offAllNamed(AppRoutes.bottomMain);
-    }
-    });
   }
 
   getToken()async{
     print('token ======= ${await PersistentStorage().getStorage('token')}');
     if(await PersistentStorage().getStorage('token')==null){
       isLogin = false;
+      Get.offAllNamed(AppRoutes.login,);
     }else{
       isLogin = true;
+      Get.offAllNamed(AppRoutes.bottomMain,);
     }
     print('islogin === ${isLogin}');
   }
@@ -46,7 +39,6 @@ class _GuidePageState extends State<GuidePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-
       ),
     );
   }

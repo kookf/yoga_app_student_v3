@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:loading_btn/loading_btn.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/student_login_modules/student_login_controller.dart';
 import 'package:yoga_student_app/utils/persistent_storage.dart';
 import '../../common/app_theme.dart';
@@ -21,10 +22,6 @@ class StudentLoginView extends GetView{
     // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   // title: Text('d'),
-      //   // leading: IconButton(onPressed: (){}, icon: Icon(Icons.add)),
-      // ),
       body: GetBuilder<StudentController>(builder: (_){
         return ListView(
           padding: const EdgeInsets.all(0),
@@ -55,7 +52,7 @@ class StudentLoginView extends GetView{
                                 color: AppColor.themeColor,
                                 borderRadius: const BorderRadius.all(Radius.circular(5))
                             ),
-                            child: const Text('學生版',style: TextStyle(color: Colors.white),)
+                            child:  const Text(I18nContent.versionLabel,style: TextStyle(color: Colors.white),)
                         )
                       ],
                     )
@@ -82,7 +79,9 @@ class StudentLoginView extends GetView{
                   width: Get.width,
                   alignment: const Alignment(-0.75, -1),
                   padding: const EdgeInsets.only(top: 30),
-                  child: Text('登入',style: appThemeData.textTheme.bodyText1!.copyWith(fontSize: 25,color: AppColor.themeColor),),
+                  child: Text(I18nContent.loginInLabel,
+                    style: appThemeData.textTheme.bodyText1!
+                        .copyWith(fontSize: 25,color: AppColor.themeColor),),
                 ),
                 Center(
                   child:  Container(
@@ -104,7 +103,7 @@ class StudentLoginView extends GetView{
                       ],
                       decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: '郵件'
+                          hintText: I18nContent.emailLabel
                       ),
                     ),
                   ),
@@ -130,7 +129,7 @@ class StudentLoginView extends GetView{
                       ],
                       decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: '密碼'
+                          hintText: I18nContent.passwordLabel
                       ),
                     ),
                   ),
@@ -153,15 +152,15 @@ class StudentLoginView extends GetView{
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       ),
                     ),
-                    child: const Text("登入"),
+                    child: const Text(I18nContent.loginInLabel),
                     onTap: (startLoading, stopLoading, btnState) async {
                       if (btnState == ButtonState.idle) {
                         if(controller.emailTextEditingController.text.isEmpty){
-                          BotToast.showText(text: '郵件 不能留空');
+                          BotToast.showText(text: I18nContent.errorEmailAddressNotEmpty);
                           return;
                         }
                         if(controller.passwordTextEditingController.text.isEmpty){
-                          BotToast.showText(text: '密碼 不能留空');
+                          BotToast.showText(text: I18nContent.errorPassWordNotEmpty);
                           return;
                         }
                         startLoading();
@@ -173,7 +172,7 @@ class StudentLoginView extends GetView{
                             // Get.offAll(const Tabs()),
                             Get.offAllNamed(AppRoutes.bottomMain),
                             stopLoading(),
-                            BotToast.showText(text: '登錄成功')
+                            BotToast.showText(text: I18nContent.loginInSuccessLabel)
                           }else{
                             BotToast.showText(text: '${value['message']}'),
                             stopLoading(),
@@ -191,7 +190,7 @@ class StudentLoginView extends GetView{
                   height: 15,
                 ),
                 Center(
-                    child: Text('未有賬戶',style: TextStyle(color: AppColor.themeColor),)
+                    child: Text(I18nContent.notUserLabel,style: TextStyle(color: AppColor.themeColor),)
                 ),
                 Center(
                   child: GestureDetector(
@@ -207,7 +206,7 @@ class StudentLoginView extends GetView{
                       width: Get.width-150,
                       height: 35,
                       alignment: Alignment.center,
-                      child: const Text('創建新賬戶',style: TextStyle(color: Colors.white),),
+                      child: const Text(I18nContent.createNewAccLabel,style: TextStyle(color: Colors.white),),
                     ),
                   ),
                 ),

@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:yoga_student_app/router/app_pages.dart';
 import '../utils/persistent_storage.dart';
 import 'address.dart';
@@ -30,7 +32,7 @@ class DioManager{
 
   Future kkRequest(
     String url, {
-    bool isShowLoad = false,
+    bool isShowLoad = true,
     String method = 'post',
     Map<String, dynamic>? params,
     var bodyParams,
@@ -42,7 +44,9 @@ class DioManager{
       print('baseOptions.baseUrl == ${baseOptions.baseUrl}');
     }
     if (isShowLoad == true) {
-      BotToast.showLoading(clickClose: true);
+      BotToast.showCustomLoading(clickClose: true, toastBuilder: (void Function() cancelFunc) {
+        return const CupertinoActivityIndicator();
+      },backgroundColor: Colors.transparent);
     }
 
     Map<String, dynamic> baseHeader = {
@@ -74,11 +78,13 @@ class DioManager{
 
       if(error.response?.statusCode==302){
         Get.offAllNamed(AppRoutes.login);
+      }else if(error.response?.statusCode ==413){
+        BotToast.showText(text: '上傳文件超出指定空間，請使用1MB或以下的相片');
       }
 
       BotToast.closeAllLoading();
 
-      BotToast.showText(text: error.message);
+      // BotToast.showText(text: error.message);
     }
   }
 }

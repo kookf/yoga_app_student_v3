@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		wdyMEw+YgydW6aLkmx8bEd6aD80=
+		7bGCyG63grSqyiHbkzyLZXACilo=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		coB59mtCiMry9WOmMQC6Yjizs7k=
+		Y5+Sd4SzNmuj3S69YY5bcJRsFQs=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -136,9 +136,17 @@
 		<data>
 		t7U+6aWPflg86/TkREQgq0+cxPE=
 		</data>
+		<key>flutter_assets/images/ic_paycode.png</key>
+		<data>
+		cGoNVyW++Zp6jmrWsKXchAA15ss=
+		</data>
 		<key>flutter_assets/images/ic_payment_fps.png</key>
 		<data>
 		MJMI8rTAEZkJSLKm1Gi4HXSZzhU=
+		</data>
+		<key>flutter_assets/images/ic_placeholder_header.png</key>
+		<data>
+		TCk+MCQKjBasGRxyhlcz73+OtYw=
 		</data>
 		<key>flutter_assets/images/ic_qianbao.png</key>
 		<data>
@@ -206,7 +214,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		kc635e9FylTxwJvG9Puk8xh5caQ=
+		l06TUKu+cfjrLJqm20NV1Qd/+yg=
 		</data>
 		<key>flutter_assets/packages/bruno/assets/fonts/Bebas-Regular.ttf</key>
 		<data>
@@ -819,7 +827,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dcqOEScmP3ZLFbbrMIcVqXAAjYnWBFpDcQEvQBD7S2U=
+			vhnr1FmzuKlj8WPHb8tMHZKZW3bv6dVrhJ2JM+nvMI0=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -833,7 +841,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tBEe4BSR3+GDk8xXV8hk/7U7LdkPWyeJqQbwREDupQw=
+			eOMl+wRFEFukWQS46N9Koj4YThuw7Yg0jMsVfV8iUUs=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -1039,11 +1047,25 @@
 			XuqORwIA3iPAihI65VJf8OpB3Sqvu0eNkXj59wvvYrc=
 			</data>
 		</dict>
+		<key>flutter_assets/images/ic_paycode.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pY/aKt/+WISbh2Pudrb6VQ3vrQOSFGUE4R5tYYXCWew=
+			</data>
+		</dict>
 		<key>flutter_assets/images/ic_payment_fps.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			ZfN/8OpEE8TOUalxtSdiTDlL8dhzvBMEBFdLlxX1/Vw=
+			</data>
+		</dict>
+		<key>flutter_assets/images/ic_placeholder_header.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			58dd8WumJDOsl/0AioDU5bhj2Iv91hjJT/DN+Yq8hzc=
 			</data>
 		</dict>
 		<key>flutter_assets/images/ic_qianbao.png</key>
@@ -1162,7 +1184,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ChEtdWvvYbDY95p469NxIwQ+UruUSPWRLHf5ZSSyxD0=
+			ZiHazkojHwVOYkgjecIPFntXzvh8FzcaK0A+EfohHBk=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/bruno/assets/fonts/Bebas-Regular.ttf</key>

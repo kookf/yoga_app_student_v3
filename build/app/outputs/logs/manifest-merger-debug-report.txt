@@ -1,32 +1,4 @@
 -- Merging decision tree log ---
-application
-INJECTED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:3:4-33:19
-MERGED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:26:5-59:19
-MERGED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:26:5-59:19
-MERGED from [androidx.window:window:1.0.0-beta04] /Users/mac/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
-MERGED from [androidx.window:window:1.0.0-beta04] /Users/mac/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
-MERGED from [io.github.lucksiege:pictureselector:v3.10.6] /Users/mac/.gradle/caches/transforms-3/5ca58615336ff08de3a1ce5a0fba4ca4/transformed/jetified-pictureselector-v3.10.6/AndroidManifest.xml:9:5-35:19
-MERGED from [io.github.lucksiege:pictureselector:v3.10.6] /Users/mac/.gradle/caches/transforms-3/5ca58615336ff08de3a1ce5a0fba4ca4/transformed/jetified-pictureselector-v3.10.6/AndroidManifest.xml:9:5-35:19
-MERGED from [io.github.lucksiege:ucrop:v3.10.6] /Users/mac/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/AndroidManifest.xml:9:5-20:19
-MERGED from [io.github.lucksiege:ucrop:v3.10.6] /Users/mac/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/AndroidManifest.xml:9:5-20:19
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/mac/.gradle/caches/transforms-3/c7b43e019d3da386157f1ebba085bd64/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/mac/.gradle/caches/transforms-3/c7b43e019d3da386157f1ebba085bd64/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/mac/.gradle/caches/transforms-3/51bdf3e4ae35cf2695452be8315c2556/transformed/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
-MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/mac/.gradle/caches/transforms-3/51bdf3e4ae35cf2695452be8315c2556/transformed/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
-MERGED from [androidx.core:core:1.6.0] /Users/mac/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.6.0] /Users/mac/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
-MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/mac/.gradle/caches/transforms-3/75700e95b76714f3b951173330b9bcbc/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
-MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/mac/.gradle/caches/transforms-3/75700e95b76714f3b951173330b9bcbc/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-	android:requestLegacyExternalStorage
-		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-52
-	android:appComponentFactory
-		ADDED from [androidx.core:core:1.6.0] /Users/mac/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-	android:networkSecurityConfig
-		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-53
-	android:name
-		INJECTED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml
 manifest
 ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:1:1-34:12
 INJECTED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:1:1-34:12
@@ -37,6 +9,7 @@ MERGED from [:shared_preferences_android] /Users/mac/yoga_app_student_v2/build/s
 MERGED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-61:12
 MERGED from [:permission_handler_android] /Users/mac/yoga_app_student_v2/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:image_gallery_saver] /Users/mac/yoga_app_student_v2/build/image_gallery_saver/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-50:12
 MERGED from [:sqflite] /Users/mac/yoga_app_student_v2/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /Users/mac/yoga_app_student_v2/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:vibration] /Users/mac/yoga_app_student_v2/build/vibration/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -49,6 +22,8 @@ MERGED from [androidx.appcompat:appcompat:1.3.1] /Users/mac/.gradle/caches/trans
 MERGED from [io.github.lucksiege:compress:v3.10.6] /Users/mac/.gradle/caches/transforms-3/8f6eedd57efc308d701bb16ed8a2579b/transformed/jetified-compress-v3.10.6/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/mac/.gradle/caches/transforms-3/51bdf3e4ae35cf2695452be8315c2556/transformed/jetified-glide-4.12.0/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/mac/.gradle/caches/transforms-3/431d964a64e726105912f352769d6e76/transformed/jetified-library-1.2.4/AndroidManifest.xml:2:1-11:12
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:2:1-191:12
+MERGED from [cn.jiguang.sdk:jcore:4.1.0] /Users/mac/.gradle/caches/transforms-3/104f6d9a7ce0eceb69b20511e4537efc/transformed/jetified-jcore-4.1.0/AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mac/.gradle/caches/transforms-3/c564864b85a0960493dadaf97ef781d3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/mac/.gradle/caches/transforms-3/a6bf228adcf2ade0b45c4be1ab213b75/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.3.1] /Users/mac/.gradle/caches/transforms-3/9f36421b2f48c30e8e3064cf2681ae13/transformed/jetified-activity-1.3.1/AndroidManifest.xml:17:1-24:12
@@ -93,6 +68,80 @@ INJECTED from /Users/mac/yoga_app_student_v2/android/app/src/debug/AndroidManife
 		INJECTED from /Users/mac/yoga_app_student_v2/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:3:4-33:19
+MERGED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:26:5-59:19
+MERGED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:26:5-59:19
+MERGED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-48:19
+MERGED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-48:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/mac/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/mac/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [io.github.lucksiege:pictureselector:v3.10.6] /Users/mac/.gradle/caches/transforms-3/5ca58615336ff08de3a1ce5a0fba4ca4/transformed/jetified-pictureselector-v3.10.6/AndroidManifest.xml:9:5-35:19
+MERGED from [io.github.lucksiege:pictureselector:v3.10.6] /Users/mac/.gradle/caches/transforms-3/5ca58615336ff08de3a1ce5a0fba4ca4/transformed/jetified-pictureselector-v3.10.6/AndroidManifest.xml:9:5-35:19
+MERGED from [io.github.lucksiege:ucrop:v3.10.6] /Users/mac/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/AndroidManifest.xml:9:5-20:19
+MERGED from [io.github.lucksiege:ucrop:v3.10.6] /Users/mac/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/AndroidManifest.xml:9:5-20:19
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/mac/.gradle/caches/transforms-3/c7b43e019d3da386157f1ebba085bd64/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/mac/.gradle/caches/transforms-3/c7b43e019d3da386157f1ebba085bd64/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/mac/.gradle/caches/transforms-3/51bdf3e4ae35cf2695452be8315c2556/transformed/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/mac/.gradle/caches/transforms-3/51bdf3e4ae35cf2695452be8315c2556/transformed/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:44:5-189:19
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:44:5-189:19
+MERGED from [cn.jiguang.sdk:jcore:4.1.0] /Users/mac/.gradle/caches/transforms-3/104f6d9a7ce0eceb69b20511e4537efc/transformed/jetified-jcore-4.1.0/AndroidManifest.xml:11:5-12:19
+MERGED from [cn.jiguang.sdk:jcore:4.1.0] /Users/mac/.gradle/caches/transforms-3/104f6d9a7ce0eceb69b20511e4537efc/transformed/jetified-jcore-4.1.0/AndroidManifest.xml:11:5-12:19
+MERGED from [androidx.core:core:1.6.0] /Users/mac/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0] /Users/mac/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/mac/.gradle/caches/transforms-3/75700e95b76714f3b951173330b9bcbc/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/mac/.gradle/caches/transforms-3/75700e95b76714f3b951173330b9bcbc/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:requestLegacyExternalStorage
+		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-52
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0] /Users/mac/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:4:9-36
+	android:icon
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:6:9-43
+	android:networkSecurityConfig
+		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-53
+activity#com.example.yoga_student_app.MainActivity
+ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:7:9-27:20
+	android:launchMode
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:10:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:13:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:14:13-55
+	android:exported
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:9:13-36
+	android:configChanges
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:12:13-163
+	android:theme
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:11:13-47
+	android:name
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:8:13-41
+meta-data#io.flutter.embedding.android.NormalTheme
+ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:19:13-22:17
+	android:resource
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:21:15-52
+	android:name
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:20:15-70
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:23:13-26:29
+action#android.intent.action.MAIN
+ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:24:17-68
+	android:name
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:25:17-76
+	android:name
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:25:27-74
+meta-data#flutterEmbedding
+ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:30:9-32:33
+	android:value
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:32:13-30
+	android:name
+		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml:31:13-44
 uses-sdk
 INJECTED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/mac/yoga_app_student_v2/android/app/src/main/AndroidManifest.xml
@@ -105,6 +154,8 @@ MERGED from [:permission_handler_android] /Users/mac/yoga_app_student_v2/build/p
 MERGED from [:permission_handler_android] /Users/mac/yoga_app_student_v2/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:image_gallery_saver] /Users/mac/yoga_app_student_v2/build/image_gallery_saver/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:image_gallery_saver] /Users/mac/yoga_app_student_v2/build/image_gallery_saver/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] /Users/mac/yoga_app_student_v2/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] /Users/mac/yoga_app_student_v2/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/mac/yoga_app_student_v2/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -129,6 +180,10 @@ MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/mac/.gradle/caches/t
 MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/mac/.gradle/caches/transforms-3/51bdf3e4ae35cf2695452be8315c2556/transformed/jetified-glide-4.12.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/mac/.gradle/caches/transforms-3/431d964a64e726105912f352769d6e76/transformed/jetified-library-1.2.4/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.chrisbanes.photoview:library:1.2.4] /Users/mac/.gradle/caches/transforms-3/431d964a64e726105912f352769d6e76/transformed/jetified-library-1.2.4/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jcore:4.1.0] /Users/mac/.gradle/caches/transforms-3/104f6d9a7ce0eceb69b20511e4537efc/transformed/jetified-jcore-4.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jcore:4.1.0] /Users/mac/.gradle/caches/transforms-3/104f6d9a7ce0eceb69b20511e4537efc/transformed/jetified-jcore-4.1.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mac/.gradle/caches/transforms-3/c564864b85a0960493dadaf97ef781d3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mac/.gradle/caches/transforms-3/c564864b85a0960493dadaf97ef781d3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/mac/.gradle/caches/transforms-3/a6bf228adcf2ade0b45c4be1ab213b75/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
@@ -195,6 +250,8 @@ uses-permission#android.permission.INTERNET
 ADDED from /Users/mac/yoga_app_student_v2/android/app/src/debug/AndroidManifest.xml:7:5-66
 MERGED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-67
 MERGED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-67
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:16:5-67
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:16:5-67
 	android:name
 		ADDED from /Users/mac/yoga_app_student_v2/android/app/src/debug/AndroidManifest.xml:7:22-64
 uses-permission#android.permission.CAMERA
@@ -207,10 +264,14 @@ ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/i
 		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-68
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-80
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:37:5-80
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:37:5-80
 	android:name
 		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-81
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:36:5-81
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:36:5-81
 	android:name
 		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-78
 queries
@@ -263,8 +324,90 @@ ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/i
 		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:48:13-44
 	android:name
 		ADDED from [:image_pickers] /Users/mac/yoga_app_student_v2/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-76
+uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-91
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:20:5-91
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:20:5-91
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-88
+receiver#com.jiguang.jpush.JPushPlugin$JPushReceiver
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-26:20
+	android:enabled
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
+	android:exported
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+intent-filter#action:name:cn.jpush.android.intent.CONNECTION+action:name:cn.jpush.android.intent.MESSAGE_RECEIVED+action:name:cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION+action:name:cn.jpush.android.intent.NOTIFICATION_OPENED+action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED+action:name:cn.jpush.android.intent.REGISTRATION+category:name:${applicationId}
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-25:29
+intent-filter#action:name:cn.jpush.android.intent.CONNECTION+action:name:cn.jpush.android.intent.MESSAGE_RECEIVED+action:name:cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION+action:name:cn.jpush.android.intent.NOTIFICATION_OPENED+action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED+action:name:cn.jpush.android.intent.REGISTRATION+category:name:com.memo1.yoga_student_app
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-25:29
+action#cn.jpush.android.intent.REGISTRATION
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-79
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:17:25-76
+action#cn.jpush.android.intent.MESSAGE_RECEIVED
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:18:17-83
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:18:25-80
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-88
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-85
+action#cn.jpush.android.intent.NOTIFICATION_OPENED
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-86
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:20:25-83
+action#cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-92
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-89
+action#cn.jpush.android.intent.CONNECTION
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:22:25-74
+category#${applicationId}
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+category#com.memo1.yoga_student_app
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+receiver#com.jiguang.jpush.JPushEventReceiver
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-35:20
+	android:exported
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-64
+intent-filter#action:name:cn.jpush.android.intent.RECEIVE_MESSAGE+category:name:${applicationId}
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-34:29
+intent-filter#action:name:cn.jpush.android.intent.RECEIVE_MESSAGE+category:name:com.memo1.yoga_student_app
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-34:29
+action#cn.jpush.android.intent.RECEIVE_MESSAGE
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-82
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:31:25-79
+service#com.jiguang.jpush.JPushCustomService
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:39:9-47:19
+	android:process
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:43:13-40
+	android:enabled
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-37
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-64
+intent-filter#action:name:cn.jiguang.user.service.action
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-46:29
+action#cn.jiguang.user.service.action
+ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:45:17-73
+	android:name
+		ADDED from [:jpush_flutter] /Users/mac/yoga_app_student_v2/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:45:25-70
 uses-permission#android.permission.VIBRATE
 ADDED from [:vibration] /Users/mac/yoga_app_student_v2/build/vibration/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-66
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:26:5-66
+MERGED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:26:5-66
 	android:name
 		ADDED from [:vibration] /Users/mac/yoga_app_student_v2/build/vibration/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-63
 uses-library#androidx.window.extensions
@@ -339,3 +482,283 @@ ADDED from [io.github.lucksiege:ucrop:v3.10.6] /Users/mac/.gradle/caches/transfo
 		ADDED from [io.github.lucksiege:ucrop:v3.10.6] /Users/mac/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/AndroidManifest.xml:19:13-69
 	android:name
 		ADDED from [io.github.lucksiege:ucrop:v3.10.6] /Users/mac/.gradle/caches/transforms-3/6869f677918f77de7ef551420fe6d672/transformed/jetified-ucrop-v3.10.6/AndroidManifest.xml:16:13-68
+permission#${applicationId}.permission.JPUSH_MESSAGE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:11:5-13:47
+	android:protectionLevel
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:13:9-44
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:12:9-65
+permission#com.memo1.yoga_student_app.permission.JPUSH_MESSAGE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:11:5-13:47
+	android:protectionLevel
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:13:9-44
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:12:9-65
+uses-permission#${applicationId}.permission.JPUSH_MESSAGE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:15:22-78
+uses-permission#com.memo1.yoga_student_app.permission.JPUSH_MESSAGE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:15:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:17:5-79
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:17:22-76
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:18:5-77
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:18:22-74
+uses-permission#com.vivo.notification.permission.BADGE_ICON
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:22:5-83
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:22:22-80
+uses-permission#com.hihonor.android.launcher.permission.CHANGE_BADGE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:24:5-92
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:24:22-89
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:29:5-81
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:29:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:30:5-79
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:30:22-76
+uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:31:5-85
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:31:22-82
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:32:5-75
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:32:22-72
+uses-permission#android.permission.QUERY_ALL_PACKAGES
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:33:5-77
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:33:22-74
+uses-permission#android.permission.GET_TASKS
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:34:5-68
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:34:22-65
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:35:5-76
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:35:22-73
+activity#cn.jpush.android.ui.PopWinActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:47:9-58:20
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:49:13-36
+	android:theme
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:50:13-49
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:48:13-62
+intent-filter#action:name:cn.jpush.android.ui.PopWinActivity+category:name:${JPUSH_PKGNAME}+category:name:android.intent.category.DEFAULT
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:51:13-57:29
+intent-filter#action:name:cn.jpush.android.ui.PopWinActivity+category:name:android.intent.category.DEFAULT+category:name:com.memo1.yoga_student_app
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:51:13-57:29
+category#android.intent.category.DEFAULT
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:17-76
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:27-73
+action#cn.jpush.android.ui.PopWinActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:54:17-77
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:54:25-74
+category#${JPUSH_PKGNAME}
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:56:17-61
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:56:27-58
+activity#cn.jpush.android.ui.PushActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:61:9-72:20
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:64:13-36
+	android:configChanges
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:63:13-63
+	android:theme
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:65:13-60
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:62:13-60
+intent-filter#action:name:cn.jpush.android.ui.PushActivity+category:name:${JPUSH_PKGNAME}+category:name:android.intent.category.DEFAULT
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:66:13-71:29
+intent-filter#action:name:cn.jpush.android.ui.PushActivity+category:name:android.intent.category.DEFAULT+category:name:com.memo1.yoga_student_app
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:66:13-71:29
+action#cn.jpush.android.ui.PushActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:67:17-75
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:67:25-72
+service#cn.jpush.android.service.PushService
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:75:9-86:19
+	android:process
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:79:13-40
+	android:enabled
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:77:13-35
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:78:13-37
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:76:13-64
+intent-filter#action:name:cn.jpush.android.intent.PUSH_TIME+action:name:cn.jpush.android.intent.PushService+action:name:cn.jpush.android.intent.REGISTER+action:name:cn.jpush.android.intent.REPORT
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:80:13-85:29
+action#cn.jpush.android.intent.REGISTER
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:81:17-75
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:81:25-72
+action#cn.jpush.android.intent.REPORT
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:82:17-73
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:82:25-70
+action#cn.jpush.android.intent.PushService
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:83:17-78
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:83:25-75
+action#cn.jpush.android.intent.PUSH_TIME
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:84:17-76
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:84:25-73
+service#cn.jpush.android.service.DaemonService
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:91:9-100:19
+	android:enabled
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:93:13-35
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:94:13-36
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:92:13-66
+intent-filter#action:name:cn.jpush.android.intent.DaemonService+category:name:${JPUSH_PKGNAME}
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:95:13-99:29
+intent-filter#action:name:cn.jpush.android.intent.DaemonService+category:name:com.memo1.yoga_student_app
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:95:13-99:29
+action#cn.jpush.android.intent.DaemonService
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:96:17-80
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:96:25-77
+activity#cn.jpush.android.service.DActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:102:9-113:20
+	android:enabled
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:104:13-35
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:105:13-36
+	android:theme
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:107:13-72
+	android:taskAffinity
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:106:13-36
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:103:13-62
+intent-filter#action:name:cn.jpush.android.intent.DActivity+category:name:${applicationId}
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:108:13-112:29
+intent-filter#action:name:cn.jpush.android.intent.DActivity+category:name:com.memo1.yoga_student_app
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:108:13-112:29
+action#cn.jpush.android.intent.DActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:109:17-76
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:109:25-73
+receiver#cn.jpush.android.service.PushReceiver
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:116:9-127:20
+	android:enabled
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:118:13-35
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:119:13-37
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:117:13-65
+intent-filter#action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+category:name:${JPUSH_PKGNAME}
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:120:13-123:29
+	android:priority
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:120:28-51
+intent-filter#action:name:cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+category:name:com.memo1.yoga_student_app
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:120:13-123:29
+	android:priority
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:120:28-51
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:121:17-94
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:121:25-91
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:124:13-126:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:125:17-79
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:125:25-76
+receiver#cn.jpush.android.service.AlarmReceiver
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:130:9-132:40
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:132:13-37
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:131:13-66
+receiver#cn.jpush.android.service.SchedulerReceiver
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:136:9-138:40
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:138:13-37
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:137:13-70
+provider#cn.jpush.android.service.DataProvider
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:141:9-145:43
+	android:process
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:145:13-40
+	android:authorities
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:143:13-64
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:144:13-37
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:142:13-65
+provider#cn.jpush.android.service.DownloadProvider
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:147:9-150:39
+	android:authorities
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:149:13-68
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:150:13-36
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:148:13-69
+activity#cn.jpush.android.service.JNotifyActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:152:9-163:20
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:154:13-36
+	android:theme
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:156:13-46
+	android:taskAffinity
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:155:13-36
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:153:13-68
+intent-filter#action:name:cn.jpush.android.intent.JNotifyActivity+category:name:${applicationId}+category:name:android.intent.category.DEFAULT
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:157:13-162:29
+intent-filter#action:name:cn.jpush.android.intent.JNotifyActivity+category:name:android.intent.category.DEFAULT+category:name:com.memo1.yoga_student_app
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:157:13-162:29
+action#cn.jpush.android.intent.JNotifyActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:158:17-82
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:158:25-79
+activity#cn.android.service.JTransitActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:165:9-176:20
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:167:13-36
+	android:theme
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:169:13-46
+	android:taskAffinity
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:168:13-36
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:166:13-63
+intent-filter#action:name:cn.android.service.JTransitActivity+category:name:${applicationId}+category:name:android.intent.category.DEFAULT
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:170:13-175:29
+intent-filter#action:name:cn.android.service.JTransitActivity+category:name:android.intent.category.DEFAULT+category:name:com.memo1.yoga_student_app
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:170:13-175:29
+action#cn.android.service.JTransitActivity
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:171:17-78
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:171:25-75
+receiver#cn.jpush.android.asus.AsusPushMessageReceiver
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:178:9-180:40
+	android:exported
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:180:13-37
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:179:13-73
+meta-data#JPUSH_CHANNEL
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:182:9-184:48
+	android:value
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:184:13-45
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:183:13-41
+meta-data#JPUSH_APPKEY
+ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:185:9-187:47
+	android:value
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:187:13-44
+	android:name
+		ADDED from [cn.jiguang.sdk:jpush:4.9.0] /Users/mac/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:186:13-40

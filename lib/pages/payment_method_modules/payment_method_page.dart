@@ -1,21 +1,20 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yoga_student_app/common/colors.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/payment_method_modules/payment_method_model.dart';
 import 'package:yoga_student_app/pages/payment_method_modules/upload_receipt_page.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
-import 'package:yoga_student_app/utils/hex_color.dart';
 import 'charge_code_model.dart';
-
 
 class PayMethodPage extends StatefulWidget {
 
+  final int type;
 
-  int type;
-
-  PayMethodPage(this.type,{Key? key}) : super(key: key);
+  const PayMethodPage(this.type,{Key? key}) : super(key: key);
 
   @override
   State<PayMethodPage> createState() => _PayMethodPageState();
@@ -52,7 +51,6 @@ class _PayMethodPageState extends State<PayMethodPage> {
 
     ChargeCodeModel model = ChargeCodeModel.fromJson(json);
 
-
     if(model.code == 200){
       chargeCodeModel = model;
       BotToast.showText(text: '已使用優惠碼');
@@ -88,10 +86,9 @@ class _PayMethodPageState extends State<PayMethodPage> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: AppColor.themeColor,
-        title: const Text('付款方式'),
+        title: const Text(I18nContent.paymentMethod),
       ),
-      body: SafeArea(
-        child:Column(
+      body: SafeArea(child:Column(
           children: [
             Container(
               decoration: BoxDecoration(
@@ -125,20 +122,21 @@ class _PayMethodPageState extends State<PayMethodPage> {
                     ),
                   ),
                   TextButton(onPressed: (){
-                    print(codeTextEditingController.text);
                     if(codeTextEditingController.text.isEmpty){
-                      BotToast.showText(text: '請輸入優惠碼');
+                      BotToast.showText(text: I18nContent.pleaseEnterDiscountsCode);
                       return;
                     }
                     requestDataWithChargeCode(codeTextEditingController.text);
-                  }, child: Text('使用',style: TextStyle(color: AppColor.themeTextColor),))
+                  }, child: Text(I18nContent.useDiscounts,style: TextStyle(color: AppColor.themeTextColor),))
                 ],
               ),
             ),
 
             Expanded(child: CustomScrollView(
               slivers: [
-                SliverList(delegate: _mySliverChildBuilderDelegate()),
+                paymentMethodModel==null?const SliverToBoxAdapter(
+                  child: CupertinoActivityIndicator(),
+                ):SliverList(delegate: _mySliverChildBuilderDelegate()),
 
                 SliverToBoxAdapter(
                   child: Column(
@@ -247,6 +245,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
                          // Text('共享錢包充值',style: TextStyle(fontSize: 12,color: AppColor.themeTextColor),),
                          Row(children: [
                            Image.asset('images/ic_mine_jinbi.png',width: 25,height: 25,),
+                           const SizedBox(width: 2,),
                            Row(
                              mainAxisAlignment: MainAxisAlignment.center,
                              children: [
@@ -282,7 +281,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
             ),
           ),
         ),
-      ):SizedBox();
+      ):const SizedBox();
     },childCount: paymentMethodModel?.data?.list?.length??0);
   }
 

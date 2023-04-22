@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/mine_modules/shared_wallet_module/shared_wallet_log_model.dart';
 import 'package:yoga_student_app/pages/mine_modules/shared_wallet_module/shared_wallet_model.dart';
 import 'package:yoga_student_app/services/address.dart';
@@ -12,7 +13,7 @@ import 'package:yoga_student_app/utils/persistent_storage.dart';
 import '../../../common/colors.dart';
 import '../../../components/custom_footer.dart';
 import '../../payment_method_modules/payment_method_page.dart';
-import 'package:get/get.dart';
+
 class SharedWalletPage extends StatefulWidget {
   const SharedWalletPage({Key? key}) : super(key: key);
 
@@ -109,13 +110,13 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
     super.initState();
     requestDataWithWalletLog();
     requestDataWithWalletUser();
-    getAvatar();
+    // getAvatar();
   }
 
-  String avatar = '';
-  getAvatar()async{
-    avatar =  await PersistentStorage().getStorage('avatar');
-  }
+  // String avatar = '';
+  // getAvatar()async{
+  //   avatar =  await PersistentStorage().getStorage('avatar');
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +145,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
               child: Container(
                 height: 110,
                 color: AppColor.themeColor,
-                padding: EdgeInsets.only(left: 35, right: 15, top: 5),
+                padding: const EdgeInsets.only(left: 35, right: 15, top: 5),
                 child: Row(
                   children: [
                     Column(
@@ -152,15 +153,15 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                       children: [
                         const Text('錢包主人'),
                         Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(35)),
                           ),
                           width: 70,
                           height: 70,
-                          clipBehavior: Clip.hardEdge,
+                          clipBehavior: Clip.antiAlias,
                           child: CachedNetworkImage(
                             imageUrl:
-                            '${Address.homeHost}/storage/${avatar}',
+                            '${Address.homeHost}/storage/${_sharedWalletModel?.data.owner.avatar}',
                             placeholder: (context, url) =>
                             const CircularProgressIndicator(),
                             errorWidget: (context, url, error) =>
@@ -175,7 +176,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                         // )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
                     Container(
@@ -187,10 +188,10 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 15),
-                          child: Text('錢包朋友'),
+                          margin: const EdgeInsets.only(left: 15),
+                          child: const Text('錢包朋友'),
                         ),
-                        Container(
+                        SizedBox(
                           height: 75,
                           width: Get.width - 150,
                           // color: Colors.red,
@@ -211,6 +212,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                                         maxLines: 1,
                                         barrierDismissible: false,
                                         autoFocus: true,
+
                                         inputEditingController:
                                             phoneTextEditingController,
                                         // inputEditingController: TextEditingController()..text = 'bbb',
@@ -229,8 +231,8 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                                         }).show(context);
                                   },
                                   child: Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    padding: EdgeInsets.only(left: 10,bottom: 15),
+                                    margin: const EdgeInsets.only(top: 10),
+                                    padding:const EdgeInsets.only(left: 10,bottom: 15),
                                     child: Image.asset(
                                       'images/ic_add.png',
                                       width: 55,
@@ -265,13 +267,13 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
   Widget buildAppBarBackground(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: Get.width,
           // color: Colors.red,
           height: 380,
           child: Stack(
             children: [
-              Container(
+              SizedBox(
                 width: Get.width,
                 child: Image.asset(
                   'images/ic_mine_bg.png',
@@ -315,7 +317,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   ),minWidth: 120,
-                  child: const Text('充值',style: TextStyle(color: Colors.white),),) ,
+                  child: const Text(I18nContent.reChargeLabel,style: TextStyle(color: Colors.white),),) ,
               ),
               GestureDetector(
                 onTap: (){
@@ -336,22 +338,20 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              child: Text(
-                '         ',
-                style: TextStyle(
-                    color: AppColor.themeTextColor,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w700),
-              ),
+            Text(
+              '         ',
+              style: TextStyle(
+                  color: AppColor.themeTextColor,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700),
             ),
             Container(
-              padding: EdgeInsets.only(top: 10,bottom: 15),
+              padding: const EdgeInsets.only(top: 10,bottom: 15),
               child: RichText(
                 text: TextSpan(children: [
                   TextSpan(
                       text:
-                          '代幣 ${_sharedWalletModel?.data?.owner?.balance ?? 0}',
+                          '${I18nContent.goldLabel} ${_sharedWalletModel?.data?.owner?.balance ?? 0}',
                       style: TextStyle(
                           color: AppColor.themeTextColor,
                           fontSize: 30,
@@ -374,22 +374,20 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                   setState(() {});
                 },
                 child: Text(
-                  '解绑钱包',
+                  I18nContent.unbindWalletLabel,
                   style:
                       TextStyle(fontSize: 18,
                           color: AppColor.themeTextColor,fontWeight: FontWeight.w700),
                 ))
           ],
         ),
-        _sharedWalletModel?.data?.owner == null
-            ? SizedBox()
-            : Container(
-                child: Text(
-                  '提示:代幣與${_sharedWalletModel?.data?.owner?.walletExpireAt}過期',
-                  style:
-                      TextStyle(color: AppColor.themeTextColor, fontSize: 12),
-                ),
-              ),
+        _sharedWalletModel?.data?.owner == null||_sharedWalletModel?.data?.owner?.walletExpireAt==null
+            ? const SizedBox()
+            : Text(
+              '提示:代幣與${_sharedWalletModel?.data?.owner?.walletExpireAt}過期',
+              style:
+                  TextStyle(color: AppColor.themeTextColor, fontSize: 12),
+            ),
       ],
     );
   }
@@ -414,20 +412,20 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                     requestDataWithWalletUser();
                   },
                   emptyWidget: dataArr.isEmpty
-                      ? const Center(child: Text('暫無信息'))
+                      ? const Center(child: Text(I18nContent.noRecords))
                       : null,
                   slivers: [
                 SliverToBoxAdapter(
                   child: Container(
                     height: 110,
                     color: AppColor.themeColor,
-                    padding: EdgeInsets.only(left: 35, right: 15, top: 5),
+                    padding: const EdgeInsets.only(left: 35, right: 15, top: 5),
                     child: Row(
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            const Text('錢包主人'),
+                            const Text(I18nContent.walletMaster),
                             Image.asset(
                               'images/header3.png',
                               width: 75,
@@ -435,7 +433,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Container(
@@ -447,10 +445,10 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(left: 15),
-                              child: Text('钱包朋友'),
+                              margin: const EdgeInsets.only(left: 15),
+                              child: const Text(I18nContent.walletFriend),
                             ),
-                            Container(
+                            SizedBox(
                               height: 75,
                               width: Get.width - 150,
                               // color: Colors.red,
@@ -494,8 +492,8 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                                       child: Container(
 
                                         color: Colors.red,
-                                        margin: EdgeInsets.only(top: 10),
-                                        padding: EdgeInsets.only(left: 15),
+                                        margin: const EdgeInsets.only(top: 10),
+                                        padding: const EdgeInsets.only(left: 15),
                                         child: Image.asset(
                                           'images/ic_add.png',
                                           width: 55,
@@ -547,12 +545,12 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                     //   child: FlutterLogo(),
                     // ),
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(25)),
                       ),
                       width: 50,
                       height: 50,
-                      clipBehavior: Clip.hardEdge,
+                      clipBehavior: Clip.antiAlias,
                       child: CachedNetworkImage(
                         imageUrl:
                             '${Address.homeHost}/storage/${_sharedWalletModel?.data?.userList?[index].avatar}',
@@ -585,6 +583,9 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                             middleText: '是否移除當前用戶',
                             textCancel: '取消',
                             textConfirm: '確定',
+                            buttonColor: AppColor.themeColor,
+                            confirmTextColor: AppColor.themeTextColor,
+                            cancelTextColor: AppColor.themeTextColor,
                             onConfirm: () {
                               requestDataWithRemoveWallet(
                                   '${_sharedWalletModel?.data?.userList?[index].id}');
@@ -634,7 +635,10 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '${model.type == 1 ? '充值' : model.type == 2 ? '訂閲' : model.type == 3 ? '管理员添加' : model.type == 12 ? '客户取消订阅' : model.type == 13 ? '管理员取消订阅' : model.type == 21 ? '钱包过期清除' : '共享钱包过期清除'}',
+                          model.type == 1 ? '充值' :
+                          model.type == 2 ? '訂閲' : model.type == 3 ? '管理員添加' :
+                          model.type == 12 ? '客戶取消訂閱' : model.type == 13 ? '管理員取消訂閱' :
+                          model.type == 21 ? '錢包過期清除' : '共享錢包過期清除',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 21,
@@ -663,7 +667,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                             const BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Text('${model.amount}',
-                        style: TextStyle(color: Colors.white, fontSize: 13),
+                        style: const TextStyle(color: Colors.white, fontSize: 13),
                       ),
                     )
                   ],

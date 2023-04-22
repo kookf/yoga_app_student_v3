@@ -5,7 +5,7 @@ class ApiManager {
 
   /// 网络请求
   static Future<dynamic> request(String url, Map<String, dynamic> params) async {
-    var json = await DioManager().kkRequest(url, bodyParams: params);
+    var json = await DioManager().kkRequest(url, bodyParams: params,isShowLoad: false);
     return json;
   }
   ///hostAuth 请求
@@ -15,7 +15,7 @@ class ApiManager {
   }
   ///public 请求
   static Future<dynamic> requestWithPublic(Map<String, dynamic> params) async {
-    var json = await request(Address.host, params);
+    var json = await request(Address.host, params,);
     return json;
   }
   /// 推出登录请求

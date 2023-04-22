@@ -1075,6 +1075,14 @@ drawable checkbox_num_red_selector
 drawable checkbox_num_white_selector
 drawable circle_gray
 drawable circle_white
+drawable jpush_btn_bg_green_playable
+drawable jpush_ic_action_cancle
+drawable jpush_ic_action_close
+drawable jpush_ic_action_close2
+drawable jpush_ic_richpush_actionbar_back
+drawable jpush_ic_richpush_actionbar_divider
+drawable jpush_richpush_btn_selector
+drawable jpush_richpush_progressbar
 drawable launch_background
 drawable loading_bg
 drawable notification_action_background
@@ -1246,6 +1254,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
+id actionbarLayoutId
 id actions
 id activity_chooser_view_content
 id add
@@ -1264,6 +1273,13 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id banner_body
+id banner_content_root
+id banner_image
+id banner_image_only
+id banner_root
+id banner_text_container
+id banner_title
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1320,6 +1336,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id download_success_size
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -1367,6 +1384,8 @@ id image_view_logo
 id image_view_state_aspect_ratio
 id image_view_state_rotate
 id image_view_state_scale
+id imgRichpushBtnBack
+id imgView
 id immediateStop
 id included
 id info
@@ -1383,6 +1402,15 @@ id iv_play_fast
 id iv_play_video
 id iv_src
 id iv_tempView
+id jad_action
+id jad_desc
+id jad_download_size
+id jad_download_status
+id jad_download_success
+id jad_download_success_status
+id jad_download_text
+id jad_icon
+id jad_root_view
 id jumpToEnd
 id jumpToStart
 id layout
@@ -1392,6 +1420,7 @@ id layout_root
 id layout_rotate_wheel
 id layout_scale_wheel
 id layout_tip
+id layout_version_2
 id left
 id legacy
 id line1
@@ -1436,6 +1465,7 @@ id path
 id pathRelative
 id percent
 id photoView
+id popLayoutId
 id position
 id postLayout
 id preview_image
@@ -1459,6 +1489,39 @@ id ps_tv_selected
 id ps_tv_selected_word
 id ps_tv_title
 id ps_tv_video
+id pushPrograssBar
+id push_notification_banner_icon
+id push_notification_banner_img
+id push_notification_banner_layout
+id push_notification_big_icon
+id push_notification_content
+id push_notification_content_one_line
+id push_notification_date
+id push_notification_dot
+id push_notification_fb_content
+id push_notification_fb_content_no_like1
+id push_notification_fb_content_no_like2
+id push_notification_fb_content_no_like3
+id push_notification_fb_content_no_like4
+id push_notification_for_bottom_margin
+id push_notification_header_expand
+id push_notification_header_neg_fb
+id push_notification_layout_lefttop
+id push_notification_layout_time
+id push_notification_main_layout
+id push_notification_null
+id push_notification_small_icon
+id push_notification_style_1
+id push_notification_style_1_banner_icon
+id push_notification_style_1_big_icon
+id push_notification_style_1_content
+id push_notification_style_1_date
+id push_notification_style_1_main_layout
+id push_notification_style_1_title
+id push_notification_style_default
+id push_notification_sub_title
+id push_notification_title
+id push_root_view
 id radio
 id ratio
 id rectangles
@@ -1468,6 +1531,7 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
+id rlRichpushTitleBar
 id rl_title_bar
 id rootView
 id rootViewBg
@@ -1572,6 +1636,7 @@ id transition_transform
 id triangle
 id tvCamera
 id tvCheck
+id tvRichpushTitle
 id tvTitle
 id tv_audio_name
 id tv_content
@@ -1591,6 +1656,8 @@ id unchecked
 id uniform
 id up
 id useLogo
+id v
+id v21
 id vertical_only
 id videoParent
 id videoView
@@ -1614,6 +1681,7 @@ id wrapper_controls
 id wrapper_reset_rotate
 id wrapper_rotate_by_angle
 id wrapper_states
+id wvPopwin
 id x_left
 id x_right
 integer abc_config_activityDefaultDur
@@ -1662,6 +1730,9 @@ layout activity_select_pics
 layout activity_video
 layout custom_dialog
 layout item_activity_photos
+layout jpush_inapp_banner
+layout jpush_popwin_layout
+layout jpush_webview_layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1690,6 +1761,10 @@ layout ps_preview_video
 layout ps_remind_dialog
 layout ps_title_bar
 layout ps_window_folder
+layout push_download_notification_layout
+layout push_notification
+layout push_notification_large
+layout push_notification_middle
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1734,6 +1809,10 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string jg_channel_name_p_default
+string jg_channel_name_p_high
+string jg_channel_name_p_low
+string jg_channel_name_p_min
 string ps_all_audio
 string ps_audio
 string ps_audio_empty
@@ -1985,7 +2064,9 @@ style Base_Widget_AppCompat_TextView
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
+style JPushTheme
 style LaunchTheme
+style MyDialogStyle
 style NormalTheme
 style Picture_Theme_AlertDialog
 style Picture_Theme_Dialog
@@ -2284,6 +2365,7 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 styleable ucrop_AspectRatioTextView ucrop_artv_ratio_title ucrop_artv_ratio_x ucrop_artv_ratio_y
 styleable ucrop_UCropView ucrop_aspect_ratio_x ucrop_aspect_ratio_y ucrop_circle_dimmed_layer ucrop_dimmed_color ucrop_frame_color ucrop_frame_stroke_size ucrop_grid_color ucrop_grid_column_count ucrop_grid_row_count ucrop_grid_stroke_size ucrop_show_frame ucrop_show_grid ucrop_show_oval_crop_frame
+xml jpush_file_paths
 xml net_sec
 xml pickers_plugin_file_path
 xml ps_file_paths

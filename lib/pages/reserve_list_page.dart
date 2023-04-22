@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/router/app_pages.dart';
 import '../common/colors.dart';
 import 'mine_modules/appointment_record_page.dart';
@@ -47,7 +48,7 @@ class _ReserveListPageState extends State<ReserveListPage> {
                 Align(
                   child: Container(
                     margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top+150),
-                    child: Text('預約課堂',style: TextStyle(fontSize: 25,
+                    child: Text(I18nContent.subscribeClassRoom,style: TextStyle(fontSize: 25,
                         fontWeight: FontWeight.w700,color: AppColor.themeTextColor),),
                   ),
                 ),
@@ -75,7 +76,7 @@ class _ReserveListPageState extends State<ReserveListPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('時間表',style: TextStyle(fontWeight: FontWeight.w700,
+                    Text(I18nContent.timeTableLabel,style: TextStyle(fontWeight: FontWeight.w700,
                         fontSize: 23,color: AppColor.themeTextColor),),
                     const Icon(Icons.arrow_forward_ios,size: 30,color: Colors.grey,)
                   ],
@@ -87,15 +88,19 @@ class _ReserveListPageState extends State<ReserveListPage> {
               Get.to(const AppointmentRecordPage());
             },
             child: Container(
-                decoration: const BoxDecoration(
+                decoration:  BoxDecoration(
                   color: Colors.white,
+                  border: Border.all(
+                    color: Colors.black54,
+                    width: 0.3
+                  )
                 ),
                 padding: const EdgeInsets.only(left: 55,right: 55),
                 height: 75,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('預約記錄',style: TextStyle(fontWeight: FontWeight.w700,
+                    Text(I18nContent.appointmentRecordLabel,style: TextStyle(fontWeight: FontWeight.w700,
                         fontSize: 23,color: AppColor.themeTextColor),),
                     const Icon(Icons.arrow_forward_ios,size: 30,color: Colors.grey,)
                   ],
@@ -104,22 +109,23 @@ class _ReserveListPageState extends State<ReserveListPage> {
           ),
           GestureDetector(
             onTap: (){
-              Get.to(const PurchaseHistoryPage());
+              Get.to(PurchaseHistoryPage(currentIndex: 1,));
             },
             child: Container(
+              margin: EdgeInsets.only(top: 0),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    border: Border.all(
-                        color: Colors.black,
-                        width: 0.3
-                    )
+                    // border: Border.all(
+                    //     color: Colors.black,
+                    //     width: 0.3
+                    // )
                 ),
                 padding: const EdgeInsets.only(left: 55,right: 55),
                 height: 75,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('購買記錄',style: TextStyle(fontWeight: FontWeight.w700,
+                    Text(I18nContent.purchaseHistoryLabel,style: TextStyle(fontWeight: FontWeight.w700,
                         fontSize: 23,color: AppColor.themeTextColor),),
                     const Icon(Icons.arrow_forward_ios,size: 30,color: Colors.grey,)
                   ],

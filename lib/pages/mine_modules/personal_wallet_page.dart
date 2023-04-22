@@ -1,10 +1,9 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/mine_modules/shared_wallet_module/shared_wallet_log_model.dart';
 import 'package:yoga_student_app/pages/mine_modules/user_model.dart';
-
 import '../../common/colors.dart';
 import '../../components/custom_footer.dart';
 import '../../services/address.dart';
@@ -155,7 +154,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                 child: Container(
                   margin: const EdgeInsets.only(top: 45),
                   child: Text(
-                    '個人錢包',
+                    I18nContent.myWalletLabel,
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w700,
@@ -180,8 +179,9 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                   color: AppColor.themeTextColor,elevation: 0,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                  child: const Text('充值',style: TextStyle(color: Colors.white),),minWidth: 120,) ,
+                  ),minWidth: 120,
+                  child: const Text(I18nContent.reChargeLabel,style: TextStyle(color: Colors.white,
+                  fontWeight: FontWeight.w700),),) ,
               )
 
             ],
@@ -191,7 +191,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
            Text(
-             '代幣 ${userModel?.data?.balance ?? '0'}',
+             '${I18nContent.goldLabel} ${userModel?.data?.balance ?? '0'}',
              style: TextStyle(
                  color: AppColor.themeTextColor,
                  fontSize: 30,
@@ -201,12 +201,11 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
          ],
        ),
         userModel?.data?.walletExpireAt == null
-            ? SizedBox()
-            : Container(
-                child: Text(
-                '提示:代幣與${userModel?.data?.walletExpireAt}過期',
-                style: TextStyle(color: AppColor.themeTextColor, fontSize: 12),
-              )),
+            ? const SizedBox()
+            : Text(
+            '提示:代幣與${userModel?.data?.walletExpireAt}過期',
+            style: TextStyle(color: AppColor.themeTextColor, fontSize: 12),
+              ),
       ],
     );
   }
@@ -231,7 +230,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                     requestDataWithWalletLog();
                   },
                   emptyWidget: dataArr.isEmpty
-                      ? const Center(child: Text('暫無信息'))
+                      ? const Center(child: Text(I18nContent.noRecords))
                       : null,
                   slivers: [
                     SliverToBoxAdapter(
@@ -244,7 +243,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                           children: [
                             Text('類型',style: TextStyle(fontSize: 20,
                                 color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
-                            Text('代幣',style: TextStyle(fontSize: 20,
+                            Text(I18nContent.goldLabel,style: TextStyle(fontSize: 20,
                                 color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
                           ],
                         ),
@@ -265,7 +264,6 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
       (BuildContext context, int index) {
 
         /// 1 充值 2 订阅 3 管理员添加 12 客户取消订阅 13 管理员取消订阅 21 钱包过期清除 22 共享钱包过期清除
-
 
         SharedWalletLogList model = dataArr[index];
         return Container(
@@ -288,10 +286,13 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '${model.type==1?'充值':model.type==2?'訂閲':model.type==3?'管理员添加'
-                              :model.type==12?'客户取消订阅':model.type==13?'管理员取消订阅':model.type==21?'钱包过期清除':
-                          '共享钱包过期清除'
-                          }',
+                          model.type==1?'充值':
+                          model.type==2?'訂閲':
+                          model.type==3?'管理員添加' :
+                          model.type==12?'客戶取消訂閱':
+                          model.type==13?'管理員取消訂閱':
+                          model.type==21?'錢包過期清除':
+                          '共享錢包過期清除',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 20,

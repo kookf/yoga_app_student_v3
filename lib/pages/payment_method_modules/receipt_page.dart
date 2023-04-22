@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:yoga_student_app/pages/payment_method_modules/payment_complete_model.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/utils/app_util.dart';
+import '../mine_modules/charge_log_modules/purchase_history_page.dart';
 
 
 class ReceiptPage extends StatefulWidget {
@@ -74,6 +75,8 @@ class _ReceiptPageState extends State<ReceiptPage> {
             child: MaterialButton(onPressed: (){
               Get.back();
               Get.back();
+              Get.back();
+              Get.to(PurchaseHistoryPage(currentIndex: 0,));
             },color: AppColor.themeColor,elevation: 0,shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),

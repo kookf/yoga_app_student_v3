@@ -122,6 +122,15 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
   Widget buildAppBarBackground(BuildContext context) {
     return Stack(
       children: [
+        Center(
+          child: Container(
+            // height: 140,
+            alignment: Alignment.topCenter,
+            // color: Colors.red,
+            child: Image.asset('images/ic_bg.png',width: Get.width,fit: BoxFit.cover,),
+          ),
+        ),
+
         // Image.asset('images/appbar_bg.png',fit: BoxFit.fitWidth,width: Get.width,),
         Align(
 
@@ -136,20 +145,13 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
                 Image.asset('images/login_log.png',width: 130,height: 130,),
                 const SizedBox(height: 3,),
                 Text('預約記錄',style: TextStyle(color: AppColor.themeTextColor,fontSize: 21,
-                    fontWeight: FontWeight.w700),)
+                    fontWeight: FontWeight.w700),),
               ],
             ),
           ),
         ),
 
-        Center(
-          child: Container(
-            // height: 140,
-            alignment: Alignment.topCenter,
-            // color: Colors.red,
-            child: Image.asset('images/ic_bg.png',width: Get.width,fit: BoxFit.cover,),
-          ),
-        ),
+
 
         // Container(
         //   margin: EdgeInsets.only(top: 100),
@@ -297,7 +299,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
             ClassRoomList model = dataArr[index];
         return Container(
           // margin: const EdgeInsets.only(left: 30,right: 30,top: 0,bottom: 15),
-          height: 140,
+          // height: 180,
           color: AppColor.bgColor,
           child: GestureDetector(
             onTap: (){
@@ -311,7 +313,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
                     )
                 ),
                 padding: const EdgeInsets.only(left: 15,right: 5),
-                height: 75,
+                // height: 75,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -319,30 +321,39 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('${model.name}',style: TextStyle(fontWeight: FontWeight.w700,
-                            fontSize: 23,color: AppColor.themeTextColor),),
+                        Container(
+                          color: Colors.white,
+                          width: Get.width-150,
+                          padding: EdgeInsets.only(top: 15),
+                          child: Text('${model.name}',style: TextStyle(fontWeight: FontWeight.w700,
+                              fontSize: 23,color: AppColor.themeTextColor),maxLines: 2,),
+                        ),
                         Text('開始時間：${model.startDay} ${model.startTime}',style: TextStyle(fontWeight: FontWeight.w700,
                             fontSize: 16,color: AppColor.themeTextColor),),
                         SizedBox(
-                          width: Get.width -150,
+                          width: 200,
                           child: Text('代幣：${model.gold}',style: TextStyle(fontWeight: FontWeight.w700,
                              fontSize: 16,color: AppColor.themeTextColor),maxLines: 1,overflow: TextOverflow.ellipsis,),
                         ),
-                        TextButton(onPressed: (){
-
-                          if(model.subscribeId!>=1&&model.subscribeStatus==0){
-
-                            Get.defaultDialog(title: '提示',middleText: '是否要取消當前課程',textCancel:'取消',textConfirm: '確定',onConfirm: (){
-                              requestDataWithCancel('${model.courseTimeId}');
-                              Get.back();
-                            },onCancel: (){
-
-                            });
-                          }else{
-                            BotToast.showText(text: '不可取消預約');
-                          }
-
-                        }, child: Text('取消预约',style: TextStyle(color: AppColor.themeColor),)),
+                        SizedBox(height: 15,),
+                        // TextButton(onPressed: (){
+                        //
+                        //   if(model.subscribeId!>=1&&model.subscribeStatus==0){
+                        //     Get.defaultDialog(title: '提示',middleText: '是否要取消當前課程',
+                        //         buttonColor: AppColor.themeColor,
+                        //         confirmTextColor: AppColor.themeTextColor,
+                        //         cancelTextColor: AppColor.themeTextColor,
+                        //         textCancel:'取消',textConfirm: '確定',onConfirm: (){
+                        //       requestDataWithCancel('${model.courseTimeId}');
+                        //       Get.back();
+                        //     },onCancel: (){
+                        //
+                        //     });
+                        //   }else{
+                        //     BotToast.showText(text: '不可取消預約');
+                        //   }
+                        //
+                        // }, child: Text('取消預約',style: TextStyle(color: AppColor.themeColor),)),
 
                       ],
                     ),
@@ -366,7 +377,7 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
                      color: AppColor.themeTextColor,
                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                    ),
-                   child:  Text('预约待审核',style: TextStyle(color: Colors.white,fontSize: 13),)):model.subscribeStatus==1&&
+                   child:  Text('預約待审核',style: TextStyle(color: Colors.white,fontSize: 13),)):model.subscribeStatus==1&&
                    model.subscribeId!>=1?Container(
                      height: 45,
                      width: 90,

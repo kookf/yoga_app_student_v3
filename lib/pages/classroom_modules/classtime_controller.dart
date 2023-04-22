@@ -4,6 +4,7 @@ import 'package:yoga_student_app/services/dio_manager.dart';
 import 'package:yoga_student_app/utils/persistent_storage.dart';
 import '../../common/eventbus.dart';
 import '../../services/address.dart';
+import '../mine_modules/appointment_record_page.dart';
 import 'classroom_model.dart';
 
 class ClassTimeController extends GetxController{
@@ -25,7 +26,8 @@ class ClassTimeController extends GetxController{
     if(json['code']==200){
       BotToast.showText(text: '預約成功');
       eventBus.fire(EventFn('refresh'));
-
+      
+      Get.to(AppointmentRecordPage());
     }
   }
 

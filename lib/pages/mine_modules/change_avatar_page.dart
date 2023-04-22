@@ -129,7 +129,7 @@ class _ChangeAvatarPageState extends State<ChangeAvatarPage> {
                 child:  Container(
                   width: 160,
                   height: 160,
-                  clipBehavior: Clip.hardEdge,
+                  clipBehavior: Clip.antiAlias,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(80))
                   ),
