@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_pickers/image_pickers.dart';
 import 'package:yoga_student_app/common/colors.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/payment_method_modules/payment_complete_model.dart';
 import 'package:yoga_student_app/utils/hex_color.dart';
 import '../../services/address.dart';
@@ -10,6 +11,7 @@ import '../../services/dio_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:get/route_manager.dart';
 import 'dart:io';
+import '../../utils/app_util.dart';
 import 'receipt_page.dart';
 
 class UpLoadReceiptPage extends StatefulWidget {
@@ -34,7 +36,7 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
   Future requestDataWithPath()async{
 
     if(listFilePaths.isEmpty){
-      BotToast.showText(text: '請選擇上傳的圖片');
+      BotToast.showText(text: I18nContent.pleaseSelectUploadImage);
       return;
     }
     MultipartFile multipartFile = MultipartFile.fromFileSync(
@@ -81,13 +83,14 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
       //     uiThemeColor: AppColor.themeColor,
       //   ),
       // );
+
       ImagePickers.pickerPaths(
         galleryMode: GalleryMode.image,
         showGif: false,
         selectCount: 1,
         showCamera: true,
         cropConfig: CropConfig(enableCrop: true, height: 1, width: 1),
-        compressSize: 300,
+        compressSize: 50,
         uiConfig: UIConfig(
           uiThemeColor: AppColor.themeColor,
         ),
@@ -122,7 +125,7 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.themeColor,
-        title: const Text('上傳收據'),
+        title: const Text(I18nContent.uploadReceipt),
       ),
       body: Column(
         children: [
@@ -157,7 +160,8 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('上傳FPS收據',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700,
+                      Text(I18nContent.uploadReceipt,
+                        style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700,
                           color: AppColor.themeTextColor),),
                       Row(
                         children: [
@@ -190,6 +194,7 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
                     height: 300,
                     child: Column(
                       children: [
+                        const SizedBox(height: 15,),
                         Image.asset('images/ic_payment_fps.png'),
                         Container(
                             decoration: BoxDecoration(
@@ -204,7 +209,7 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
                               children: [
                                 listFilePaths.isNotEmpty?Image.file(File(listFilePaths[0].path!),width: 80,
                                   height: 80,):Image.asset('images/ic_upload_camera.png',width: 50,height: 50,),
-                                Text('上傳圖片',style: TextStyle(color: AppColor.themeTextColor),)
+                                Text(I18nContent.uploadImage,style: TextStyle(color: AppColor.themeTextColor),)
                               ],
                             )
                         ),
@@ -220,12 +225,14 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
                             onPressed: () {
                               requestDataWithPath().then((value) {
                                 if(value['code'] == 200){
-                                  requestDataWithChargeCreate(widget.chargeId,value['data']['path'],code: widget.code);
+                                  requestDataWithChargeCreate(widget.chargeId,
+                                      value['data']['path'],code: widget.code);
                                 }
                               });
 
                             },
-                            child: const Text('送出',style: TextStyle(color: Colors.white,fontSize: 18,
+                            child: const Text(I18nContent.sendOut,
+                              style: TextStyle(color: Colors.white,fontSize: 18,
                                 fontWeight: FontWeight.w700
                             ),),
                           ),
@@ -235,12 +242,31 @@ class _UpLoadReceiptPageState extends State<UpLoadReceiptPage> {
                   ),
                 ),
               ),
+
               const SizedBox(height: 5,),
+              Center(
+                child: Text('FPS識別代碼',style: TextStyle(color: AppColor.themeTextColor,
+                    fontSize: 18,fontWeight: FontWeight.w600),),
+              ),
+              const SizedBox(height: 5,),
+
+              GestureDetector(
+                onLongPress: (){
+                  AppUtil.saveImage('images/ic_paycode.png',isAsset: true);
+                },
+                child: Center(
+                  child: Image.asset('images/ic_paycode.png',width: 150,height: 150,),
+                ),
+              ),
+              Center(
+                child: SelectableText('長按可複製 165932872',style: TextStyle(color: AppColor.themeTextColor),),
+              ),
+
+              const SizedBox(height: 15,),
+
               Center(
                 child: Text('如欲使用 Payme 付款可與客服聯繫',style: TextStyle(color: AppColor.themeTextColor),),
               ),
-              const SizedBox(height: 15,),
-
 
 //           Center(
 //             child: Container(

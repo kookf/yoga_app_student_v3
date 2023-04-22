@@ -1,4 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
@@ -7,9 +6,9 @@ import 'package:yoga_student_app/pages/classroom_modules/classroom_model.dart';
 import 'package:yoga_student_app/pages/classroom_modules/tearcher_list_model.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
-
 import '../../common/eventbus.dart';
 import 'classroom_calendar_page.dart';
+import 'course_cate_model.dart';
 import 'course_list_model.dart';
 
 class ClassroomController extends GetxController{
@@ -33,8 +32,7 @@ class ClassroomController extends GetxController{
 
   List dataArr = [];
 
-  List <String>teacherNameArr = ['全部教練-0'];
-  List <int>teacherIdArr = [];
+  List <String>teacherNameArr = ['全部教練'];
 
   DateTime initDatetime = DateTime.now();
 
@@ -42,7 +40,7 @@ class ClassroomController extends GetxController{
 
   String startDay = '';
   int teacherId = 0;
-  int courseId = 0;
+  int cateId = 0;
 
   requestDataWithCourseList({int page =1,})async{
     var params = {
@@ -52,7 +50,7 @@ class ClassroomController extends GetxController{
       'start_day':startDay,
       'is_teacher':'0',
       'teacher_id':teacherId,
-       'course_id':courseId,
+       'cate_id':cateId,
     };
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
     ClassRoomModel model = ClassRoomModel.fromJson(json);
@@ -72,9 +70,10 @@ class ClassroomController extends GetxController{
     update();
   }
 
-  String selectedValue = '全部教練-0';
-  String selectedCourseValue = '所有課堂-0';
+  String selectedValue = '全部教練';
+  String selectedCourseValue = '所有程度';
 
+  TeacherListModel? teacherListModel;
   requestDataWithTeacher()async{
     var params = {
       'method':'course.teacher_list',
@@ -82,13 +81,11 @@ class ClassroomController extends GetxController{
     var json = await DioManager().kkRequest(Address.hostAuth,bodyParams:params);
 
     TeacherListModel model = TeacherListModel.fromJson(json);
-
+    teacherListModel = model;
     // teacherNameArr.insert(0, '全部教練-0');
-    teacherIdArr.insert(0, 00);
-    
+
     for(int i = 0;i<model.data!.list!.length;i++){
-      teacherNameArr.add('${model.data!.list![i].teacherName!}-${i+1}');
-      teacherIdArr.add(model.data!.list![i].teacherId!);
+      teacherNameArr.add('${model.data!.list![i].teacherName!}');
     }
 
     // dataArr.add(model.data!.list!);
@@ -97,36 +94,41 @@ class ClassroomController extends GetxController{
 
   }
 
-  List <String>courseNameArr = ['所有課堂-0'];
-  List <int>courseIdArr = [];
+  List <String>courseNameArr = ['所有程度'];
 
-  requestDataWithCourseName()async{
+  // CourseListModel? courseListModel;
+  //
+  // requestDataWithCourseName()async{
+  //   var params = {
+  //     'method':'course.name',
+  //   };
+  //   var json = await DioManager().kkRequest(Address.hostAuth,bodyParams:params);
+  //
+  //   CourseListModel model = CourseListModel.fromJson(json);
+  //   courseListModel = model;
+  //   for(int i = 0;i<model.data!.list!.length;i++){
+  //     courseNameArr.add('${model.data!.list![i].courseName!}');
+  //   }
+  //   update();
+  // }
+  /// 获取课堂程度分类
+  CourseCateModel? courseCateModel;
+  requestDataWithCourseCate()async{
     var params = {
-      'method':'course.name',
+      'method':'course.cate',
     };
-    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams:params);
-
-    CourseListModel model = CourseListModel.fromJson(json);
-
-    // teacherNameArr.insert(0, '全部教練-0');
-    courseIdArr.insert(0, 00);
-
+    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+    CourseCateModel model = CourseCateModel.fromJson(json);
     for(int i = 0;i<model.data!.list!.length;i++){
-      courseNameArr.add('${model.data!.list![i].courseName!}-${i+1}');
-      courseIdArr.add(model.data!.list![i].courseId!);
+      courseNameArr.add('${model.data!.list![i].cateName!}');
     }
-
-    // dataArr.add(model.data!.list!);
-
+    courseCateModel = model;
     update();
-
   }
+
   /// 下拉刷新
   onRefresh()async{
-
-    var data = selectedValue.split('-')[1];
      page = 1 ;
-     teacherId = teacherIdArr[int.parse(data)];
     requestDataWithCourseList(page: page,);
   }
   /// 上拉加載
@@ -138,10 +140,42 @@ class ClassroomController extends GetxController{
   ///老師篩選
   filterTeacher(String value){
     selectedValue = value;
-    var data = value.split('-')[1];
-    teacherId = teacherIdArr[int.parse(data)];
-    startDay = '';
-    requestDataWithCourseList();
+    if(value == '全部教練'){
+      teacherId = 0;
+      startDay = '';
+      requestDataWithCourseList();
+      update();
+    }else{
+      for(int i = 0;i<teacherListModel!.data!.list!.length;i++){
+        if(value == teacherListModel!.data!.list![i].teacherName){
+          teacherId = teacherListModel!.data!.list![i].teacherId!;
+        }
+      }
+      startDay = '';
+      requestDataWithCourseList();
+    }
+
+    update();
+  }
+
+  /// 課堂篩選
+  filterCourse(String value){
+    selectedCourseValue = value;
+    if(value == '所有程度'){
+      cateId = 0;
+      startDay = '';
+      requestDataWithCourseList();
+    }else{
+
+      for(int i = 0;i<courseCateModel!.data!.list!.length;i++){
+        if(value == courseCateModel!.data!.list![i].cateName){
+          cateId = courseCateModel!.data!.list![i].cateId!;
+        }
+      }
+
+      startDay = '';
+      requestDataWithCourseList();
+    }
     update();
   }
 
@@ -166,7 +200,8 @@ class ClassroomController extends GetxController{
     // TODO: implement onInit
     super.onInit();
     requestDataWithTeacher();
-    requestDataWithCourseName();
+    requestDataWithCourseCate();
+    // requestDataWithCourseName();
     // scrollController.addListener(() {
     //   ///监听滚动位置设置导航栏颜色
     //     headerWhite = scrollController.offset == 350 ? true : false;

@@ -8,7 +8,7 @@ class SharedWalletLogModel {
   SharedWalletLogModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ?  Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {

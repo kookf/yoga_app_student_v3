@@ -32,7 +32,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-
   intl: ^0.17.0
   # get package
   get: ^4.1.4
@@ -51,7 +50,7 @@ dependencies:
   # 下拉刷新
   flutter_easyrefresh: ^2.2.2
   # 极光推送
-#  jpush_flutter: 2.2.0
+  jpush_flutter: 2.4.2
   # 权限申请
   permission_handler: ^10.2.0
   # 日历组件
@@ -74,6 +73,11 @@ dependencies:
   event_bus: ^2.0.0
   # 保持圖片到本地
   image_gallery_saver: ^1.7.1
+  webview_flutter: ^4.0.7
+  url_launcher: ^6.1.10
+
+
+
 
 
 

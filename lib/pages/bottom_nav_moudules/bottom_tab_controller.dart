@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import '../../common/colors.dart';
 import '../../components/keep_alive_wrapper.dart';
 import '../home_modules/home_view.dart';
@@ -10,22 +11,17 @@ import '../reserve_list_page.dart';
 import 'bottom_controller.dart';
 
 
-
 class TabPage extends GetView{
-
-   int _currentIndex = 0;
-
 
   final pageController = PageController();
 
   TabPage({super.key});
 
-   var _lastTime;
 
    Future<bool> _isExit()async {
-     if (_lastTime == null ||
-         DateTime.now().difference(_lastTime) > Duration(seconds: 2)) {
-       _lastTime = DateTime.now();
+     if (controller.lastTime == null ||
+         DateTime.now().difference(controller.lastTime!) > const Duration(seconds: 2)) {
+       controller.lastTime = DateTime.now();
        BotToast.showText(text: '在按一次退出應用');
        return Future.value(false);
      }
@@ -39,7 +35,7 @@ class TabPage extends GetView{
 
   void onPageChanged(int index) {
     // setState(() {
-      _currentIndex = index;
+      controller.currentIndex = index;
       controller.update();
     // });
   }
@@ -48,15 +44,10 @@ class TabPage extends GetView{
   final BottomController controller = Get.put(BottomController());
 
   final List<Widget> _listPageData = [
-    // const KeepAliveWrapper(child: HomeConver()),
     KeepAliveWrapper(child: HomeView()),
     const KeepAliveWrapper(child: ReserveListPage()),
-
     KeepAliveWrapper(child: MessagePage()),
-    // const KeepAliveWrapper(child: ContactPage()),
-    //  KeepAliveWrapper(child: MineView(),),
     MineView(),
-    // MinePage(),
   ];
   @override
 
@@ -76,7 +67,7 @@ class TabPage extends GetView{
         ),
         bottomNavigationBar:
         BottomNavigationBar(
-          currentIndex: _currentIndex,//配置对应的索引值选中
+          currentIndex: controller.currentIndex,//配置对应的索引值选中
           onTap: onTap,
           backgroundColor: AppColor.themeColor,
           iconSize: 20.0,//icon的大小
@@ -89,22 +80,22 @@ class TabPage extends GetView{
             BottomNavigationBarItem(
               icon: Image.asset('images/home_bottom_icon.png',width: 36,height: 36,color: Colors.white,),
               activeIcon: Image.asset('images/home_bottom_icon.png',width: 36,height: 36,color: Colors.black54,),
-              label: '首頁',
+              label: I18nContent.bottomHomeLabel,
             ),
             BottomNavigationBarItem(
                 icon: Image.asset('images/ic_bottom_calendar.png',width: 36,height: 36,color: Colors.white,),
                 activeIcon: Image.asset('images/ic_bottom_calendar.png',width: 36,height: 36,color: Colors.black54,),
-                label: '預約'
+                label: I18nContent.bottomSubscribeLabel,
             ),
             BottomNavigationBarItem(
                 icon: Image.asset('images/ic_message_bottom.png',width: 36,height: 36,color: Colors.white,),
                 activeIcon: Image.asset('images/ic_message_bottom.png',width: 36,height: 36,color: Colors.black54,),
-                label: '通知'
+                label: I18nContent.bottomMessageLabel
             ),
             BottomNavigationBarItem(
                 icon: Image.asset('images/mine_bottom_icon.png',width: 36,height: 36,color: Colors.white,),
                 activeIcon: Image.asset('images/mine_bottom_icon.png',width: 36,height: 36,color: Colors.black54,),
-                label: '設定'
+                label: I18nContent.bottomSettingLabel
             ),
           ],
         ),
@@ -157,7 +148,6 @@ class TabPage extends GetView{
 //
 //
 //   final List<Widget> _listPageData = [
-//     // const KeepAliveWrapper(child: HomeConver()),
 //      KeepAliveWrapper(child: HomeView()),
 //      const KeepAliveWrapper(child: ReserveListPage()),
 //

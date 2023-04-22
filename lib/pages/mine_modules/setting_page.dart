@@ -2,10 +2,10 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/mine_modules/user_model.dart';
 import '../../common/colors.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-
 import '../../services/address.dart';
 import '../../services/dio_manager.dart';
 
@@ -32,7 +32,6 @@ class _SettingPageState extends State<SettingPage> {
     var params = {
       'method': 'auth.profile',
     };
-
     var json = await DioManager().kkRequest(
         Address.hostAuth, bodyParams: params);
 
@@ -42,12 +41,10 @@ class _SettingPageState extends State<SettingPage> {
     phoneTextEditingController.text = '${userModel.data?.phone}';
     birthTextEditingController.text = '${userModel.data?.birth}';
     addressTextEditingController.text = '${userModel.data?.optional}';
-
     setState(() {
 
     });
   }
-
   ///修改個人資料
   void requestDataWithSave()async{
     var params = {
@@ -64,8 +61,8 @@ class _SettingPageState extends State<SettingPage> {
     }else{
       BotToast.showText(text: json['message']);
     }
-
   }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -77,8 +74,7 @@ class _SettingPageState extends State<SettingPage> {
     @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
+      body:Column(
         children: [
           Container(
               height: MediaQuery.of(context).padding.top+kToolbarHeight,
@@ -99,21 +95,25 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 35),
-                    child: const Text('設定',style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),),
+                    child: const Text(I18nContent.bottomSettingLabel,
+                      style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),),
                   ),
                 ],
               )
           ),
-          Expanded(child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            // padding: const EdgeInsets.all(0),
+          Expanded(child:  ListView(
+            padding: EdgeInsets.all(0),
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
               const SizedBox(height: 35,),
               Center(
-                child: Text('更改當前個人資料',style: TextStyle(color: AppColor.themeTextColor,fontSize: 21,fontWeight: FontWeight.w700),),
+                child: Text(I18nContent.changeCurrentProfile,
+                  style: TextStyle(color: AppColor.themeTextColor,fontSize: 21,fontWeight: FontWeight.w700),),
               ),
               const SizedBox(height: 15,),
-              Padding(padding: const EdgeInsets.only(left: 30,),child: Text('用戶名稱/電聯',style: TextStyle(color: AppColor.themeColor),),),
+              Padding(padding: const EdgeInsets.only(left: 30,),
+                child: Text('用戶名稱/電聯',style: TextStyle(color: AppColor.themeColor),),),
               Center(
                 child:  Container(
                   margin: const EdgeInsets.only(top: 5),
@@ -139,7 +139,7 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                 ),
               ),
-              
+
               // Padding(padding: const EdgeInsets.only(left: 30,top: 15),child: Text('用戶電話',style: TextStyle(color: AppColor.themeColor),),),
               // Center(
               //   child:  Container(
@@ -172,7 +172,7 @@ class _SettingPageState extends State<SettingPage> {
                 onTap: (){
                   DatePicker.showDatePicker(context,
                     showTitleActions: true,
-                    minTime: DateTime(1980, 1, 1),
+                    minTime: DateTime(1950, 1, 1),
                     maxTime: DateTime(2099, 6, 7),
                     theme: DatePickerTheme(
                         headerColor: AppColor.themeColor,
@@ -184,11 +184,9 @@ class _SettingPageState extends State<SettingPage> {
                         doneStyle:
                         const TextStyle(color: Colors.white, fontSize: 16)),
                     onChanged: (date) {
-                      print('change $date in time zone ${date.timeZoneOffset.inHours}');
+
                     }, onConfirm: (date) {
-                      print('confirm ${date.day}');
                       String dateStr = '${date.year}-${date.month}-${date.day}';
-                      print('confirm ${dateStr}');
                       // controller.birth = dateStr;
                       birthTextEditingController.text = dateStr;
                       // controller.update();
@@ -215,14 +213,15 @@ class _SettingPageState extends State<SettingPage> {
                       ],
                       decoration:  InputDecoration(
                           border: InputBorder.none,
-                          hintText: '出生日期（年/月/日）',
+                          hintText: I18nContent.birthdayLabel,
                           hintStyle: TextStyle(color: AppColor.themeColor)
                       ),
                     ),
                   ),
                 ),
               ),
-              Padding(padding: const EdgeInsets.only(left: 30,top: 15),child: Text('地址（選填）',style: TextStyle(color: AppColor.themeColor),),),
+              Padding(padding: const EdgeInsets.only(left: 30,top: 15),
+                child: Text(I18nContent.addressLabel,style: TextStyle(color: AppColor.themeColor),),),
               Center(
                 child:  Container(
                   margin: const EdgeInsets.only(top: 5),
@@ -244,49 +243,37 @@ class _SettingPageState extends State<SettingPage> {
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: '地址'
+                        hintText: I18nContent.addressLabel
                     ),
                     maxLines: 2,
                   ),
                 ),
               ),
               const SizedBox(height: 35,),
-             GestureDetector(
-               onTap: (){
-                 requestDataWithSave();
-               },
-               child:  Center(
-                 child:Container(
-                   height: 45,
-                   width: Get.width -50,
-                   alignment: Alignment.center,
-                   decoration: BoxDecoration(
-                     borderRadius: const BorderRadius.all(Radius.circular(20)),
-                     color: AppColor.themeColor,
-                   ),
-                   child: const Text('送出',style: TextStyle(color: Colors.white),),
-                 ),
-               ),
-             ),
-              SizedBox(height: 50,),
+              GestureDetector(
+                onTap: (){
+                  requestDataWithSave();
+                },
+                child:  Center(
+                  child:Container(
+                    height: 45,
+                    width: Get.width -50,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      color: AppColor.themeColor,
+                    ),
+                    child: const Text(I18nContent.sendOut,style: TextStyle(color: Colors.white),),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 50,)
 
-              // Container(
-              //
-              //   alignment: Alignment.bottomCenter,
-              //   width: Get.width,
-              //   child: Image.asset('images/yuyuebg.png'),
-              // )
-
-              Expanded(child: Container(
-                // height: 200,
-                alignment: Alignment.bottomRight,
-                child: Image.asset('images/yuyuebg.png'),
-              ))
             ],
-          ))
-
+          ),),
         ],
-      ),
+      )
+
     );
   }
 }

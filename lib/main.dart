@@ -3,15 +3,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-// import 'package:jpush_flutter/jpush_flutter.dart';
+import 'package:jpush_flutter/jpush_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:yoga_student_app/pages/bottom_nav_moudules/bottom_tab_controller.dart';
 import 'package:yoga_student_app/pages/bottom_nav_moudules/guide_page.dart';
+import 'package:yoga_student_app/pages/student_login_modules/student_login_view.dart';
+import 'package:yoga_student_app/router/app_pages.dart';
 import 'package:yoga_student_app/router/app_routes.dart';
+import 'package:yoga_student_app/utils/persistent_storage.dart';
 import 'common/app_theme.dart';
+import 'dart:io'show Platform;
+import 'package:get/get.dart';
 
-
-void main() {
-
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
   setCustomErrorPage();
   runApp(const MyApp());
 }
@@ -25,8 +30,10 @@ class MyApp extends StatefulWidget{
     // TODO: implement createState
     return _MyAppState();
   }
-
 }
+
+
+
 
 void setCustomErrorPage() {
 
@@ -37,107 +44,82 @@ void setCustomErrorPage() {
     );
   };
 }
-
-
 class _MyAppState extends State<MyApp> {
 
-
-  /// 百度地图的appkey
-  static const String  appKey = 'IUkP2NbP8VOrlpl5tbEKAPszvk1w6GGt';
   /// 极光注册
-  // connect()async{
-  //
-  //   JPush jpush = JPush();
-  //
-  //   jpush.applyPushAuthority(const NotificationSettingsIOS(
-  //       sound: true,
-  //       alert: true,
-  //       badge: true));
-  //
-  //   jpush.setup(
-  //     appKey: "a104990b599c92cd6c150596",
-  //     channel: "theChannel",
-  //     production: false,
-  //     debug: true, // 设置是否打印 debug 日志
-  //   );
-  //   jpush.addEventHandler(
-  //     // 接收通知回调方法。
-  //     onReceiveNotification: (Map<String, dynamic> message) async {
-  //       /// ios 接受到极光推送的方法
-  //       debugPrint("flutter onReceiveNotification: $message");
-  //       // var json = message['message'];
-  //       // Get.snackbar('${json['msg_type']}', '${json['alert']}');
-  //       // var localNotification = LocalNotification(
-  //       //     id: 234,
-  //       //     title: "本地推送",
-  //       //     buildId: 1,
-  //       //     content: "😁 随便写点内容，时间 ${DateTime.now().toIso8601String()}",
-  //       //     fireTime: DateTime.now(), // 立即发送
-  //       //     subtitle: "副标题 123456",
-  //
-  //       //     badge: 1,
-  //       //     extra: {"myInfo": "推送信息balabla"} // 携带数据
-  //       // );
-  //       // jpush.sendLocalNotification(localNotification);
-  //     },
-  //
-  //
-  //     // 点击通知回调方法。
-  //     onOpenNotification: (Map<String, dynamic> message) async {
-  //
-  //       /// ios 点击推送的方法
-  //       jpush.setBadge(0);
-  //       debugPrint("flutter onOpenNotification: $message");
-  //
-  //       if(Platform.isAndroid){
-  //         var resId = message['extras']['cn.jpush.android.EXTRA']['res_id'];
-  //
-  //         // Get.toNamed(AppRoutes.calendarDetail, arguments: res_id);
-  //
-  //       }else{
-  //
-  //         var resId = message['res_id'];
-  //
-  //         // Get.toNamed(AppRoutes.calendarDetail, arguments: res_id);
-  //
-  //
-  //       }
-  //
-  //
-  //       // var json = jsonDecode(message);
-  //
-  //       debugPrint('messageData  === ${message['res_id']}');
-  //
-  //
-  //     },
-  //     // 接收自定义消息回调方法。
-  //     onReceiveMessage: (Map<String, dynamic> message) async {
-  //       debugPrint("接收自定义消息回调方法 --- flutter onReceiveMessage: $message");
-  //     },
-  //   );
-  //
-  //
-  //   jpush.setBadge(0);
-  //   jpush.getRegistrationID().then((value)async {
-  //     debugPrint('getRegistrationID  === $value');
-  //
-  //     await PersistentStorage().setStorage('registration_id', value);
-  //
-  //     // requestDataWithUpDataResgister(value);
-  //   });
-  //   // debugPrint('getRegistrationID=== ${await jpush.getRegistrationID()}');
-  //
-  //
-  //
-  //   // WbcManager().init();
-  // }
+  connect()async{
+
+    JPush jpush = JPush();
+
+    jpush.applyPushAuthority(const NotificationSettingsIOS(
+        sound: true,
+        alert: true,
+        badge: true));
+
+    jpush.setup(
+      appKey: "a104990b599c92cd6c150596",
+      channel: "theChannel",
+      production: false,
+      debug: true, // 设置是否打印 debug 日志
+    );
+    jpush.addEventHandler(
+      // 接收通知回调方法。
+      onReceiveNotification: (Map<String, dynamic> message) async {
+        /// ios 接受到极光推送的方法
+        debugPrint("flutter onReceiveNotification: $message");
+        // var json = message['message'];
+        // Get.snackbar('${json['msg_type']}', '${json['alert']}');
+        // var localNotification = LocalNotification(
+        //     id: 234,
+        //     title: "本地推送",
+        //     buildId: 1,
+        //     content: "😁 随便写点内容，时间 ${DateTime.now().toIso8601String()}",
+        //     fireTime: DateTime.now(), // 立即发送
+        //     subtitle: "副标题 123456",
+
+        //     badge: 1,
+        //     extra: {"myInfo": "推送信息balabla"} // 携带数据
+        // );
+        // jpush.sendLocalNotification(localNotification);
+      },
 
 
-  bool isLogin = false;
+      // 点击通知回调方法。
+      onOpenNotification: (Map<String, dynamic> message) async {
+
+        /// ios 点击推送的方法
+        jpush.setBadge(0);
+        debugPrint("flutter onOpenNotification: $message");
+
+        if(Platform.isAndroid){
+
+        }else{
+
+        }
+
+      },
+      // 接收自定义消息回调方法。
+      onReceiveMessage: (Map<String, dynamic> message) async {
+        debugPrint("接收自定义消息回调方法 --- flutter onReceiveMessage: $message");
+      },
+    );
+
+
+    jpush.setBadge(0);
+    jpush.getRegistrationID().then((value)async {
+
+      debugPrint('getRegistrationID  === $value');
+
+      // requestDataWithUpDataResgister(value);
+    });
+    // debugPrint('getRegistrationID=== ${await jpush.getRegistrationID()}');
+  }
+
+
   @override
   void initState() {
     // TODO: implement initState
-    // connect();
+    connect();
     requestPermission();
     super.initState();
   }
@@ -157,7 +139,7 @@ class _MyAppState extends State<MyApp> {
         Locale.fromSubtags(languageCode: 'en'),
       ],
       debugShowCheckedModeBanner: false,
-      title: 'yoga',
+      title: 'MeMoYoga學生版',
       // theme:appThemeData,
       theme: appThemeData,
       builder: BotToastInit(),
@@ -166,6 +148,7 @@ class _MyAppState extends State<MyApp> {
       // initialRoute:isLogin==false?AppRoutes.login:AppRoutes.bottomMain,
       // home: isLogin==false?StudentLoginView():const Tabs(),
       home: const GuidePage(),
+      // home: const Demo1(),
       // home:  MyWidget(),
       navigatorObservers: [BotToastNavigatorObserver()],
       // home:Dome2(),
@@ -180,9 +163,10 @@ requestPermission() async {
     // Permission.location,
     Permission.storage,
     Permission.mediaLibrary,
+    Permission.accessNotificationPolicy
     // Permission.microphone,
   ].request();
-  debugPrint('权限状态$statuses');
+  debugPrint('权限状态  ==== $statuses');
   // if (!status.isGranted) {
   //   openAppSettings();
   // }

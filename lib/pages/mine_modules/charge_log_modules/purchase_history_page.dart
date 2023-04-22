@@ -1,4 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
@@ -11,7 +10,9 @@ import '../../../components/custom_footer.dart';
 import '../../classroom_modules/classroom_calendar_page.dart';
 
 class PurchaseHistoryPage extends StatefulWidget {
-  const PurchaseHistoryPage({Key? key}) : super(key: key);
+
+  int currentIndex = 1;
+  PurchaseHistoryPage({required this.currentIndex,Key? key}) : super(key: key);
 
   @override
   State<PurchaseHistoryPage> createState() => _PurchaseHistoryPageState();
@@ -20,7 +21,7 @@ class PurchaseHistoryPage extends StatefulWidget {
 class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
 
 
-  int selectIndex = 1;
+  // int selectIndex = 1;
 
   int page = 1;
 
@@ -30,11 +31,13 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
 
   String createDate = '';
 
+  /// 代幣購買後去待審批=0，已審批去成功審批=1，未通過去未獲通過=2
+  ///
   requestDataWithChargeLog()async{
     var params = {
       'method':'charge.log',
       'page':page,
-      'pay_status':selectIndex,  /// 空所有状态记录 0 未支付状态 1 充值支付状态
+      'pay_status':widget.currentIndex,  ///待審批=0，已審批去成功審批=1，未通過去未獲通過=2
       'is_share_wallet':'',
       'create_date':createDate
     };
@@ -108,6 +111,16 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
     return Stack(
       children: [
         // Image.asset('images/appbar_bg.png',fit: BoxFit.fitWidth,width: Get.width,),
+
+        Center(
+          child: Container(
+            // height: 140,
+            alignment: Alignment.topCenter,
+            // color: Colors.red,
+            child: Image.asset('images/ic_bg.png',width: Get.width,fit: BoxFit.cover,),
+          ),
+        ),
+
         Align(
           alignment: const Alignment(0, -0.8),
           child:Container(
@@ -127,14 +140,6 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
           ),
         ),
 
-        Center(
-          child: Container(
-            // height: 140,
-            alignment: Alignment.topCenter,
-            // color: Colors.red,
-            child: Image.asset('images/ic_bg.png',width: Get.width,fit: BoxFit.cover,),
-          ),
-        ),
       ],
     );
   }
@@ -159,7 +164,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                   onTap: (){
                     setState(() {
                       page = 1;
-                      selectIndex =1;
+                      widget.currentIndex =1;
                       requestDataWithChargeLog();
                     });
                   },
@@ -168,18 +173,18 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                     height: 45,
                     width: 80,
                     decoration: BoxDecoration(
-                        color: selectIndex ==1? AppColor.themeColor:Colors.transparent,
+                        color:  widget.currentIndex ==1? AppColor.themeColor:Colors.transparent,
                         borderRadius: const BorderRadius.all(Radius.circular(10))
                     ),
-                    child:Text('已購買',style: TextStyle(fontSize: 22,
-                        color:selectIndex==1?Colors.white:AppColor.themeTextColor,
-                        fontWeight: FontWeight.w700),),
+                    child:Text('成功審批',style: TextStyle(fontSize: 18,
+                        color: widget.currentIndex==1?Colors.white:AppColor.themeTextColor,
+                        fontWeight: FontWeight.w500),),
                   ),
                 ),
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      selectIndex =0;
+                      widget.currentIndex =0;
                       page = 1;
                       requestDataWithChargeLog();
                     });
@@ -189,12 +194,33 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                     height: 45,
                     width: 80,
                     decoration: BoxDecoration(
-                        color: selectIndex ==0? AppColor.themeColor:Colors.transparent,
+                        color:  widget.currentIndex ==0? AppColor.themeColor:Colors.transparent,
                         borderRadius: const BorderRadius.all(Radius.circular(10))
                     ),
-                    child:Text('未支付',style: TextStyle(fontSize: 22,
-                        color:selectIndex==2?Colors.white:AppColor.themeTextColor,
-                        fontWeight: FontWeight.w700),),
+                    child:Text('待審批',style: TextStyle(fontSize: 18,
+                        color: widget.currentIndex==0?Colors.white:AppColor.themeTextColor,
+                        fontWeight: FontWeight.w500),),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      widget.currentIndex =2;
+                      page = 1;
+                      requestDataWithChargeLog();
+                    });
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 45,
+                    width: 80,
+                    decoration: BoxDecoration(
+                        color:  widget.currentIndex ==2? AppColor.themeColor:Colors.transparent,
+                        borderRadius: const BorderRadius.all(Radius.circular(10))
+                    ),
+                    child:Text('未獲通過',style: TextStyle(fontSize: 18,
+                        color: widget.currentIndex==2?Colors.white:AppColor.themeTextColor,
+                        fontWeight: FontWeight.w500),),
                   ),
                 ),
                 GestureDetector(
@@ -236,8 +262,8 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                       children: [
                         Text('單號',style: TextStyle(fontSize: 20,
                             color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
-                        Text('狀態',style: TextStyle(fontSize: 20,
-                            color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
+                        // Text('狀態',style: TextStyle(fontSize: 20,
+                        //     color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
                       ],
                     ),
                   ),
@@ -258,7 +284,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
             ChargeLogList model = dataArr[index];
         return Container(
           // margin: const EdgeInsets.only(left: 30,right: 30,top: 0,bottom: 15),
-          height: 190,
+          height: 180,
           color: AppColor.bgColor,
           child: GestureDetector(
             onTap: (){
@@ -292,23 +318,32 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                             fontSize: 17,color: AppColor.themeTextColor),),
                         const SizedBox(height: 10,),
 
-                        model.payStatus==1?Text('已支付 HK\$${model.amount}',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
-                          ,fontWeight: FontWeight.w700,
-                        )):Text('未支付 HK\$${model.amount}',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
-                        ,fontWeight: FontWeight.w700,
+                        model.cause ==null?Text('備註：暫無備註',style: TextStyle(
+                          fontWeight: FontWeight.w700,color: AppColor.themeTextColor
+                        ),):Text('備註：${model.cause}',style: TextStyle(
+                          color: AppColor.themeTextColor,fontWeight: FontWeight.w700
                         ),),
+
+                        // model.payStatus==1?Text('已支付 HK\$${model.amount}',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
+                        //   ,fontWeight: FontWeight.w700,
+                        // )):Text('未支付 HK\$${model.amount}',style: TextStyle(color: AppColor.themeTextColor,fontSize: 17
+                        // ,fontWeight: FontWeight.w700,
+                        // ),),
                         TextButton(onPressed: (){
+                          // ImagePickers.previewImage('${Address.homeHost}/storage/${model.image}');
                           Get.dialog(
                            Center(
                              child: SizedBox(
-                               width: 150,
-                               height: 150,
+                               width: 250,
+                               height: 250,
                                child: CachedNetworkImage(
                                  imageUrl: "${Address.homeHost}/storage/${model.image}",
-                                 placeholder: (context, url) => const CircularProgressIndicator(),
+                                 placeholder: (context, url) => const SizedBox(
+                                   height: 25,width: 25,child: Center(child: CircularProgressIndicator()),
+                                 ),
                                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                                 fit: BoxFit.cover,
-                                 width: 150,height: 150,
+                                 fit: BoxFit.fill,
+                                 width: 250,height: 250,
                                ),
                              ),
                            )
@@ -326,5 +361,4 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
       childCount: dataArr.length,
     );
   }
-
 }

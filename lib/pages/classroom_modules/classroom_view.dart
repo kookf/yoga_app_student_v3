@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:yoga_student_app/common/app_theme.dart';
 import 'package:yoga_student_app/common/colors.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/classroom_modules/classroom_model.dart';
 import 'package:yoga_student_app/pages/sign_class_page.dart';
 import 'package:yoga_student_app/router/app_pages.dart';
@@ -66,11 +67,6 @@ class ClassroomView extends GetView {
                           borderRadius: BorderRadius.all(Radius.circular(8))),
                       onChanged: (value) {
                         controller.filterTeacher(value!);
-
-                        // controller.selectedValue = value!;
-                        // var data = value.split('-')[1];
-                        // controller.requestDataWithCourseList(teacherId: controller.teacherIdArr[int.parse(data)]);
-                        // controller.update();
                       },
                     ),
                     // Text('全部地點',style: TextStyle(color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
@@ -98,15 +94,7 @@ class ClassroomView extends GetView {
                       buttonDecoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(8))),
                       onChanged: (value) {
-                        controller.selectedCourseValue = value!;
-                        controller.startDay = '';
-                        var data = value.split('-')[1];
-                        controller.courseId =
-                            controller.courseIdArr[int.parse(data)];
-                        controller.requestDataWithCourseList();
-                        controller.update();
-                        // selectedValue = value;
-                        // controller.update();
+                        controller.filterCourse(value!);
                       },
                     ),
                     // GestureDetector(
@@ -124,8 +112,8 @@ class ClassroomView extends GetView {
                 ? SliverToBoxAdapter(
                     child: Container(
                       height: 200,
-                      alignment: Alignment(0, 0.1),
-                      child: Text('暫無信息'),
+                      alignment: const Alignment(0, 0.1),
+                      child: const Text(I18nContent.noRecords),
                     ),
                   )
                 : SliverList(
@@ -295,6 +283,18 @@ class ClassroomView extends GetView {
   Widget buildAppBarBackground(BuildContext context) {
     return Stack(
       children: [
+        Center(
+          child: Container(
+            // height: 140,
+            alignment: Alignment.topCenter,
+            // color: Colors.red,
+            child: Image.asset(
+              'images/ic_yuyuebg.png',
+              width: Get.width,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
         Align(
           alignment: const Alignment(0, -0.8),
           child: SizedBox(
@@ -316,18 +316,7 @@ class ClassroomView extends GetView {
             ),
           ),
         ),
-        Center(
-          child: Container(
-            // height: 140,
-            alignment: Alignment.topCenter,
-            // color: Colors.red,
-            child: Image.asset(
-              'images/ic_yuyuebg.png',
-              width: Get.width,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
+
         Container(
           margin: const EdgeInsets.only(top: 100),
           child: Center(
@@ -378,15 +367,16 @@ class ClassroomView extends GetView {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(
-                            top: 30,
+                            top: 35,
                             left: 15,
+                            right: 15
                           ),
                           child: Text(
                             '${model.name}',
                             style: appThemeData.textTheme.bodyText1!.copyWith(
                                 color: AppColor.themeTextColor,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 22),
+                                fontSize: 22,),maxLines: 2,overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         Container(
@@ -551,7 +541,7 @@ class ClassroomView extends GetView {
                           ),
                           width: 50,
                           height: 50,
-                          clipBehavior: Clip.hardEdge,
+                          clipBehavior: Clip.antiAlias,
                           child: CachedNetworkImage(
                             imageUrl:
                                   '${Address.homeHost}/storage/${model.teacherAvatar}',

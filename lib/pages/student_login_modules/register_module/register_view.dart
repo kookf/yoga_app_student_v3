@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/student_login_modules/register_module/register_controller.dart';
 import '../../../common/colors.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
@@ -30,7 +31,7 @@ class RegisterView extends GetView{
               Container(
                 padding: const EdgeInsets.only(top: 25),
                 alignment: Alignment.center,
-                child: Text('學生註冊',style: TextStyle(fontSize: 31,color: AppColor.themeColor,fontWeight: FontWeight.w700),),
+                child: Text(I18nContent.studentRegisterLabel,style: TextStyle(fontSize: 31,color: AppColor.themeColor,fontWeight: FontWeight.w700),),
               ),
               const SizedBox(height: 25,),
               Center(
@@ -53,7 +54,7 @@ class RegisterView extends GetView{
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: '用戶名稱'
+                        hintText: I18nContent.userNameLabel
                     ),
                   ),
                 ),
@@ -79,7 +80,7 @@ class RegisterView extends GetView{
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: '郵件'
+                        hintText: I18nContent.emailLabel
                     ),
                   ),
                 ),
@@ -105,7 +106,7 @@ class RegisterView extends GetView{
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: '用戶電話'
+                        hintText: I18nContent.userPhoneLabel
                     ),
                   ),
                 ),
@@ -187,7 +188,7 @@ class RegisterView extends GetView{
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: '密碼'
+                        hintText: I18nContent.passwordLabel
                     ),
                   ),
                 ),
@@ -215,12 +216,42 @@ class RegisterView extends GetView{
                     ],
                     decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: '確認密碼'
+                        hintText: I18nContent.enterPasswordLabel
                     ),
                   ),
                 ),
               ),
+              Padding(padding: const EdgeInsets.only(left: 30,top: 15),
+                child: Text(I18nContent.addressLabel,style: TextStyle(color: AppColor.themeColor),),),
+              Center(
+                child:  Container(
+                  margin: const EdgeInsets.only(top: 5),
+                  padding: const EdgeInsets.only(left: 15),
+                  width: Get.width-50,
+                  height: 100,
+                  //边框设置
+                  decoration:  BoxDecoration(
+                    color: Colors.white,
+                    //设置四周圆角 角度
+                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                    //设置四周边框
+                    border:  Border.all(width: 1, color: AppColor.textFieldBorderColor),
+                  ),
+                  child: TextField(
+                    controller: controller.addressController,
+                    inputFormatters: <TextInputFormatter>[
+                      LengthLimitingTextInputFormatter(100) //限制长度
+                    ],
+                    decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: I18nContent.addressLabel
+                    ),
+                    maxLines: 2,
+                  ),
+                ),
+              ),
               const SizedBox(height: 25,),
+
               GestureDetector(
                 onTap: () =>controller.tapClickRegister(),
                 child: Center(
@@ -232,10 +263,12 @@ class RegisterView extends GetView{
                       borderRadius: const BorderRadius.all(Radius.circular(20)),
                       color: AppColor.themeColor,
                     ),
-                    child: const Text('註冊賬號',style: TextStyle(color: Colors.white),),
+                    child: const Text(I18nContent.registerUserLabel,style: TextStyle(color: Colors.white),),
                   ),
                 ),
               ),
+
+
               const SizedBox(height: 80,),
 
               Container(

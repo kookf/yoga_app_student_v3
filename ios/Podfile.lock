@@ -25,6 +25,13 @@ PODS:
     - Flutter
     - SDWebImage
     - ZLPhotoBrowser
+  - JCore (3.2.5)
+  - JPush (4.8.1):
+    - JCore (>= 2.0.0)
+  - jpush_flutter (0.0.2):
+    - Flutter
+    - JCore (= 3.2.5)
+    - JPush (= 4.8.1)
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -38,7 +45,11 @@ PODS:
   - sqflite (0.0.2):
     - Flutter
     - FMDB (>= 2.7.5)
+  - url_launcher_ios (0.0.1):
+    - Flutter
   - vibration (1.7.5):
+    - Flutter
+  - webview_flutter_wkwebview (0.0.1):
     - Flutter
   - ZLPhotoBrowser (4.3.8):
     - ZLPhotoBrowser/Core (= 4.3.8)
@@ -48,16 +59,21 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_pickers (from `.symlinks/plugins/image_pickers/ios`)
+  - jpush_flutter (from `.symlinks/plugins/jpush_flutter/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
   - vibration (from `.symlinks/plugins/vibration/ios`)
+  - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - FMDB
+    - JCore
+    - JPush
     - SDWebImage
     - ZLPhotoBrowser
 
@@ -68,6 +84,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
   image_pickers:
     :path: ".symlinks/plugins/image_pickers/ios"
+  jpush_flutter:
+    :path: ".symlinks/plugins/jpush_flutter/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
   permission_handler_apple:
@@ -76,8 +94,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/shared_preferences_ios/ios"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
   vibration:
     :path: ".symlinks/plugins/vibration/ios"
+  webview_flutter_wkwebview:
+    :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
@@ -85,12 +107,17 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
   image_pickers: 075764ed041c5e3089fcd4d040384ecdb23840e0
+  JCore: 4c9febdfdb1a5675ab361bc1f06c0905391d7b23
+  JPush: 2caabdb6d62d009bc07a9bd115d03c7c42512b5e
+  jpush_flutter: 3badd7fb60be478508730b46a701430be4d13c48
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
   SDWebImage: 9c36e66c8ce4620b41a7407698dda44211a96764
   shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
   vibration: 7d883d141656a1c1a6d8d238616b2042a51a1241
+  webview_flutter_wkwebview: 2e2d318f21a5e036e2c3f26171342e95908bd60a
   ZLPhotoBrowser: a36e618898b781c225672115938ed861a11b2121
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3

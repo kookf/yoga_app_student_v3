@@ -17,17 +17,17 @@ class MessagePageController extends GetxController{
 
   onRefresh()async{
      page = 1 ;
-    requestDataWithNoticeList(page);
+    requestDataWithNoticeList();
   }
   onLoad()async{
     await Future.delayed(const Duration(milliseconds: 500));
     page++;
-    requestDataWithNoticeList(page);
+    requestDataWithNoticeList();
   }
 
 
 
-  requestDataWithNoticeList(int page )async{
+  requestDataWithNoticeList()async{
     var params = {
       'method':'notice.list',
       'page':page,
@@ -53,7 +53,7 @@ class MessagePageController extends GetxController{
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    requestDataWithNoticeList(1);
+    requestDataWithNoticeList();
   }
 
 }

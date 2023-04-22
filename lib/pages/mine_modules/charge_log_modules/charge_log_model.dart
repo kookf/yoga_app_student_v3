@@ -58,6 +58,7 @@ class ChargeLogList {
   String? updatedAt;
   var createdAt;
   String? image;
+  String? cause;
 
   ChargeLogList(
       {this.id,
@@ -68,6 +69,7 @@ class ChargeLogList {
         this.payTime,
         this.updatedAt,
         this.createdAt,
+        this.cause,
         this.image});
 
   ChargeLogList.fromJson(Map<String, dynamic> json) {
@@ -80,6 +82,7 @@ class ChargeLogList {
     updatedAt = json['updated_at'];
     createdAt = json['created_at'];
     image = json['image'];
+    cause = json['cause'];
   }
 
   Map<String, dynamic> toJson() {

@@ -1,8 +1,10 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yoga_student_app/common/colors.dart';
+import '../../services/address.dart';
 import 'classtime_controller.dart';
 
 
@@ -72,6 +74,40 @@ class ClassTimeView extends GetView{
             ),
             Center(child: Text('',style: TextStyle(fontSize: 30,color: AppColor.themeTextColor,fontWeight: FontWeight.w700),)),
             const SizedBox(height: 15,),
+
+            Center(
+              child: Container(
+                // height: 100,
+                // width: 100,
+                // color: Colors.red,
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                      ),
+                      width: 100,
+                      height: 100,
+                      clipBehavior: Clip.antiAlias,
+                      child: CachedNetworkImage(
+                        imageUrl:
+                        '${Address.homeHost}/storage/${controller.model?.teacherAvatar}',
+                        placeholder: (context, url) =>
+                        const CircularProgressIndicator(),
+                        errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    SizedBox(height: 15,),
+                    Text('${controller.model?.teacherName}',style: TextStyle(
+                      fontSize: 18,color: Colors.black,
+                    ),)
+                  ],
+                )
+              ),
+            ),
+            SizedBox(height: 15,),
             Center(
               child: Container(
                 decoration: BoxDecoration(
