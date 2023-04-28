@@ -226,7 +226,16 @@ class MineView extends GetView{
             GestureDetector(
               onTap: (){
                 // Get.to(const SettingPage());
-                controller.requestDataWithLoginOut();
+                Get.defaultDialog(
+                  title: '提示',content: Text('是否確認登出'),
+                  cancel: MaterialButton(onPressed: (){
+                    Get.back();
+                  },child: Text('取消'),),confirm: MaterialButton(onPressed: (){
+                    Get.back();
+                    controller.requestDataWithLoginOut();
+                },child: Text('確認',style: TextStyle(color: AppColor.themeColor),),)
+                );
+                //
               },
               child: Container(
                   decoration: BoxDecoration(
