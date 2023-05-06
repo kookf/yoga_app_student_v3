@@ -359,9 +359,10 @@ class ClassTimeView extends GetView{
               ),
             ),
             Expanded(child:Container(
+              width: Get.width,
               // height: 200,
-              alignment: Alignment.bottomRight,
-              child: Image.asset('images/yuyuebg.png'),
+              // alignment: Alignment.bottomRight,
+              child: Image.asset('images/yuyuebg.png',fit: BoxFit.fitWidth,),
             ),)
           ],
         );

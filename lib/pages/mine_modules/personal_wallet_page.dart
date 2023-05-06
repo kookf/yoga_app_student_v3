@@ -203,7 +203,7 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
         userModel?.data?.walletExpireAt == null
             ? const SizedBox()
             : Text(
-            '提示:代幣與${userModel?.data?.walletExpireAt}過期',
+            '提示:Credit與${userModel?.data?.walletExpireAt}過期',
             style: TextStyle(color: AppColor.themeTextColor, fontSize: 12),
               ),
       ],

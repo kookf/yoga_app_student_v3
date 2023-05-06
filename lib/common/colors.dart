@@ -4,7 +4,7 @@ import '../utils/hex_color.dart';
 
 class AppColor{
   /// 主题色
-  static Color themeColor = HexColor('#D2A5CC');
+  static Color themeColor = Color.fromRGBO(234, 195, 226, 1);
   /// 界面背景色
   static Color bgColor = HexColor('#FAF7F7');
   /// 按鈕背景色

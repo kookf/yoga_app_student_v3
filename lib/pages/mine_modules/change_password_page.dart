@@ -48,10 +48,9 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
           Container(
               height: MediaQuery.of(context).padding.top+kToolbarHeight,
               width: Get.width,
-              decoration: const BoxDecoration(
-                image:DecorationImage(image: AssetImage('images/appbar_bg.png',),
-                  fit: BoxFit.fill,
-                ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: AppColor.themeColor,
               ),
               alignment: Alignment.center,
               child: Row(

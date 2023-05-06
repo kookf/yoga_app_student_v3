@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:yoga_student_app/common/colors.dart';
 import 'package:get/get.dart';
 import 'package:yoga_student_app/lang/message.dart';
@@ -71,6 +72,20 @@ class _PayMethodPageState extends State<PayMethodPage> {
     });
   }
 
+  /// 获取警示
+  String refundStr = '';
+  requestDataWithRefund()async{
+    var params = {
+      'method':'charge.refund',
+    };
+    var json = await DioManager().kkRequest(Address.hostAuth,
+        bodyParams: params);
+    refundStr = json['data']['refund'];
+    setState(() {
+
+    });
+  }
+
 
 
   @override
@@ -78,7 +93,9 @@ class _PayMethodPageState extends State<PayMethodPage> {
     // TODO: implement initState
     super.initState();
     requestDataWithChargeType();
+    requestDataWithRefund();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -164,28 +181,12 @@ class _PayMethodPageState extends State<PayMethodPage> {
                       // ),
                       Container(
 
-                          margin: const EdgeInsets.only(top: 15,left: 35,right: 35),
+                          margin: const EdgeInsets.only(top: 15,left: 15,
+                              right: 15,bottom: 15),
                           child: Column(
                             children: [
-                              SelectableText('''
-請學員細閱以下提示：
+                              HtmlWidget(refundStr),
 
-1. 學員已繳付的所有費用，不設退款或轉讓，不接受任何理由將課堂延期。MeMoYoga保留一切權利。如患上新冠病毒或任何病患，請出示有效醫生證明，否則一概不可取消課堂。
-
-2. 開課前24小時內不能取消課堂，如未能出席將課堂扣除。
-
-3. 學員身體如有傷患/舊患/懷孕等特別情況，需主動通知老師及學員已明白及同意MeMoYoga其免責機制。
-
-4. 請於開課前5-10分鐘前到達； 如遲到多於10分鐘，有機會被拒上課，以免影響其他學員練習。
-
-5. MeMoYoga有提供消毒物品，請學員於落堂後將瑜伽用具消毒。並請勿踐踏其他人學員的瑜伽蓆，以尊重瑜伽精神。
-
-6. 特殊情況下的上堂安排：如果上堂前2小時，懸掛8號風球或以上或者黑暴雨警告訊號生效，則會停課，已預約課堂可改期。
-
-7. 如有任何問題，可於辦公時間（11:00-21:00）Whatsapp: 5597 8331
-                              
-                              
-                  ''',style: TextStyle(fontSize: 12,color: AppColor.themeTextColor),),
                             ],
                           )
                       ),

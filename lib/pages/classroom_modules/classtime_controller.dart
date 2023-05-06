@@ -10,7 +10,7 @@ import 'classroom_model.dart';
 class ClassTimeController extends GetxController{
 
 
-  ClassRoomList? model;
+  Course? model;
 
 
   String? userName;

@@ -12,7 +12,7 @@ class I18nContent{
 
   /// 登錄與註冊
   static const String appTitle = 'MeMo Yoga';
-  static const String goldLabel= '代幣';
+  static const String goldLabel= 'Credit';
 
   static const String loginInLabel = '登入';
   static const String loginInSuccessLabel = '登錄成功';

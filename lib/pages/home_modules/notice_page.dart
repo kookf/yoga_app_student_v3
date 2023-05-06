@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
+import 'package:yoga_student_app/common/colors.dart';
 import 'package:yoga_student_app/lang/message.dart';
 import '../../services/address.dart';
 import '../../services/dio_manager.dart';
@@ -53,10 +54,12 @@ class _NoticePageState extends State<NoticePage> {
           Container(
               height: MediaQuery.of(context).padding.top+kToolbarHeight,
               width: Get.width,
-              decoration: const BoxDecoration(
-                image:DecorationImage(image: AssetImage('images/appbar_bg.png',),
-                  fit: BoxFit.fill,
-                ),
+              decoration:BoxDecoration(
+                color: AppColor.themeColor,
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                // image:DecorationImage(image: AssetImage('images/appbar_bg.png',),
+                //   fit: BoxFit.fill,
+                // ),
               ),
               alignment: Alignment.center,
               child: Row(

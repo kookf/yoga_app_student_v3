@@ -359,7 +359,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                 ]),
               ),
 
-              // Text('代幣 ${_sharedWalletModel?.data?.owner?.balance??0}',
+              // Text('Credit ${_sharedWalletModel?.data?.owner?.balance??0}',
               //   style: TextStyle(color: AppColor.themeTextColor,
               //       fontSize: 30,fontWeight: FontWeight.w700),),
             ),
@@ -384,7 +384,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
         _sharedWalletModel?.data?.owner == null||_sharedWalletModel?.data?.owner?.walletExpireAt==null
             ? const SizedBox()
             : Text(
-              '提示:代幣與${_sharedWalletModel?.data?.owner?.walletExpireAt}過期',
+              '提示:Credit與${_sharedWalletModel?.data?.owner?.walletExpireAt}過期',
               style:
                   TextStyle(color: AppColor.themeTextColor, fontSize: 12),
             ),

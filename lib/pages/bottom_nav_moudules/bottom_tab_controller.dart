@@ -65,40 +65,51 @@ class TabPage extends GetView{
           physics: const NeverScrollableScrollPhysics(),
           children: _listPageData, // 禁止滑动
         ),
-        bottomNavigationBar:
-        BottomNavigationBar(
-          currentIndex: controller.currentIndex,//配置对应的索引值选中
-          onTap: onTap,
-          backgroundColor: AppColor.themeColor,
-          iconSize: 20.0,//icon的大小
-          fixedColor:Colors.black54,//选中颜色
-          selectedFontSize: 12,
-          unselectedItemColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          // selectedItemColor: Colors.black54,
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset('images/home_bottom_icon.png',width: 36,height: 36,color: Colors.white,),
-              activeIcon: Image.asset('images/home_bottom_icon.png',width: 36,height: 36,color: Colors.black54,),
-              label: I18nContent.bottomHomeLabel,
-            ),
-            BottomNavigationBarItem(
+        bottomNavigationBar:Container(
+          width: Get.width,
+          // decoration: const BoxDecoration(
+          //     color: Colors.grey,
+          //     image: DecorationImage(
+          //     image: AssetImage('images/appbar_bg.png',),
+          //       fit: BoxFit.fitWidth
+          //   )
+          // ),
+          child:   BottomNavigationBar(
+            currentIndex: controller.currentIndex,//配置对应的索引值选中
+            onTap: onTap,
+
+            backgroundColor: AppColor.themeColor,
+            iconSize: 20.0,//icon的大小
+            fixedColor:Colors.black54,//选中颜色
+            selectedFontSize: 12,
+            unselectedItemColor: Colors.white,
+            type: BottomNavigationBarType.fixed,
+            // selectedItemColor: Colors.black54,
+            items: [
+              BottomNavigationBarItem(
+                icon: Image.asset('images/home_bottom_icon.png',width: 36,height: 36,color: Colors.white,),
+                activeIcon: Image.asset('images/home_bottom_icon.png',width: 36,height: 36,color: Colors.black54,),
+                label: I18nContent.bottomHomeLabel,
+              ),
+              BottomNavigationBarItem(
                 icon: Image.asset('images/ic_bottom_calendar.png',width: 36,height: 36,color: Colors.white,),
                 activeIcon: Image.asset('images/ic_bottom_calendar.png',width: 36,height: 36,color: Colors.black54,),
                 label: I18nContent.bottomSubscribeLabel,
-            ),
-            BottomNavigationBarItem(
-                icon: Image.asset('images/ic_message_bottom.png',width: 36,height: 36,color: Colors.white,),
-                activeIcon: Image.asset('images/ic_message_bottom.png',width: 36,height: 36,color: Colors.black54,),
-                label: I18nContent.bottomMessageLabel
-            ),
-            BottomNavigationBarItem(
-                icon: Image.asset('images/mine_bottom_icon.png',width: 36,height: 36,color: Colors.white,),
-                activeIcon: Image.asset('images/mine_bottom_icon.png',width: 36,height: 36,color: Colors.black54,),
-                label: I18nContent.bottomSettingLabel
-            ),
-          ],
-        ),
+              ),
+              BottomNavigationBarItem(
+                  icon: Image.asset('images/ic_message_bottom.png',width: 36,height: 36,color: Colors.white,),
+                  activeIcon: Image.asset('images/ic_message_bottom.png',width: 36,height: 36,color: Colors.black54,),
+                  label: I18nContent.bottomMessageLabel
+              ),
+              BottomNavigationBarItem(
+                  icon: Image.asset('images/mine_bottom_icon.png',width: 36,height: 36,color: Colors.white,),
+                  activeIcon: Image.asset('images/mine_bottom_icon.png',width: 36,height: 36,color: Colors.black54,),
+                  label: I18nContent.bottomSettingLabel
+              ),
+            ],
+          ),
+        )
+
 
       ),
       );

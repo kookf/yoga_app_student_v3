@@ -31,7 +31,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
 
   String createDate = '';
 
-  /// 代幣購買後去待審批=0，已審批去成功審批=1，未通過去未獲通過=2
+  /// Credit購買後去待審批=0，已審批去成功審批=1，未通過去未獲通過=2
   ///
   requestDataWithChargeLog()async{
     var params = {
