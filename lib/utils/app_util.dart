@@ -31,6 +31,7 @@ class AppUtil {
 
       /// 保存的图片数据
       Uint8List imageBytes;
+      File? file;
 
       if (isAsset == true) {
         /// 保存资源图片
@@ -42,7 +43,7 @@ class AppUtil {
         CachedNetworkImage image = CachedNetworkImage(imageUrl: imageUrl);
         BaseCacheManager manager = image.cacheManager ?? DefaultCacheManager();
         // Map<String, String>? headers = image.httpHeaders;
-        File file = await manager.getSingleFile(
+         file = await manager.getSingleFile(
           image.imageUrl,
           // headers: headers,
         );
@@ -50,7 +51,7 @@ class AppUtil {
       }
 
       /// 保存图片
-      final result = await ImageGallerySaver.saveImage(imageBytes);
+      final result = await ImageGallerySaver.saveFile(file!.path);
 
       if (result == null || result == '') throw '图片保存失败';
       BotToast.showText(text: '已存儲到本地');

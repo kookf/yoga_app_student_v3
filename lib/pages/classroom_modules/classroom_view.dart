@@ -336,29 +336,21 @@ class ClassroomView extends GetView {
         ///
         // ClassRoomList model = controller.dataArr[index];
         Classroomlist model = controller.dataArr[index];
-        return GestureDetector(
-          onTap: () async {
-            // Get.to(SignClassPage());
-            var data = await Get.toNamed(AppRoutes.classtime, arguments: model);
-            if (data == 'refresh') {
-              controller.requestDataWithCourseList();
-            }
-          },
-          child:Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.only(left: 25,right: 15,top: 10),
-                color: Colors.transparent,
-                child: Text('${model.day}',style: TextStyle(
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: EdgeInsets.only(left: 25,right: 15,top: 10),
+              color: Colors.transparent,
+              child: Text('${model.day}',style: TextStyle(
                   fontSize: 18,fontWeight: FontWeight.w600,
                   color: AppColor.smallTextColor
-                ),),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (context,a){
+              ),),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context,a){
                 return GestureDetector(
                   onTap: ()async{
                     var data = await Get.toNamed(AppRoutes.classtime,
@@ -403,7 +395,7 @@ class ClassroomView extends GetView {
                                 Container(
                                   margin: const EdgeInsets.only(top: 10, left: 15),
                                   child: Text(
-                                    '日期：${model.course?[a].startDay}',
+                                    '開堂時間：${model.course?[a].startDay} ${model.course?[a].startTime}',
                                     style: appThemeData.textTheme.bodyText1!.copyWith(
                                         color: AppColor.themeTextColor,
                                         fontWeight: FontWeight.w700),
@@ -601,9 +593,7 @@ class ClassroomView extends GetView {
                   ),
                 );
               },itemCount: model.course?.length??0,)
-            ],
-          )
-
+          ],
         );
       },
       childCount: controller.dataArr.length,
@@ -654,14 +644,21 @@ class FixedPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
                     controller.update();
                   }, icon: Icon(Icons.arrow_back_ios,size: 15,
                     color: AppColor.themeTextColor,)),
-                  Text('This Week',style: TextStyle(
-                      fontSize: 21,fontWeight: FontWeight.w600,
-                      color: AppColor.themeTextColor
-                  ),),
+                  GestureDetector(
+                    onTap: (){
+                      controller.getInitWeek();
+                      controller.requestDataWithCourseList();
+                      controller.update();
+
+                    },
+                    child: Text('This Week',style: TextStyle(
+                        fontSize: 21,fontWeight: FontWeight.w600,
+                        color: AppColor.themeTextColor
+                    ),),
+                  ),
                   IconButton(onPressed: (){
                     controller.nextWeek();
                     controller.update();
-
                   },
                       icon: Icon(Icons.arrow_forward_ios,size: 15,
                         color: AppColor.themeTextColor,)),

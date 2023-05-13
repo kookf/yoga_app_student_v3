@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:yoga_student_app/common/colors.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
+import 'package:yoga_student_app/utils/hex_color.dart';
 import '../../components/gradient_button.dart';
 import 'package:get/get.dart';
 class ClassRoomCalendarPage extends StatefulWidget {
@@ -106,8 +107,8 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
             children: [
               Text('${date.day}'),
              num==null?SizedBox():
-             Text('(${num})',style: TextStyle(
-                fontSize: 13,color: Colors.black
+             Text('/(${num})',style: TextStyle(
+                fontSize: 13,color: AppColor.themeTextColor
               ),),
             ],
           ),
@@ -282,6 +283,7 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
       ],
     );
   }
+
   List pickerChildren = [
     "上午",
     "下午",

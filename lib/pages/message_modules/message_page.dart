@@ -121,7 +121,7 @@ class MessagePage extends GetView{
               width: Get.width,
               // color: Colors.red,
               margin: const EdgeInsets.only(left: 15,top: 5,right: 15),
-              child: Text('${model.msg}222',style: TextStyle(color: HexColor('#D15299'),
+              child: Text('${model.msg}',style: TextStyle(color: HexColor('#D15299'),
                   fontSize: 19,fontWeight: FontWeight.w700),),
             ),
             const SizedBox(height: 15,),
