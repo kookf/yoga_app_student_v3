@@ -31,7 +31,7 @@ class Data {
     if (json['list'] != null) {
       list = <CourseList>[];
       json['list'].forEach((v) {
-        list!.add( CourseList.fromJson(v));
+        list!.add(CourseList.fromJson(v));
       });
     }
   }

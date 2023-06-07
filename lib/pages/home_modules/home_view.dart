@@ -10,81 +10,88 @@ import 'package:yoga_student_app/pages/home_modules/home_controller.dart';
 import 'notice_page.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class HomeView extends GetView{
+class HomeView extends GetView {
   @override
   final HomeController controller = Get.put(HomeController());
 
-   HomeView({super.key});
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: AppColor.themeColor,
-      //   title: Text('MeMo Yoga',style: TextStyle(color: AppColor.themeTextColor),),
-      // ),
-      body: GetBuilder<HomeController>(builder: (_){
-        return Column(
-          children: [
-            Container(
-                height: MediaQuery.of(context).padding.top+kToolbarHeight,
-                width: Get.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: AppColor.themeColor,
+        // appBar: AppBar(
+        //   backgroundColor: AppColor.themeColor,
+        //   title: Text('MeMo Yoga',style: TextStyle(color: AppColor.themeTextColor),),
+        // ),
+        body: GetBuilder<HomeController>(builder: (_) {
+      return Column(
+        children: [
+          Container(
+              height: MediaQuery.of(context).padding.top + kToolbarHeight,
+              width: Get.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: AppColor.themeColor,
+              ),
+              // decoration: const BoxDecoration(
+              //   image:DecorationImage(image: AssetImage('images/appbar_bg.png',),
+              //     fit: BoxFit.fill,
+              //   ),
+              // ),
+              alignment: Alignment.center,
+              child: Container(
+                padding: const EdgeInsets.only(top: 25),
+                child: const Text(
+                  I18nContent.appTitle,
+                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
                 ),
-                // decoration: const BoxDecoration(
-                //   image:DecorationImage(image: AssetImage('images/appbar_bg.png',),
-                //     fit: BoxFit.fill,
-                //   ),
-                // ),
-                alignment: Alignment.center,
-                child: Container(
-                  padding: const EdgeInsets.only(top: 25),
-                  child: const Text(I18nContent.appTitle,
-                    style: TextStyle(fontSize: 19,fontWeight: FontWeight.w500),),
-                )
-            ),
-            Expanded(child:ListView(
-
+              )),
+          Expanded(
+            child: ListView(
               padding: const EdgeInsets.all(0),
               children: [
                 Container(
-                  margin: const EdgeInsets.only(left: 25,right: 25,top: 15),
+                  margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    image:DecorationImage(
+                    image: DecorationImage(
                       image: ExactAssetImage('images/ic_home_bg.png'),
                       fit: BoxFit.cover,
                     ),
-
                   ),
                   height: 600,
                   child: Column(
                     children: [
                       Container(
                         decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(8))
-                        ),
+                            borderRadius: BorderRadius.all(Radius.circular(8))),
                         clipBehavior: Clip.antiAlias,
                         height: 200,
                         // color: Colors.red,
-                        margin: const EdgeInsets.only(left: 15,right: 15,top: 15),
-                        child: Swiper(itemCount: controller.homeIndexModel?.data?.banner?.length??3,
+                        margin:
+                            const EdgeInsets.only(left: 15, right: 15, top: 15),
+                        child: Swiper(
+                          itemCount:
+                              controller.homeIndexModel?.data?.banner?.length ??
+                                  3,
                           autoplay: true,
                           pagination: SwiperPagination(
                               alignment: Alignment.bottomCenter,
                               builder: DotSwiperPaginationBuilder(
                                   color: Colors.white,
-                                  activeColor: AppColor.themeTextColor
-                              )
-                          ),
-                          itemBuilder: (BuildContext context,int index){
-                            return  GestureDetector(
-                              onTap: (){
-                                if(int.parse(controller.homeIndexModel!.data!.banner![index].url!) >=1){
-                                  Get.to(NoticePage(int.parse(controller.homeIndexModel!.data!.banner![index].url!)));
+                                  activeColor: AppColor.themeTextColor)),
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                if (int.parse(controller.homeIndexModel!.data!
+                                        .banner![index].url!) >=
+                                    1) {
+                                  Get.to(NoticePage(int.parse(controller
+                                      .homeIndexModel!
+                                      .data!
+                                      .banner![index]
+                                      .url!)));
                                 }
                               },
                               child: Container(
@@ -96,29 +103,39 @@ class HomeView extends GetView{
                                 padding: const EdgeInsets.all(0),
                                 child: CachedNetworkImage(
                                   imageUrl:
-                                  '${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
+                                      '${controller.homeIndexModel?.data?.banner?[index].coverUrl}',
                                   placeholder: (context, url) => const Center(
                                     child: CircularProgressIndicator(),
                                   ),
-                                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(Icons.error),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             );
-                          },),
+                          },
+                        ),
                       ),
-                      const SizedBox(height: 5,),
+                      const SizedBox(
+                        height: 5,
+                      ),
                       Center(
-                        child: Text(I18nContent.noticeTitleLabel,
-                          style: TextStyle(color: AppColor.themeTextColor,fontSize: 20,
-                            fontWeight: FontWeight.w600),),
+                        child: Text(
+                          I18nContent.noticeTitleLabel,
+                          style: TextStyle(
+                              color: AppColor.themeTextColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                      const SizedBox(height: 5,),
-
+                      const SizedBox(
+                        height: 5,
+                      ),
                       Container(
                         height: 300,
                         // color: Colors.red,
-                        margin: const EdgeInsets.only(left: 5,right: 5,top: 0),
+                        margin:
+                            const EdgeInsets.only(left: 5, right: 5, top: 0),
                         child: CustomScrollView(
                           // shrinkWrap: true,
                           // physics: const NeverScrollableScrollPhysics(),
@@ -148,23 +165,32 @@ class HomeView extends GetView{
                       )
                     ],
                   ),
-
                 ),
                 Container(
-                  margin: const EdgeInsets.only(left: 25,right: 25,top: 15),
+                  margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
                   decoration: const BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(8))
-                  ),
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
                   height: 230,
                   child: Column(
                     children: [
-                      const SizedBox(height: 10,),
-                      Text(I18nContent.contactUsLabel,style: TextStyle(fontSize: 19,
-                          color: AppColor.themeTextColor,fontWeight: FontWeight.w700),),
-                      const SizedBox(height: 10,),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        I18nContent.contactUsLabel,
+                        style: TextStyle(
+                            fontSize: 19,
+                            color: AppColor.themeTextColor,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       Image.asset('images/ic_location.png'),
-                      const SizedBox(height: 10,),
+                      const SizedBox(
+                        height: 10,
+                      ),
                       // Container(
                       //   margin: EdgeInsets.only(left: 15,right: 15),
                       //   alignment: Alignment.center,
@@ -181,13 +207,18 @@ class HomeView extends GetView{
                         builder: (BuildContext ctx, FollowLink? openLink) {
                           return TextButton.icon(
                             onPressed: openLink,
-                            label: Text('地址:${controller.homeIndexModel?.data?.site?.address}（按此查看地圖）'
-                              ,style: TextStyle(color: AppColor.themeTextColor),textAlign: TextAlign.center,),
+                            label: Text(
+                              '地址:${controller.homeIndexModel?.data?.site?.address}（按此查看地圖）',
+                              style: TextStyle(color: AppColor.themeTextColor),
+                              textAlign: TextAlign.center,
+                            ),
                             icon: SizedBox(),
                           );
                         },
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(
+                        height: 10,
+                      ),
 
                       // Center(
                       //   child: Container(
@@ -200,15 +231,19 @@ class HomeView extends GetView{
                       // ),
                       Container(
                         margin: const EdgeInsets.only(top: 5),
-                        child: SelectableText('電話: ${controller.homeIndexModel?.data?.site?.tel}',
+                        child: SelectableText(
+                          '電話: ${controller.homeIndexModel?.data?.site?.tel}',
                           style: TextStyle(color: AppColor.themeTextColor),
-                          textAlign: TextAlign.center,),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 5),
-                        child: SelectableText('${I18nContent.emailLabel}: ${controller.homeIndexModel?.data?.site?.mail}',
+                        child: SelectableText(
+                          '${I18nContent.emailLabel}: ${controller.homeIndexModel?.data?.site?.mail}',
                           style: TextStyle(color: AppColor.themeTextColor),
-                          textAlign: TextAlign.center,),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ],
                   ),
@@ -217,17 +252,19 @@ class HomeView extends GetView{
                   height: 20,
                 )
               ],
-            ),),
-          ],
-        );
-      })
-    );
+            ),
+          ),
+        ],
+      );
+    }));
   }
-  SliverChildBuilderDelegate _mySliverChildBuildList(){
+
+  SliverChildBuilderDelegate _mySliverChildBuildList() {
     return SliverChildBuilderDelegate((context, index) {
       return GestureDetector(
-        onTap: (){
-          Get.to(NoticePage(controller.homeIndexModel!.data!.notice![index].id!));
+        onTap: () {
+          Get.to(
+              NoticePage(controller.homeIndexModel!.data!.notice![index].id!));
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -239,33 +276,41 @@ class HomeView extends GetView{
                   padding: const EdgeInsets.only(left: 15),
                   alignment: Alignment.centerLeft,
                   height: 50,
-                    width: Get.width/2-20,
-                    // color: Colors.red,
-                    child: Text('${controller.homeIndexModel?.data?.notice?[index].title}',
-                      style: TextStyle(fontWeight: FontWeight.w600,fontSize: 17,
-                      color: AppColor.themeTextColor),maxLines: 1,
-                      overflow: TextOverflow.ellipsis,),
+                  width: Get.width / 2 - 20,
+                  // color: Colors.red,
+                  child: Text(
+                    '${controller.homeIndexModel?.data?.notice?[index].title}',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17,
+                        color: AppColor.themeTextColor),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 Container(
                   padding: const EdgeInsets.only(right: 15),
                   alignment: Alignment.centerLeft,
                   height: 50,
                   // width: 100,
-                  child: Text('${controller.homeIndexModel?.data?.notice?[index].noticeTime}'
-                    ,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14,
-                      color: AppColor.themeTextColor),),
+                  child: Text(
+                    '${controller.homeIndexModel?.data?.notice?[index].noticeTime}',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        color: AppColor.themeTextColor),
+                  ),
                 ),
-
               ],
             ),
             Container(
-              margin: const EdgeInsets.only(left: 5,right: 5),
+              margin: const EdgeInsets.only(left: 5, right: 5),
               color: Colors.black,
               height: 0.5,
             )
           ],
         ),
       );
-    },childCount: controller.homeIndexModel?.data?.notice?.length??0);
+    }, childCount: controller.homeIndexModel?.data?.notice?.length ?? 0);
   }
 }

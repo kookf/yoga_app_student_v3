@@ -16,8 +16,6 @@ class AppointmentRecordPage extends StatefulWidget {
 }
 
 class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
-
-
   int selectIndex = 1;
 
   String startDay = '';
@@ -28,45 +26,46 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
 
   int page = 1;
 
-  requestDataWithCourseList({String? startDay,})async{
+  requestDataWithCourseList({
+    String? startDay,
+  }) async {
     var params = {
-      'method':'course.list',
-      'page':page,
-      'subscribe':'1',
-      'start_day':startDay,
-      'is_teacher':'0',
+      'method': 'course.list',
+      'page': page,
+      'subscribe': '1',
+      'start_day': startDay,
+      'is_teacher': '0',
     };
-    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+    var json =
+        await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
     ClassRoomModel model = ClassRoomModel.fromJson(json);
     // dataArr.clear();
-    if(page == 1){
+    if (page == 1) {
       easyRefreshController.resetLoadState();
       dataArr.clear();
       dataArr.addAll(model.data!.classroomlist!);
-    }else{
-      if(model.data!.classroomlist!.isNotEmpty){
+    } else {
+      if (model.data!.classroomlist!.isNotEmpty) {
         dataArr.addAll(model.data!.classroomlist!);
-      }else{
+      } else {
         easyRefreshController.finishLoad(noMore: true);
-
       }
     }
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   /// 取消预约
 
-  requestDataWithCancel(String courseTimeId)async{
+  requestDataWithCancel(String courseTimeId) async {
     var params = {
-      'method':'subscribe.cancel',
-      'course_time_id':courseTimeId,
+      'method': 'subscribe.cancel',
+      'course_time_id': courseTimeId,
     };
-    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
-    if(json['code'] == 200){
+    var json =
+        await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
+    if (json['code'] == 200) {
       BotToast.showText(text: '取消成功');
-    }else{
+    } else {
       BotToast.showText(text: json['message']);
     }
     requestDataWithCourseList();
@@ -79,7 +78,6 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
     requestDataWithCourseList();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,16 +85,15 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
         headerSliverBuilder: _headerSliverBuilder,
         body: buildSliverBody(context),
       ),
-
     );
   }
 
   ///页面滚动头部处理
-  List<Widget> _headerSliverBuilder(BuildContext context, bool innerBoxIsScrolled) {
-    return <Widget> [
-      buildSliverAppBar(context)
-    ];
+  List<Widget> _headerSliverBuilder(
+      BuildContext context, bool innerBoxIsScrolled) {
+    return <Widget>[buildSliverAppBar(context)];
   }
+
   ///导航部分渲染
   Widget buildSliverAppBar(BuildContext context) {
     return SliverAppBar(
@@ -106,15 +103,16 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
       elevation: 0,
       // backgroundColor:AppColor.themeColor,
       snap: false,
-      iconTheme: const IconThemeData(
-          color: Colors.black
-      ),
+      iconTheme: const IconThemeData(color: Colors.black),
       flexibleSpace: FlexibleSpaceBar(
-        title:  Text('', style: TextStyle(
-          color: AppColor.themeTextColor,
-          fontWeight: FontWeight.w700,
-          fontSize: 16,
-        ),) ,
+        title: Text(
+          '',
+          style: TextStyle(
+            color: AppColor.themeTextColor,
+            fontWeight: FontWeight.w700,
+            fontSize: 16,
+          ),
+        ),
         centerTitle: true,
         background: buildAppBarBackground(context),
       ),
@@ -129,31 +127,44 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
             // height: 140,
             alignment: Alignment.topCenter,
             // color: Colors.red,
-            child: Image.asset('images/ic_bg.png',width: Get.width,fit: BoxFit.cover,),
+            child: Image.asset(
+              'images/ic_bg.png',
+              width: Get.width,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
 
         // Image.asset('images/appbar_bg.png',fit: BoxFit.fitWidth,width: Get.width,),
         Align(
-
-          child:Container(
+          child: Container(
             width: Get.width,
-            margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top+25),
+            margin:
+                EdgeInsets.only(top: MediaQuery.of(context).padding.top + 25),
             // height: 200,
             // color: Colors.redAccent,
             // color: Colors.redAccent,
             child: Column(
               children: [
-                Image.asset('images/login_log.png',width: 130,height: 130,),
-                const SizedBox(height: 3,),
-                Text('預約記錄',style: TextStyle(color: AppColor.themeTextColor,fontSize: 21,
-                    fontWeight: FontWeight.w700),),
+                Image.asset(
+                  'images/login_log.png',
+                  width: 130,
+                  height: 130,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Text(
+                  '預約記錄',
+                  style: TextStyle(
+                      color: AppColor.themeTextColor,
+                      fontSize: 21,
+                      fontWeight: FontWeight.w700),
+                ),
               ],
             ),
           ),
         ),
-
-
 
         // Container(
         //   margin: EdgeInsets.only(top: 100),
@@ -163,12 +174,11 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
         //     ),),
         //   ),
         // ),
-
       ],
     );
   }
 
-  Widget buildSliverBody(BuildContext context){
+  Widget buildSliverBody(BuildContext context) {
     return Container(
       color: AppColor.bgColor,
       child: Column(
@@ -257,39 +267,53 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
           //     ],
           //   ),
           // ),
-          Expanded(child:   EasyRefresh.custom(
-          emptyWidget:dataArr.isEmpty?const Center(child:Text('暫無信息')):null,
-              header: MaterialHeader(),
-              footer: MaterialFooter1(),
-              controller: easyRefreshController,
-              onRefresh: ()async{
-               page = 1;
-               requestDataWithCourseList();
-              },
-              onLoad: ()async{
-              page++;
-              requestDataWithCourseList();
-              },
-            slivers: [
-
-              SliverToBoxAdapter(
-                child:   Container(
-                  height: 60,
-                  color: AppColor.themeColor,
-                  padding: const EdgeInsets.only(left: 55,right: 55),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('課程名稱',style: TextStyle(fontSize: 20,color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
-                      Text('狀態',style: TextStyle(fontSize: 20,color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
-                    ],
+          Expanded(
+              child: EasyRefresh.custom(
+                  emptyWidget: dataArr.isEmpty
+                      ? const Center(child: Text('暫無信息'))
+                      : null,
+                  header: MaterialHeader(),
+                  footer: MaterialFooter1(),
+                  controller: easyRefreshController,
+                  onRefresh: () async {
+                    page = 1;
+                    requestDataWithCourseList();
+                  },
+                  onLoad: () async {
+                    page++;
+                    requestDataWithCourseList();
+                  },
+                  slivers: [
+                SliverToBoxAdapter(
+                  child: Container(
+                    height: 60,
+                    color: AppColor.themeColor,
+                    padding: const EdgeInsets.only(left: 55, right: 55),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '課程名稱',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: AppColor.themeTextColor,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          '狀態',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: AppColor.themeTextColor,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SliverList(
-                delegate: _mySliverChildBuilderDelegate(),
-              ),
-            ])),
+                SliverList(
+                  delegate: _mySliverChildBuilderDelegate(),
+                ),
+              ])),
         ],
       ),
     );
@@ -297,126 +321,168 @@ class _AppointmentRecordPageState extends State<AppointmentRecordPage> {
 
   SliverChildBuilderDelegate _mySliverChildBuilderDelegate() {
     return SliverChildBuilderDelegate(
-          (BuildContext context, int index) {
-            Classroomlist model = dataArr[index];
+      (BuildContext context, int index) {
+        Classroomlist model = dataArr[index];
         return Container(
           // margin: const EdgeInsets.only(left: 30,right: 30,top: 0,bottom: 15),
           // height: 180,
           color: AppColor.bgColor,
           child: GestureDetector(
-            onTap: (){
-            },
-            child:Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  // color: Colors.red,
-                  padding: EdgeInsets.only(left: 15,top: 10,right: 15),
-                  child: Text('${model.day}',style: TextStyle(
-                    fontSize: 18,color: AppColor.smallTextColor
-                  ),),
-                ),
-                ListView.builder(
+              onTap: () {},
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    // color: Colors.red,
+                    padding:
+                        const EdgeInsets.only(left: 15, top: 10, right: 15),
+                    child: Text(
+                      '${model.day}',
+                      style: TextStyle(
+                          fontSize: 18, color: AppColor.smallTextColor),
+                    ),
+                  ),
+                  ListView.builder(
+                    padding: const EdgeInsets.all(0),
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context,a){
-                  return  Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                              color: Colors.black,
-                              width: 0.3
-                          )
-                      ),
-                      padding: const EdgeInsets.only(left: 15,right: 5),
-                      // height: 75,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, a) {
+                      return Container(
+                          margin: const EdgeInsets.only(top: 15),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border:
+                                  Border.all(color: Colors.black, width: 0.3)),
+                          padding: const EdgeInsets.only(left: 15, right: 5),
+                          // height: 75,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                color: Colors.white,
-                                width: Get.width-150,
-                                padding: EdgeInsets.only(top: 15),
-                                child: Text('${model.course?[a].name}',style: TextStyle(fontWeight: FontWeight.w700,
-                                    fontSize: 23,color: AppColor.themeTextColor),maxLines: 2,),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    color: Colors.white,
+                                    width: Get.width - 150,
+                                    padding: EdgeInsets.only(top: 15),
+                                    child: Text(
+                                      '${model.course?[a].name}',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 23,
+                                          color: AppColor.themeTextColor),
+                                      maxLines: 2,
+                                    ),
+                                  ),
+                                  Text(
+                                    '開始時間：${model.course?[a].startDay} ${model.course?[a].startTime}',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 16,
+                                        color: AppColor.themeTextColor),
+                                  ),
+                                  SizedBox(
+                                    width: 200,
+                                    child: Text(
+                                      'Credit：${model.course?[a].gold}',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16,
+                                          color: AppColor.themeTextColor),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  // TextButton(onPressed: (){
+                                  //
+                                  //   if(model.subscribeId!>=1&&model.subscribeStatus==0){
+                                  //     Get.defaultDialog(title: '提示',middleText: '是否要取消當前課程',
+                                  //         buttonColor: AppColor.themeColor,
+                                  //         confirmTextColor: AppColor.themeTextColor,
+                                  //         cancelTextColor: AppColor.themeTextColor,
+                                  //         textCancel:'取消',textConfirm: '確定',onConfirm: (){
+                                  //       requestDataWithCancel('${model.courseTimeId}');
+                                  //       Get.back();
+                                  //     },onCancel: (){
+                                  //
+                                  //     });
+                                  //   }else{
+                                  //     BotToast.showText(text: '不可取消預約');
+                                  //   }
+                                  //
+                                  // }, child: Text('取消預約',style: TextStyle(color: AppColor.themeColor),)),
+                                ],
                               ),
-                              Text('開始時間：${model.course?[a].startDay} ${model.course?[a].startTime}',style: TextStyle(fontWeight: FontWeight.w700,
-                                  fontSize: 16,color: AppColor.themeTextColor),),
-                              SizedBox(
-                                width: 200,
-                                child: Text('Credit：${model.course?[a].gold}',style: TextStyle(fontWeight: FontWeight.w700,
-                                    fontSize: 16,color: AppColor.themeTextColor),maxLines: 1,overflow: TextOverflow.ellipsis,),
-                              ),
-                              SizedBox(height: 15,),
-                              // TextButton(onPressed: (){
-                              //
-                              //   if(model.subscribeId!>=1&&model.subscribeStatus==0){
-                              //     Get.defaultDialog(title: '提示',middleText: '是否要取消當前課程',
-                              //         buttonColor: AppColor.themeColor,
-                              //         confirmTextColor: AppColor.themeTextColor,
-                              //         cancelTextColor: AppColor.themeTextColor,
-                              //         textCancel:'取消',textConfirm: '確定',onConfirm: (){
-                              //       requestDataWithCancel('${model.courseTimeId}');
-                              //       Get.back();
-                              //     },onCancel: (){
-                              //
-                              //     });
-                              //   }else{
-                              //     BotToast.showText(text: '不可取消預約');
-                              //   }
-                              //
-                              // }, child: Text('取消預約',style: TextStyle(color: AppColor.themeColor),)),
-
+                              model.course?[a].subscribeId == 0
+                                  ? Container(
+                                      height: 45,
+                                      width: 90,
+                                      padding: const EdgeInsets.all(5),
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        color: AppColor.themeTextColor,
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(20)),
+                                      ),
+                                      child: const Text(
+                                        '未預約',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 13),
+                                      ),
+                                    )
+                                  : model.course![a].subscribeId! >= 1 &&
+                                          model.course?[a].subscribeStatus == 0
+                                      ? Container(
+                                          height: 45,
+                                          width: 90,
+                                          padding: const EdgeInsets.all(5),
+                                          alignment: Alignment.center,
+                                          decoration: BoxDecoration(
+                                            color: AppColor.themeTextColor,
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(20)),
+                                          ),
+                                          child: Text(
+                                            '預約待审核',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 13),
+                                          ))
+                                      : model.course![a].subscribeStatus == 1 &&
+                                              model.course![a].subscribeId! >= 1
+                                          ? Container(
+                                              height: 45,
+                                              width: 90,
+                                              padding: const EdgeInsets.all(5),
+                                              alignment: Alignment.center,
+                                              decoration: BoxDecoration(
+                                                color: AppColor.themeTextColor,
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                        Radius.circular(20)),
+                                              ),
+                                              child: Text(
+                                                '已預約',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 13),
+                                              ))
+                                          : SizedBox(),
                             ],
-                          ),
-
-                          model.course?[a].subscribeId==0?Container(
-                            height: 45,
-                            width: 90,
-                            padding: const EdgeInsets.all(5),
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: AppColor.themeTextColor,
-                              borderRadius: const BorderRadius.all(Radius.circular(20)),
-                            ),
-                            child:  const Text('未預約',style: TextStyle(color: Colors.white,fontSize: 13),),
-                          ):model.course![a].subscribeId!>=1&&model.course?[a].subscribeStatus==0?Container(
-                              height: 45,
-                              width: 90,
-                              padding: const EdgeInsets.all(5),
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: AppColor.themeTextColor,
-                                borderRadius: const BorderRadius.all(Radius.circular(20)),
-                              ),
-                              child:  Text('預約待审核',style: TextStyle(color: Colors.white,fontSize: 13),))
-                              :model.course![a].subscribeStatus==1&&
-                              model.course![a].subscribeId!>=1?Container(
-                              height: 45,
-                              width: 90,
-                              padding: const EdgeInsets.all(5),
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: AppColor.themeTextColor,
-                                borderRadius: const BorderRadius.all(Radius.circular(20)),
-                              ),
-                              child:  Text('已預約',style: TextStyle(color: Colors.white,fontSize: 13),)):SizedBox(),
-
-                        ],
-                      )
-                  );
-                },itemCount: model.course?.length??0,)
-              ],
-            )
-          ),
+                          ));
+                    },
+                    itemCount: model.course?.length ?? 0,
+                  )
+                ],
+              )),
         );
       },
       childCount: dataArr.length,
     );
   }
-
 }

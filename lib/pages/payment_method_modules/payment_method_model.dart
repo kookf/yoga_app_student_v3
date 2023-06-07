@@ -48,11 +48,12 @@ class Data {
 class PaymentMethodList {
   int? id;
   String? name;
-  String? gold;
+  var gold;
   String? amount;
   int? isShareWallet;
 
-  PaymentMethodList({this.id, this.name, this.gold, this.amount, this.isShareWallet});
+  PaymentMethodList(
+      {this.id, this.name, this.gold, this.amount, this.isShareWallet});
 
   PaymentMethodList.fromJson(Map<String, dynamic> json) {
     id = json['id'];

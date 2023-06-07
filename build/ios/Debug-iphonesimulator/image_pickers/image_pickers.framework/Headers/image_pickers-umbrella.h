@@ -17,6 +17,7 @@
 #import "AKGalleryViewer.h"
 #import "AKInterativeDismissToList.h"
 #import "PlayTheVideoVC.h"
+#import "ChooseImageManager.h"
 #import "ImagePickersPlugin.h"
 #import "MASCompositeConstraint.h"
 #import "MASConstraint+Private.h"

@@ -51,7 +51,7 @@ class Data {
 class ChargeLogList {
   int? id;
   String? orderNo;
-  String? gold;
+  var gold;
   String? amount;
   int? payStatus;
   var payTime;
@@ -62,15 +62,15 @@ class ChargeLogList {
 
   ChargeLogList(
       {this.id,
-        this.orderNo,
-        this.gold,
-        this.amount,
-        this.payStatus,
-        this.payTime,
-        this.updatedAt,
-        this.createdAt,
-        this.cause,
-        this.image});
+      this.orderNo,
+      this.gold,
+      this.amount,
+      this.payStatus,
+      this.payTime,
+      this.updatedAt,
+      this.createdAt,
+      this.cause,
+      this.image});
 
   ChargeLogList.fromJson(Map<String, dynamic> json) {
     id = json['id'];

@@ -1,8 +1,8 @@
 import 'package:bot_toast/bot_toast.dart';
-import 'package:bruno/bruno.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:get/get.dart';
 import 'package:yoga_student_app/lang/message.dart';
 import 'package:yoga_student_app/pages/mine_modules/shared_wallet_module/shared_wallet_log_model.dart';
@@ -39,7 +39,6 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
     SharedWalletModel model = SharedWalletModel.fromJson(json);
 
     _sharedWalletModel = model;
-
     setState(() {});
   }
 
@@ -49,8 +48,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
     var json =
         await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
     BotToast.showText(text: json['message']);
-    if(json['code'] ==200){
-
+    if (json['code'] == 200) {
       Get.back();
     }
     requestDataWithWalletUser();
@@ -64,7 +62,6 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
         await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
     print('remove == ${json}');
     if (json['code'] == 200) {
-
       BotToast.showText(text: '移除成功');
       Get.back();
       Get.back();
@@ -73,7 +70,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
     // requestDataWithWalletUser();
   }
 
-  /// 共享錢包充值記錄
+  /// 共享Credit充值記錄
   var page = 1;
 
   EasyRefreshController easyRefreshController = EasyRefreshController();
@@ -98,10 +95,45 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
         dataArr.addAll(model.data!.list!);
       } else {
         easyRefreshController.finishLoad(noMore: true);
-
       }
     }
     setState(() {});
+  }
+  /// 获取共享提示
+  requestDataWithShardGold()async{
+    var params = {
+      'method': 'charge.share_gold',
+    };
+
+    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+
+    String data = json['data']['share_gold'];
+
+    dialogText(data);
+  }
+
+  ///彈框
+
+  void dialogText(var msg) {
+    Get.defaultDialog(
+      cancel: TextButton(
+        onPressed: () {
+          Get.back();
+        },
+        child: Text(
+          '確定',
+          style: TextStyle(color: AppColor.themeTextColor),
+        ),
+      ),
+      title: '提示',
+      content: Container(
+        padding: EdgeInsets.only(right: 25),
+        // color: Colors.red,
+        child: HtmlWidget(
+         '${msg}'
+        ),
+      ),
+    );
   }
 
   @override
@@ -110,6 +142,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
     super.initState();
     requestDataWithWalletLog();
     requestDataWithWalletUser();
+    requestDataWithShardGold();
     // getAvatar();
   }
 
@@ -143,7 +176,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
             ),
             SliverToBoxAdapter(
               child: Container(
-                height: 110,
+                height: 120,
                 color: AppColor.themeColor,
                 padding: const EdgeInsets.only(left: 35, right: 15, top: 5),
                 child: Row(
@@ -151,7 +184,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text('錢包主人'),
+                        const Text('Credit主人'),
                         Container(
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(35)),
@@ -161,14 +194,15 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                           clipBehavior: Clip.antiAlias,
                           child: CachedNetworkImage(
                             imageUrl:
-                            '${Address.homeHost}/storage/${_sharedWalletModel?.data.owner.avatar}',
+                                '${Address.homeHost}/storage/${_sharedWalletModel?.data.owner.avatar}',
                             placeholder: (context, url) =>
-                            const CircularProgressIndicator(),
+                                const CircularProgressIndicator(),
                             errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                                const Icon(Icons.error),
                             fit: BoxFit.cover,
                           ),
                         ),
+                        Text('${_sharedWalletModel?.data.owner.name}')
                         // Image.asset(
                         //   'images/header3.png',
                         //   width: 75,
@@ -189,7 +223,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                       children: [
                         Container(
                           margin: const EdgeInsets.only(left: 15),
-                          child: const Text('錢包朋友'),
+                          child: const Text('Credit朋友'),
                         ),
                         SizedBox(
                           height: 75,
@@ -203,36 +237,71 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                               SliverToBoxAdapter(
                                 child: GestureDetector(
                                   onTap: () {
-                                    BrnMiddleInputDialog(
-                                        title: '請輸入手機號碼',
-                                        hintText: '手機號碼',
-                                        cancelText: '取消',
-                                        confirmText: '确定',
-                                        maxLength: 20,
-                                        maxLines: 1,
-                                        barrierDismissible: false,
-                                        autoFocus: true,
-
-                                        inputEditingController:
-                                            phoneTextEditingController,
-                                        // inputEditingController: TextEditingController()..text = 'bbb',
-                                        textInputAction: TextInputAction.done,
-                                        onConfirm: (value) {
-                                          if (value.isEmpty) {
-                                            BotToast.showText(text: '請輸入手機號碼');
-                                            return;
-                                          }
-                                          requestDataWithAddWallet(value);
-                                          // BrnToast.show(value, context);
-                                        },
-                                        onCancel: () {
-                                          // BrnToast.show("取消", context);
-                                          Navigator.pop(context);
-                                        }).show(context);
+                                    Get.defaultDialog(
+                                        title: '添加人員',
+                                        titleStyle: TextStyle(fontSize: 16),
+                                        content: TextField(
+                                          controller:
+                                              phoneTextEditingController,
+                                          decoration: InputDecoration(
+                                            hintText: '請輸入手機號碼',
+                                          ),
+                                        ),
+                                        cancel: MaterialButton(
+                                          onPressed: () {
+                                            Get.back();
+                                          },
+                                          child: Text('取消'),
+                                        ),
+                                        confirm: MaterialButton(
+                                          onPressed: () {
+                                            if (phoneTextEditingController
+                                                .text.isEmpty) {
+                                              BotToast.showText(
+                                                  text: '請輸入手機號碼');
+                                              return;
+                                            }
+                                            requestDataWithAddWallet(
+                                                phoneTextEditingController
+                                                    .text);
+                                          },
+                                          child: Text(
+                                            '確定',
+                                            style: TextStyle(
+                                                color: AppColor.themeTextColor),
+                                          ),
+                                        ));
+                                    // BrnMiddleInputDialog(
+                                    //     title: '請輸入手機號碼',
+                                    //     hintText: '手機號碼',
+                                    //     cancelText: '取消',
+                                    //     confirmText: '确定',
+                                    //     maxLength: 20,
+                                    //     maxLines: 1,
+                                    //     barrierDismissible: false,
+                                    //     autoFocus: true,
+                                    //
+                                    //     inputEditingController:
+                                    //         phoneTextEditingController,
+                                    //     // inputEditingController: TextEditingController()..text = 'bbb',
+                                    //     textInputAction: TextInputAction.done,
+                                    //     onConfirm: (value) {
+                                    //       if (value.isEmpty) {
+                                    //         BotToast.showText(text: '請輸入手機號碼');
+                                    //         return;
+                                    //       }
+                                    //       requestDataWithAddWallet(value);
+                                    //       // BrnToast.show(value, context);
+                                    //     },
+                                    //     onCancel: () {
+                                    //       // BrnToast.show("取消", context);
+                                    //       Navigator.pop(context);
+                                    //     }).show(context);
                                   },
                                   child: Container(
                                     margin: const EdgeInsets.only(top: 10),
-                                    padding:const EdgeInsets.only(left: 10,bottom: 15),
+                                    padding: const EdgeInsets.only(
+                                        left: 10, bottom: 15),
                                     child: Image.asset(
                                       'images/ic_add.png',
                                       width: 55,
@@ -261,7 +330,6 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
             ),
           ]),
     );
-
   }
 
   Widget buildAppBarBackground(BuildContext context) {
@@ -292,7 +360,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                 child: Container(
                   margin: const EdgeInsets.only(top: 70),
                   child: Text(
-                    '共享錢包',
+                    '共享Credit',
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w700,
@@ -310,25 +378,36 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
               ),
               Align(
                 alignment: const Alignment(0, 1.0),
-                child: MaterialButton(onPressed: (){
-                  Get.to(PayMethodPage(1));
-                },
-                  color: AppColor.themeTextColor,elevation: 0,
+                child: MaterialButton(
+                  onPressed: () {
+                    Get.to(PayMethodPage(1));
+                  },
+                  color: AppColor.themeTextColor,
+                  elevation: 0,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),minWidth: 120,
-                  child: const Text(I18nContent.reChargeLabel,style: TextStyle(color: Colors.white),),) ,
+                  ),
+                  minWidth: 120,
+                  child: const Text(
+                    I18nContent.reChargeLabel,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Get.back();
                 },
-                child:Container(
+                child: Container(
                   width: 50,
-                  margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top+15,left: 15),
-                  child:const Align(
-                    alignment:Alignment.topLeft,
-                    child: Icon(Icons.arrow_back,color: Colors.black87,),
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).padding.top + 15, left: 15),
+                  child: const Align(
+                    alignment: Alignment.topLeft,
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black87,
+                    ),
                   ),
                 ),
               ),
@@ -346,7 +425,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                   fontWeight: FontWeight.w700),
             ),
             Container(
-              padding: const EdgeInsets.only(top: 10,bottom: 15),
+              padding: const EdgeInsets.only(top: 10, bottom: 15),
               child: RichText(
                 text: TextSpan(children: [
                   TextSpan(
@@ -366,7 +445,7 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
             TextButton(
                 onPressed: () {
                   // requestDataWithRemoveWallet(id)
-                  if(_sharedWalletModel?.data?.owner ==null){
+                  if (_sharedWalletModel?.data?.owner == null) {
                     BotToast.showText(text: '暫無共享人員');
                     return;
                   }
@@ -375,154 +454,24 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                 },
                 child: Text(
                   I18nContent.unbindWalletLabel,
-                  style:
-                      TextStyle(fontSize: 18,
-                          color: AppColor.themeTextColor,fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: AppColor.themeTextColor,
+                      fontWeight: FontWeight.w700),
                 ))
           ],
         ),
-        _sharedWalletModel?.data?.owner == null||_sharedWalletModel?.data?.owner?.walletExpireAt==null
+        _sharedWalletModel?.data?.owner == null ||
+                _sharedWalletModel?.data?.owner?.walletExpireAt == null
             ? const SizedBox()
             : Text(
-              '提示:Credit與${_sharedWalletModel?.data?.owner?.walletExpireAt}過期',
-              style:
-                  TextStyle(color: AppColor.themeTextColor, fontSize: 12),
-            ),
+                '提示:Credit與${_sharedWalletModel?.data?.owner?.walletExpireAt}過期',
+                style: TextStyle(color: AppColor.themeTextColor, fontSize: 12),
+              ),
+        SizedBox(
+          height: 10,
+        ),
       ],
-    );
-  }
-
-  Widget buildSliverBody(BuildContext context) {
-    return Container(
-      color: AppColor.bgColor,
-      child: Column(
-        children: [
-          Expanded(
-              child: EasyRefresh.custom(
-                  controller: easyRefreshController,
-                  header: MaterialHeader(),
-                  footer: MaterialFooter1(),
-                  onLoad: () async {
-                    page++;
-                    requestDataWithWalletLog();
-                  },
-                  onRefresh: () async {
-                    page = 1;
-                    requestDataWithWalletLog();
-                    requestDataWithWalletUser();
-                  },
-                  emptyWidget: dataArr.isEmpty
-                      ? const Center(child: Text(I18nContent.noRecords))
-                      : null,
-                  slivers: [
-                SliverToBoxAdapter(
-                  child: Container(
-                    height: 110,
-                    color: AppColor.themeColor,
-                    padding: const EdgeInsets.only(left: 35, right: 15, top: 5),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Text(I18nContent.walletMaster),
-                            Image.asset(
-                              'images/header3.png',
-                              width: 75,
-                              height: 75,
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        Container(
-                          height: 110,
-                          width: 0.3,
-                          color: Colors.black,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(left: 15),
-                              child: const Text(I18nContent.walletFriend),
-                            ),
-                            SizedBox(
-                              height: 75,
-                              width: Get.width - 150,
-                              // color: Colors.red,
-                              child: CustomScrollView(
-                                scrollDirection: Axis.horizontal,
-                                slivers: [
-                                  SliverList(
-                                      delegate:
-                                          _mySliverChildBuilderDelegate()),
-                                  SliverToBoxAdapter(
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        BrnMiddleInputDialog(
-                                            title: '請輸入手機號碼',
-                                            hintText: '手機號碼',
-                                            cancelText: '取消',
-                                            confirmText: '确定',
-                                            maxLength: 20,
-                                            maxLines: 1,
-                                            barrierDismissible: false,
-                                            autoFocus: true,
-                                            inputEditingController:
-                                                phoneTextEditingController,
-                                            // inputEditingController: TextEditingController()..text = 'bbb',
-                                            textInputAction:
-                                                TextInputAction.done,
-                                            onConfirm: (value) {
-                                              if (value.isEmpty) {
-                                                BotToast.showText(
-                                                    text: '請輸入手機號碼');
-                                                return;
-                                              }
-                                              requestDataWithAddWallet(value);
-                                              // BrnToast.show(value, context);
-                                            },
-                                            onCancel: () {
-                                              // BrnToast.show("取消", context);
-                                              Navigator.pop(context);
-                                            }).show(context);
-                                      },
-                                      child: Container(
-
-                                        color: Colors.red,
-                                        margin: const EdgeInsets.only(top: 10),
-                                        padding: const EdgeInsets.only(left: 15),
-                                        child: Image.asset(
-                                          'images/ic_add.png',
-                                          width: 55,
-                                          height: 55,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
-                            // Container(
-                            //   width: double.infinity,
-                            //   color: Colors.red,
-                            //   margin: EdgeInsets.only(top: 5),
-                            //   child:Image.asset('images/header5.png',width: 65,height: 65,),
-                            // )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SliverList(
-                  delegate: _mySliverChildBuilderDelegate1(),
-                ),
-              ])),
-        ],
-      ),
     );
   }
 
@@ -635,10 +584,19 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          model.type == 1 ? '充值' :
-                          model.type == 2 ? '訂閲' : model.type == 3 ? '管理員添加' :
-                          model.type == 12 ? '客戶取消訂閱' : model.type == 13 ? '管理員取消訂閱' :
-                          model.type == 21 ? '錢包過期清除' : '共享錢包過期清除',
+                          model.type == 1
+                              ? '充值'
+                              : model.type == 2
+                                  ? '訂閲'
+                                  : model.type == 3
+                                      ? '管理員添加'
+                                      : model.type == 12
+                                          ? '客戶取消預約'
+                                          : model.type == 13
+                                              ? '管理員取消預約'
+                                              : model.type == 21
+                                                  ? 'Credit過期清除'
+                                                  : '共享Credit過期清除',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 21,
@@ -666,8 +624,10 @@ class _SharedWalletPageState extends State<SharedWalletPage> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
                       ),
-                      child: Text('${model.amount}',
-                        style: const TextStyle(color: Colors.white, fontSize: 13),
+                      child: Text(
+                        '${model.amount}',
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 13),
                       ),
                     )
                   ],

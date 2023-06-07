@@ -8,7 +8,7 @@ class SharedWalletLogModel {
   SharedWalletLogModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
-    data = json['data'] != null ?  Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -32,7 +32,7 @@ class Data {
     if (json['list'] != null) {
       list = <SharedWalletLogList>[];
       json['list'].forEach((v) {
-        list!.add( SharedWalletLogList.fromJson(v));
+        list!.add(SharedWalletLogList.fromJson(v));
       });
     }
     totalPage = json['total_page'];
@@ -53,20 +53,20 @@ class SharedWalletLogList {
   int? userId;
   String? name;
   int? type;
-  String? amount;
-  String? beforeAmount;
-  String? afterAmount;
+  var amount;
+  var beforeAmount;
+  var afterAmount;
   String? createdAt;
 
   SharedWalletLogList(
       {this.id,
-        this.userId,
-        this.name,
-        this.type,
-        this.amount,
-        this.beforeAmount,
-        this.afterAmount,
-        this.createdAt});
+      this.userId,
+      this.name,
+      this.type,
+      this.amount,
+      this.beforeAmount,
+      this.afterAmount,
+      this.createdAt});
 
   SharedWalletLogList.fromJson(Map<String, dynamic> json) {
     id = json['id'];

@@ -92,7 +92,7 @@ class Notice {
   String? body;
   String? noticeTime;
 
-  Notice({this.id, this.title, this.picUrl, this.body,this.noticeTime});
+  Notice({this.id, this.title, this.picUrl, this.body, this.noticeTime});
 
   Notice.fromJson(Map<String, dynamic> json) {
     id = json['id'];

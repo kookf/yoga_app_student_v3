@@ -6,9 +6,7 @@ import 'package:yoga_student_app/pages/home_modules/home_index_model.dart';
 import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
 
-class HomeController extends GetxController{
-
-
+class HomeController extends GetxController {
   // BannerModel? model;
   //
   // ///獲取banner
@@ -43,11 +41,11 @@ class HomeController extends GetxController{
 
   /// home 數據
   HomeIndexModel? homeIndexModel;
-  requestDataWithHomeIndex()async{
+  requestDataWithHomeIndex() async {
     var params = {
-      'method':'home.index',
+      'method': 'home.index',
     };
-    var json = await DioManager().kkRequest(Address.host,bodyParams:params);
+    var json = await DioManager().kkRequest(Address.host, bodyParams: params);
 
     HomeIndexModel model = HomeIndexModel.fromJson(json);
 
@@ -57,7 +55,7 @@ class HomeController extends GetxController{
   }
 
   late final WebViewController webViewController;
-   String kLocalExamplePage = '''
+  String kLocalExamplePage = '''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,27 +74,25 @@ class HomeController extends GetxController{
     super.onInit();
     requestDataWithHomeIndex();
 
-    webViewController = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(const Color(0x00000000))
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onProgress: (int progress) {
-            // Update loading bar.
-          },
-          onPageStarted: (String url) {},
-          onPageFinished: (String url) {},
-          onWebResourceError: (WebResourceError error) {},
-          onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.youtube.com/')) {
-              return NavigationDecision.prevent;
-            }
-            return NavigationDecision.navigate;
-          },
-        ),
-      )
-      ..loadHtmlString(kLocalExamplePage);
+    // webViewController = WebViewController()
+    //   ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    //   ..setBackgroundColor(const Color(0x00000000))
+    //   ..setNavigationDelegate(
+    //     NavigationDelegate(
+    //       onProgress: (int progress) {
+    //         // Update loading bar.
+    //       },
+    //       onPageStarted: (String url) {},
+    //       onPageFinished: (String url) {},
+    //       onWebResourceError: (WebResourceError error) {},
+    //       onNavigationRequest: (NavigationRequest request) {
+    //         if (request.url.startsWith('https://www.youtube.com/')) {
+    //           return NavigationDecision.prevent;
+    //         }
+    //         return NavigationDecision.navigate;
+    //       },
+    //     ),
+    //   )
+    //   ..loadHtmlString(kLocalExamplePage);
   }
-
-
 }

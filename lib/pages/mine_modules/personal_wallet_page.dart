@@ -18,7 +18,7 @@ class PersonalWalletPage extends StatefulWidget {
 }
 
 class _PersonalWalletPageState extends State<PersonalWalletPage> {
-  /// 錢包充值記錄
+  /// Credit充值記錄
   var page = 1;
 
   EasyRefreshController easyRefreshController = EasyRefreshController();
@@ -44,7 +44,6 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
         dataArr.addAll(model.data!.list!);
       } else {
         easyRefreshController.finishLoad(noMore: true);
-
       }
     }
     setState(() {});
@@ -77,50 +76,53 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: _headerSliverBuilder,
-        body: buildSliverBody(context),
-      ),
-    );
-  }
-
-  ///页面滚动头部处理
-  List<Widget> _headerSliverBuilder(
-      BuildContext context, bool innerBoxIsScrolled) {
-    return <Widget>[buildSliverAppBar(context)];
-  }
-
-  ///导航部分渲染
-  Widget buildSliverAppBar(BuildContext context) {
-    return SliverAppBar(
-      pinned: true,
-      stretch: true,
-      expandedHeight: 440,
-      elevation: 0,
-      // backgroundColor:AppColor.themeColor,
-      snap: false,
-      // actions: [
-      //   TextButton(
-      //       onPressed: () {
-      //         Get.to(const PayMethodPage());
-      //       },
-      //       child: Text(
-      //         '充值',
-      //         style: TextStyle(color: AppColor.themeColor),
-      //       ))
-      // ],
-      iconTheme: const IconThemeData(color: Colors.black),
-      flexibleSpace: FlexibleSpaceBar(
-        title: Text(
-          '',
-          style: TextStyle(
-            color: AppColor.themeTextColor,
-            fontWeight: FontWeight.w700,
-            fontSize: 16,
+      body: EasyRefresh.custom(
+        controller: easyRefreshController,
+        header: MaterialHeader(),
+        footer: MaterialFooter1(),
+        onLoad: () async {
+          page++;
+          requestDataWithWalletLog();
+        },
+        onRefresh: () async {
+          page = 1;
+          requestDataWithWalletLog();
+        },
+        slivers: [
+          SliverToBoxAdapter(
+            child: buildAppBarBackground(context),
           ),
-        ),
-        centerTitle: true,
-        background: buildAppBarBackground(context),
+          SliverToBoxAdapter(
+            child: Container(
+              height: 60,
+              color: AppColor.themeColor,
+              padding: const EdgeInsets.only(left: 75, right: 45),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '類型',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: AppColor.themeTextColor,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    I18nContent.goldLabel,
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: AppColor.themeTextColor,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: _mySliverChildBuilderDelegate(),
+          ),
+        ],
+        // body: buildSliverBody(context),
       ),
     );
   }
@@ -129,9 +131,8 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
     return Column(
       children: [
         // Image.asset('images/appbar_bg.png',fit: BoxFit.fitWidth,width: Get.width,),
-        SizedBox(
+        Container(
           width: Get.width,
-          // color: Colors.red,
           height: 390,
           child: Stack(
             children: [
@@ -172,97 +173,74 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
               ),
               Align(
                 alignment: const Alignment(0, 1),
-                child: MaterialButton(onPressed: (){
-                  Get.to(PayMethodPage(0));
-
-                },
-                  color: AppColor.themeTextColor,elevation: 0,
+                child: MaterialButton(
+                  onPressed: () {
+                    Get.to(PayMethodPage(0));
+                  },
+                  color: AppColor.themeTextColor,
+                  elevation: 0,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),minWidth: 120,
-                  child: const Text(I18nContent.reChargeLabel,style: TextStyle(color: Colors.white,
-                  fontWeight: FontWeight.w700),),) ,
-              )
-
+                  ),
+                  minWidth: 120,
+                  child: const Text(
+                    I18nContent.reChargeLabel,
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w700),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.back();
+                },
+                child: Container(
+                  width: 50,
+                  margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).padding.top + 15, left: 15),
+                  child: const Align(
+                    alignment: Alignment.topLeft,
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
-       Row(
-         mainAxisAlignment: MainAxisAlignment.center,
-         children: [
-           Text(
-             '${I18nContent.goldLabel} ${userModel?.data?.balance ?? '0'}',
-             style: TextStyle(
-                 color: AppColor.themeTextColor,
-                 fontSize: 30,
-                 fontWeight: FontWeight.w700),
-           ),
-
-         ],
-       ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '${I18nContent.goldLabel} ${userModel?.data?.balance ?? '0'}',
+              style: TextStyle(
+                  color: AppColor.themeTextColor,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700),
+            ),
+          ],
+        ),
         userModel?.data?.walletExpireAt == null
             ? const SizedBox()
-            : Text(
-            '提示:Credit與${userModel?.data?.walletExpireAt}過期',
-            style: TextStyle(color: AppColor.themeTextColor, fontSize: 12),
+            : Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 10,
+                ),
+                child: Text(
+                  '提示:Credit與${userModel?.data?.walletExpireAt}過期',
+                  style:
+                      TextStyle(color: AppColor.themeTextColor, fontSize: 12),
+                ),
               ),
       ],
-    );
-  }
-
-  Widget buildSliverBody(BuildContext context) {
-    return Container(
-      color: AppColor.bgColor,
-      child: Column(
-        children: [
-          Expanded(
-              child: EasyRefresh.custom(
-                  controller: easyRefreshController,
-                  header: MaterialHeader(),
-                  footer: MaterialFooter1(),
-                  onRefresh: () async {
-                    page = 1;
-                    requestDataWithWalletLog();
-                    requestDataWithUserinfo();
-                  },
-                  onLoad: () async {
-                    page++;
-                    requestDataWithWalletLog();
-                  },
-                  emptyWidget: dataArr.isEmpty
-                      ? const Center(child: Text(I18nContent.noRecords))
-                      : null,
-                  slivers: [
-                    SliverToBoxAdapter(
-                      child:   Container(
-                        height: 60,
-                        color: AppColor.themeColor,
-                        padding: const EdgeInsets.only(left: 75,right: 45),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('類型',style: TextStyle(fontSize: 20,
-                                color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
-                            Text(I18nContent.goldLabel,style: TextStyle(fontSize: 20,
-                                color: AppColor.themeTextColor,fontWeight: FontWeight.w600),),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    SliverList(
-                  delegate: _mySliverChildBuilderDelegate(),
-                ),
-              ])),
-        ],
-      ),
     );
   }
 
   SliverChildBuilderDelegate _mySliverChildBuilderDelegate() {
     return SliverChildBuilderDelegate(
       (BuildContext context, int index) {
-
         /// 1 充值 2 订阅 3 管理员添加 12 客户取消订阅 13 管理员取消订阅 21 钱包过期清除 22 共享钱包过期清除
 
         SharedWalletLogList model = dataArr[index];
@@ -286,13 +264,19 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          model.type==1?'充值':
-                          model.type==2?'訂閲':
-                          model.type==3?'管理員添加' :
-                          model.type==12?'客戶取消訂閱':
-                          model.type==13?'管理員取消訂閱':
-                          model.type==21?'錢包過期清除':
-                          '共享錢包過期清除',
+                          model.type == 1
+                              ? '充值'
+                              : model.type == 2
+                                  ? '訂閲'
+                                  : model.type == 3
+                                      ? '管理員添加'
+                                      : model.type == 12
+                                          ? '客戶取消預約'
+                                          : model.type == 13
+                                              ? '管理員取消預約'
+                                              : model.type == 21
+                                                  ? 'Credit過期清除'
+                                                  : '共享Credit過期清除',
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 20,
@@ -305,7 +289,6 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                               fontSize: 17,
                               color: AppColor.themeTextColor),
                         ),
-
                       ],
                     ),
                     Container(
@@ -318,7 +301,8 @@ class _PersonalWalletPageState extends State<PersonalWalletPage> {
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20)),
                       ),
-                      child: Text('${model.amount}',
+                      child: Text(
+                        '${model.amount}',
                         style:
                             const TextStyle(color: Colors.white, fontSize: 13),
                       ),

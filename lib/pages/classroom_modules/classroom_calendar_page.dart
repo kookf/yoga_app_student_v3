@@ -7,8 +7,8 @@ import 'package:yoga_student_app/services/dio_manager.dart';
 import 'package:yoga_student_app/utils/hex_color.dart';
 import '../../components/gradient_button.dart';
 import 'package:get/get.dart';
-class ClassRoomCalendarPage extends StatefulWidget {
 
+class ClassRoomCalendarPage extends StatefulWidget {
   const ClassRoomCalendarPage({Key? key}) : super(key: key);
 
   @override
@@ -16,8 +16,6 @@ class ClassRoomCalendarPage extends StatefulWidget {
 }
 
 class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
-
-
   @override
   void initState() {
     super.initState();
@@ -25,21 +23,15 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
   }
 
   CourseNumModel? courseNumModel;
-  requestDataWithCourseNum()async{
-    var params = {
-      'method':'course.nums'
-    };
-    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+  requestDataWithCourseNum() async {
+    var params = {'method': 'course.nums'};
+    var json =
+        await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
     CourseNumModel model = CourseNumModel.fromJson(json);
     courseNumModel = model;
     print(model.message);
-    setState(() {
-
-    });
+    setState(() {});
   }
-
-
-
 
   List<DateTime?> _singleDatePickerValueWithDefaultValue = [
     DateTime.now(),
@@ -49,11 +41,11 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // actions: [
-            // IconButton(onPressed: (){
-            //
-            // }, icon: Image.asset('images/message_icon.png'))
-          // ],
+        // actions: [
+        // IconButton(onPressed: (){
+        //
+        // }, icon: Image.asset('images/message_icon.png'))
+        // ],
         backgroundColor: AppColor.themeColor,
         iconTheme: const IconThemeData(
           color: Colors.white, //修改颜色
@@ -62,21 +54,24 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
       body: ListView(
         children: [
           Container(
-            height: 80,
-            decoration: BoxDecoration(
-              color: AppColor.themeColor,
-              borderRadius: const BorderRadius.only(bottomLeft:
-              Radius.circular(15),bottomRight: Radius.circular(15)),
-            ),
-            padding: const EdgeInsets.only(left: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text('選擇查詢日期',style: TextStyle(fontSize: 18,color: Colors.white),),
-                // Text('成人減壓班1201 陳大明#2368',style: TextStyle(fontSize: 18,color: Colors.white),),
-              ],
-            )
-          ),
+              height: 80,
+              decoration: BoxDecoration(
+                color: AppColor.themeColor,
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15)),
+              ),
+              padding: const EdgeInsets.only(left: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    '選擇查詢日期',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                  // Text('成人減壓班1201 陳大明#2368',style: TextStyle(fontSize: 18,color: Colors.white),),
+                ],
+              )),
           _buildDefaultSingleDatePickerWithValue(),
         ],
       ),
@@ -86,14 +81,19 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
   Widget _buildDefaultSingleDatePickerWithValue() {
     final config = CalendarDatePicker2WithActionButtonsConfig(
       selectedDayHighlightColor: AppColor.themeColor,
-      dayBuilder: (({required date, decoration, isDisabled, isSelected, isToday, textStyle}) {
-
+      dayBuilder: ((
+          {required date,
+          decoration,
+          isDisabled,
+          isSelected,
+          isToday,
+          textStyle}) {
         var timeFormat = DateFormat("yyyy-MM-dd");
         var timeStr = timeFormat.format(date);
 
         var num;
-        for(int i = 0;i<courseNumModel!.data!.list!.length;i++){
-          if(timeStr == courseNumModel!.data!.list![i].startDay){
+        for (int i = 0; i < courseNumModel!.data!.list!.length; i++) {
+          if (timeStr == courseNumModel!.data!.list![i].startDay) {
             num = courseNumModel!.data!.list![i].nums;
           }
         }
@@ -106,10 +106,15 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('${date.day}'),
-             num==null?SizedBox():
-             Text('/(${num})',style: TextStyle(
-                fontSize: 13,color: AppColor.themeTextColor
-              ),),
+              num == null
+                  ? SizedBox()
+                  : Text(
+                      ' (${num})',
+                      style: TextStyle(
+                          fontSize: 13,
+                          color: AppColor.themeTextColor,
+                          fontStyle: FontStyle.italic),
+                    ),
             ],
           ),
         );
@@ -119,7 +124,6 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
         color: Colors.black87,
         fontWeight: FontWeight.w400,
       ),
-
       firstDayOfWeek: 1,
       controlsHeight: 50,
       controlsTextStyle: const TextStyle(
@@ -166,7 +170,6 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
         //   ],
         // ),
         const SizedBox(height: 25),
-
 
         // Row(
         //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -260,23 +263,26 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
         //   ],
         // ),
         GestureDetector(
-          onTap: (){
+          onTap: () {
             var timeFormat = DateFormat("yyyy-MM-dd");
-            var timeStr = timeFormat.format(_singleDatePickerValueWithDefaultValue[0]!);
+            var timeStr =
+                timeFormat.format(_singleDatePickerValueWithDefaultValue[0]!);
             print(timeStr);
             Get.back(result: '${timeStr}');
           },
-          child:Center(
+          child: Center(
             child: Container(
               margin: const EdgeInsets.only(top: 15),
               width: Get.width - 50,
               height: 45,
-              child:  GradientButton(
-                borderRadius: const BorderRadius.all(Radius.circular(20)),colors: [
-                AppColor.themeColor,
-                AppColor.themeColor,
-              ],
-                child: Text('确定'),),
+              child: GradientButton(
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                colors: [
+                  AppColor.themeColor,
+                  AppColor.themeColor,
+                ],
+                child: Text('確定'),
+              ),
             ),
           ),
         )
@@ -318,9 +324,9 @@ class _ClassRoomCalendarPageState extends State<ClassRoomCalendarPage> {
   int selectedValue = 0;
 
   String _getValueText(
-      CalendarDatePicker2Type datePickerType,
-      List<DateTime?> values,
-      ) {
+    CalendarDatePicker2Type datePickerType,
+    List<DateTime?> values,
+  ) {
     // var valueText = (values.isNotEmpty ? values[0] : null)
     //     .toString()
     //     .replaceAll('00:00:00.000', '');
@@ -359,7 +365,6 @@ class Data {
       });
     }
   }
-
 }
 
 class CourseNumList {

@@ -27,7 +27,7 @@ class Data {
   String? name;
   String? email;
   String? phone;
-  String? balance;
+  var balance;
   String? birth;
   String? optional;
   String? updatedAt;
@@ -37,16 +37,16 @@ class Data {
 
   Data(
       {this.id,
-        this.name,
-        this.email,
-        this.phone,
-        this.balance,
-        this.birth,
-        this.optional,
-        this.updatedAt,
-        this.avatar,
-        this.walletExpireAt,
-        this.createdAt});
+      this.name,
+      this.email,
+      this.phone,
+      this.balance,
+      this.birth,
+      this.optional,
+      this.updatedAt,
+      this.avatar,
+      this.walletExpireAt,
+      this.createdAt});
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];

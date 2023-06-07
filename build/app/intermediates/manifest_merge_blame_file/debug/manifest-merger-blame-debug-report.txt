@@ -6,594 +6,609 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-9        android:targetSdkVersion="31" />
+9        android:targetSdkVersion="33" />
 10    <!--
 11         The INTERNET permission is required for development. Specifically,
 12         the Flutter tool needs it to communicate with the running application
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->D:\yoga_app_student_v3\android\app\src\debug\AndroidManifest.xml:7:5-66
-15-->D:\yoga_app_student_v3\android\app\src\debug\AndroidManifest.xml:7:22-64
-16    <uses-permission android:name="android.permission.CAMERA" />
-16-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
-16-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
-17    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-17-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-71
-17-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-68
-18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-18-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-80
-18-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-77
-19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-19-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-81
-19-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-78
-20
-21    <queries package="com.memo1.yoga_student_app" >
-21-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-24:15
-21-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:15:14-40
-22        <intent>
-22-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-19:18
-23            <action android:name="android.media.action.IMAGE_CAPTURE" >
-23-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-18:22
-23-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:17:21-70
-24            </action>
-25        </intent>
-26        <intent>
-26-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-23:18
-27            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE" >
-27-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-22:22
-27-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:21:21-77
-28            </action>
-29        </intent>
-30    </queries>
-31
-32    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
-32-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-91
-32-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-88
-33    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Required -->
-33-->[:vibration] D:\yoga_app_student_v3\build\vibration\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-66
-33-->[:vibration] D:\yoga_app_student_v3\build\vibration\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-63
-34    <permission
-34-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:11:5-13:47
-35        android:name="com.memo1.yoga_student_app.permission.JPUSH_MESSAGE"
-35-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:12:9-65
-36        android:protectionLevel="signature" /> <!-- Required -->
-36-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:13:9-44
-37    <uses-permission android:name="com.memo1.yoga_student_app.permission.JPUSH_MESSAGE" />
-37-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:15:5-81
-37-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:15:22-78
-38    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-38-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:17:5-79
-38-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:17:22-76
-39    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- vivo 角标 -->
-39-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:18:5-77
-39-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:18:22-74
-40    <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" /> <!-- honor 角标 -->
-40-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:22:5-83
-40-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:22:22-80
-41    <uses-permission android:name="com.hihonor.android.launcher.permission.CHANGE_BADGE" /> <!-- Optional. Required for location feature -->
-41-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:24:5-92
-41-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:24:22-89
-42    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-42-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:29:5-81
-42-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:29:22-78
-43    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-43-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:30:5-79
-43-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:30:22-76
-44    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-44-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:31:5-85
-44-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:31:22-82
-45    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-45-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:32:5-75
-45-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:32:22-72
-46    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-46-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:33:5-77
-46-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:33:22-74
-47    <uses-permission android:name="android.permission.GET_TASKS" />
-47-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:34:5-68
-47-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:34:22-65
-48    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-48-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:35:5-76
-48-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:35:22-73
-49
-50    <application
-50-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:3:4-33:19
-51        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-51-->[androidx.core:core:1.6.0] C:\Users\Lenovo\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-52        android:debuggable="true"
-53        android:icon="@mipmap/ic_launcher"
-53-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:6:9-43
-54        android:label="MeMoYoga學生版"
-54-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:4:9-36
-55        android:networkSecurityConfig="@xml/net_sec"
-55-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:27:9-53
-56        android:requestLegacyExternalStorage="true" >
-56-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-52
-57        <activity
-57-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:7:9-27:20
-58            android:name="com.example.yoga_student_app.MainActivity"
-58-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:8:13-41
-59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-59-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:12:13-163
-60            android:exported="true"
-60-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:9:13-36
-61            android:hardwareAccelerated="true"
-61-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:13:13-47
-62            android:launchMode="singleTop"
-62-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:10:13-43
-63            android:theme="@style/LaunchTheme"
-63-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:11:13-47
-64            android:windowSoftInputMode="adjustResize" >
-64-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:14:13-55
-65
-66            <!--
-67                 Specifies an Android theme to apply to this Activity as soon as
-68                 the Android process has started. This theme is visible to the user
-69                 while the Flutter UI initializes. After that, this theme continues
-70                 to determine the Window background behind the Flutter UI.
-71            -->
-72            <meta-data
-72-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:19:13-22:17
-73                android:name="io.flutter.embedding.android.NormalTheme"
-73-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:20:15-70
-74                android:resource="@style/NormalTheme" />
-74-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:21:15-52
-75
-76            <intent-filter>
-76-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:23:13-26:29
-77                <action android:name="android.intent.action.MAIN" />
-77-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:24:17-68
-77-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:24:25-66
-78
-79                <category android:name="android.intent.category.LAUNCHER" />
-79-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:25:17-76
-79-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:25:27-74
-80            </intent-filter>
-81        </activity>
-82        <!--
-83             Don't delete the meta-data below.
-84             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-85        -->
-86        <meta-data
-86-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:30:9-32:33
-87            android:name="flutterEmbedding"
-87-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:31:13-44
-88            android:value="2" />
-88-->D:\yoga_app_student_v3\android\app\src\main\AndroidManifest.xml:32:13-30
-89        <!-- 适配9.0的系统 -->
-90        <uses-library
-90-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:31:9-33:40
-91            android:name="org.apache.http.legacy"
-91-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-50
-92            android:required="false" /> <!-- 适配9.0的系统 -->
-92-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:33:13-37
-93        <activity
-93-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:35:9-37:49
-94            android:name="com.leeson.image_pickers.activitys.PermissionActivity"
-94-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-81
-95            android:theme="@style/TransTheme" />
-95-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-46
-96        <activity
-96-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:38:9-40:49
-97            android:name="com.leeson.image_pickers.activitys.SelectPicsActivity"
-97-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:39:13-81
-98            android:theme="@style/TransTheme" />
-98-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:40:13-46
-99        <activity
-99-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:41:9-44:47
-100            android:name="com.leeson.image_pickers.activitys.PhotosActivity"
-100-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-77
-101            android:screenOrientation="portrait"
-101-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-49
-102            android:theme="@style/AppTheme" />
-102-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:44:13-44
+15-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/debug/AndroidManifest.xml:7:5-66
+15-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/debug/AndroidManifest.xml:7:22-64
+16    <uses-permission
+16-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:3:5-80
+17        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+17-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:3:22-78
+18        android:maxSdkVersion="32" />
+18-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-35
+19    <uses-permission
+19-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:4:5-79
+20        android:name="android.permission.READ_EXTERNAL_STORAGE"
+20-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:4:22-77
+21        android:maxSdkVersion="32" />
+21-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-35
+22    <uses-permission android:name="android.permission.CAMERA" />
+22-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-65
+22-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-62
+23    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+23-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-71
+23-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-68
+24    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+24-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-76
+24-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:18:22-73
+25    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+25-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-75
+25-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:19:22-72
+26    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+26-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:20:5-77
+26-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:20:22-74
+27
+28    <queries package="com.memo1.yoga_student_app" >
+28-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:22:5-31:15
+28-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:22:14-40
+29        <intent>
+29-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-26:18
+30            <action android:name="android.media.action.IMAGE_CAPTURE" >
+30-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-25:22
+30-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:24:21-70
+31            </action>
+32        </intent>
+33        <intent>
+33-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-30:18
+34            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE" >
+34-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-29:22
+34-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:28:21-77
+35            </action>
+36        </intent>
+37    </queries>
+38
+39    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+39-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-91
+39-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-88
+40    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Required -->
+40-->[:vibration] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/vibration/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-66
+40-->[:vibration] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/vibration/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-63
+41    <permission
+41-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:11:5-13:47
+42        android:name="com.memo1.yoga_student_app.permission.JPUSH_MESSAGE"
+42-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:12:9-65
+43        android:protectionLevel="signature" /> <!-- Required -->
+43-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:13:9-44
+44    <uses-permission android:name="com.memo1.yoga_student_app.permission.JPUSH_MESSAGE" />
+44-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:15:5-81
+44-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:15:22-78
+45    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+45-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:17:5-79
+45-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:17:22-76
+46    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- vivo 角标 -->
+46-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:18:5-77
+46-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:18:22-74
+47    <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" /> <!-- honor 角标 -->
+47-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:22:5-83
+47-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:22:22-80
+48    <uses-permission android:name="com.hihonor.android.launcher.permission.CHANGE_BADGE" /> <!-- Optional. Required for location feature -->
+48-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:24:5-92
+48-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:24:22-89
+49    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+49-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:29:5-81
+49-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:29:22-78
+50    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+50-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:30:5-79
+50-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:30:22-76
+51    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+51-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:31:5-85
+51-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:31:22-82
+52    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+52-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:32:5-75
+52-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:32:22-72
+53    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+53-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:33:5-77
+53-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:33:22-74
+54    <uses-permission android:name="android.permission.GET_TASKS" />
+54-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:34:5-68
+54-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:34:22-65
+55    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+55-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:35:5-76
+55-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:35:22-73
+56
+57    <application
+57-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:6:4-35:19
+58        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+58-->[androidx.core:core:1.6.0] /Users/li/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+59        android:debuggable="true"
+60        android:icon="@mipmap/ic_launcher"
+60-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:8:9-43
+61        android:label="MeMoYoga學生版"
+61-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:7:9-36
+62        android:networkSecurityConfig="@xml/net_sec"
+62-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-53
+63        android:requestLegacyExternalStorage="true" >
+63-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:35:9-52
+64        <activity
+64-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:9:9-29:20
+65            android:name="com.example.yoga_student_app.MainActivity"
+65-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:10:13-41
+66            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+66-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:14:13-163
+67            android:exported="true"
+67-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:11:13-36
+68            android:hardwareAccelerated="true"
+68-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:15:13-47
+69            android:launchMode="singleTop"
+69-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:12:13-43
+70            android:theme="@style/LaunchTheme"
+70-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:13:13-47
+71            android:windowSoftInputMode="adjustResize" >
+71-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:16:13-55
+72
+73            <!--
+74                 Specifies an Android theme to apply to this Activity as soon as
+75                 the Android process has started. This theme is visible to the user
+76                 while the Flutter UI initializes. After that, this theme continues
+77                 to determine the Window background behind the Flutter UI.
+78            -->
+79            <meta-data
+79-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:21:13-24:17
+80                android:name="io.flutter.embedding.android.NormalTheme"
+80-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:22:15-70
+81                android:resource="@style/NormalTheme" />
+81-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:23:15-52
+82
+83            <intent-filter>
+83-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:25:13-28:29
+84                <action android:name="android.intent.action.MAIN" />
+84-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:26:17-68
+84-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:26:25-66
+85
+86                <category android:name="android.intent.category.LAUNCHER" />
+86-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:27:17-76
+86-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:27:27-74
+87            </intent-filter>
+88        </activity>
+89        <!--
+90             Don't delete the meta-data below.
+91             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+92        -->
+93        <meta-data
+93-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:32:9-34:33
+94            android:name="flutterEmbedding"
+94-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:33:13-44
+95            android:value="2" />
+95-->/Users/li/AndroidStudioProjects/yoga_app_student_v3/android/app/src/main/AndroidManifest.xml:34:13-30
+96        <!-- 适配9.0的系统 -->
+97        <uses-library
+97-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:38:9-40:40
+98            android:name="org.apache.http.legacy"
+98-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-50
+99            android:required="false" /> <!-- 适配9.0的系统 -->
+99-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-37
+100        <activity
+100-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:42:9-44:49
+101            android:name="com.leeson.image_pickers.activitys.PermissionActivity"
+101-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:43:13-81
+102            android:theme="@style/TransTheme" />
+102-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-46
 103        <activity
-103-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:45:9-48:47
-104            android:name="com.leeson.image_pickers.activitys.VideoActivity"
-104-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-76
-105            android:configChanges="orientation|screenSize"
-105-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-59
-106            android:theme="@style/AppTheme" />
-106-->[:image_pickers] D:\yoga_app_student_v3\build\image_pickers\intermediates\merged_manifest\debug\AndroidManifest.xml:48:13-44
-107
-108        <receiver
-108-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-26:20
-109            android:name="com.jiguang.jpush.JPushPlugin$JPushReceiver"
-109-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
-110            android:enabled="true"
-110-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-35
-111            android:exported="false" >
-111-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-37
-112            <intent-filter>
-112-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-25:29
-113                <action android:name="cn.jpush.android.intent.REGISTRATION" />
-113-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-79
-113-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:17:25-76
-114                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
-114-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-83
-114-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-80
-115                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
-115-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:19:17-88
-115-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:19:25-85
-116                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
-116-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-86
-116-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:20:25-83
-117                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
-117-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:21:17-92
-117-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:21:25-89
-118                <action android:name="cn.jpush.android.intent.CONNECTION" />
-118-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:22:17-77
-118-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:22:25-74
-119
-120                <category android:name="com.memo1.yoga_student_app" />
-120-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-120-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-121            </intent-filter>
-122        </receiver>
-123        <receiver
-123-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:27:9-35:20
-124            android:name="com.jiguang.jpush.JPushEventReceiver"
-124-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-64
-125            android:exported="false" >
-125-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-37
-126            <intent-filter>
-126-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-34:29
-127                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
-127-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-82
-127-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:31:25-79
-128
-129                <category android:name="com.memo1.yoga_student_app" />
-129-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-129-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-130            </intent-filter>
-131        </receiver> <!-- Since JCore2.0.0 Required SDK核心功能 -->
-132        <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
-133        <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
-134        <service
-134-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:39:9-47:19
-135            android:name="com.jiguang.jpush.JPushCustomService"
-135-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:40:13-64
-136            android:enabled="true"
-136-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-35
-137            android:exported="false"
-137-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-37
-138            android:process=":pushcore" >
-138-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-40
-139            <intent-filter>
-139-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:44:13-46:29
-140                <action android:name="cn.jiguang.user.service.action" />
-140-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:45:17-73
-140-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:45:25-70
-141            </intent-filter>
-142        </service>
-143
-144        <activity
-144-->[:url_launcher_android] D:\yoga_app_student_v3\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
-145            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-145-->[:url_launcher_android] D:\yoga_app_student_v3\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
-146            android:exported="false"
-146-->[:url_launcher_android] D:\yoga_app_student_v3\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
-147            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-147-->[:url_launcher_android] D:\yoga_app_student_v3\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
-148
-149        <uses-library
-149-->[androidx.window:window:1.0.0-beta04] C:\Users\Lenovo\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-150            android:name="androidx.window.extensions"
-150-->[androidx.window:window:1.0.0-beta04] C:\Users\Lenovo\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-151            android:required="false" />
-151-->[androidx.window:window:1.0.0-beta04] C:\Users\Lenovo\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-152        <uses-library
-152-->[androidx.window:window:1.0.0-beta04] C:\Users\Lenovo\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-153            android:name="androidx.window.sidecar"
-153-->[androidx.window:window:1.0.0-beta04] C:\Users\Lenovo\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-154            android:required="false" />
-154-->[androidx.window:window:1.0.0-beta04] C:\Users\Lenovo\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+103-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:45:9-47:49
+104            android:name="com.leeson.image_pickers.activitys.SelectPicsActivity"
+104-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-81
+105            android:theme="@style/TransTheme" />
+105-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-46
+106        <activity
+106-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:48:9-51:47
+107            android:name="com.leeson.image_pickers.activitys.PhotosActivity"
+107-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:49:13-77
+108            android:configChanges="orientation|screenSize"
+108-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:50:13-59
+109            android:theme="@style/AppTheme" />
+109-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:51:13-44
+110        <activity
+110-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:52:9-55:47
+111            android:name="com.leeson.image_pickers.activitys.VideoActivity"
+111-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:53:13-76
+112            android:configChanges="orientation|screenSize"
+112-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:54:13-59
+113            android:theme="@style/AppTheme" />
+113-->[:image_pickers] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/image_pickers/intermediates/merged_manifest/debug/AndroidManifest.xml:55:13-44
+114
+115        <receiver
+115-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-26:20
+116            android:name="com.jiguang.jpush.JPushPlugin$JPushReceiver"
+116-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+117            android:enabled="true"
+117-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-35
+118            android:exported="false" >
+118-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-37
+119            <intent-filter>
+119-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-25:29
+120                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+120-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-79
+120-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:17:25-76
+121                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+121-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:18:17-83
+121-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:18:25-80
+122                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+122-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-88
+122-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-85
+123                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+123-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-86
+123-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:20:25-83
+124                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+124-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-92
+124-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-89
+125                <action android:name="cn.jpush.android.intent.CONNECTION" />
+125-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-77
+125-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:22:25-74
+126
+127                <category android:name="com.memo1.yoga_student_app" />
+127-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+127-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+128            </intent-filter>
+129        </receiver>
+130        <receiver
+130-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-35:20
+131            android:name="com.jiguang.jpush.JPushEventReceiver"
+131-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-64
+132            android:exported="false" >
+132-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-37
+133            <intent-filter>
+133-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-34:29
+134                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+134-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-82
+134-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:31:25-79
+135
+136                <category android:name="com.memo1.yoga_student_app" />
+136-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+136-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+137            </intent-filter>
+138        </receiver> <!-- Since JCore2.0.0 Required SDK核心功能 -->
+139        <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
+140        <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
+141        <service
+141-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:39:9-47:19
+142            android:name="com.jiguang.jpush.JPushCustomService"
+142-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-64
+143            android:enabled="true"
+143-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-35
+144            android:exported="false"
+144-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-37
+145            android:process=":pushcore" >
+145-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:43:13-40
+146            <intent-filter>
+146-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-46:29
+147                <action android:name="cn.jiguang.user.service.action" />
+147-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:45:17-73
+147-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:45:25-70
+148            </intent-filter>
+149        </service>
+150
+151        <activity
+151-->[:url_launcher_android] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
+152            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+152-->[:url_launcher_android] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
+153            android:exported="false"
+153-->[:url_launcher_android] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+154            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+154-->[:url_launcher_android] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
 155
-156        <provider
-156-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:10:9-18:20
-157            android:name="com.luck.picture.lib.basic.PictureFileProvider"
-157-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:11:13-74
-158            android:authorities="com.memo1.yoga_student_app.luckProvider"
-158-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:12:13-64
-159            android:exported="false"
-159-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:13:13-37
-160            android:grantUriPermissions="true" >
-160-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:14:13-47
-161            <meta-data
-161-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:15:13-17:57
-162                android:name="android.support.FILE_PROVIDER_PATHS"
-162-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:16:17-67
-163                android:resource="@xml/ps_file_paths" />
-163-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:17:17-54
-164        </provider>
-165
-166        <service
-166-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:20:9-23:56
-167            android:name="com.luck.picture.lib.service.ForegroundService"
-167-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:21:13-74
-168            android:enabled="true"
-168-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:22:13-35
-169            android:foregroundServiceType="location" />
-169-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:23:13-53
-170
-171        <activity
-171-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:25:9-29:20
-172            android:name="com.luck.picture.lib.basic.PictureSelectorSupporterActivity"
-172-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:26:13-87
-173            android:configChanges="orientation|keyboardHidden|screenSize"
-173-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:27:13-74
-174            android:theme="@style/Base.Theme.NoActionBar" >
-174-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:28:13-58
-175        </activity>
-176        <activity
-176-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:30:9-34:20
-177            android:name="com.luck.picture.lib.basic.PictureSelectorTransparentActivity"
-177-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:31:13-89
-178            android:configChanges="orientation|keyboardHidden|screenSize"
-178-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:32:13-74
-179            android:theme="@style/Picture.Theme.Translucent" >
-179-->[io.github.lucksiege:pictureselector:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\5ca58615336ff08de3a1ce5a0fba4ca4\transformed\jetified-pictureselector-v3.10.6\AndroidManifest.xml:33:13-61
-180        </activity>
-181        <activity
-181-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:10:9-14:72
-182            android:name="com.yalantis.ucrop.UCropActivity"
-182-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:11:13-60
-183            android:configChanges="orientation|keyboardHidden|screenSize"
-183-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:12:13-74
-184            android:screenOrientation="portrait"
-184-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:13:13-49
-185            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-185-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:14:13-69
-186        <activity
-186-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:15:9-19:72
-187            android:name="com.yalantis.ucrop.UCropMultipleActivity"
-187-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:16:13-68
-188            android:configChanges="orientation|keyboardHidden|screenSize"
-188-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:17:13-74
-189            android:screenOrientation="portrait"
-189-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:18:13-49
-190            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Rich push 核心功能 since 2.0.6 -->
-190-->[io.github.lucksiege:ucrop:v3.10.6] C:\Users\Lenovo\.gradle\caches\transforms-3\6869f677918f77de7ef551420fe6d672\transformed\jetified-ucrop-v3.10.6\AndroidManifest.xml:19:13-69
-191        <activity
-191-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:47:9-58:20
-192            android:name="cn.jpush.android.ui.PopWinActivity"
-192-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:48:13-62
-193            android:exported="true"
-193-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:49:13-36
-194            android:theme="@style/MyDialogStyle" >
-194-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:50:13-49
-195            <intent-filter>
-195-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:51:13-57:29
-196                <category android:name="android.intent.category.DEFAULT" />
-196-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:17-76
-196-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:27-73
-197
-198                <action android:name="cn.jpush.android.ui.PopWinActivity" />
-198-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:54:17-77
-198-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:54:25-74
-199
-200                <category android:name="com.memo1.yoga_student_app" />
-200-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-200-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-201            </intent-filter>
-202        </activity> <!-- Required SDK核心功能 -->
-203        <activity
-203-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:61:9-72:20
-204            android:name="cn.jpush.android.ui.PushActivity"
-204-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:62:13-60
-205            android:configChanges="orientation|keyboardHidden"
-205-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:63:13-63
-206            android:exported="true"
-206-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:64:13-36
-207            android:theme="@android:style/Theme.NoTitleBar" >
-207-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:65:13-60
-208            <intent-filter>
-208-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:66:13-71:29
-209                <action android:name="cn.jpush.android.ui.PushActivity" />
-209-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:67:17-75
-209-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:67:25-72
-210
-211                <category android:name="android.intent.category.DEFAULT" />
-211-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:17-76
-211-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:27-73
-212                <category android:name="com.memo1.yoga_student_app" />
-212-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-212-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-213            </intent-filter>
-214        </activity> <!-- Required SDK 核心功能 -->
-215        <!-- 可配置android:process参数将PushService放在其他进程中 -->
-216        <service
-216-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:75:9-86:19
-217            android:name="cn.jpush.android.service.PushService"
-217-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:76:13-64
-218            android:enabled="true"
-218-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:77:13-35
-219            android:exported="false"
-219-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:78:13-37
-220            android:process=":pushcore" >
-220-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:79:13-40
-221            <intent-filter>
-221-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:80:13-85:29
-222                <action android:name="cn.jpush.android.intent.REGISTER" />
-222-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:81:17-75
-222-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:81:25-72
-223                <action android:name="cn.jpush.android.intent.REPORT" />
-223-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:82:17-73
-223-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:82:25-70
-224                <action android:name="cn.jpush.android.intent.PushService" />
-224-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:83:17-78
-224-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:83:25-75
-225                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
-225-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:84:17-76
-225-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:84:25-73
-226            </intent-filter>
-227        </service> <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
-228        <!-- 若不启用该功能可删除该组件，或把 enabled 设置成 false ；App 不会被其他 App 拉起，但会拉起其他的 App。 -->
-229        <!-- jcore2.4.2 App的被拉起不依赖于该组件 -->
-230        <service
-230-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:91:9-100:19
-231            android:name="cn.jpush.android.service.DaemonService"
-231-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:92:13-66
-232            android:enabled="true"
-232-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:93:13-35
-233            android:exported="true" >
-233-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:94:13-36
-234            <intent-filter>
-234-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:95:13-99:29
-235                <action android:name="cn.jpush.android.intent.DaemonService" />
-235-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:96:17-80
-235-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:96:25-77
-236
-237                <category android:name="com.memo1.yoga_student_app" />
-237-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-237-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-238            </intent-filter>
-239        </service> <!-- 可选，如果使用静态Activity方式拉起，该组件必须声明 -->
-240        <activity
-240-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:102:9-113:20
-241            android:name="cn.jpush.android.service.DActivity"
-241-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:103:13-62
-242            android:enabled="true"
-242-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:104:13-35
-243            android:exported="true"
-243-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:105:13-36
-244            android:taskAffinity=""
-244-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:106:13-36
-245            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-245-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:107:13-72
-246            <intent-filter>
-246-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:108:13-112:29
-247                <action android:name="cn.jpush.android.intent.DActivity" />
-247-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:109:17-76
-247-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:109:25-73
-248
-249                <category android:name="com.memo1.yoga_student_app" />
-249-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-249-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-250            </intent-filter>
-251        </activity> <!-- Required SDK核心功能 -->
-252        <receiver
-252-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:116:9-127:20
-253            android:name="cn.jpush.android.service.PushReceiver"
-253-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:117:13-65
-254            android:enabled="true"
-254-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:118:13-35
-255            android:exported="false" >
-255-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:119:13-37
-256            <intent-filter android:priority="1000" >
-256-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:120:13-123:29
-256-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:120:28-51
-257                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
-257-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:121:17-94
-257-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:121:25-91
-258                <category android:name="com.memo1.yoga_student_app" />
-258-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-258-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-259            </intent-filter>
-260            <intent-filter>
-260-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:124:13-126:29
-261                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-261-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:125:17-79
-261-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:125:25-76
-262            </intent-filter>
-263        </receiver> <!-- Required SDK核心功能 -->
-264        <receiver
-264-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:130:9-132:40
-265            android:name="cn.jpush.android.service.AlarmReceiver"
-265-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:131:13-66
-266            android:exported="false" /> <!-- since 3.5.0 Required SDK 核心功能 -->
-266-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:132:13-37
-267        <!-- 3.5.0新增，用于定时展示功能 -->
-268        <receiver
-268-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:136:9-138:40
-269            android:name="cn.jpush.android.service.SchedulerReceiver"
-269-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:137:13-70
-270            android:exported="false" /> <!-- since 3.0.9 Required SDK 核心功能 -->
-270-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:138:13-37
-271        <provider
-271-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:141:9-145:43
-272            android:name="cn.jpush.android.service.DataProvider"
-272-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:142:13-65
-273            android:authorities="com.memo1.yoga_student_app.DataProvider"
-273-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:143:13-64
-274            android:exported="false"
-274-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:144:13-37
-275            android:process=":pushcore" /> <!-- since 3.1.0 Required SDK 核心功能 -->
-275-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:145:13-40
-276        <provider
-276-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:147:9-150:39
-277            android:name="cn.jpush.android.service.DownloadProvider"
-277-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:148:13-69
-278            android:authorities="com.memo1.yoga_student_app.DownloadProvider"
-278-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:149:13-68
-279            android:exported="true" /> <!-- since 3.3.0 Required SDK核心功能 -->
-279-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:150:13-36
-280        <activity
-280-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:152:9-163:20
-281            android:name="cn.jpush.android.service.JNotifyActivity"
-281-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:153:13-68
-282            android:exported="true"
-282-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:154:13-36
-283            android:taskAffinity=""
-283-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:155:13-36
-284            android:theme="@style/JPushTheme" >
-284-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:156:13-46
-285            <intent-filter>
-285-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:157:13-162:29
-286                <action android:name="cn.jpush.android.intent.JNotifyActivity" />
-286-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:158:17-82
-286-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:158:25-79
-287
-288                <category android:name="android.intent.category.DEFAULT" />
-288-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:17-76
-288-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:27-73
-289                <category android:name="com.memo1.yoga_student_app" />
-289-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-289-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-290            </intent-filter>
-291        </activity> <!-- since 4.6.0 Required SDK核心功能 -->
-292        <activity
-292-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:165:9-176:20
-293            android:name="cn.android.service.JTransitActivity"
-293-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:166:13-63
-294            android:exported="true"
-294-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:167:13-36
-295            android:taskAffinity=""
-295-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:168:13-36
-296            android:theme="@style/JPushTheme" >
-296-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:169:13-46
-297            <intent-filter>
-297-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:170:13-175:29
-298                <action android:name="cn.android.service.JTransitActivity" />
-298-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:171:17-78
-298-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:171:25-75
-299
-300                <category android:name="android.intent.category.DEFAULT" />
-300-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:17-76
-300-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:52:27-73
-301                <category android:name="com.memo1.yoga_student_app" />
-301-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-61
-301-->[:jpush_flutter] D:\yoga_app_student_v3\build\jpush_flutter\intermediates\merged_manifest\debug\AndroidManifest.xml:24:27-58
-302            </intent-filter>
-303        </activity> <!-- since 3.5.6 新增华硕通道 -->
-304        <receiver
-304-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:178:9-180:40
-305            android:name="cn.jpush.android.asus.AsusPushMessageReceiver"
-305-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:179:13-73
-306            android:exported="false" /> <!-- Required  . Enable it you can get statistics data with channel -->
-306-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:180:13-37
-307        <meta-data
-307-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:182:9-184:48
-308            android:name="JPUSH_CHANNEL"
-308-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:183:13-41
-309            android:value="developer-default" />
-309-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:184:13-45
-310        <meta-data
-310-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:185:9-187:47
-311            android:name="JPUSH_APPKEY"
-311-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:186:13-40
-312            android:value="5f425592298c818de8324049" />
-312-->[cn.jiguang.sdk:jpush:4.9.0] C:\Users\Lenovo\.gradle\caches\transforms-3\d37d4e353654ee182215d5f89a31a911\transformed\jetified-jpush-4.9.0\AndroidManifest.xml:187:13-44
-313    </application>
-314
-315</manifest>
+156        <uses-library
+156-->[androidx.window:window:1.0.0-beta04] /Users/li/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+157            android:name="androidx.window.extensions"
+157-->[androidx.window:window:1.0.0-beta04] /Users/li/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+158            android:required="false" />
+158-->[androidx.window:window:1.0.0-beta04] /Users/li/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+159        <uses-library
+159-->[androidx.window:window:1.0.0-beta04] /Users/li/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+160            android:name="androidx.window.sidecar"
+160-->[androidx.window:window:1.0.0-beta04] /Users/li/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+161            android:required="false" />
+161-->[androidx.window:window:1.0.0-beta04] /Users/li/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+162
+163        <provider
+163-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:10:9-18:20
+164            android:name="com.luck.picture.lib.basic.PictureFileProvider"
+164-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:11:13-74
+165            android:authorities="com.memo1.yoga_student_app.luckProvider"
+165-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:12:13-64
+166            android:exported="false"
+166-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:13:13-37
+167            android:grantUriPermissions="true" >
+167-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:14:13-47
+168            <meta-data
+168-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:15:13-17:57
+169                android:name="android.support.FILE_PROVIDER_PATHS"
+169-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:16:17-67
+170                android:resource="@xml/ps_file_paths" />
+170-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:17:17-54
+171        </provider>
+172
+173        <service
+173-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:20:9-23:56
+174            android:name="com.luck.picture.lib.service.ForegroundService"
+174-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:21:13-74
+175            android:enabled="true"
+175-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:22:13-35
+176            android:foregroundServiceType="location" />
+176-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:23:13-53
+177
+178        <activity
+178-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:25:9-29:20
+179            android:name="com.luck.picture.lib.basic.PictureSelectorSupporterActivity"
+179-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:26:13-87
+180            android:configChanges="orientation|keyboardHidden|screenSize"
+180-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:27:13-74
+181            android:theme="@style/Base.Theme.NoActionBar" >
+181-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:28:13-58
+182        </activity>
+183        <activity
+183-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:30:9-34:20
+184            android:name="com.luck.picture.lib.basic.PictureSelectorTransparentActivity"
+184-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:31:13-89
+185            android:configChanges="orientation|keyboardHidden|screenSize"
+185-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:32:13-74
+186            android:theme="@style/Picture.Theme.Translucent" >
+186-->[io.github.lucksiege:pictureselector:v3.10.9] /Users/li/.gradle/caches/transforms-3/9f7b465fb026bca4b8f4bc99e4c1ebfc/transformed/jetified-pictureselector-v3.10.9/AndroidManifest.xml:33:13-61
+187        </activity>
+188        <activity
+188-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:10:9-14:72
+189            android:name="com.yalantis.ucrop.UCropActivity"
+189-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:11:13-60
+190            android:configChanges="orientation|keyboardHidden|screenSize"
+190-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:12:13-74
+191            android:screenOrientation="portrait"
+191-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:13:13-49
+192            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+192-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:14:13-69
+193        <activity
+193-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:15:9-19:72
+194            android:name="com.yalantis.ucrop.UCropMultipleActivity"
+194-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:16:13-68
+195            android:configChanges="orientation|keyboardHidden|screenSize"
+195-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:17:13-74
+196            android:screenOrientation="portrait"
+196-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:18:13-49
+197            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Rich push 核心功能 since 2.0.6 -->
+197-->[io.github.lucksiege:ucrop:v3.10.9] /Users/li/.gradle/caches/transforms-3/84595c491b8e21cc53ea6e4b955d96af/transformed/jetified-ucrop-v3.10.9/AndroidManifest.xml:19:13-69
+198        <activity
+198-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:47:9-58:20
+199            android:name="cn.jpush.android.ui.PopWinActivity"
+199-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:48:13-62
+200            android:exported="true"
+200-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:49:13-36
+201            android:theme="@style/MyDialogStyle" >
+201-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:50:13-49
+202            <intent-filter>
+202-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:51:13-57:29
+203                <category android:name="android.intent.category.DEFAULT" />
+203-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:17-76
+203-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:27-73
+204
+205                <action android:name="cn.jpush.android.ui.PopWinActivity" />
+205-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:54:17-77
+205-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:54:25-74
+206
+207                <category android:name="com.memo1.yoga_student_app" />
+207-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+207-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+208            </intent-filter>
+209        </activity> <!-- Required SDK核心功能 -->
+210        <activity
+210-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:61:9-72:20
+211            android:name="cn.jpush.android.ui.PushActivity"
+211-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:62:13-60
+212            android:configChanges="orientation|keyboardHidden"
+212-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:63:13-63
+213            android:exported="true"
+213-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:64:13-36
+214            android:theme="@android:style/Theme.NoTitleBar" >
+214-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:65:13-60
+215            <intent-filter>
+215-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:66:13-71:29
+216                <action android:name="cn.jpush.android.ui.PushActivity" />
+216-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:67:17-75
+216-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:67:25-72
+217
+218                <category android:name="android.intent.category.DEFAULT" />
+218-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:17-76
+218-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:27-73
+219                <category android:name="com.memo1.yoga_student_app" />
+219-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+219-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+220            </intent-filter>
+221        </activity> <!-- Required SDK 核心功能 -->
+222        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+223        <service
+223-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:75:9-86:19
+224            android:name="cn.jpush.android.service.PushService"
+224-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:76:13-64
+225            android:enabled="true"
+225-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:77:13-35
+226            android:exported="false"
+226-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:78:13-37
+227            android:process=":pushcore" >
+227-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:79:13-40
+228            <intent-filter>
+228-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:80:13-85:29
+229                <action android:name="cn.jpush.android.intent.REGISTER" />
+229-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:81:17-75
+229-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:81:25-72
+230                <action android:name="cn.jpush.android.intent.REPORT" />
+230-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:82:17-73
+230-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:82:25-70
+231                <action android:name="cn.jpush.android.intent.PushService" />
+231-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:83:17-78
+231-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:83:25-75
+232                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+232-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:84:17-76
+232-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:84:25-73
+233            </intent-filter>
+234        </service> <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+235        <!-- 若不启用该功能可删除该组件，或把 enabled 设置成 false ；App 不会被其他 App 拉起，但会拉起其他的 App。 -->
+236        <!-- jcore2.4.2 App的被拉起不依赖于该组件 -->
+237        <service
+237-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:91:9-100:19
+238            android:name="cn.jpush.android.service.DaemonService"
+238-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:92:13-66
+239            android:enabled="true"
+239-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:93:13-35
+240            android:exported="true" >
+240-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:94:13-36
+241            <intent-filter>
+241-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:95:13-99:29
+242                <action android:name="cn.jpush.android.intent.DaemonService" />
+242-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:96:17-80
+242-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:96:25-77
+243
+244                <category android:name="com.memo1.yoga_student_app" />
+244-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+244-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+245            </intent-filter>
+246        </service> <!-- 可选，如果使用静态Activity方式拉起，该组件必须声明 -->
+247        <activity
+247-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:102:9-113:20
+248            android:name="cn.jpush.android.service.DActivity"
+248-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:103:13-62
+249            android:enabled="true"
+249-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:104:13-35
+250            android:exported="true"
+250-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:105:13-36
+251            android:taskAffinity=""
+251-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:106:13-36
+252            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+252-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:107:13-72
+253            <intent-filter>
+253-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:108:13-112:29
+254                <action android:name="cn.jpush.android.intent.DActivity" />
+254-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:109:17-76
+254-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:109:25-73
+255
+256                <category android:name="com.memo1.yoga_student_app" />
+256-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+256-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+257            </intent-filter>
+258        </activity> <!-- Required SDK核心功能 -->
+259        <receiver
+259-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:116:9-127:20
+260            android:name="cn.jpush.android.service.PushReceiver"
+260-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:117:13-65
+261            android:enabled="true"
+261-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:118:13-35
+262            android:exported="false" >
+262-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:119:13-37
+263            <intent-filter android:priority="1000" >
+263-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:120:13-123:29
+263-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:120:28-51
+264                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+264-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:121:17-94
+264-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:121:25-91
+265                <category android:name="com.memo1.yoga_student_app" />
+265-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+265-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+266            </intent-filter>
+267            <intent-filter>
+267-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:124:13-126:29
+268                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+268-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:125:17-79
+268-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:125:25-76
+269            </intent-filter>
+270        </receiver> <!-- Required SDK核心功能 -->
+271        <receiver
+271-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:130:9-132:40
+272            android:name="cn.jpush.android.service.AlarmReceiver"
+272-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:131:13-66
+273            android:exported="false" /> <!-- since 3.5.0 Required SDK 核心功能 -->
+273-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:132:13-37
+274        <!-- 3.5.0新增，用于定时展示功能 -->
+275        <receiver
+275-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:136:9-138:40
+276            android:name="cn.jpush.android.service.SchedulerReceiver"
+276-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:137:13-70
+277            android:exported="false" /> <!-- since 3.0.9 Required SDK 核心功能 -->
+277-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:138:13-37
+278        <provider
+278-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:141:9-145:43
+279            android:name="cn.jpush.android.service.DataProvider"
+279-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:142:13-65
+280            android:authorities="com.memo1.yoga_student_app.DataProvider"
+280-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:143:13-64
+281            android:exported="false"
+281-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:144:13-37
+282            android:process=":pushcore" /> <!-- since 3.1.0 Required SDK 核心功能 -->
+282-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:145:13-40
+283        <provider
+283-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:147:9-150:39
+284            android:name="cn.jpush.android.service.DownloadProvider"
+284-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:148:13-69
+285            android:authorities="com.memo1.yoga_student_app.DownloadProvider"
+285-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:149:13-68
+286            android:exported="true" /> <!-- since 3.3.0 Required SDK核心功能 -->
+286-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:150:13-36
+287        <activity
+287-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:152:9-163:20
+288            android:name="cn.jpush.android.service.JNotifyActivity"
+288-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:153:13-68
+289            android:exported="true"
+289-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:154:13-36
+290            android:taskAffinity=""
+290-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:155:13-36
+291            android:theme="@style/JPushTheme" >
+291-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:156:13-46
+292            <intent-filter>
+292-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:157:13-162:29
+293                <action android:name="cn.jpush.android.intent.JNotifyActivity" />
+293-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:158:17-82
+293-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:158:25-79
+294
+295                <category android:name="android.intent.category.DEFAULT" />
+295-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:17-76
+295-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:27-73
+296                <category android:name="com.memo1.yoga_student_app" />
+296-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+296-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+297            </intent-filter>
+298        </activity> <!-- since 4.6.0 Required SDK核心功能 -->
+299        <activity
+299-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:165:9-176:20
+300            android:name="cn.android.service.JTransitActivity"
+300-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:166:13-63
+301            android:exported="true"
+301-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:167:13-36
+302            android:taskAffinity=""
+302-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:168:13-36
+303            android:theme="@style/JPushTheme" >
+303-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:169:13-46
+304            <intent-filter>
+304-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:170:13-175:29
+305                <action android:name="cn.android.service.JTransitActivity" />
+305-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:171:17-78
+305-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:171:25-75
+306
+307                <category android:name="android.intent.category.DEFAULT" />
+307-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:17-76
+307-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:52:27-73
+308                <category android:name="com.memo1.yoga_student_app" />
+308-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-61
+308-->[:jpush_flutter] /Users/li/AndroidStudioProjects/yoga_app_student_v3/build/jpush_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:24:27-58
+309            </intent-filter>
+310        </activity> <!-- since 3.5.6 新增华硕通道 -->
+311        <receiver
+311-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:178:9-180:40
+312            android:name="cn.jpush.android.asus.AsusPushMessageReceiver"
+312-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:179:13-73
+313            android:exported="false" /> <!-- Required  . Enable it you can get statistics data with channel -->
+313-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:180:13-37
+314        <meta-data
+314-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:182:9-184:48
+315            android:name="JPUSH_CHANNEL"
+315-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:183:13-41
+316            android:value="developer-default" />
+316-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:184:13-45
+317        <meta-data
+317-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:185:9-187:47
+318            android:name="JPUSH_APPKEY"
+318-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:186:13-40
+319            android:value="5f425592298c818de8324049" />
+319-->[cn.jiguang.sdk:jpush:4.9.0] /Users/li/.gradle/caches/transforms-3/d37d4e353654ee182215d5f89a31a911/transformed/jetified-jpush-4.9.0/AndroidManifest.xml:187:13-44
+320    </application>
+321
+322</manifest>

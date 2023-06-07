@@ -1,13 +1,14 @@
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 /// 授权管理
 import 'package:permission_handler/permission_handler.dart';
+
 /// 图片缓存管理
 import 'package:cached_network_image/cached_network_image.dart';
+
 /// 保存文件或图片到本地
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 
@@ -17,9 +18,10 @@ class AppUtil {
   /// 默认为下载网络图片，如需下载资源图片，需要指定 [isAsset] 为 `true`。
   static Future<void> saveImage(String imageUrl, {bool isAsset: false}) async {
     try {
-      if (imageUrl == null){
+      if (imageUrl == null) {
         BotToast.showText(text: '保持失敗,圖片不存在!');
       }
+
       /// 权限检测
       PermissionStatus storageStatus = await Permission.storage.status;
       if (storageStatus != PermissionStatus.granted) {
@@ -43,7 +45,7 @@ class AppUtil {
         CachedNetworkImage image = CachedNetworkImage(imageUrl: imageUrl);
         BaseCacheManager manager = image.cacheManager ?? DefaultCacheManager();
         // Map<String, String>? headers = image.httpHeaders;
-         file = await manager.getSingleFile(
+        file = await manager.getSingleFile(
           image.imageUrl,
           // headers: headers,
         );
@@ -54,8 +56,8 @@ class AppUtil {
       final result = await ImageGallerySaver.saveFile(file!.path);
 
       if (result == null || result == '') throw '图片保存失败';
-      BotToast.showText(text: '已存儲到本地');
-      // print("保存成功${result.}");
+      BotToast.showText(text: '已存儲到本地相冊');
+      print("保存成功${result}");
     } catch (e) {
       BotToast.showText(text: '無效的圖片地址');
       print(e.toString());

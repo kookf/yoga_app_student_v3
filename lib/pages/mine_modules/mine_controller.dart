@@ -7,21 +7,21 @@ import 'package:yoga_student_app/services/address.dart';
 import 'package:yoga_student_app/services/dio_manager.dart';
 import 'package:yoga_student_app/utils/persistent_storage.dart';
 import '../../common/eventbus.dart';
-
-class MineController extends GetxController{
-
+import 'package:get/get.dart';
+class MineController extends GetxController {
   List dataArr = [];
 
   UserModel? userModel;
 
   StreamSubscription? eventBusFn;
-  /// 獲取個人資料
-  void requestDataWithUserinfo()async{
 
+  /// 獲取個人資料
+  void requestDataWithUserinfo() async {
     var params = {
-      'method':'auth.profile',
+      'method': 'auth.profile',
     };
-    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
+    var json =
+        await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
     userModel = UserModel.fromJson(json);
     await PersistentStorage().setStorage('name', userModel!.data!.name);
     await PersistentStorage().setStorage('id', userModel!.data!.id);
@@ -29,22 +29,32 @@ class MineController extends GetxController{
 
     update();
   }
-  /// 退出登录
-  void requestDataWithLoginOut()async{
 
-    var json = await DioManager().kkRequest(Address.loginOut,isShowLoad: true);
-    if(json['code'] == 200){
+  /// 退出登录
+  void requestDataWithLoginOut() async {
+    var json = await DioManager().kkRequest(Address.loginOut, isShowLoad: true);
+    if (json['code'] == 200) {
       await PersistentStorage().removeStorage('token');
       await PersistentStorage().removeStorage('avatar');
       await PersistentStorage().removeStorage('name');
       await PersistentStorage().removeStorage('id');
       // Get.off(StudentLoginView());
       Get.offNamed(AppRoutes.login);
-    }else{
+    } else {
       BotToast.showText(text: json['message']);
     }
     update();
   }
+  /// 刪除賬號
+  requestDataWithDelete()async{
+    var params = {
+      'method': 'auth.delete',
+    };
+    var json = await DioManager().kkRequest(Address.hostAuth,isShowLoad: true,
+        bodyParams: params);
+    Get.offNamed(AppRoutes.login);
+  }
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -52,7 +62,7 @@ class MineController extends GetxController{
     eventBusFn = eventBus.on<EventFn>().listen((event) {
       //  event为 event.obj 即为 eventBus.dart 文件中定义的 EventFn 类中监听的数据
 
-      if(event.obj == 'headerRefresh'){
+      if (event.obj == 'headerRefresh') {
         requestDataWithUserinfo();
       }
       print('event.obj hh ===== ${event.obj}');
@@ -60,5 +70,4 @@ class MineController extends GetxController{
 
     requestDataWithUserinfo();
   }
-
 }

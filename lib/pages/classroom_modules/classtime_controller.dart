@@ -7,26 +7,24 @@ import '../../services/address.dart';
 import '../mine_modules/appointment_record_page.dart';
 import 'classroom_model.dart';
 
-class ClassTimeController extends GetxController{
-
-
+class ClassTimeController extends GetxController {
   Course? model;
-
+  bool check = true;
 
   String? userName;
 
-
-  requestDataWithSubscribeCreate(var isShareWallet)async{
+  requestDataWithSubscribeCreate(var isShareWallet) async {
     var params = {
-      'method':'subscribe.create',
-      'course_time_id':model?.courseTimeId,
-      'is_share_wallet':isShareWallet,
+      'method': 'subscribe.create',
+      'course_time_id': model?.courseTimeId,
+      'is_share_wallet': isShareWallet,
     };
-    var json = await DioManager().kkRequest(Address.hostAuth,bodyParams: params);
-    if(json['code']==200){
+    var json =
+        await DioManager().kkRequest(Address.hostAuth, bodyParams: params);
+    if (json['code'] == 200) {
       BotToast.showText(text: '預約成功');
       eventBus.fire(EventFn('refresh'));
-      
+
       Get.to(AppointmentRecordPage());
     }
   }
@@ -37,15 +35,11 @@ class ClassTimeController extends GetxController{
     super.onInit();
     model = Get.arguments;
     getName();
-
-
-
   }
 
-  getName()async{
+  getName() async {
     userName = await PersistentStorage().getStorage('name');
     print(userName);
     update();
   }
-
 }

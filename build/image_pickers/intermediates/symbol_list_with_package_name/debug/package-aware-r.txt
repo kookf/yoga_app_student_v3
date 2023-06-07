@@ -1185,6 +1185,7 @@ drawable ps_seek_bar_thumb_normal
 drawable ps_seek_bar_thumb_pressed
 drawable ps_select_complete_bg
 drawable ps_select_complete_normal_bg
+drawable ps_transparent_space
 drawable ps_view_normal
 drawable ps_view_press
 drawable tooltip_frame_dark
@@ -1376,6 +1377,7 @@ id ivImage
 id ivPicture
 id ivPlay
 id iv_photo
+id iv_play
 id iv_play_back
 id iv_play_fast
 id iv_play_video
@@ -1647,6 +1649,7 @@ layout activity_select_pics
 layout activity_video
 layout custom_dialog
 layout item_activity_photos
+layout item_activity_video
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

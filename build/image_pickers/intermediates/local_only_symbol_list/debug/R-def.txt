@@ -34,6 +34,7 @@ drawable num_oval_grey
 drawable num_oval_orange
 drawable num_oval_red
 drawable num_oval_white
+id iv_play
 id iv_src
 id iv_tempView
 id layout_rl
@@ -48,6 +49,7 @@ layout activity_photos
 layout activity_select_pics
 layout activity_video
 layout item_activity_photos
+layout item_activity_video
 style AppTheme
 style TransTheme
 xml net_sec

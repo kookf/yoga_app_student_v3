@@ -41,8 +41,7 @@ class Data {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.classroomlist != null) {
-      data['list'] =
-          this.classroomlist!.map((v) => v.toJson()).toList();
+      data['list'] = this.classroomlist!.map((v) => v.toJson()).toList();
     }
     data['total_page'] = this.totalPage;
     return data;
@@ -80,7 +79,7 @@ class Course {
   int? teacherId;
   int? courseId;
   String? name;
-  String? gold;
+  var gold;
   int? times;
   String? teacherName;
   String? teacherAvatar;
@@ -97,23 +96,23 @@ class Course {
 
   Course(
       {this.courseTimeId,
-        this.teacherId,
-        this.courseId,
-        this.name,
-        this.gold,
-        this.times,
-        this.teacherName,
-        this.teacherAvatar,
-        this.totalUser,
-        this.address,
-        this.startDay,
-        this.startTime,
-        this.endTime,
-        this.subscribeId,
-        this.subscribeStatus,
-        this.cause,
-        this.subscribeUser,
-        this.signIn});
+      this.teacherId,
+      this.courseId,
+      this.name,
+      this.gold,
+      this.times,
+      this.teacherName,
+      this.teacherAvatar,
+      this.totalUser,
+      this.address,
+      this.startDay,
+      this.startTime,
+      this.endTime,
+      this.subscribeId,
+      this.subscribeStatus,
+      this.cause,
+      this.subscribeUser,
+      this.signIn});
 
   Course.fromJson(Map<String, dynamic> json) {
     courseTimeId = json['course_time_id'];

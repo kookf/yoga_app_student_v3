@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import '../common/colors.dart';
 import 'package:get/get.dart';
-class BaseAppBar extends PreferredSize{
+
+class BaseAppBar extends PreferredSize {
   /// 公共导航条
   ///
   final List<Widget>? action;
-  const BaseAppBar({super.key, required super.child, required super.preferredSize,this.action});
+  const BaseAppBar(
+      {super.key,
+      required super.child,
+      required super.preferredSize,
+      this.action});
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return  AppBar(
+    return AppBar(
       actions: action,
       backgroundColor: AppColor.themeColor,
       title: child,
       leading: IconButton(
-        onPressed: () async{
+        onPressed: () async {
           Get.back();
         },
         icon: Image.asset(
@@ -26,5 +31,4 @@ class BaseAppBar extends PreferredSize{
       ),
     );
   }
-
 }

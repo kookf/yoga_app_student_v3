@@ -8,7 +8,7 @@ class SharedWalletModel {
   SharedWalletModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
-    data = json['data'] != null ?  Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -54,7 +54,7 @@ class Owner {
   int? id;
   String? name;
   var avatar;
-  String? balance;
+  var balance;
   var walletExpireAt;
 
   Owner({this.id, this.name, this.avatar, this.balance, this.walletExpireAt});

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AKGallery.h</key>
 		<data>
-		UVw6FwhQXXRDCZvgk6FSfBhBuco=
+		P+NXwvBAgaXIwJLRDJ7D5ViM5Ew=
 		</data>
 		<key>Headers/AKGalleryCustUI.h</key>
 		<data>
@@ -28,9 +28,13 @@
 		<data>
 		hRwvqqwW87p8tXzl9qFLhZo8eBc=
 		</data>
+		<key>Headers/ChooseImageManager.h</key>
+		<data>
+		iMBD3wdvDhl9eCzWgJe7NLLC8fM=
+		</data>
 		<key>Headers/ImagePickersPlugin.h</key>
 		<data>
-		n+pV9d/3mqWHPA/6FqHG05fXPOE=
+		u398H7Ef1o66BkQK7+sGYAouGaU=
 		</data>
 		<key>Headers/MASCompositeConstraint.h</key>
 		<data>
@@ -82,7 +86,7 @@
 		</data>
 		<key>Headers/PlayTheVideoVC.h</key>
 		<data>
-		GJicieXJsr+biJ1pm4fc5zwa70s=
+		0p+14VW7DFUF37zBzFUeUbTmk1A=
 		</data>
 		<key>Headers/View+MASAdditions.h</key>
 		<data>
@@ -98,15 +102,19 @@
 		</data>
 		<key>Headers/image_pickers-umbrella.h</key>
 		<data>
-		noaX7aKUrkgYHWWL93/NA1GF4Ac=
+		qQyAu3V/Nir1II3RsovB54AuDIw=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qexyhwpOx6Dc+CEvzP5u4Nw1dz4=
+		14cqbDS5uvFwgAsWppy4av00DRU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		fBGpcUBDeKBudA2PspBog+KV2x0=
+		</data>
+		<key>bofang2.png</key>
+		<data>
+		5/OV0H9Wto5WXqvfOzDgBeotGAo=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -115,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			omqTr2r49sX8oisI76otZTLTmgJOZHokBdTyC4RpSH4=
+			N/LkdB5hrbzcRrgT9kMTDvczrLTplBb5XmwGfLmdmBA=
 			</data>
 		</dict>
 		<key>Headers/AKGalleryCustUI.h</key>
@@ -153,11 +161,18 @@
 			zIbyHvoThlEDv/s87UC1KCCbZh52wMCFI1en1ktP6iA=
 			</data>
 		</dict>
+		<key>Headers/ChooseImageManager.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DRzIclYSYroLyM5swIgzHX1JQ/d/xAcmnkn3CCbfIcY=
+			</data>
+		</dict>
 		<key>Headers/ImagePickersPlugin.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t5KbS9PDgnczCis3bm7f/doSQOkz8xk1DG8YiTM1A9U=
+			vIm0+GD9H3ql/O+Hbe/J2APvDDyU65kT5mFYc5aD2pI=
 			</data>
 		</dict>
 		<key>Headers/MASCompositeConstraint.h</key>
@@ -248,7 +263,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nwwChqdtnFe4tCy9SkfO2ZSyhMozczh+zqdvoZm+Dy4=
+			9V9Tex5PRkV7o/RgyWxH25/W/WCZhqCNHqu2ZP8FhaE=
 			</data>
 		</dict>
 		<key>Headers/View+MASAdditions.h</key>
@@ -276,7 +291,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6CqCuM+VoYg3dftAB6qbwSVVMxMMpeNBXbh1WBHbwz4=
+			lbulUTH2uv5Ud39jALdkIfxMveoj0Isa2n874boredU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -284,6 +299,13 @@
 			<key>hash2</key>
 			<data>
 			jiZvF29M7ZpJegI58H7z4YA/6Wk/wgcbo1NYi/9wPy4=
+			</data>
+		</dict>
+		<key>bofang2.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vTYu1/pk2bW5uRfsx6u0u/R3/6Cq0Js9yUU+nEwyCJ8=
 			</data>
 		</dict>
 	</dict>

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../common/colors.dart';
 
 class GradientButton extends StatelessWidget {
-
-  const GradientButton({Key? key,
+  const GradientButton({
+    Key? key,
     this.colors,
     this.width,
     this.height,
@@ -28,10 +28,9 @@ class GradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //确保colors数组不空
-    List<Color> colors1 =
-        colors ?? [
+    List<Color> colors1 = colors ??
+        [
           AppColor.registerBgColor,
           AppColor.themeColor,
         ];
@@ -39,7 +38,7 @@ class GradientButton extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
+            begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: colors1),
         borderRadius: borderRadius,

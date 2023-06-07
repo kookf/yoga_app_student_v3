@@ -6,11 +6,23 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		qexyhwpOx6Dc+CEvzP5u4Nw1dz4=
+		14cqbDS5uvFwgAsWppy4av00DRU=
+		</data>
+		<key>bofang2.png</key>
+		<data>
+		5/OV0H9Wto5WXqvfOzDgBeotGAo=
 		</data>
 	</dict>
 	<key>files2</key>
-	<dict/>
+	<dict>
+		<key>bofang2.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vTYu1/pk2bW5uRfsx6u0u/R3/6Cq0Js9yUU+nEwyCJ8=
+			</data>
+		</dict>
+	</dict>
 	<key>rules</key>
 	<dict>
 		<key>^.*</key>

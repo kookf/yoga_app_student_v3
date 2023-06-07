@@ -1,4 +1,3 @@
-
 import 'package:yoga_student_app/pages/bottom_nav_moudules/bottom_tab_controller.dart';
 import 'package:yoga_student_app/pages/classroom_modules/classtime_view.dart';
 
@@ -10,7 +9,6 @@ import 'app_pages.dart';
 import 'package:get/get.dart';
 
 class AppPages {
-
   static final routes = [
     GetPage(
       name: AppRoutes.login,

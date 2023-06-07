@@ -58,14 +58,14 @@ class MessageList {
 
   MessageList(
       {this.id,
-        this.name,
-        this.userId,
-        this.msg,
-        this.createdAt,
-        this.coursesName,
-        this.teacherName,
-        this.noticeType,
-        this.startDay});
+      this.name,
+      this.userId,
+      this.msg,
+      this.createdAt,
+      this.coursesName,
+      this.teacherName,
+      this.noticeType,
+      this.startDay});
 
   MessageList.fromJson(Map<String, dynamic> json) {
     id = json['id'];

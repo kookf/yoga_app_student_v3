@@ -38,17 +38,17 @@ class Data {
 
   Data(
       {this.chargeId,
-        this.image,
-        this.orderNo,
-        this.createdAt,
-        this.updatedAt,
-        this.clientIp,
-        this.userId,
-        this.codeId,
-        this.amount,
-        this.gold,
-        this.isShareWallet,
-        this.id});
+      this.image,
+      this.orderNo,
+      this.createdAt,
+      this.updatedAt,
+      this.clientIp,
+      this.userId,
+      this.codeId,
+      this.amount,
+      this.gold,
+      this.isShareWallet,
+      this.id});
 
   Data.fromJson(Map<String, dynamic> json) {
     chargeId = json['charge_id'];

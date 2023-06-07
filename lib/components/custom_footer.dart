@@ -22,21 +22,21 @@ class MaterialFooter1 extends Footer {
     bool enableInfiniteLoad = true,
     bool overScroll = false,
   }) : super(
-    float: true,
-    extent: 72.0,
-    triggerDistance: 72.0,
-    completeDuration: completeDuration == null
-        ? Duration(
-      milliseconds: 300,
-    )
-        : completeDuration +
-        Duration(
-          milliseconds: 300,
-        ),
-    enableHapticFeedback: enableHapticFeedback,
-    enableInfiniteLoad: enableInfiniteLoad,
-    overScroll: overScroll,
-  );
+          float: true,
+          extent: 72.0,
+          triggerDistance: 72.0,
+          completeDuration: completeDuration == null
+              ? Duration(
+                  milliseconds: 300,
+                )
+              : completeDuration +
+                  Duration(
+                    milliseconds: 300,
+                  ),
+          enableHapticFeedback: enableHapticFeedback,
+          enableInfiniteLoad: enableInfiniteLoad,
+          overScroll: overScroll,
+        );
 
   @override
   Widget contentBuilder(
@@ -107,15 +107,19 @@ class MaterialFooterWidgetState extends State<MaterialFooterWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (_noMore) return  Container(
-      width: MediaQuery.of(context).size.width,
-      height: 200,
-      alignment: Alignment.center,
+    if (_noMore)
+      return Container(
+        width: MediaQuery.of(context).size.width,
+        height: 200,
+        alignment: Alignment.center,
 
-      margin: EdgeInsets.only(bottom: 0),
-      // color: Colors.yellow,
-      child: Text('我是有底綫的~',style: TextStyle(fontSize: 13),),
-    );
+        margin: EdgeInsets.only(bottom: 0),
+        // color: Colors.yellow,
+        child: Text(
+          '我是有底綫的~',
+          style: TextStyle(fontSize: 13),
+        ),
+      );
     // 是否为垂直方向
     bool isVertical = _axisDirection == AxisDirection.down ||
         _axisDirection == AxisDirection.up;
@@ -130,37 +134,37 @@ class MaterialFooterWidgetState extends State<MaterialFooterWidget> {
         Positioned(
           top: isVertical
               ? !isReverse
-              ? 0.0
-              : null
+                  ? 0.0
+                  : null
               : 0.0,
           bottom: isVertical
               ? isReverse
-              ? 0.0
-              : null
+                  ? 0.0
+                  : null
               : 0.0,
           left: !isVertical
               ? !isReverse
-              ? 0.0
-              : null
+                  ? 0.0
+                  : null
               : 0.0,
           right: !isVertical
               ? isReverse
-              ? 0.0
-              : null
+                  ? 0.0
+                  : null
               : 0.0,
           child: Container(
             alignment: isVertical
                 ? !isReverse
-                ? Alignment.topCenter
-                : Alignment.bottomCenter
+                    ? Alignment.topCenter
+                    : Alignment.bottomCenter
                 : !isReverse
-                ? Alignment.centerLeft
-                : Alignment.centerRight,
+                    ? Alignment.centerLeft
+                    : Alignment.centerRight,
             child: RefreshProgressIndicator(
               value: _refreshState == LoadMode.armed ||
-                  _refreshState == LoadMode.load ||
-                  _refreshState == LoadMode.loaded ||
-                  _refreshState == LoadMode.done
+                      _refreshState == LoadMode.load ||
+                      _refreshState == LoadMode.loaded ||
+                      _refreshState == LoadMode.done
                   ? null
                   : indicatorValue,
               valueColor: widget.valueColor,

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:yoga_student_app/common/colors.dart';
 import 'package:get/get.dart';
-class CounterDownPage extends StatefulWidget {
 
+class CounterDownPage extends StatefulWidget {
   final int time;
 
   const CounterDownPage(this.time, {super.key});
@@ -22,12 +22,11 @@ class _CounterDownPageState extends State<CounterDownPage> {
   String? _hourStr;
   String? _minute;
   String? _second;
-  
+
   Timer? _timer;
 
   //倒计时
   void startCountDown() {
-
     // 重新计时的时候要把之前的清除掉
     if (_timer != null) {
       if (_timer!.isActive) {
@@ -55,18 +54,19 @@ class _CounterDownPageState extends State<CounterDownPage> {
 
       //外面传进来的单位是秒，所以需要根据总秒数，计算小时，分钟，秒
       int hour = countTime ~/ 3600;
-      int minute = countTime % 3600 ~/60;
+      int minute = countTime % 3600 ~/ 60;
       int second = countTime % 60;
 
       var str = '';
-      if(hour<10){
+      if (hour < 10) {
         _hourStr = '${str}0$hour';
       }
       if (hour > 10) {
         _hourStr = '$str$hour';
       }
 
-      if (minute / 10 < 1) {//当只有个位数时，给前面加“0”，实现效果：“:01”,":02"
+      if (minute / 10 < 1) {
+        //当只有个位数时，给前面加“0”，实现效果：“:01”,":02"
         _minute = str + '0' + minute.toString() + "";
       } else {
         _minute = "$str$minute";
@@ -81,7 +81,6 @@ class _CounterDownPageState extends State<CounterDownPage> {
       setState(() {
         remainTimeStr = str;
       });
-
     });
   }
 
@@ -114,60 +113,84 @@ class _CounterDownPageState extends State<CounterDownPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               Container(
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(50)),
-                  border: Border.all(
-                    color: AppColor.themeColor,
-                    width: 6.0,
-                  )
-                ),
+                    borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    border: Border.all(
+                      color: AppColor.themeColor,
+                      width: 6.0,
+                    )),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(_hourStr??'--',style: TextStyle(color: AppColor.themeTextColor,fontSize: 22),),
-                    Text('時',style: TextStyle(color: AppColor.themeTextColor,fontSize: 18),)
+                    Text(
+                      _hourStr ?? '--',
+                      style: TextStyle(
+                          color: AppColor.themeTextColor, fontSize: 22),
+                    ),
+                    Text(
+                      '時',
+                      style: TextStyle(
+                          color: AppColor.themeTextColor, fontSize: 18),
+                    )
                   ],
                 ),
               ),
-              const SizedBox(width: 15,),
+              const SizedBox(
+                width: 15,
+              ),
               Container(
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(50)),
-                  border: Border.all(
-                    color: AppColor.themeColor,
-                    width: 6.0,
-                  )
-                ),
+                    borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    border: Border.all(
+                      color: AppColor.themeColor,
+                      width: 6.0,
+                    )),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(_minute??'--',style: TextStyle(color: AppColor.themeTextColor,fontSize: 22),),
-                    Text('分',style: TextStyle(color: AppColor.themeTextColor,fontSize: 18),)
+                    Text(
+                      _minute ?? '--',
+                      style: TextStyle(
+                          color: AppColor.themeTextColor, fontSize: 22),
+                    ),
+                    Text(
+                      '分',
+                      style: TextStyle(
+                          color: AppColor.themeTextColor, fontSize: 18),
+                    )
                   ],
                 ),
               ),
-              const SizedBox(width: 15,),
+              const SizedBox(
+                width: 15,
+              ),
               Container(
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(50)),
-                  border: Border.all(
-                    color: AppColor.themeColor,
-                    width: 6.0,
-                  )
-                ),
+                    borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    border: Border.all(
+                      color: AppColor.themeColor,
+                      width: 6.0,
+                    )),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(_second??'--',style: TextStyle(color: AppColor.themeTextColor,fontSize: 22),),
-                    Text('秒',style: TextStyle(color: AppColor.themeTextColor,fontSize: 18),)
+                    Text(
+                      _second ?? '--',
+                      style: TextStyle(
+                          color: AppColor.themeTextColor, fontSize: 22),
+                    ),
+                    Text(
+                      '秒',
+                      style: TextStyle(
+                          color: AppColor.themeTextColor, fontSize: 18),
+                    )
                   ],
                 ),
               ),

@@ -1184,6 +1184,7 @@ int drawable ps_seek_bar_thumb_normal 0x0
 int drawable ps_seek_bar_thumb_pressed 0x0
 int drawable ps_select_complete_bg 0x0
 int drawable ps_select_complete_normal_bg 0x0
+int drawable ps_transparent_space 0x0
 int drawable ps_view_normal 0x0
 int drawable ps_view_press 0x0
 int drawable tooltip_frame_dark 0x0
@@ -1375,6 +1376,7 @@ int id ivImage 0x0
 int id ivPicture 0x0
 int id ivPlay 0x0
 int id iv_photo 0x0
+int id iv_play 0x0
 int id iv_play_back 0x0
 int id iv_play_fast 0x0
 int id iv_play_video 0x0
@@ -1646,6 +1648,7 @@ int layout activity_select_pics 0x0
 int layout activity_video 0x0
 int layout custom_dialog 0x0
 int layout item_activity_photos 0x0
+int layout item_activity_video 0x0
 int layout notification_action 0x0
 int layout notification_action_tombstone 0x0
 int layout notification_template_custom_big 0x0
